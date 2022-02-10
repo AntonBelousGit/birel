@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('receive_news')->nullable();
             $table->tinyInteger('type')->nullable();
+            $table->string('position')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

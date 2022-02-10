@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\UserUpdateRequest;
+// use App\Models\User;
 
 class HomeController extends Controller
 {
@@ -25,17 +27,15 @@ class HomeController extends Controller
     {
         return view('lc.home');
     }
-     public function companies()
-    {
-        return view('lc.companies');
-    }
     public function addcompany()
     {
         return view('lc.addcompany');
     }
-    public function info(Request $request)
+    public function update(UserUpdateRequest $request)
     {
-        dd($request);
-        return->back();
+     
+           auth()->user()->update($request->validated());
+
+       return redirect()->back()->with('success', 'Profile updated.');
     }
 }

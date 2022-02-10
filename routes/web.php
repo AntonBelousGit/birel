@@ -20,6 +20,6 @@ Route::get('/explore', [App\Http\Controllers\MainController::class, 'explore'])-
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/companies', [App\Http\Controllers\HomeController::class, 'companies'])->name('companies');
-Route::get('/companies/new', [App\Http\Controllers\HomeController::class, 'addcompany'])->name('addcompany');
-Route::post('/info', [App\Http\Controllers\HomeController::class, 'info'])->name('info');
+Route::get('/companies', [App\Http\Controllers\CompanyController::class, 'index'])->name('companies');
+Route::get('/companies/new', [App\Http\Controllers\CompanyController::class, 'create'])->name('addcompany');
+Route::post('/update', [App\Http\Controllers\HomeController::class, 'update'])->name('update');

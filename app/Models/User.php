@@ -26,6 +26,7 @@ class User extends Authenticatable
         'email',
         'receive_news',
         'type',
+        'position',
         'password',
         ];
 

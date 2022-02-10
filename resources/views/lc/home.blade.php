@@ -14,7 +14,7 @@
 		<h2 class="content-box-title t-sb f22-l25 black2">
 			Personal information
 		</h2>
-		<form class="content-box-form" action="{{ route('info')}}" method="POST">
+		<form class="content-box-form" action="{{ route('update')}}" method="POST">
 			@csrf
 			<ul class="form-list">
 				<li class="form-list-item">
@@ -53,37 +53,88 @@
 		</div>
 		<h2 class="content-box-title t-sb f22-l25 black2">
 			Personal information
+
+		
+
+@if ($errors->any())
+    <div>
+        <div class="font-medium text-red-600">
+            {{ __('Whoops! Something went wrong.') }}
+        </div>
+
+        <ul class="mt-3 list-disc list-inside text-sm text-red-600">
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 		</h2>
-		<form class="content-box-form" action="{{ route('info')}}" method="POST">
+		<form class="content-box-form" action="{{ route('update')}}" method="POST">
 			@csrf
 			<ul class="form-list">
 				<li class="form-list-item">
 					<label class="t-r f16-l24 purple1" for="name2">First Name</label>
 					<input class="i-f" id="name2" type="text" name="name" value="{{Auth::user()->name}}">
+					 @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                     @enderror
 				</li>
 				<li class="form-list-item">
 					<label class="t-r f16-l24 purple1" for="secondName2">Last Name</label>
 					<input class="i-f" id="secondName2" type="text" name="surname" value="{{Auth::user()->surname}}">
+					 @error('surname')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                     @enderror
 				</li>
 				<li class="form-list-item">
 					<label class="t-r f16-l24 purple1" for="email2">Email</label>
 					<input class="i-f" id="email2" type="email" name="email" value="{{Auth::user()->email}}">
+					 @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                     @enderror
 				</li>
 				<li class="form-list-item">
 					<label class="t-r f16-l24 purple1" for="linkedin2">Linkedin</label>
 					<input class="i-f" id="linkedin2" type="text" name="linkedin" value="{{Auth::user()->linkedin}}">
+					 @error('linkedin')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                     @enderror
 				</li>
 				<li class="form-list-item">
 					<label class="t-r f16-l24 purple1" for="nameFund">Name Fund</label>
 					<input class="i-f" id="nameFund" type="text" name="fund_name" value="{{Auth::user()->fund_name}}">
+					 @error('fund_name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                     @enderror
 				</li>
 				<li class="form-list-item">
 					<label class="t-r f16-l24 purple1" for="fundAddress">Fund address</label>
 					<input class="i-f" id="fundAddress" type="text" name="fund_address" value="{{Auth::user()->fund_address}}">
+					 @error('fund_address')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                     @enderror
 				</li>
 				<li class="form-list-item">
 					<label class="t-r f16-l24 purple1" for="position">Position</label>
 					<input class="i-f" id="position" type="text" name="position" value="{{Auth::user()->position}}">
+					 @error('position')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                     @enderror
 				</li>
 			</ul>
 			<div class="form-checkbox">
