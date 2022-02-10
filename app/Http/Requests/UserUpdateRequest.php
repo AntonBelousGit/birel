@@ -5,6 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 class UserUpdateRequest extends FormRequest
 {
@@ -32,6 +33,8 @@ class UserUpdateRequest extends FormRequest
             'fund_address' => ['nullable', 'string', 'max:255'],
             'fund_name' => ['nullable', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255',Rule::unique('users')->ignore(Auth::user())],
+            // 'email' => ['required', 'string', 'email', 'max:255',Rule::unique('users')->ignore($user)],
+            
             'receive_news' => ['nullable'],
             'position' => ['nullable','string', 'max:255'],
             'type' => ['sometimes','integer'],

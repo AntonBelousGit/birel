@@ -18,8 +18,9 @@ Route::get('/mission', [App\Http\Controllers\MainController::class, 'mission'])-
 Route::get('/explore', [App\Http\Controllers\MainController::class, 'explore'])->name('explore');
 
 Auth::routes();
-
+require('_admin.php');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/companies', [App\Http\Controllers\CompanyController::class, 'index'])->name('companies');
 Route::get('/companies/new', [App\Http\Controllers\CompanyController::class, 'create'])->name('addcompany');
 Route::post('/update', [App\Http\Controllers\HomeController::class, 'update'])->name('update');
+Route::post('/changepass', [App\Http\Controllers\HomeController::class, 'changepass'])->name('changepass');

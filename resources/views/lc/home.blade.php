@@ -20,24 +20,44 @@
 				<li class="form-list-item">
 					<label class="t-r f16-l24 purple1" for="name">First Name</label>
 					<input class="i-f" id="name" type="text" name="name" value="{{Auth::user()->name}}">
+					 @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                     @enderror
 				</li>
 				<li class="form-list-item">
 					<label class="t-r f16-l24 purple1" for="secondName">Last Name</label>
 					<input class="i-f" id="secondName" type="text" name="surname" value="{{Auth::user()->surname}}">
+					 @error('surname')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                     @enderror
 				</li>
 				<li class="form-list-item">
 					<label class="t-r f16-l24 purple1" for="email">Email</label>
 					<input class="i-f" id="email" type="email" name="email" value="{{Auth::user()->email}}">
+					 @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                     @enderror
 				</li>
 				<li class="form-list-item">
 					<label class="t-r f16-l24 purple1" for="linkedin">Linkedin</label>
 					<input class="i-f" id="linkedin" type="text" name="linkedin" value="{{Auth::user()->linkedin}}">
+					 @error('linkedin')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                     @enderror
 				</li>
 			</ul>
 			<div class="form-checkbox">
 				<label class="checkbox-ios">
 					<span class="t-r f16-l24 purple1">Я хочу получать новостную рассылку</span>
-					<input type="checkbox" name="receive_news" checked="{{ (Auth::user()->receive_news == 'on') ? 'checked': ''}}">
+					<input type="checkbox" name="receive_news" {{ (Auth::user()->receive_news == 'on') ? 'checked="checked"': ''}}>
 					<span class="checkbox-ios-switch"></span>
 				</label>
 			</div>
@@ -53,22 +73,6 @@
 		</div>
 		<h2 class="content-box-title t-sb f22-l25 black2">
 			Personal information
-
-		
-
-@if ($errors->any())
-    <div>
-        <div class="font-medium text-red-600">
-            {{ __('Whoops! Something went wrong.') }}
-        </div>
-
-        <ul class="mt-3 list-disc list-inside text-sm text-red-600">
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
 		</h2>
 		<form class="content-box-form" action="{{ route('update')}}" method="POST">
 			@csrf
@@ -140,7 +144,7 @@
 			<div class="form-checkbox">
 				<label class="checkbox-ios">
 					<span class="t-r f16-l24 purple1">Я хочу получать новостную рассылку</span>
-					<input type="checkbox" name="receive_news" checked="{{ (Auth::user()->receive_news == 'on') ? 'checked': ''}}">
+					<input type="checkbox" name="receive_news" {{ (Auth::user()->receive_news == 'on') ? 'checked="checked"': ''}}>
 					<span class="checkbox-ios-switch"></span>
 				</label>
 			</div>
@@ -158,15 +162,21 @@
 			You can create new password here!
 		</p>
 		<div class="content-box-wrapper">
-			<form class="content-box-form" action="#">
+			<form class="content-box-form" action="{{ route('changepass')}}" method="POST">
+				@csrf
 				<ul class="form-list">
 					<li class="form-list-item">
 						<label class="t-r f16-l24 purple1" for="password">New password</label>
-						<input class="i-f" id="password" type="text" placeholder="Placeholder text">
+						<input class="i-f" id="password" type="text" placeholder="Password" name="password" required autocomplete="new-password">
+                         @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
 					</li>
 					<li class="form-list-item">
 						<label class="t-r f16-l24 purple1" for="secondPassword">Re-enter new password</label>
-						<input class="i-f" id="secondPassword" type="text" placeholder="Placeholder text">
+						<input class="i-f" id="secondPassword" type="text" name="password_confirmation" required autocomplete="new-password">
 					</li>
 				</ul>
 				<div class="form-btn">
