@@ -41,7 +41,7 @@
 			</a>
 		</li>
 		<li class="sidebar-nav-item">
-			<a class="nav-link {{ Route::is('addcompany') ? 'active' : '' }}" href="{{ route('addcompany')}}">
+			<a class="nav-link {{ Route::is('addcompany') ? 'active' : '' }}" href="{{ route('companies.create')}}">
 				<i class="icon icon-case-plus-purple"></i>
 				<i class="icon icon-case-plus-green"></i>
 				<i class="icon icon-case-plus-white"></i>

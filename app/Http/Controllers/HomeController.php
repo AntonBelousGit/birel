@@ -28,10 +28,6 @@ class HomeController extends Controller
     {
         return view('lc.home');
     }
-    public function addcompany()
-    {
-        return view('lc.addcompany');
-    }
     public function update(UserUpdateRequest $request)
     {
      

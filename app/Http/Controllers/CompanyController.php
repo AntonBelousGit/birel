@@ -12,6 +12,11 @@ class CompanyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+      public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         return view('lc.companies');
@@ -24,7 +29,7 @@ class CompanyController extends Controller
      */
     public function create()
     {
-        //
+        return view('lc.addcompany');
     }
 
     /**
@@ -35,7 +40,7 @@ class CompanyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request);
     }
 
     /**
