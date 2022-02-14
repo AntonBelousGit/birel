@@ -3,28 +3,12 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Auth;
-use App\Models\User;
+use Illuminate\Validation\Rule;
 
-class UserUpdateRequest extends FormRequest
+class UserCreateRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     *
-     * @return bool
-     */
-    public function authorize()
-    {
-        return true;
-    }
-
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array
-     */
-    public function rules()
+    public function rules(): array
     {
         return [
             'name' => ['required', 'string', 'max:255'],
@@ -33,11 +17,17 @@ class UserUpdateRequest extends FormRequest
             'fund_address' => ['nullable', 'string', 'max:255'],
             'fund_name' => ['nullable', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore(Auth::user())],
-            // 'email' => ['required', 'string', 'email', 'max:255',Rule::unique('users')->ignore($user)],
-
+            'password' => 'required|string|min:5|confirmed',
             'receive_news' => ['nullable'],
             'position' => ['nullable', 'string', 'max:255'],
             'type' => ['sometimes', 'integer'],
+            'role_id' => 'required',
+            'user_type_id' => 'required',
         ];
+    }
+
+    public function authorize(): bool
+    {
+        return true;
     }
 }

@@ -23,3 +23,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('/companies', App\Http\Controllers\CompanyController::class);
 Route::post('/update', [App\Http\Controllers\HomeController::class, 'update'])->name('update');
 Route::post('/changepass', [App\Http\Controllers\HomeController::class, 'changepass'])->name('changepass');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

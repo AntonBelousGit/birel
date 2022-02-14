@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\UserUpdateRequest;
 use Illuminate\Support\Facades\Hash;
+
 // use App\Models\User;
 
 class HomeController extends Controller
@@ -28,24 +29,26 @@ class HomeController extends Controller
     {
         return view('lc.home');
     }
+
     public function update(UserUpdateRequest $request)
     {
-     
-           auth()->user()->update($request->validated());
 
-       return redirect()->back()->with('success', 'Profile updated.');
+        auth()->user()->update($request->validated());
+
+        return redirect()->back()->with('success', 'Profile updated.');
     }
-     public function changepass(Request $request)
+
+    public function changepass(Request $request)
     {
-             
-                $validated = $request->validate([
-        'password' => ['required', 'string', 'min:6', 'confirmed'],
-    ]);
-               
-            auth()->user()->update(['password' => Hash::make($validated['password'])]);
-      
 
-       return redirect()->back()->with('success', 'password updated.');
+        $validated = $request->validate([
+            'password' => ['required', 'string', 'min:6', 'confirmed'],
+        ]);
+
+        auth()->user()->update(['password' => Hash::make($validated['password'])]);
+
+
+        return redirect()->back()->with('success', 'password updated.');
     }
-    
+
 }

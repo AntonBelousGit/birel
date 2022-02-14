@@ -75,17 +75,17 @@ class RegisterController extends Controller
          * undocumented constant
          **/
         if($data['type'] == 0){
-              return User::create([
-            'name' => $data['name'],
-            'surname' => $data['surname'],
-           // 'linkedin' => $data['linkedin'],
-            'fund_address' => $data['fund_address'],
-            'fund_name' => $data['fund_name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-            'receive_news' => (isset($data['receive_news'])) ? $data['receive_news'] : null,
-            'type' => $data['type'],
-        ]);
+            return User::create([
+                'name' => $data['name'],
+                'surname' => $data['surname'],
+                // 'linkedin' => $data['linkedin'],
+                'fund_address' => $data['fund_address'],
+                'fund_name' => $data['fund_name'],
+                'email' => $data['email'],
+                'password' => Hash::make($data['password']),
+                'receive_news' => $data['receive_news'] ?? null,
+                'type' => $data['type'],
+            ]);
         }else{
 
         }
@@ -93,13 +93,12 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'surname' => $data['surname'],
             'linkedin' => $data['linkedin'],
-           // 'fund_address' => $data['fund_address'],
-           // 'fund_name' => $data['fund_name'],
+            // 'fund_address' => $data['fund_address'],
+            // 'fund_name' => $data['fund_name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'receive_news' => (isset($data['receive_news'])) ? $data['receive_news'] : null,
+            'receive_news' => $data['receive_news'] ?? null,
             'type' => $data['type'],
         ]);
     }
 }
- 
