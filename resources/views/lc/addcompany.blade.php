@@ -17,15 +17,16 @@
 			<p class="t-r f16-l24 purple2">
 				Вы можете добавить компанию. Для этого нужно корректно ввести ее название и адрес ее сайта.
 			</p>
-			<form class="add-company-form" action="#">
+			<form class="add-company-form" action="{{route('companies.store')}}" method="POST">
+				@csrf
 				<ul class="form-list">
 					<li class="form-list-item">
 						<label class="t-r f16-l24 purple1"  for="companyName">Название компании</label>
-						<input class="i-f" type="text" id="companyName" placeholder="Placeholder text">
+						<input class="i-f" type="text" id="companyName" placeholder="Placeholder text" name="companyName">
 					</li>
 					<li class="form-list-item">
 						<label class="t-r f16-l24 purple1"  for="companyAddress">Адрес компании</label>
-						<input class="i-f" type="text" id="companyAddress" placeholder="Placeholder">
+						<input class="i-f" type="text" id="companyAddress" placeholder="Placeholder" name="companyAddress">
 					</li>
 				</ul>
 				<button class="btn btn-green">
