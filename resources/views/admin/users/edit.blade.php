@@ -24,36 +24,9 @@
             <div class="row clearfix">
                 <div class="col-lg-12">
                     <div class="form-control">
-                        <form action="{{ route('users.store') }}" method="post">
+                        <form action="{{ route('users.update',$user) }}" method="post">
                             @csrf
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="name" placeholder="Name" value="{{old('name')}}">
-                            </div>
-                            <div class="form-group">
-                                <input type="text"  class="form-control"  name="surname" placeholder="Surname" value="{{old('surname')}}">
-                            </div>
-                            <div class="form-group">
-                                <input type="text"  class="form-control"  name="email" placeholder="Email" value="{{old('email')}}">
-                            </div>
-                            <div class="form-group">
-                                <input type="text"  class="form-control"   name="linkedin" placeholder="Linkedin" value="{{old('linkedin')}}">
-                            </div>
-                            <div class="form-group">
-                                <input type="text"  class="form-control"  name="fund_address" placeholder="Fund address" value="{{old('fund_address')}}">
-                            </div>
-                            <div class="form-group">
-                                <input type="text"  class="form-control"  name="fund_name" placeholder="Fund name" value="{{old('fund_name')}}">
-                            </div>
-                            <div class="form-group">
-                                <input type="text"  class="form-control"  name="receive_news" placeholder="Receive news" value="{{old('receive_news')}}">
-                            </div>
-                            <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Password" name="password"/>
-                            </div>
-                            <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Password confirmation" name="password_confirmation"/>
-                            </div>
-
+                            @method('patch')
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <label class="input-group-text" for="inputGroupSelect01">Выбрать
@@ -61,7 +34,11 @@
                                 </div>
                                 <select name="role_id" class="custom-select">
                                     @foreach($roles as $item)
-                                        <option value="{{$item->id}}" {{old('role_id') == $item->id? 'selected':'' }}>{{$item->name}}</option>
+                                        <option value="{{$item->id}}"
+                                        @if ($item->id == $user->role->first()->id)
+                                            selected
+                                        @endif
+                                            >{{$item->name}}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -72,7 +49,11 @@
                                 </div>
                                 <select name="user_type_id" class="custom-select">
                                     @foreach($userTypes as $item)
-                                        <option value="{{$item->id}}" {{old('user_type_id') == $item->id? 'selected':'' }}>{{$item->name}}</option>
+                                        <option value="{{$item->id}}"
+                                                @if ($item->id == $user->user_type->first()->id)
+                                                selected
+                                                @endif
+                                        >{{$item->name}}</option>
                                     @endforeach
                                 </select>
                             </div>

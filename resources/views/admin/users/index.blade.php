@@ -13,7 +13,7 @@
                         <li class="breadcrumb-item">Table</li>
                         <li class="breadcrumb-item active">Jquery Datatable</li>
                     </ul>
-                    <a href="javascript:void(0);" class="btn btn-sm btn-primary" title="">Create New</a>
+                    <a href="{{ route('users.create') }}" class="btn btn-sm btn-primary" title="">Create New</a>
                 </div>
             </div>
         </div>
@@ -47,6 +47,7 @@
                                         <th>Email</th>
                                         <th>Role</th>
                                         <th>User Type</th>
+                                        <th>Action</th>
                                     </tr>
                                     </thead>
                                     <tfoot>
@@ -56,6 +57,8 @@
                                         <th>Email</th>
                                         <th>Role</th>
                                         <th>User Type</th>
+                                        <th>Action</th>
+
                                     </tr>
                                     </tfoot>
                                     <tbody>
@@ -66,6 +69,15 @@
                                             <td>{{$item->email}}</td>
                                             <td>{{$item->role->first()->name}}</td>
                                             <td>{{$item->user_type->first()->name}}</td>
+                                            <td>
+                                                <a href="{{ route('users.edit',$item->id) }}">Edit</a>
+                                                <form action="{{route('users.destroy',$item)}}" class="d-inline" method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button class="btn btn-sm btn-icon btn-pure btn-default on-default button-remove"
+                                                            data-toggle="tooltip" data-original-title="Remove"><i class="icon-trash" aria-hidden="true"></i></button>
+                                                </form>
+                                            </td>
                                         </tr>
                                     @empty
 

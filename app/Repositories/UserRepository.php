@@ -21,6 +21,11 @@ class UserRepository extends CoreRepository
      */
     public function getUsersWithRoleAndType()
     {
-        return $this->startCondition()->with('role','user_type')->orderByDesc('created_at')->get();
+        return $this->startCondition()->with('role', 'user_type')->orderByDesc('created_at')->get();
+    }
+
+    public function getUsersWithRoleAndTypeByID($id)
+    {
+        return $this->startCondition()->with('role', 'user_type')->where('id', $id)->first();
     }
 }
