@@ -35,10 +35,6 @@
                                        placeholder="Company Address" value="{{old('companyAddress')}}">
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" name="email" placeholder="Email"
-                                       value="{{old('email')}}">
-                            </div>
-                            <div class="form-group">
                                 <textarea class="form-control" name="description" placeholder="Description">
                                     {{old('description')}}
                                 </textarea>
