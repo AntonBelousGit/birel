@@ -1,14 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin\User;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UserCreateRequest;
 use App\Http\Requests\UserDependencyRequest;
 use App\Models\User;
 use App\Service\UserService;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 use Throwable;
 
 class UserController extends Controller
