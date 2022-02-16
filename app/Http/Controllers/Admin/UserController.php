@@ -27,7 +27,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = $this->userService->getUsersWithRoleAndType();
+        $users = $this->userService->getUsersWithRole();
         return view('admin.users.index', compact('users'));
     }
 
@@ -39,8 +39,7 @@ class UserController extends Controller
     public function create()
     {
         $roles = $this->userService->getAllRoles();
-        $userTypes = $this->userService->gatAllUserTypes();
-        return view('admin.users.create', compact('roles', 'userTypes'));
+        return view('admin.users.create', compact('roles'));
     }
 
     /**
@@ -54,23 +53,11 @@ class UserController extends Controller
             if (!$data['password']) unset($data['password']);
             $user = User::create($data->toArray());
             $user->role()->attach($data['role_id']);
-            $user->user_type()->attach($data['user_type_id']);
         } catch (Throwable $e) {
             report($e);
             abort(500);
         }
         return redirect()->route('users.index');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param \App\Models\User $user
-     * @return \Illuminate\Http\Response
-     */
-    public function show(User $user)
-    {
-        //
     }
 
     /**
@@ -80,16 +67,15 @@ class UserController extends Controller
     public function edit($id)
     {
         try {
-            $user = $this->userService->getUsersWithRoleAndTypeByID($id);
+            $user = $this->userService->getUsersWithRoleByID($id);
             $roles = $this->userService->getAllRoles();
-            $userTypes = $this->userService->gatAllUserTypes();
         }
         catch (Throwable $e)
         {
             report($e);
             abort(404);
         }
-        return view('admin.users.edit',compact('user','roles','userTypes'));
+        return view('admin.users.edit',compact('user','roles'));
     }
 
     /**
@@ -98,10 +84,13 @@ class UserController extends Controller
      * @param \App\Models\User $user
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(UserDependencyRequest $data,User $user)
+    public function update(UserDependencyRequest $request,User $user)
     {
-        $user->role()->sync($data['role_id']);
-        $user->user_type()->sync($data['user_type_id']);
+        $data = [
+            'type' => $request->input('type')
+        ];
+        $user->update($data);
+        $user->role()->sync($request['role_id']);
         return redirect()->route('users.index');
     }
 

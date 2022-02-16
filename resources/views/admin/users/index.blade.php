@@ -68,7 +68,7 @@
                                             <td>{{$item->surname}}</td>
                                             <td>{{$item->email}}</td>
                                             <td>{{$item->role->first()->name}}</td>
-                                            <td>{{$item->user_type->first()->name}}</td>
+                                            <td>{{$item->type}}</td>
                                             <td>
                                                 <a href="{{ route('users.edit',$item->id) }}">Edit</a>
                                                 <form action="{{route('users.destroy',$item)}}" class="d-inline" method="POST">

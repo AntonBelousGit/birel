@@ -20,9 +20,8 @@ class UserCreateRequest extends FormRequest
             'password' => 'required|string|min:5|confirmed',
             'receive_news' => ['nullable'],
             'position' => ['nullable', 'string', 'max:255'],
-            'type' => ['sometimes', 'integer'],
             'role_id' => 'required',
-            'user_type_id' => 'required',
+            'type' => 'required',
         ];
     }
 
