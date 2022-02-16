@@ -74,7 +74,7 @@
                                             <td><img src="{{asset('storage/companies/'.$item->image)}}" alt=""></td>
                                             <td>{{$item->description}}</td>
                                             <td>{{number_format($item->valuation,2)}}</td>
-                                            <td>{{$item->status}}</td>
+                                            <td>{{$item->status? 'active':'inactive'}}</td>
                                             <td>
                                                 <a href="{{ route('company.edit',$item) }}">Edit</a>
                                                 <form action="{{route('company.destroy',$item)}}" class="d-inline"
