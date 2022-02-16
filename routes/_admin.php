@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\Company\CompanyController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\User\UserController;
 use Illuminate\Support\Facades\Route;
@@ -12,6 +13,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'],
         Route::resources(
             [
                 'users'=> UserController::class,
+                'company'=> CompanyController::class,
             ]
         );
     });

@@ -24,8 +24,8 @@ class StoreCompanyRequest extends FormRequest
     public function rules()
     {
         return [
-            'companyName'
-            companyAddress
+            'companyName'=>'required',
+            'companyAddress'=>'required',
         ];
     }
 }
