@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin\Company;
 
 use App\Helpers\StorageHelper;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreCompanyAdminRequest;
 use App\Http\Requests\StoreCompanyRequest;
 use App\Models\Company;
 use App\Service\CompanyService;
@@ -50,11 +51,9 @@ class CompanyController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(StoreCompanyRequest $request)
+    public function store(StoreCompanyAdminRequest $request)
     {
         $name = $this->storage->saveImage();
-//        $name = md5(uniqid('', true)). '.'.$request->file('file')->getClientOriginalExtension();
-//        Storage::putFileAs('/public',$request->file('file'),$name);
         Company::create([
             'companyName'=> $request->input('companyName'),
             'companyAddress' => $request->input('companyAddress'),
@@ -95,7 +94,7 @@ class CompanyController extends Controller
      * @param  \App\Models\Company  $company
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, Company $company)
+    public function update(StoreCompanyAdminRequest $request, Company $company)
     {
         $data = [
             'companyName'=> $request->input('companyName'),
@@ -115,10 +114,12 @@ class CompanyController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Company  $company
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Company $company)
     {
-        //
+        $this->storage->destroyImage();
+        $company->delete();
+        return redirect()->route('company.index');
     }
 }
