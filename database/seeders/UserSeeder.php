@@ -13,7 +13,7 @@ class UserSeeder extends Seeder
             'name'=>'admin',
             'surname'=> 'admin',
             'email'=>'admin@admin.com',
-            'password' => \Hash::make('123')
+            'password' => '123',
         ]);
     }
 }
