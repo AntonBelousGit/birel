@@ -19,13 +19,13 @@ class UserRepository extends CoreRepository
     /**
      * @return \Illuminate\Database\Eloquent\Collection
      */
-    public function getUsersWithRoleAndType()
+    public function getUsersWithRole()
     {
-        return $this->startCondition()->with('role', 'user_type')->orderByDesc('created_at')->get();
+        return $this->startCondition()->with('role')->orderByDesc('created_at')->get();
     }
 
-    public function getUsersWithRoleAndTypeByID($id)
+    public function getUsersWithRoleByID($id)
     {
-        return $this->startCondition()->with('role', 'user_type')->where('id', $id)->first();
+        return $this->startCondition()->with('role')->where('id', $id)->first();
     }
 }

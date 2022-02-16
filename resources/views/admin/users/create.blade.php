@@ -70,10 +70,9 @@
                                     <label class="input-group-text" for="inputGroupSelect01">Выбрать
                                         тип</label>
                                 </div>
-                                <select name="user_type_id" class="custom-select">
-                                    @foreach($userTypes as $item)
-                                        <option value="{{$item->id}}" {{old('user_type_id') == $item->id? 'selected':'' }}>{{$item->name}}</option>
-                                    @endforeach
+                                <select name="type" class="custom-select">
+                                    <option value="Representative"  @if (old('type') === 'Representative') selected @endif>Representative</option>
+                                    <option value="Individual"  @if (old('type') === 'Individual') selected @endif>Individual</option>
                                 </select>
                             </div>
 

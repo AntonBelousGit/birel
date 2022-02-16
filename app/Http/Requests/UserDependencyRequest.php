@@ -10,7 +10,7 @@ class UserDependencyRequest extends FormRequest
     {
         return [
             'role_id' => 'required',
-            'user_type_id' => 'required',
+            'type' => 'required',
         ];
     }
 

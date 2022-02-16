@@ -24,13 +24,13 @@ class UserService
     }
 
 
-    public function getUsersWithRoleAndType(): Collection
+    public function getUsersWithRole(): Collection
     {
-        return $this->userRepository->getUsersWithRoleAndType();
+        return $this->userRepository->getUsersWithRole();
     }
-    public function getUsersWithRoleAndTypeByID(int $id)
+    public function getUsersWithRoleByID(int $id)
     {
-        return $this->userRepository->getUsersWithRoleAndTypeByID($id);
+        return $this->userRepository->getUsersWithRoleByID($id);
     }
 
     public function getAllRoles()

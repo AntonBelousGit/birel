@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('receive_news')->nullable();
-            $table->tinyInteger('type')->nullable();
+            $table->enum('type',['Representative','Individual'])->default('Individual');
             $table->string('position')->nullable();
             $table->rememberToken();
             $table->timestamps();
