@@ -16,4 +16,9 @@ class Company extends Model
       'valuation',
       'status',
     ];
+
+    public function category()
+    {
+        return $this->belongsToMany(Category::class);
+    }
 }

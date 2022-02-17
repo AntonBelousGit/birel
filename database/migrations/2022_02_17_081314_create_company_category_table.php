@@ -13,7 +13,7 @@ class CreateCompanyCategoryTable extends Migration
      */
     public function up()
     {
-        Schema::create('company_category', function (Blueprint $table) {
+        Schema::create('category_company', function (Blueprint $table) {
             $table->foreignId('company_id')->constrained()->onDelete('cascade');
             $table->foreignId('category_id')->constrained()->onDelete('cascade');
         });
@@ -26,6 +26,6 @@ class CreateCompanyCategoryTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('company_category');
+        Schema::dropIfExists('category_company');
     }
 }

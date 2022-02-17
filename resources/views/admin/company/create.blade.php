@@ -48,6 +48,16 @@
                             </div>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
+                                    <label class="input-group-text" for="inputGroupSelect01">Categories</label>
+                                </div>
+                                <select name="category_id[]" class="custom-select" multiple required>
+                                   @foreach($categories as $item)
+                                        <option value="{{$item->id}}">{{$item->name}}</option>
+                                   @endforeach
+                                </select>
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
                                     <label class="input-group-text" for="inputGroupSelect01">Status</label>
                                 </div>
                                 <select name="status" class="custom-select">

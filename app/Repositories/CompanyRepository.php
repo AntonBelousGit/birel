@@ -21,4 +21,8 @@ class CompanyRepository extends CoreRepository
     {
         return $this->startCondition()->orderByDesc('created_at')->get();
     }
+    public function getCompanyWithCategories($id)
+    {
+        return $this->startCondition()->with('category')->find($id);
+    }
 }

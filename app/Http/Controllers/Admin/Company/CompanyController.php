@@ -2,26 +2,28 @@
 
 namespace App\Http\Controllers\Admin\Company;
 
+use App\Action\Company\SyncDependentsCompanyAction;
 use App\Helpers\StorageHelper;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreCompanyAdminRequest;
-use App\Http\Requests\StoreCompanyRequest;
 use App\Models\Company;
+use App\Service\CategoryService;
 use App\Service\CompanyService;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Storage;
+
 
 class CompanyController extends Controller
 {
     private $storage;
     protected $companyService;
+    protected $categoryService;
 
-    public function __construct(Request $request,CompanyService $companyService)
+    public function __construct(Request $request, CompanyService $companyService, CategoryService $categoryService)
     {
         $this->companyService = $companyService;
+        $this->categoryService = $categoryService;
         $company_id = $request->route('company');
-        $this->storage = new StorageHelper('image','companies', $request->file('file'),Company::find($company_id));
+        $this->storage = new StorageHelper('image', 'companies', $request->file('file'), Company::find($company_id));
     }
 
     /**
@@ -32,7 +34,7 @@ class CompanyController extends Controller
     public function index()
     {
         $companies = $this->companyService->getAllCompanies();
-        return view('admin.company.index',compact('companies'));
+        return view('admin.company.index', compact('companies'));
     }
 
     /**
@@ -42,78 +44,55 @@ class CompanyController extends Controller
      */
     public function create()
     {
-        return view('admin.company.create');
+        $categories = $this->categoryService->getAllCategories();
+        return view('admin.company.create', compact('categories'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(StoreCompanyAdminRequest $request)
+    public function store(StoreCompanyAdminRequest $request, SyncDependentsCompanyAction $action)
     {
         $name = $this->storage->saveImage();
-        Company::create([
-            'companyName'=> $request->input('companyName'),
-            'companyAddress' => $request->input('companyAddress'),
-            'image' => $name,
-            'description' => $request->input('description'),
-            'valuation'=> $request->input('valuation'),
-            'status' => $request->input('status'),
-        ]);
+        $company = $this->companyService->store($request, $name);
+        $action->handle($company, $request['category_id']);
         return redirect()->route('company.index');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Company  $company
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Company $company)
-    {
-        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Company  $company
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
-    public function edit(Company $company)
+    public function edit(int $id)
     {
-        return view('admin.company.edit',compact('company'));
+        $categories = $this->categoryService->getAllCategories();
+        $company = $this->companyService->getCompanyWithCategories($id);
+        return view('admin.company.edit', compact('company','categories'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Company  $company
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\Company $company
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(StoreCompanyAdminRequest $request, Company $company)
+    public function update(StoreCompanyAdminRequest $request, Company $company, SyncDependentsCompanyAction $action)
     {
-        $data = [
-            'companyName'=> $request->input('companyName'),
-            'companyAddress' => $request->input('companyAddress'),
-            'description' => $request->input('description'),
-            'valuation'=> $request->input('valuation'),
-            'status' => $request->input('status'),
-        ];
-
-        $data['image'] = $this->storage->saveImage();
-
-        $company->update($data);
+        $name = $this->storage->saveImage();
+        $companyUpdated = $this->companyService->update($request, $company, $name);
+        $action->handle($companyUpdated, $request['category_id']);
         return redirect()->route('company.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Company  $company
+     * @param \App\Models\Company $company
      * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Company $company)

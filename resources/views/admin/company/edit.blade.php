@@ -49,6 +49,16 @@
                             </div>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
+                                    <label class="input-group-text" for="inputGroupSelect01">Categories</label>
+                                </div>
+                                <select name="category_id[]" class="custom-select" multiple required>
+                                    @foreach($categories as $item)
+                                        <option value="{{$item->id}}" @if($company->category->pluck('id')->contains($item->id)) selected @endif>{{$item->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
                                     <label class="input-group-text" for="inputGroupSelect01">Status</label>
                                 </div>
                                 <select name="status" class="custom-select">
