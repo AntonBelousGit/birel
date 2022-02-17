@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\Category\CategoryController;
 use App\Http\Controllers\Admin\Company\CompanyController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\User\UserController;
@@ -14,6 +15,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'],
             [
                 'users'=> UserController::class,
                 'company'=> CompanyController::class,
+                'category'=> CategoryController::class,
             ]
         );
     });

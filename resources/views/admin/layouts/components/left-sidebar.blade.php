@@ -40,6 +40,13 @@
                         <li><a href="{{ route('company.create') }}">Create company</a></li>
                     </ul>
                 </li>
+                <li @if(Route::is('category.*')) class="active" @endif>
+                    <a href="#category" class="has-arrow"><i class="icon-diamond"></i><span>Categories</span></a>
+                    <ul>
+                        <li><a href="{{ route('category.index') }}">All</a></li>
+                        <li><a href="{{ route('category.create') }}">Create category</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </div>
