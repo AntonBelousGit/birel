@@ -40,7 +40,7 @@
                                 </textarea>
                             </div>
                             <div class="form-group">
-                                <input type="number" class="form-control" min="0" step="0.5" name="valuation"
+                                <input type="number" class="form-control" min="0" name="valuation"
                                        placeholder="Valuation" value="{{old('valuation')}}">
                             </div>
                             <div class="form-group">
