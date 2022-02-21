@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+require('_clear.php');
 Route::get('/', [App\Http\Controllers\MainController::class, 'index']);
 Route::get('/mission', [App\Http\Controllers\MainController::class, 'mission'])->name('mission');
 Route::get('/explore', [App\Http\Controllers\MainController::class, 'explore'])->name('explore');
@@ -21,6 +21,7 @@ Auth::routes();
 require('_admin.php');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('/companies', App\Http\Controllers\CompanyController::class);
+Route::post('/companies/wali', [App\Http\Controllers\CompanyController::class,'wali']);
 Route::post('/update', [App\Http\Controllers\HomeController::class, 'update'])->name('update');
 Route::post('/changepass', [App\Http\Controllers\HomeController::class, 'changepass'])->name('changepass');
 

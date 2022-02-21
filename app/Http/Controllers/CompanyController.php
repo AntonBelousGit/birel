@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Company;
+use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreCompanyRequest;
 
 class CompanyController extends Controller
 {
@@ -19,7 +21,10 @@ class CompanyController extends Controller
 
     public function index()
     {
-        return view('lc.companies');
+        $categories = Category::all();
+        $companies = Company::with('category')->paginate();
+        //dd($companies);
+        return view('lc.companies', compact('companies','categories'));
     }
 
     /**
@@ -40,7 +45,8 @@ class CompanyController extends Controller
      */
     public function store(StoreCompanyRequest $request)
     {
-        dd($request);
+         $company = Company::create($request->validated());
+         return redirect()->route('companies.index');
     }
 
     /**
@@ -86,5 +92,9 @@ class CompanyController extends Controller
     public function destroy(Company $company)
     {
         //
+    }
+    public function wali(Request $request)
+    {
+        dd($request);
     }
 }

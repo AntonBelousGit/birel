@@ -6,10 +6,10 @@
 <div class="company" id="tabs">
 	<div class="company-wrapper">
 		<ul class="tab-wrapper nav-tabs">
-			<li class="t-m f18-l32 purple1 tab-n active">
+			<li class="t-m f18-l32 purple1 tab-n">
 				Подписки на компании
 			</li>
-			<li class="t-m f18-l32 purple1 tab-n">
+			<li class="t-m f18-l32 purple1 tab-n active">
 				Все компании
 			</li>
 		</ul>
@@ -31,7 +31,7 @@
 		</form>
 		<p class="company-search-text t-r f16-l24 purple2">
 			You can add company если компании нет в списке .
-			<a class="company-search-link" href="#">
+			<a class="company-search-link" href="{{route('companies.create')}}">
 				<i class="icon icon-green-circle-plus"></i>
 			</a>
 		</p>
@@ -39,10 +39,9 @@
 	<div class="company-philter">
 		<div class="company-philter-select">
 			<select class="js-example-basic-single">
-				<option value="0">3D Printing</option>
-				<option value="1">Advertising</option>
-				<option value="2">Aerospace</option>
-				<option value="3">Analytics/Big Data</option>
+@foreach($categories as $item)
+				<option value="{{$item->id}}">{{$item->name}}</option>
+@endforeach				
 			</select>
 		</div>
 		<div class="company-philter-select">
@@ -58,854 +57,86 @@
 			<i class="icon icon-close-green"></i>
 		</button>
 	</div>
-	<ul class="company-list content-t active">
+	<ul class="company-list content-t">
+	
+		@foreach($companies as $company)
 		<li class="company-item">
 			<a class="company-item-link" href="#">
-				<picture><source srcset="./img/test.webp" type="image/webp"><img class="company-item-img" src="./img/test.png" alt=""></picture>
+				<picture><source srcset="{{asset('storage/companies/'.$company->image)  }}" type="image/webp"><img class="company-item-img" src="{{asset('storage/companies/'.$company->image)  }}" alt=""></picture>
 			</a>
-			<a class="company-item-company t-sb f24-l32 purple1" href="#">Company name</a>
-			<p class="company-item-tech t-r f16-l24 purple3">BioTech</p>
+			<a class="company-item-company t-sb f24-l32 purple1" href="#">{{$company->companyName}}</a>
+			<p class="company-item-tech t-r f16-l24 purple3">
+				@foreach($categories as $item)
+                      @if($company->category->pluck('id')->contains($item->id)) 
+                      {{$item->name }}
+                       @endif
+            @endforeach
+			</p>
 			<p class="company-item-val t-r f16-l24 purple1">Last Round Est. Valuation</p>
-			<span class="company-item-numb t-r f16-l24 purple3">40.54B</span>
+			<span class="company-item-numb t-r f16-l24 purple3">{{$company->valuation}}B</span>
 			<form class="company-item-form" action="#">
-				<div class="company-item-add-watch active">
-					<button class="btn btn-green">Add to watch list</button>
-					<div class="company-item-drop">
-						<p class="company-item-notifications f12-l18 t-r purple3">Укажите уведомления по каким ордерам вы хотите получать</p>
-						<div class="form_radio">
-							<label>
-								<input type="radio" name="variant" >
-								<span></span>
-								BID
-							</label>
-						</div>
-						<div class="form_radio">
-							<label>
-								<input type="radio" name="variant" >
-								<span></span>
-								ASK
-							</label>
-						</div>
-						<div class="form_radio">
-							<label>
-								<input type="radio" name="variant" >
-								<span></span>
-								ALL
-							</label>
-						</div>
-					</div>
+				<div class="company-item-watch">
+					<div class="btn2 btn2-green w170 h49 b-h">In watch list</div>
+					<button class="reset-btn">
+						<i class="icon icon-trash"></i>
+					</button>
 				</div>
 			</form>
 		</li>
-		<li class="company-item">
-			<a class="company-item-link" href="#">
-				<picture><source srcset="./img/test.webp" type="image/webp"><img class="company-item-img" src="./img/test.png" alt=""></picture>
-			</a>
-			<a class="company-item-company t-sb f24-l32 purple1" href="#">Company name</a>
-			<p class="company-item-tech t-r f16-l24 purple3">BioTech</p>
-			<p class="company-item-val t-r f16-l24 purple1">Last Round Est. Valuation</p>
-			<span class="company-item-numb t-r f16-l24 purple3">40.54B</span>
-			<form class="company-item-form" action="#">
-				<div class="company-item-add-watch active">
-					<button class="btn btn-green">Add to watch list</button>
-					<div class="company-item-drop">
-						<p class="company-item-notifications f12-l18 t-r purple3">Укажите уведомления по каким ордерам вы хотите получать</p>
-						<div class="form_radio">
-							<label>
-								<input type="radio" name="variant" >
-								<span></span>
-								BID
-							</label>
-						</div>
-						<div class="form_radio">
-							<label>
-								<input type="radio" name="variant" >
-								<span></span>
-								ASK
-							</label>
-						</div>
-						<div class="form_radio">
-							<label>
-								<input type="radio" name="variant" >
-								<span></span>
-								ALL
-							</label>
-						</div>
-					</div>
-				</div>
-			</form>
-		</li>
-		<li class="company-item">
-			<a class="company-item-link" href="#">
-				<picture><source srcset="./img/sale3.webp" type="image/webp"><img class="company-item-img" src="./img/sale3.png" alt=""></picture>
-			</a>
-			<a class="company-item-company t-sb f24-l32 purple1" href="#">Company name</a>
-			<p class="company-item-tech t-r f16-l24 purple3">BioTech</p>
-			<p class="company-item-val t-r f16-l24 purple1">Last Round Est. Valuation</p>
-			<span class="company-item-numb t-r f16-l24 purple3">40.54B</span>
-			<form class="company-item-form" action="#">
-				<div class="company-item-add-watch active">
-					<button class="btn btn-green">Add to watch list</button>
-					<div class="company-item-drop">
-						<p class="company-item-notifications f12-l18 t-r purple3">Укажите уведомления по каким ордерам вы хотите получать</p>
-						<div class="form_radio">
-							<label>
-								<input type="radio" name="variant" >
-								<span></span>
-								BID
-							</label>
-						</div>
-						<div class="form_radio">
-							<label>
-								<input type="radio" name="variant" >
-								<span></span>
-								ASK
-							</label>
-						</div>
-						<div class="form_radio">
-							<label>
-								<input type="radio" name="variant" >
-								<span></span>
-								ALL
-							</label>
-						</div>
-					</div>
-				</div>
-			</form>
-		</li>
-		<li class="company-item">
-			<a class="company-item-link" href="#">
-				<picture><source srcset="./img/test.webp" type="image/webp"><img class="company-item-img" src="./img/test.png" alt=""></picture>
-			</a>
-			<a class="company-item-company t-sb f24-l32 purple1" href="#">Company name</a>
-			<p class="company-item-tech t-r f16-l24 purple3">BioTech</p>
-			<p class="company-item-val t-r f16-l24 purple1">Last Round Est. Valuation</p>
-			<span class="company-item-numb t-r f16-l24 purple3">40.54B</span>
-			<form class="company-item-form" action="#">
-				<div class="company-item-add-watch active">
-					<button class="btn btn-green">Add to watch list</button>
-					<div class="company-item-drop">
-						<p class="company-item-notifications f12-l18 t-r purple3">Укажите уведомления по каким ордерам вы хотите получать</p>
-						<div class="form_radio">
-							<label>
-								<input type="radio" name="variant" >
-								<span></span>
-								BID
-							</label>
-						</div>
-						<div class="form_radio">
-							<label>
-								<input type="radio" name="variant" >
-								<span></span>
-								ASK
-							</label>
-						</div>
-						<div class="form_radio">
-							<label>
-								<input type="radio" name="variant" >
-								<span></span>
-								ALL
-							</label>
-						</div>
-					</div>
-				</div>
-			</form>
-		</li>
-		<li class="company-item">
-			<a class="company-item-link" href="#">
-				<picture><source srcset="./img/test.webp" type="image/webp"><img class="company-item-img" src="./img/test.png" alt=""></picture>
-			</a>
-			<a class="company-item-company t-sb f24-l32 purple1" href="#">Company name</a>
-			<p class="company-item-tech t-r f16-l24 purple3">BioTech</p>
-			<p class="company-item-val t-r f16-l24 purple1">Last Round Est. Valuation</p>
-			<span class="company-item-numb t-r f16-l24 purple3">40.54B</span>
-			<form class="company-item-form" action="#">
-				<div class="company-item-add-watch active">
-					<button class="btn btn-green">Add to watch list</button>
-					<div class="company-item-drop">
-						<p class="company-item-notifications f12-l18 t-r purple3">Укажите уведомления по каким ордерам вы хотите получать</p>
-						<div class="form_radio">
-							<label>
-								<input type="radio" name="variant" >
-								<span></span>
-								BID
-							</label>
-						</div>
-						<div class="form_radio">
-							<label>
-								<input type="radio" name="variant" >
-								<span></span>
-								ASK
-							</label>
-						</div>
-						<div class="form_radio">
-							<label>
-								<input type="radio" name="variant" >
-								<span></span>
-								ALL
-							</label>
-						</div>
-					</div>
-				</div>
-			</form>
-		</li>
-		<li class="company-item">
-			<a class="company-item-link" href="#">
-				<picture><source srcset="./img/test.webp" type="image/webp"><img class="company-item-img" src="./img/test.png" alt=""></picture>
-			</a>
-			<a class="company-item-company t-sb f24-l32 purple1" href="#">Company name</a>
-			<p class="company-item-tech t-r f16-l24 purple3">BioTech</p>
-			<p class="company-item-val t-r f16-l24 purple1">Last Round Est. Valuation</p>
-			<span class="company-item-numb t-r f16-l24 purple3">40.54B</span>
-			<form class="company-item-form" action="#">
-				<div class="company-item-add-watch active">
-					<button class="btn btn-green">Add to watch list</button>
-					<div class="company-item-drop">
-						<p class="company-item-notifications f12-l18 t-r purple3">Укажите уведомления по каким ордерам вы хотите получать</p>
-						<div class="form_radio">
-							<label>
-								<input type="radio" name="variant" >
-								<span></span>
-								BID
-							</label>
-						</div>
-						<div class="form_radio">
-							<label>
-								<input type="radio" name="variant" >
-								<span></span>
-								ASK
-							</label>
-						</div>
-						<div class="form_radio">
-							<label>
-								<input type="radio" name="variant" >
-								<span></span>
-								ALL
-							</label>
-						</div>
-					</div>
-				</div>
-			</form>
-		</li>
-		<li class="company-item">
-			<a class="company-item-link" href="#">
-				<picture><source srcset="./img/test.webp" type="image/webp"><img class="company-item-img" src="./img/test.png" alt=""></picture>
-			</a>
-			<a class="company-item-company t-sb f24-l32 purple1" href="#">Company name</a>
-			<p class="company-item-tech t-r f16-l24 purple3">BioTech</p>
-			<p class="company-item-val t-r f16-l24 purple1">Last Round Est. Valuation</p>
-			<span class="company-item-numb t-r f16-l24 purple3">40.54B</span>
-			<form class="company-item-form" action="#">
-				<div class="company-item-add-watch active">
-					<button class="btn btn-green">Add to watch list</button>
-					<div class="company-item-drop">
-						<p class="company-item-notifications f12-l18 t-r purple3">Укажите уведомления по каким ордерам вы хотите получать</p>
-						<div class="form_radio">
-							<label>
-								<input type="radio" name="variant" >
-								<span></span>
-								BID
-							</label>
-						</div>
-						<div class="form_radio">
-							<label>
-								<input type="radio" name="variant" >
-								<span></span>
-								ASK
-							</label>
-						</div>
-						<div class="form_radio">
-							<label>
-								<input type="radio" name="variant" >
-								<span></span>
-								ALL
-							</label>
-						</div>
-					</div>
-				</div>
-			</form>
-		</li>
-		<li class="company-item">
-			<a class="company-item-link" href="#">
-				<picture><source srcset="./img/test.webp" type="image/webp"><img class="company-item-img" src="./img/test.png" alt=""></picture>
-			</a>
-			<a class="company-item-company t-sb f24-l32 purple1" href="#">Company name</a>
-			<p class="company-item-tech t-r f16-l24 purple3">BioTech</p>
-			<p class="company-item-val t-r f16-l24 purple1">Last Round Est. Valuation</p>
-			<span class="company-item-numb t-r f16-l24 purple3">40.54B</span>
-			<form class="company-item-form" action="#">
-				<div class="company-item-add-watch active">
-					<button class="btn btn-green">Add to watch list</button>
-					<div class="company-item-drop">
-						<p class="company-item-notifications f12-l18 t-r purple3">Укажите уведомления по каким ордерам вы хотите получать</p>
-						<div class="form_radio">
-							<label>
-								<input type="radio" name="variant" >
-								<span></span>
-								BID
-							</label>
-						</div>
-						<div class="form_radio">
-							<label>
-								<input type="radio" name="variant" >
-								<span></span>
-								ASK
-							</label>
-						</div>
-						<div class="form_radio">
-							<label>
-								<input type="radio" name="variant" >
-								<span></span>
-								ALL
-							</label>
-						</div>
-					</div>
-				</div>
-			</form>
-		</li>
-		<li class="company-item">
-			<a class="company-item-link" href="#">
-				<picture><source srcset="./img/test.webp" type="image/webp"><img class="company-item-img" src="./img/test.png" alt=""></picture>
-			</a>
-			<a class="company-item-company t-sb f24-l32 purple1" href="#">Company name</a>
-			<p class="company-item-tech t-r f16-l24 purple3">BioTech</p>
-			<p class="company-item-val t-r f16-l24 purple1">Last Round Est. Valuation</p>
-			<span class="company-item-numb t-r f16-l24 purple3">40.54B</span>
-			<form class="company-item-form" action="#">
-				<div class="company-item-add-watch active">
-					<button class="btn btn-green">Add to watch list</button>
-					<div class="company-item-drop">
-						<p class="company-item-notifications f12-l18 t-r purple3">Укажите уведомления по каким ордерам вы хотите получать</p>
-						<div class="form_radio">
-							<label>
-								<input type="radio" name="variant" >
-								<span></span>
-								BID
-							</label>
-						</div>
-						<div class="form_radio">
-							<label>
-								<input type="radio" name="variant" >
-								<span></span>
-								ASK
-							</label>
-						</div>
-						<div class="form_radio">
-							<label>
-								<input type="radio" name="variant" >
-								<span></span>
-								ALL
-							</label>
-						</div>
-					</div>
-				</div>
-			</form>
-		</li>
-		<li class="company-item">
-			<a class="company-item-link" href="#">
-				<picture><source srcset="./img/test.webp" type="image/webp"><img class="company-item-img" src="./img/test.png" alt=""></picture>
-			</a>
-			<a class="company-item-company t-sb f24-l32 purple1" href="#">Company name</a>
-			<p class="company-item-tech t-r f16-l24 purple3">BioTech</p>
-			<p class="company-item-val t-r f16-l24 purple1">Last Round Est. Valuation</p>
-			<span class="company-item-numb t-r f16-l24 purple3">40.54B</span>
-			<form class="company-item-form" action="#">
-				<div class="company-item-add-watch active">
-					<button class="btn btn-green">Add to watch list</button>
-					<div class="company-item-drop">
-						<p class="company-item-notifications f12-l18 t-r purple3">Укажите уведомления по каким ордерам вы хотите получать</p>
-						<div class="form_radio">
-							<label>
-								<input type="radio" name="variant" >
-								<span></span>
-								BID
-							</label>
-						</div>
-						<div class="form_radio">
-							<label>
-								<input type="radio" name="variant" >
-								<span></span>
-								ASK
-							</label>
-						</div>
-						<div class="form_radio">
-							<label>
-								<input type="radio" name="variant" >
-								<span></span>
-								ALL
-							</label>
-						</div>
-					</div>
-				</div>
-			</form>
-		</li>
-		<li class="company-item">
-			<a class="company-item-link" href="#">
-				<picture><source srcset="./img/test.webp" type="image/webp"><img class="company-item-img" src="./img/test.png" alt=""></picture>
-			</a>
-			<a class="company-item-company t-sb f24-l32 purple1" href="#">Company name</a>
-			<p class="company-item-tech t-r f16-l24 purple3">BioTech</p>
-			<p class="company-item-val t-r f16-l24 purple1">Last Round Est. Valuation</p>
-			<span class="company-item-numb t-r f16-l24 purple3">40.54B</span>
-			<form class="company-item-form" action="#">
-				<div class="company-item-add-watch active">
-					<button class="btn btn-green">Add to watch list</button>
-					<div class="company-item-drop">
-						<p class="company-item-notifications f12-l18 t-r purple3">Укажите уведомления по каким ордерам вы хотите получать</p>
-						<div class="form_radio">
-							<label>
-								<input type="radio" name="variant" >
-								<span></span>
-								BID
-							</label>
-						</div>
-						<div class="form_radio">
-							<label>
-								<input type="radio" name="variant" >
-								<span></span>
-								ASK
-							</label>
-						</div>
-						<div class="form_radio">
-							<label>
-								<input type="radio" name="variant" >
-								<span></span>
-								ALL
-							</label>
-						</div>
-					</div>
-				</div>
-			</form>
-		</li>
-		<li class="company-item">
-			<a class="company-item-link" href="#">
-				<picture><source srcset="./img/test.webp" type="image/webp"><img class="company-item-img" src="./img/test.png" alt=""></picture>
-			</a>
-			<a class="company-item-company t-sb f24-l32 purple1" href="#">Company name</a>
-			<p class="company-item-tech t-r f16-l24 purple3">BioTech</p>
-			<p class="company-item-val t-r f16-l24 purple1">Last Round Est. Valuation</p>
-			<span class="company-item-numb t-r f16-l24 purple3">40.54B</span>
-			<form class="company-item-form" action="#">
-				<div class="company-item-add-watch active">
-					<button class="btn btn-green">Add to watch list</button>
-					<div class="company-item-drop">
-						<p class="company-item-notifications f12-l18 t-r purple3">Укажите уведомления по каким ордерам вы хотите получать</p>
-						<div class="form_radio">
-							<label>
-								<input type="radio" name="variant" >
-								<span></span>
-								BID
-							</label>
-						</div>
-						<div class="form_radio">
-							<label>
-								<input type="radio" name="variant" >
-								<span></span>
-								ASK
-							</label>
-						</div>
-						<div class="form_radio">
-							<label>
-								<input type="radio" name="variant" >
-								<span></span>
-								ALL
-							</label>
-						</div>
-					</div>
-				</div>
-			</form>
-		</li>
-		<li class="company-item">
-			<a class="company-item-link" href="#">
-				<picture><source srcset="./img/test.webp" type="image/webp"><img class="company-item-img" src="./img/test.png" alt=""></picture>
-			</a>
-			<a class="company-item-company t-sb f24-l32 purple1" href="#">Company name</a>
-			<p class="company-item-tech t-r f16-l24 purple3">BioTech</p>
-			<p class="company-item-val t-r f16-l24 purple1">Last Round Est. Valuation</p>
-			<span class="company-item-numb t-r f16-l24 purple3">40.54B</span>
-			<form class="company-item-form" action="#">
-				<div class="company-item-add-watch active">
-					<button class="btn btn-green">Add to watch list</button>
-					<div class="company-item-drop">
-						<p class="company-item-notifications f12-l18 t-r purple3">Укажите уведомления по каким ордерам вы хотите получать</p>
-						<div class="form_radio">
-							<label>
-								<input type="radio" name="variant" >
-								<span></span>
-								BID
-							</label>
-						</div>
-						<div class="form_radio">
-							<label>
-								<input type="radio" name="variant" >
-								<span></span>
-								ASK
-							</label>
-						</div>
-						<div class="form_radio">
-							<label>
-								<input type="radio" name="variant" >
-								<span></span>
-								ALL
-							</label>
-						</div>
-					</div>
-				</div>
-			</form>
-		</li>
-		<li class="company-item">
-			<a class="company-item-link" href="#">
-				<picture><source srcset="./img/test.webp" type="image/webp"><img class="company-item-img" src="./img/test.png" alt=""></picture>
-			</a>
-			<a class="company-item-company t-sb f24-l32 purple1" href="#">Company name</a>
-			<p class="company-item-tech t-r f16-l24 purple3">BioTech</p>
-			<p class="company-item-val t-r f16-l24 purple1">Last Round Est. Valuation</p>
-			<span class="company-item-numb t-r f16-l24 purple3">40.54B</span>
-			<form class="company-item-form" action="#">
-				<div class="company-item-add-watch active">
-					<button class="btn btn-green">Add to watch list</button>
-					<div class="company-item-drop">
-						<p class="company-item-notifications f12-l18 t-r purple3">Укажите уведомления по каким ордерам вы хотите получать</p>
-						<div class="form_radio">
-							<label>
-								<input type="radio" name="variant" >
-								<span></span>
-								BID
-							</label>
-						</div>
-						<div class="form_radio">
-							<label>
-								<input type="radio" name="variant" >
-								<span></span>
-								ASK
-							</label>
-						</div>
-						<div class="form_radio">
-							<label>
-								<input type="radio" name="variant" >
-								<span></span>
-								ALL
-							</label>
-						</div>
-					</div>
-				</div>
-			</form>
-		</li>
-		<li class="company-item">
-			<a class="company-item-link" href="#">
-				<picture><source srcset="./img/test.webp" type="image/webp"><img class="company-item-img" src="./img/test.png" alt=""></picture>
-			</a>
-			<a class="company-item-company t-sb f24-l32 purple1" href="#">Company name</a>
-			<p class="company-item-tech t-r f16-l24 purple3">BioTech</p>
-			<p class="company-item-val t-r f16-l24 purple1">Last Round Est. Valuation</p>
-			<span class="company-item-numb t-r f16-l24 purple3">40.54B</span>
-			<form class="company-item-form" action="#">
-				<div class="company-item-add-watch active">
-					<button class="btn btn-green">Add to watch list</button>
-					<div class="company-item-drop">
-						<p class="company-item-notifications f12-l18 t-r purple3">Укажите уведомления по каким ордерам вы хотите получать</p>
-						<div class="form_radio">
-							<label>
-								<input type="radio" name="variant" >
-								<span></span>
-								BID
-							</label>
-						</div>
-						<div class="form_radio">
-							<label>
-								<input type="radio" name="variant" >
-								<span></span>
-								ASK
-							</label>
-						</div>
-						<div class="form_radio">
-							<label>
-								<input type="radio" name="variant" >
-								<span></span>
-								ALL
-							</label>
-						</div>
-					</div>
-				</div>
-			</form>
-		</li>
+		@endforeach
+		
 		
 		
 	</ul>
-	<ul class="company-list content-t">
-		<li class="company-item">
-			<a class="company-item-link" href="#">
-				<picture><source srcset="./img/test.webp" type="image/webp"><img class="company-item-img" src="./img/test.png" alt=""></picture>
-			</a>
-			<a class="company-item-company t-sb f24-l32 purple1" href="#">Company name</a>
-			<p class="company-item-tech t-r f16-l24 purple3">BioTech</p>
-			<p class="company-item-val t-r f16-l24 purple1">Last Round Est. Valuation</p>
-			<span class="company-item-numb t-r f16-l24 purple3">40.54B</span>
-			<form class="company-item-form" action="#">
-				<div class="company-item-watch">
-					<div class="btn2 btn2-green w170 h49 b-h">In watch list</div>
-					<button class="reset-btn">
-						<i class="icon icon-trash"></i>
-					</button>
-				</div>
-			</form>
-		</li>
+	<ul class="company-list content-t active">
 		
+		@foreach($companies as $company)
 		<li class="company-item">
 			<a class="company-item-link" href="#">
-				<picture><source srcset="./img/test.webp" type="image/webp"><img class="company-item-img" src="./img/test.png" alt=""></picture>
+				<picture><source srcset="{{asset('storage/companies/'.$company->image)  }}" type="image/webp"><img class="company-item-img" src="{{asset('storage/companies/'.$company->image)  }}" alt=""></picture>
 			</a>
-			<a class="company-item-company t-sb f24-l32 purple1" href="#">Company name</a>
-			<p class="company-item-tech t-r f16-l24 purple3">BioTech</p>
+			<a class="company-item-company t-sb f24-l32 purple1" href="#">{{$company->companyName}}</a>
+			<p class="company-item-tech t-r f16-l24 purple3">
+			@foreach($categories as $item)
+                      @if($company->category->pluck('id')->contains($item->id)) 
+                      {{$item->name }}
+                       @endif
+            @endforeach
+			</p>
 			<p class="company-item-val t-r f16-l24 purple1">Last Round Est. Valuation</p>
-			<span class="company-item-numb t-r f16-l24 purple3">40.54B</span>
-			<form class="company-item-form" action="#">
-				<div class="company-item-watch">
-					<div class="btn2 btn2-green w170 h49 b-h">In watch list</div>
-					<button class="reset-btn">
-						<i class="icon icon-trash"></i>
-					</button>
+			<span class="company-item-numb t-r f16-l24 purple3">{{$company->valuation}}B</span>
+			<form class="company-item-form" action="/companies/wali" method="POST">
+				@csrf
+				<div class="company-item-add-watch active">
+					<button class="btn btn-green">Add to watch list</button>
+					<div class="company-item-drop">
+						<p class="company-item-notifications f12-l18 t-r purple3">Укажите уведомления по каким ордерам вы хотите получать</p>
+						<div class="form_radio">
+							<label>
+								<input type="radio" name="bid" >
+								<span></span>
+								BID
+							</label>
+						</div>
+						<div class="form_radio">
+							<label>
+								<input type="radio" name="asc" >
+								<span></span>
+								ASK
+							</label>
+						</div>
+						<div class="form_radio">
+							<label>
+								<input type="radio" name="all" >
+								<span></span>
+								ALL
+							</label>
+						</div>
+					</div>
 				</div>
 			</form>
 		</li>
-		<li class="company-item">
-			<a class="company-item-link" href="#">
-				<picture><source srcset="./img/test.webp" type="image/webp"><img class="company-item-img" src="./img/test.png" alt=""></picture>
-			</a>
-			<a class="company-item-company t-sb f24-l32 purple1" href="#">Company name</a>
-			<p class="company-item-tech t-r f16-l24 purple3">BioTech</p>
-			<p class="company-item-val t-r f16-l24 purple1">Last Round Est. Valuation</p>
-			<span class="company-item-numb t-r f16-l24 purple3">40.54B</span>
-			<form class="company-item-form" action="#">
-				<div class="company-item-watch">
-					<div class="btn2 btn2-green w170 h49 b-h">In watch list</div>
-					<button class="reset-btn">
-						<i class="icon icon-trash"></i>
-					</button>
-				</div>
-			</form>
-		</li>
-		<li class="company-item">
-			<a class="company-item-link" href="#">
-				<picture><source srcset="./img/test.webp" type="image/webp"><img class="company-item-img" src="./img/test.png" alt=""></picture>
-			</a>
-			<a class="company-item-company t-sb f24-l32 purple1" href="#">Company name</a>
-			<p class="company-item-tech t-r f16-l24 purple3">BioTech</p>
-			<p class="company-item-val t-r f16-l24 purple1">Last Round Est. Valuation</p>
-			<span class="company-item-numb t-r f16-l24 purple3">40.54B</span>
-			<form class="company-item-form" action="#">
-				<div class="company-item-watch">
-					<div class="btn2 btn2-green w170 h49 b-h">In watch list</div>
-					<button class="reset-btn">
-						<i class="icon icon-trash"></i>
-					</button>
-				</div>
-			</form>
-		</li>
-		<li class="company-item">
-			<a class="company-item-link" href="#">
-				<picture><source srcset="./img/test.webp" type="image/webp"><img class="company-item-img" src="./img/test.png" alt=""></picture>
-			</a>
-			<a class="company-item-company t-sb f24-l32 purple1" href="#">Company name</a>
-			<p class="company-item-tech t-r f16-l24 purple3">BioTech</p>
-			<p class="company-item-val t-r f16-l24 purple1">Last Round Est. Valuation</p>
-			<span class="company-item-numb t-r f16-l24 purple3">40.54B</span>
-			<form class="company-item-form" action="#">
-				<div class="company-item-watch">
-					<div class="btn2 btn2-green w170 h49 b-h">In watch list</div>
-					<button class="reset-btn">
-						<i class="icon icon-trash"></i>
-					</button>
-				</div>
-			</form>
-		</li>
-		<li class="company-item">
-			<a class="company-item-link" href="#">
-				<picture><source srcset="./img/test.webp" type="image/webp"><img class="company-item-img" src="./img/test.png" alt=""></picture>
-			</a>
-			<a class="company-item-company t-sb f24-l32 purple1" href="#">Company name</a>
-			<p class="company-item-tech t-r f16-l24 purple3">BioTech</p>
-			<p class="company-item-val t-r f16-l24 purple1">Last Round Est. Valuation</p>
-			<span class="company-item-numb t-r f16-l24 purple3">40.54B</span>
-			<form class="company-item-form" action="#">
-				<div class="company-item-watch">
-					<div class="btn2 btn2-green w170 h49 b-h">In watch list</div>
-					<button class="reset-btn">
-						<i class="icon icon-trash"></i>
-					</button>
-				</div>
-			</form>
-		</li>
-		<li class="company-item">
-			<a class="company-item-link" href="#">
-				<picture><source srcset="./img/test.webp" type="image/webp"><img class="company-item-img" src="./img/test.png" alt=""></picture>
-			</a>
-			<a class="company-item-company t-sb f24-l32 purple1" href="#">Company name</a>
-			<p class="company-item-tech t-r f16-l24 purple3">BioTech</p>
-			<p class="company-item-val t-r f16-l24 purple1">Last Round Est. Valuation</p>
-			<span class="company-item-numb t-r f16-l24 purple3">40.54B</span>
-			<form class="company-item-form" action="#">
-				<div class="company-item-watch">
-					<div class="btn2 btn2-green w170 h49 b-h">In watch list</div>
-					<button class="reset-btn">
-						<i class="icon icon-trash"></i>
-					</button>
-				</div>
-			</form>
-		</li>
-		<li class="company-item">
-			<a class="company-item-link" href="#">
-				<picture><source srcset="./img/test.webp" type="image/webp"><img class="company-item-img" src="./img/test.png" alt=""></picture>
-			</a>
-			<a class="company-item-company t-sb f24-l32 purple1" href="#">Company name</a>
-			<p class="company-item-tech t-r f16-l24 purple3">BioTech</p>
-			<p class="company-item-val t-r f16-l24 purple1">Last Round Est. Valuation</p>
-			<span class="company-item-numb t-r f16-l24 purple3">40.54B</span>
-			<form class="company-item-form" action="#">
-				<div class="company-item-watch">
-					<div class="btn2 btn2-green w170 h49 b-h">In watch list</div>
-					<button class="reset-btn">
-						<i class="icon icon-trash"></i>
-					</button>
-				</div>
-			</form>
-		</li>
-		<li class="company-item">
-			<a class="company-item-link" href="#">
-				<picture><source srcset="./img/test.webp" type="image/webp"><img class="company-item-img" src="./img/test.png" alt=""></picture>
-			</a>
-			<a class="company-item-company t-sb f24-l32 purple1" href="#">Company name</a>
-			<p class="company-item-tech t-r f16-l24 purple3">BioTech</p>
-			<p class="company-item-val t-r f16-l24 purple1">Last Round Est. Valuation</p>
-			<span class="company-item-numb t-r f16-l24 purple3">40.54B</span>
-			<form class="company-item-form" action="#">
-				<div class="company-item-watch">
-					<div class="btn2 btn2-green w170 h49 b-h">In watch list</div>
-					<button class="reset-btn">
-						<i class="icon icon-trash"></i>
-					</button>
-				</div>
-			</form>
-		</li>
-		<li class="company-item">
-			<a class="company-item-link" href="#">
-				<picture><source srcset="./img/test.webp" type="image/webp"><img class="company-item-img" src="./img/test.png" alt=""></picture>
-			</a>
-			<a class="company-item-company t-sb f24-l32 purple1" href="#">Company name</a>
-			<p class="company-item-tech t-r f16-l24 purple3">BioTech</p>
-			<p class="company-item-val t-r f16-l24 purple1">Last Round Est. Valuation</p>
-			<span class="company-item-numb t-r f16-l24 purple3">40.54B</span>
-			<form class="company-item-form" action="#">
-				<div class="company-item-watch">
-					<div class="btn2 btn2-green w170 h49 b-h">In watch list</div>
-					<button class="reset-btn">
-						<i class="icon icon-trash"></i>
-					</button>
-				</div>
-			</form>
-		</li>
-		<li class="company-item">
-			<a class="company-item-link" href="#">
-				<picture><source srcset="./img/test.webp" type="image/webp"><img class="company-item-img" src="./img/test.png" alt=""></picture>
-			</a>
-			<a class="company-item-company t-sb f24-l32 purple1" href="#">Company name</a>
-			<p class="company-item-tech t-r f16-l24 purple3">BioTech</p>
-			<p class="company-item-val t-r f16-l24 purple1">Last Round Est. Valuation</p>
-			<span class="company-item-numb t-r f16-l24 purple3">40.54B</span>
-			<form class="company-item-form" action="#">
-				<div class="company-item-watch">
-					<div class="btn2 btn2-green w170 h49 b-h">In watch list</div>
-					<button class="reset-btn">
-						<i class="icon icon-trash"></i>
-					</button>
-				</div>
-			</form>
-		</li>
-		<li class="company-item">
-			<a class="company-item-link" href="#">
-				<picture><source srcset="./img/test.webp" type="image/webp"><img class="company-item-img" src="./img/test.png" alt=""></picture>
-			</a>
-			<a class="company-item-company t-sb f24-l32 purple1" href="#">Company name</a>
-			<p class="company-item-tech t-r f16-l24 purple3">BioTech</p>
-			<p class="company-item-val t-r f16-l24 purple1">Last Round Est. Valuation</p>
-			<span class="company-item-numb t-r f16-l24 purple3">40.54B</span>
-			<form class="company-item-form" action="#">
-				<div class="company-item-watch">
-					<div class="btn2 btn2-green w170 h49 b-h">In watch list</div>
-					<button class="reset-btn">
-						<i class="icon icon-trash"></i>
-					</button>
-				</div>
-			</form>
-		</li>
-		<li class="company-item">
-			<a class="company-item-link" href="#">
-				<picture><source srcset="./img/test.webp" type="image/webp"><img class="company-item-img" src="./img/test.png" alt=""></picture>
-			</a>
-			<a class="company-item-company t-sb f24-l32 purple1" href="#">Company name</a>
-			<p class="company-item-tech t-r f16-l24 purple3">BioTech</p>
-			<p class="company-item-val t-r f16-l24 purple1">Last Round Est. Valuation</p>
-			<span class="company-item-numb t-r f16-l24 purple3">40.54B</span>
-			<form class="company-item-form" action="#">
-				<div class="company-item-watch">
-					<div class="btn2 btn2-green w170 h49 b-h">In watch list</div>
-					<button class="reset-btn">
-						<i class="icon icon-trash"></i>
-					</button>
-				</div>
-			</form>
-		</li>
-		<li class="company-item">
-			<a class="company-item-link" href="#">
-				<picture><source srcset="./img/test.webp" type="image/webp"><img class="company-item-img" src="./img/test.png" alt=""></picture>
-			</a>
-			<a class="company-item-company t-sb f24-l32 purple1" href="#">Company name</a>
-			<p class="company-item-tech t-r f16-l24 purple3">BioTech</p>
-			<p class="company-item-val t-r f16-l24 purple1">Last Round Est. Valuation</p>
-			<span class="company-item-numb t-r f16-l24 purple3">40.54B</span>
-			<form class="company-item-form" action="#">
-				<div class="company-item-watch">
-					<div class="btn2 btn2-green w170 h49 b-h">In watch list</div>
-					<button class="reset-btn">
-						<i class="icon icon-trash"></i>
-					</button>
-				</div>
-			</form>
-		</li>
-		<li class="company-item">
-			<a class="company-item-link" href="#">
-				<picture><source srcset="./img/test.webp" type="image/webp"><img class="company-item-img" src="./img/test.png" alt=""></picture>
-			</a>
-			<a class="company-item-company t-sb f24-l32 purple1" href="#">Company name</a>
-			<p class="company-item-tech t-r f16-l24 purple3">BioTech</p>
-			<p class="company-item-val t-r f16-l24 purple1">Last Round Est. Valuation</p>
-			<span class="company-item-numb t-r f16-l24 purple3">40.54B</span>
-			<form class="company-item-form" action="#">
-				<div class="company-item-watch">
-					<div class="btn2 btn2-green w170 h49 b-h">In watch list</div>
-					<button class="reset-btn">
-						<i class="icon icon-trash"></i>
-					</button>
-				</div>
-			</form>
-		</li>
-		<li class="company-item">
-			<a class="company-item-link" href="#">
-				<picture><source srcset="./img/test.webp" type="image/webp"><img class="company-item-img" src="./img/test.png" alt=""></picture>
-			</a>
-			<a class="company-item-company t-sb f24-l32 purple1" href="#">Company name</a>
-			<p class="company-item-tech t-r f16-l24 purple3">BioTech</p>
-			<p class="company-item-val t-r f16-l24 purple1">Last Round Est. Valuation</p>
-			<span class="company-item-numb t-r f16-l24 purple3">40.54B</span>
-			<form class="company-item-form" action="#">
-				<div class="company-item-watch">
-					<div class="btn2 btn2-green w170 h49 b-h">In watch list</div>
-					<button class="reset-btn">
-						<i class="icon icon-trash"></i>
-					</button>
-				</div>
-			</form>
-		</li>
+		@endforeach
 	
 	</ul>
 </div>

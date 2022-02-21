@@ -5,7 +5,7 @@
 
 	<section class="content">
 	<div class="content-box ">
-		@if(Auth::user()->type == 1)
+		@if(Auth::user()->type == 'Individual')
 		<div class="content-box-nav">
 			<h1 class="t-m f18-l32 purple1">
 				 Individual
@@ -65,7 +65,7 @@
 				<button class="btn w100p" type="submit">Confirm information changed</button>
 			</div>
 		</form>
-		@elseif(Auth::user()->type == 0)
+		@elseif(Auth::user()->type == 'Representative')
 		<div class="content-box-nav">
 			<h1 class="t-m f18-l32 purple1">
 				Fund representative
