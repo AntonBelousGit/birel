@@ -1,6 +1,6 @@
 <div id="left-sidebar" class="sidebar">
     <div class="navbar-brand">
-        <a href="index.html"><img src="../assets/images/icon-dark.svg" alt="HexaBit Logo" class="img-fluid logo"><span>HexaBit</span></a>
+        <a href="/home"><img src="../assets/images/icon-dark.svg" alt="HexaBit Logo" class="img-fluid logo"><span>Birel</span></a>
         <button type="button" class="btn-toggle-offcanvas btn btn-sm btn-default float-right"><i
                     class="lnr lnr-menu fa fa-chevron-circle-left"></i></button>
     </div>

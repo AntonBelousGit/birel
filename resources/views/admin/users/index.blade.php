@@ -67,7 +67,11 @@
                                             <td>{{$item->name}}</td>
                                             <td>{{$item->surname}}</td>
                                             <td>{{$item->email}}</td>
-                                            <td>{{$item->role->first()->name}}</td>
+                                            <td>
+                                               
+                                                {{$item->role->pluck('name')->first()}}
+                                               
+                                            </td>
                                             <td>{{$item->type}}</td>
                                             <td>
                                                 <a href="{{ route('users.edit',$item->id) }}">Edit</a>

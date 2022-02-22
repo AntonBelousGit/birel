@@ -74,8 +74,9 @@ class RegisterController extends Controller
         /**
          * undocumented constant
          **/
-        if($data['type'] == 0){
-            return User::create([
+       
+        if($data['type'] == 'Representative'){
+             return User::create([
                 'name' => $data['name'],
                 'surname' => $data['surname'],
                 // 'linkedin' => $data['linkedin'],
@@ -86,10 +87,11 @@ class RegisterController extends Controller
                 'receive_news' => $data['receive_news'] ?? null,
                 'type' => $data['type'],
             ]);
+           return $user->role()->attach('2');
         }else{
 
         }
-        return User::create([
+         return User::create([
             'name' => $data['name'],
             'surname' => $data['surname'],
             'linkedin' => $data['linkedin'],
@@ -100,5 +102,6 @@ class RegisterController extends Controller
             'receive_news' => $data['receive_news'] ?? null,
             'type' => $data['type'],
         ]);
+      
     }
 }

@@ -95,6 +95,11 @@ class CompanyController extends Controller
     }
     public function wali(Request $request)
     {
-        dd($request);
+        $type = 'All';
+        Company->wali()::create([
+            'user_id' => Auth::user->id,
+            'company_id' => '1',
+            'type' => $type,
+        ]);
     }
 }

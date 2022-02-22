@@ -23,7 +23,7 @@
             <form class="tab-content active" action="{{ route('register') }}" method="POST">
                         @csrf
                 <div class="cont-l">
-                    <input type="hidden" name="type" value="Individual">
+                    <input type="hidden" name="type" value="Representative">
                     <div class="box-input">
                          <input class="i-f" type="text" placeholder="Name" name="name" value="{{ old('name') }}" required autocomplete="name">
                           @error('name')
@@ -92,7 +92,7 @@
             <form class="tab-content" action="{{ route('register') }}" method="POST">
                         @csrf
                 <div class="cont-l">
-                    <input type="hidden" name="type" value="Representative">
+                    <input type="hidden" name="type" value="Individual">
                     <div class="box-input">
                         <input class="i-f" type="text" placeholder="Name" name="name" value="{{ old('name') }}" required autocomplete="name">
                           @error('name')

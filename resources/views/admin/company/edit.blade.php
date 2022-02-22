@@ -41,7 +41,11 @@
                                           placeholder="Description">{{$company->description}}</textarea>
                             </div>
                             <div class="form-group">
+<<<<<<< Updated upstream
                                 <input type="number" class="form-control" min="0"  name="valuation"
+=======
+                                <input type="number" class="form-control" min="0" step="0.01" name="valuation"
+>>>>>>> Stashed changes
                                        placeholder="Valuation" value="{{$company->valuation}}">
                             </div>
                             <div class="form-group">

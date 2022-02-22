@@ -33,8 +33,6 @@ class UserUpdateRequest extends FormRequest
             'fund_address' => ['nullable', 'string', 'max:255'],
             'fund_name' => ['nullable', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore(Auth::user())],
-            // 'email' => ['required', 'string', 'email', 'max:255',Rule::unique('users')->ignore($user)],
-
             'receive_news' => ['nullable'],
             'position' => ['nullable', 'string', 'max:255'],
             'type' => ['sometimes', 'integer'],

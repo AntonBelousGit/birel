@@ -21,4 +21,8 @@ class Company extends Model
     {
         return $this->belongsToMany(Category::class);
     }
+       public function wali()
+    {
+        return $this->belongsTo(User::class, 'id', 'user_id');
+    }
 }
