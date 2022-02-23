@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Company;
 use App\Models\Category;
+use App\Models\Watchlist;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreCompanyRequest;
 
@@ -96,10 +97,11 @@ class CompanyController extends Controller
     public function wali(Request $request)
     {
         $type = 'All';
-        Company->wali()::create([
-            'user_id' => Auth::user->id,
+        Watchlist::create([
+            'user_id' => auth()->user()->id,
             'company_id' => '1',
             'type' => $type,
         ]);
+         return redirect()->back();
     }
 }

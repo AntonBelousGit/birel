@@ -23,6 +23,7 @@ class Company extends Model
     }
        public function wali()
     {
-        return $this->belongsTo(User::class, 'id', 'user_id');
+        return $this->belongsTo(Watchlist::class, 'id', 'company_id');
+        //->where('user_id', Auth::user->id);
     }
 }
