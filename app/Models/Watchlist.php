@@ -9,13 +9,14 @@ class Watchlist extends Model
 {
     use HasFactory;
 
-      protected $fillable = [
+    protected $fillable = [
         'user_id',
         'company_id',
         'type',
-           ];
+    ];
 
-           public function company(){
-            return $this->belongsTo(Company::class);
-           }
+    public function company()
+    {
+        return $this->belongsTo(Company::class);
+    }
 }

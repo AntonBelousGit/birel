@@ -21,7 +21,7 @@ Auth::routes();
 require('_admin.php');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('/companies', App\Http\Controllers\CompanyController::class);
-Route::post('/companies/wali', [App\Http\Controllers\CompanyController::class,'wali']);
+Route::post('/companies/wali', [App\Http\Controllers\CompanyController::class, 'wali']);
 Route::post('/update', [App\Http\Controllers\HomeController::class, 'update'])->name('update');
 Route::post('/changepass', [App\Http\Controllers\HomeController::class, 'changepass'])->name('changepass');
 
