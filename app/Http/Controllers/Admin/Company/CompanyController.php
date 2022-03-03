@@ -9,6 +9,10 @@ use App\Http\Requests\StoreCompanyAdminRequest;
 use App\Models\Company;
 use App\Service\CategoryService;
 use App\Service\CompanyService;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 
@@ -29,7 +33,7 @@ class CompanyController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     * @return Application|Factory|View
      */
     public function index()
     {
@@ -40,7 +44,7 @@ class CompanyController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     * @return Application|Factory|View
      */
     public function create()
     {
@@ -51,8 +55,9 @@ class CompanyController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\RedirectResponse
+     * @param StoreCompanyAdminRequest $request
+     * @param SyncDependentsCompanyAction $action
+     * @return RedirectResponse
      */
     public function store(StoreCompanyAdminRequest $request, SyncDependentsCompanyAction $action)
     {
@@ -65,7 +70,7 @@ class CompanyController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     * @return Application|Factory|View
      */
     public function edit(int $id)
     {
@@ -77,9 +82,10 @@ class CompanyController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param \App\Models\Company $company
-     * @return \Illuminate\Http\RedirectResponse
+     * @param StoreCompanyAdminRequest $request
+     * @param Company $company
+     * @param SyncDependentsCompanyAction $action
+     * @return RedirectResponse
      */
     public function update(StoreCompanyAdminRequest $request, Company $company, SyncDependentsCompanyAction $action)
     {
@@ -92,8 +98,8 @@ class CompanyController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param \App\Models\Company $company
-     * @return \Illuminate\Http\RedirectResponse
+     * @param Company $company
+     * @return RedirectResponse
      */
     public function destroy(Company $company)
     {
