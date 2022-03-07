@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreWatchlistRequest;
 use App\Models\Company;
 use App\Models\Category;
 use App\Models\Watchlist;
@@ -29,8 +30,8 @@ class CompanyController extends Controller
     {
         $categories = Category::all();
         $companies = Company::with('category')->paginate();
-        //dd($companies);
-        return view('lc.companies', compact('companies', 'categories'));
+        $watchlist = Watchlist::where('user_id', auth()->id())->with('company.category')->get();
+        return view('lc.companies', compact('companies', 'categories', 'watchlist'));
     }
 
     /**
@@ -100,14 +101,27 @@ class CompanyController extends Controller
         //
     }
 
-    public function wali(Request $request)
+    public function wali(StoreWatchlistRequest $request)
     {
-        $type = 'All';
+        $data = $request->validated();
+        $check_isset = Watchlist::where(['user_id' => auth()->id(), 'company_id' => $data['company_id']])->count();
+
+        if ($check_isset) {
+            return redirect()->back();
+        }
+
         Watchlist::create([
             'user_id' => auth()->user()->id,
-            'company_id' => '1',
-            'type' => $type,
+            'company_id' => $data['company_id'],
+            'type' => $data['type'] ?? 'All',
         ]);
+
+        return redirect()->back();
+    }
+
+    public function deleteWali($id, Request $request)
+    {
+        Watchlist::where(['user_id' => auth()->id(), 'company_id' => $request->input('company_id'), 'id' => $id])->delete();
         return redirect()->back();
     }
 }
