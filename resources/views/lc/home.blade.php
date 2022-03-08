@@ -206,14 +206,13 @@
 					<li class="pointer t-r f16-l24 black3">
 						Your password cannot be any of your last 3 passwords
 					</li>
-					
+
 				</ul>
 			</div>
 		</div>
 	</div>
 </section>
-	</div>
-</main>
+
 @endsection
 
 

@@ -21,4 +21,4 @@ document.addEventListener('click', e => {
 	if (!its_menu && !its_hamburger && menu_is_active) {
 		toggleMenu();
 	}
-})
+});

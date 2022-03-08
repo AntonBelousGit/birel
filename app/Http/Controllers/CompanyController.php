@@ -60,11 +60,11 @@ class CompanyController extends Controller
      * Display the specified resource.
      *
      * @param Company $company
-     * @return Response
+     * @return Application|Factory|View
      */
     public function show(Company $company)
     {
-        //
+        return view('lc.one-company', compact('company'));
     }
 
     /**

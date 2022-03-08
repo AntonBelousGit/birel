@@ -1,5 +1,4 @@
 .content-text {
-  margin-top: 150px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -122,10 +121,6 @@
 }
 
 @media screen and (max-width: 768px) {
-  .content-text {
-    margin-top: 0;
-  }
-
   .content-text .title {
     width: 100%;
   }

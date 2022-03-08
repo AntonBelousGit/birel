@@ -189,3 +189,9 @@
     padding: 15px 15px 15px 10px;
   }
 }
+
+@media screen and (max-height: 1050px) {
+  .bg-registration {
+    height: auto;
+  }
+}

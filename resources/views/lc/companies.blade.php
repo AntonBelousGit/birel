@@ -1,7 +1,6 @@
 @extends('layouts.main')
 
 @section('content')
-
     <link rel="stylesheet" href="{{asset('css/pages/page-lc-company.min.css')}}">
     <div class="company" id="tabs">
         <div class="company-wrapper">
@@ -58,7 +57,6 @@
             </button>
         </div>
         <ul class="company-list content-t">
-
             @foreach($watchlist as $item)
                 <li class="company-item">
                     <a class="company-item-link" href="#">
@@ -67,7 +65,7 @@
                             <img class="company-item-img" src="{{asset('storage/companies/'.$item->company->image)  }}"
                                  alt=""></picture>
                     </a>
-                    <a class="company-item-company t-sb f24-l32 purple1" href="#">{{$item->company->companyName}}</a>
+                    <a class="company-item-company t-sb f24-l32 purple1" href="{{ route('companies.show',$item->company) }}">{{$item->company->companyName}}</a>
                     <p class="company-item-tech t-r f16-l24 purple3">
                         @forelse($item->company->category as $category)
                             {{$category->name }}
@@ -100,7 +98,7 @@
                             <img class="company-item-img" src="{{asset('storage/companies/'.$company->image)  }}"
                                  alt=""></picture>
                     </a>
-                    <a class="company-item-company t-sb f24-l32 purple1" href="#">{{$company->companyName}}</a>
+                    <a class="company-item-company t-sb f24-l32 purple1" href="{{ route('companies.show',$company) }}">{{$company->companyName}}</a>
                     <p class="company-item-tech t-r f16-l24 purple3">
                         @foreach($categories as $item)
                             @if($company->category->pluck('id')->contains($item->id))

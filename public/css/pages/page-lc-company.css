@@ -12,7 +12,8 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  position: relative;
+  position: fixed;
+  left: 0;
   z-index: 20;
 }
 
@@ -128,7 +129,7 @@
 .company {
   background-color: #fff;
   width: 100%;
-  padding: 45px 65px;
+  padding: 40px 65px;
 }
 
 .company-wrapper {
@@ -420,7 +421,6 @@
     min-width: 100vw;
     overflow-x: hidden;
     overflow-y: auto;
-    position: fixed;
     background-color: #2A206A;
   }
 
