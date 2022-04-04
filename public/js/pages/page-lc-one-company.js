@@ -1,5 +1,4 @@
 
-
 function openMenuTr(container) {
 	if (typeof container === 'string') {
 		container = document.querySelector(container);
@@ -12,7 +11,6 @@ function openMenuTr(container) {
 	for (let i = 0; i < btn.length; i++) {
 		const titleEl = btn[i];
 		titleEl.addEventListener('click', () => {
-
 			if(row[i].classList.contains('active')) {
 				row[i].classList.remove('active');
 			} else {
@@ -28,8 +26,19 @@ function openMenuTr(container) {
 			element.classList.remove('active');
 		}
 	}
-
 }
+
 openMenuTr('.table-two');
+
+tippy('[data-tippy-content]',
+	{
+		placement: 'left',
+		arrow: true,
+		theme: 'my',
+		duration: 0,
+		delay: [700, 500],
+		dynamicTitle: true,
+	});
+
 
 

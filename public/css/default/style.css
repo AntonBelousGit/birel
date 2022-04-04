@@ -1166,7 +1166,7 @@ label {
 .i-f {
   border: none;
   border-bottom: 1px solid #573CDA;
-  padding: 10px 0;
+  padding: 10px 8px;
   border-radius: 0;
   -webkit-appearance: none;
   background-color: transparent;
@@ -1292,6 +1292,11 @@ label {
 .f24-l32 {
   font-size: 24px;
   line-height: 32px;
+}
+
+.f30-l42 {
+  font-size: 30px;
+  line-height: 42px;
 }
 
 .f36-l42 {
