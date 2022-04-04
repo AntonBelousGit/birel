@@ -10,7 +10,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -60,23 +60,22 @@
                 </a>
                 @endguest
                   @auth
-                    <a class="btn2 w140" href="{{ route('home') }}">
+                    <a class="btn3" href="{{ route('home') }}">
                     <i class="icon-user"></i>
                    {{ Auth::user()->name }}
                 </a>
-                                           
                     <a class="btn2 btn2-green w170" href="{{ route('logout') }}"  onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                    {{ __('Logout') }}
-                </a>             
+                </a>
                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
-                                
-                          
+
+
                         @endauth
             </div>
-           
+
             <div class="burger">
                 <button class="reset-btn" id="menu">
                     <i class="icon-burger"></i>
@@ -105,8 +104,8 @@
                 </menu>
             </nav>
             <div class="btn-group">
-                 @guest
-                <a class="btn2 w140" href="{{ route('login') }}">
+            @guest
+                <a class="btn3" href="{{ route('login') }}">
                     <i class="icon-user"></i>
                     {{ __('Login') }}
                 </a>
@@ -115,37 +114,33 @@
                 </a>
             </div>
             @endguest
-             @auth
+            @auth
             <div class="btn-group">
-               
-                 <a class="btn2 w140" href="{{ route('login') }}">
+                <a class="btn3" href="{{ route('login') }}">
                     <i class="icon-user"></i>
-                   {{ Auth::user()->name }}
+                    {{ Auth::user()->name }}
                 </a>
-                                           
-                    <a class="btn2 btn2-green w170" href="{{ route('logout') }}"  onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                   {{ __('Logout') }}
-                </a>             
-                           <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                    
-                        </div>
-                          
-                        @endauth
+                <a class="btn2 btn2-green w170" href="{{ route('logout') }}"  onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }}
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
+                </div>
+                @endauth
             </div>
         </div>
     </div>
 </header>
-   
-                     
-                              
-                   
 
-        
+
+
+
+
+
             @yield('content')
-       <footer class="footer-bg">
+<footer class="footer-bg">
     <div class="container">
         <div class="footer-grid">
             <div class="footer-logo">
@@ -183,7 +178,7 @@
                     <li class="list-nav-item">
                         <a class="t-r f18-l32 white" href="#">Pricing</a>
                     </li>
-                    
+
                 </ul>
             </div>
             <div  class="footer-nav2">
