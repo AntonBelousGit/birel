@@ -31,6 +31,15 @@ class HomeController extends Controller
         return view('lc.home');
     }
 
+    public function addOrder()
+    {
+        return view('lc.add-order');
+    }
+    public function orders()
+    {
+        return view('lc.page-lc-orders');
+    }
+
     public function update(UserUpdateRequest $request)
     {
 

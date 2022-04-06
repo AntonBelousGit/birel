@@ -16,11 +16,12 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ asset('css/lib/iconmoon.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/default/style.min.css') }}">
+    @yield('front_style')
+
 </head>
 <body>
-    <header class="header">
+<header class="header">
     <div class="container">
         <div class="header-container">
             <a class="header-logo" href="/">
@@ -50,30 +51,28 @@
                 </menu>
             </nav>
             <div class="btn-group">
-                 @guest
-                <a class="btn3" href="{{ route('login') }}">
-                    <i class="icon-user"></i>
-                    Login
-                </a>
-                <a class="btn2 btn2-green w170" href="{{ route('register') }}">
-                    Sign up Free
-                </a>
+                @guest
+                    <a class="btn3" href="{{ route('login') }}">
+                        <i class="icon-user"></i>
+                        Login
+                    </a>
+                    <a class="btn2 btn2-green w170" href="{{ route('register') }}">
+                        Sign up Free
+                    </a>
                 @endguest
-                  @auth
+                @auth
                     <a class="btn3" href="{{ route('home') }}">
-                    <i class="icon-user"></i>
-                   {{ Auth::user()->name }}
-                </a>
-                    <a class="btn2 btn2-green w170" href="{{ route('logout') }}"  onclick="event.preventDefault();
+                        <i class="icon-user"></i>
+                        {{ Auth::user()->name }}
+                    </a>
+                    <a class="btn2 btn2-green w170" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                   {{ __('Logout') }}
-                </a>
-                           <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-
-
-                        @endauth
+                        {{ __('Logout') }}
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                @endauth
             </div>
 
             <div class="burger">
@@ -104,42 +103,39 @@
                 </menu>
             </nav>
             <div class="btn-group">
-            @guest
-                <a class="btn3" href="{{ route('login') }}">
-                    <i class="icon-user"></i>
-                    {{ __('Login') }}
-                </a>
-                <a class="btn2 btn2-green w170" href="{{ route('register') }}">
-                    Sign up Free
-                </a>
+                @guest
+                    <a class="btn3" href="{{ route('login') }}">
+                        <i class="icon-user"></i>
+                        {{ __('Login') }}
+                    </a>
+                    <a class="btn2 btn2-green w170" href="{{ route('register') }}">
+                        Sign up Free
+                    </a>
+                @endguest
             </div>
-            @endguest
+
             @auth
-            <div class="btn-group">
-                <a class="btn3" href="{{ route('login') }}">
-                    <i class="icon-user"></i>
-                    {{ Auth::user()->name }}
-                </a>
-                <a class="btn2 btn2-green w170" href="{{ route('logout') }}"  onclick="event.preventDefault();
+                <div class="btn-group">
+                    <a class="btn3" href="{{ route('login') }}">
+                        <i class="icon-user"></i>
+                        {{ Auth::user()->name }}
+                    </a>
+                    <a class="btn2 btn2-green w170" href="{{ route('logout') }}" onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">
-                    {{ __('Logout') }}
-                </a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                    @csrf
-                </form>
+                        {{ __('Logout') }}
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
                 </div>
-                @endauth
-            </div>
+            @endauth
         </div>
+    </div>
     </div>
 </header>
 
+@yield('content')
 
-
-
-
-
-            @yield('content')
 <footer class="footer-bg">
     <div class="container">
         <div class="footer-grid">
@@ -181,7 +177,7 @@
 
                 </ul>
             </div>
-            <div  class="footer-nav2">
+            <div class="footer-nav2">
                 <ul class="list-nav">
                     <li class="list-nav-item">
                         <a class="t-r f18-l32 grey-lite" href="#">Privacy policy</a>
@@ -201,14 +197,19 @@
                         <button class="reset-btn" type="submit"><i class="icon-telegram-2"></i></button>
                     </label>
                 </form>
-                <p class="t-r f18-l32 white">E–mail:  <a class="t-r f18-l32 white" href="mailto:orders@birel.io">  orders@birel.io</a></p>
-                <p class="t-r f18-l32 grey-lite wg">Development <a class="t-r f18-l32 grey-lite" href="https://webgenerator.com.ua/" target="_blank">WG-Studio</a></p>
+                <p class="t-r f18-l32 white">E–mail: <a class="t-r f18-l32 white" href="mailto:orders@birel.io">
+                        orders@birel.io</a></p>
+                <p class="t-r f18-l32 grey-lite wg">Development <a class="t-r f18-l32 grey-lite"
+                                                                   href="https://webgenerator.com.ua/" target="_blank">WG-Studio</a>
+                </p>
             </div>
         </div>
     </div>
 </footer>
 
 <script src="{{ asset('js/default/default.js')}}"></script>
+
+@yield('front_scripts')
 </body>
 
 </html>

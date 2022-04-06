@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,19 +15,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 require('_clear.php');
-Route::get('/', [App\Http\Controllers\MainController::class, 'index']);
-Route::get('/mission', [App\Http\Controllers\MainController::class, 'mission'])->name('mission');
-Route::get('/explore', [App\Http\Controllers\MainController::class, 'explore'])->name('explore');
+
+Route::controller(MainController::class)->group(function () {
+    Route::get('/', 'index');
+    Route::get('/mission',  'mission')->name('mission');
+    Route::get('/explore', 'explore')->name('explore');
+    Route::get('/terms-of-use', 'termsOfUse')->name('terms-of-use');
+});
 
 Auth::routes();
+
 require('_admin.php');
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('/companies', App\Http\Controllers\CompanyController::class);
-Route::get('/zalupa', [App\Http\Controllers\CompanyController::class, 'zalupa'])->name('zalupa');
 Route::post('/companies/wali', [App\Http\Controllers\CompanyController::class, 'wali']);
 Route::post('/companies/wali-delete', [App\Http\Controllers\CompanyController::class, 'deleteWali'])->name('delete-wali');
-Route::post('/update', [App\Http\Controllers\HomeController::class, 'update'])->name('update');
-Route::post('/changepass', [App\Http\Controllers\HomeController::class, 'changepass'])->name('changepass');
+
+
+Route::controller(HomeController::class)->group(function () {
+    Route::get('/orders', 'orders')->name('orders');
+    Route::get('/add-order', 'addOrder')->name('add-order');
+    Route::post('/update', 'update')->name('update');
+    Route::post('/changepass', 'changepass')->name('changepass');
+});
 
 Auth::routes();
 

@@ -2,17 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class MainController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         return view('welcome');
     }
-    public function mission(){
+
+    public function mission()
+    {
         return view('mission');
     }
-     public function explore(){
+
+    public function explore()
+    {
         return view('explore');
     }
+
+    public function termsOfUse()
+    {
+        return view('front.terms-of-use');
+    }
+
+
 }

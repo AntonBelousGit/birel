@@ -64,7 +64,7 @@ class CompanyController extends Controller
      */
     public function show(Company $company)
     {
-        return view('lc.one-company', compact('company'));
+        return view('lc.page-lc-one-company', compact('company'));
     }
 
     /**
