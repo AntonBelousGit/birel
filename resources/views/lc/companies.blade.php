@@ -6,10 +6,10 @@
         <div class="company-wrapper">
             <ul class="tab-wrapper nav-tabs">
                 <li class="t-m f18-l32 purple1 tab-n">
-                    Подписки на компании
+                    Subscriptions to companies
                 </li>
                 <li class="t-m f18-l32 purple1 tab-n active">
-                    Все компании
+                    All companies
                 </li>
             </ul>
             <div class="link-wrapper">
@@ -29,7 +29,7 @@
                 </button>
             </form>
             <p class="company-search-text t-r f16-l24 purple2">
-                You can add company если компании нет в списке .
+                You can add company if the company is not listed.
                 <a class="company-search-link" href="{{route('companies.create')}}">
                     <i class="icon icon-green-circle-plus"></i>
                 </a>
@@ -114,8 +114,8 @@
                         <div class="company-item-add-watch active">
                             <button class="btn btn-green">Add to watch list</button>
                             <div class="company-item-drop">
-                                <p class="company-item-notifications f12-l18 t-r purple3">Укажите уведомления по каким
-                                    ордерам вы хотите получать</p>
+                                <p class="company-item-notifications f12-l18 t-r purple3">Specify notifications for which
+                                    orders you want to receive</p>
                                 <div class="form_radio">
                                     <label>
                                         <input type="radio" name="type" value="Bid">

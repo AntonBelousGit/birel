@@ -147,12 +147,10 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: calc(100vh - 102px);
 }
 
 .add-company {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
   padding: 40px 65px;
   width: 550px;
   background-color: #fff;
@@ -267,5 +265,11 @@
 
   .add-company {
     width: 100%;
+  }
+}
+
+@media screen and (max-height: 898px) {
+  .add {
+    height: auto;
   }
 }

@@ -8,7 +8,7 @@
 		<div class="add-company-link active">
 			<a class="t-r f18-l32 purple4 " href="{{ URL::previous() }}">
 				<i class="icon icon-arrow-left"></i>
-				Return back 
+				Return back
 			</a>
 		</div>
 		@endif
@@ -17,17 +17,17 @@
 				Add company
 			</h1>
 			<p class="t-r f16-l24 purple2">
-				Вы можете добавить компанию. Для этого нужно корректно ввести ее название и адрес ее сайта.
+				You can add a company. To do this, you need to correctly enter its name and the address of its website.
 			</p>
 			<form class="add-company-form" action="{{route('companies.store')}}" method="POST">
 				@csrf
 				<ul class="form-list">
 					<li class="form-list-item">
-						<label class="t-r f16-l24 purple1"  for="companyName">Название компании</label>
+						<label class="t-r f16-l24 purple1"  for="companyName">Company name</label>
 						<input class="i-f" type="text" id="companyName" placeholder="Placeholder text" name="companyName">
 					</li>
 					<li class="form-list-item">
-						<label class="t-r f16-l24 purple1"  for="companyAddress">Адрес компании</label>
+						<label class="t-r f16-l24 purple1"  for="companyAddress">Company address</label>
 						<input class="i-f" type="text" id="companyAddress" placeholder="Placeholder" name="companyAddress">
 					</li>
 				</ul>
