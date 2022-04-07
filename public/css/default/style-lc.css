@@ -275,9 +275,11 @@ label {
 #tabs2 .nav-tabs,
 #tabs .nav-tabs {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
@@ -324,9 +326,11 @@ label {
 
 .btn-group {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   grid-gap: 10px;
@@ -342,14 +346,16 @@ label {
   background-color: transparent;
   padding: 0;
   border: 0;
-  border-radius: 0;
+  -webkit-border-radius: 0;
+          border-radius: 0;
 }
 
 .btn {
   width: 100%;
   height: 49px;
   padding: 0 15px;
-  border-radius: 35px;
+  -webkit-border-radius: 35px;
+          border-radius: 35px;
   background-color: #573CDA;
   border: 1px solid #573CDA;
   font-family: "WorkSans-Medium";
@@ -357,12 +363,15 @@ label {
   font-size: 18px;
   line-height: 24px;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
+  -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   color: #fff;
@@ -437,7 +446,8 @@ label {
 .btn2 {
   width: 116px;
   height: 60px;
-  border-radius: 30px;
+  -webkit-border-radius: 30px;
+          border-radius: 30px;
   background-color: #fff;
   border: 1px solid #573CDA;
   font-family: "WorkSans-Medium";
@@ -445,12 +455,15 @@ label {
   font-size: 18px;
   line-height: 24px;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
+  -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   color: #573CDA;
@@ -508,7 +521,8 @@ label {
 .btn3 {
   width: 144px;
   height: 60px;
-  border-radius: 30px;
+  -webkit-border-radius: 30px;
+          border-radius: 30px;
   background-color: #fff;
   border: 1px solid transparent;
   color: #573CDA;
@@ -517,12 +531,15 @@ label {
   font-size: 18px;
   line-height: 24px;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
+  -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   grid-gap: 10px;
@@ -566,6 +583,7 @@ label {
 
 .option {
   display: -webkit-inline-box;
+  display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
 }
@@ -601,6 +619,7 @@ label {
   width: 24px;
   height: 24px;
   left: 0;
+  top: -webkit-calc(50% - 12px);
   top: calc(50% - 12px);
   overflow: hidden;
   background-color: #fff;
@@ -614,10 +633,12 @@ label {
   content: '';
   display: block;
   position: absolute;
-  border-radius: 2px;
+  -webkit-border-radius: 2px;
+          border-radius: 2px;
   width: 18px;
   height: 18px;
   left: 3px;
+  top: -webkit-calc(50% - 9px);
   top: calc(50% - 9px);
   background-color: #C0BCD6;
 }
@@ -632,6 +653,7 @@ label {
   position: absolute;
   z-index: 10;
   left: 3px;
+  top: -webkit-calc(50% - 9px);
   top: calc(50% - 9px);
   opacity: 1;
   background-size: 79%;
@@ -642,12 +664,15 @@ label {
 
 .checkbox-ios {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
   height: 29px;
@@ -669,7 +694,8 @@ label {
   width: 22px;
   height: 14px;
   border: 2px solid #573CDA;
-  border-radius: 25%/50%;
+  -webkit-border-radius: 25%/50%;
+          border-radius: 25%/50%;
   vertical-align: top;
   background: transparent;
   -webkit-transition: .2s;
@@ -685,7 +711,8 @@ label {
   display: inline-block;
   width: 6px;
   height: 6px;
-  border-radius: 50%;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
   background: #515994;
   -webkit-transition: .15s;
   -o-transition: .15s;
@@ -930,6 +957,7 @@ label {
   content: '';
   display: block;
   position: absolute;
+  top: -webkit-calc(50% - 8px);
   top: calc(50% - 8px);
   right: 0;
   height: 6px;
@@ -950,6 +978,7 @@ label {
   content: '';
   display: block;
   position: absolute;
+  top: -webkit-calc(50% - 4px);
   top: calc(50% - 4px);
   right: 10px;
   height: 8px;
@@ -966,7 +995,8 @@ label {
   width: 4px;
   height: 4px;
   background-color: #2A206A;
-  border-radius: 2px;
+  -webkit-border-radius: 2px;
+          border-radius: 2px;
   position: relative;
 }
 
@@ -978,7 +1008,8 @@ label {
   height: 4px;
   display: block;
   background-color: #2A206A;
-  border-radius: 2px;
+  -webkit-border-radius: 2px;
+          border-radius: 2px;
 }
 
 .tree-dots:after {
@@ -992,7 +1023,8 @@ label {
 .i-f {
   border: 1px solid #C0BCD6;
   padding: 10px 8px;
-  border-radius: 0;
+  -webkit-border-radius: 0;
+          border-radius: 0;
   -webkit-appearance: none;
   background: #fff;
   width: 100%;
@@ -1055,7 +1087,8 @@ label {
 .i-f2 {
   border: none;
   padding: 5px 5px 5px 0;
-  border-radius: 0;
+  -webkit-border-radius: 0;
+          border-radius: 0;
   -webkit-appearance: none;
   background: #fff;
   width: 100%;
@@ -1139,11 +1172,13 @@ label {
   content: '';
   display: block;
   position: absolute;
+  top: -webkit-calc(50% - 7.5px);
   top: calc(50% - 7.5px);
   left: 0;
   height: 15px;
   width: 15px;
-  border-radius: 50%;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
   background-color: #1BC082;
 }
 
@@ -1170,7 +1205,9 @@ label {
   display: none;
   position: fixed;
   z-index: 110;
+  top: -webkit-calc(50% - 350px);
   top: calc(50% - 350px);
+  left: -webkit-calc(50% - 250px);
   left: calc(50% - 250px);
   width: 500px;
   height: 700px;
@@ -1204,10 +1241,12 @@ label {
 
 .popUp-message-form {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
 }
@@ -1301,10 +1340,12 @@ label {
 
 .form_radio label {
   display: -webkit-inline-box;
+  display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
   grid-gap: 4px;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer;
@@ -1338,7 +1379,8 @@ label {
   left: 0;
   bottom: 1px;
   border: 2px solid #C4C4C4;
-  border-radius: 50%;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
   background-color: transparent;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -1350,9 +1392,12 @@ label {
   width: 12px;
   height: 12px;
   position: absolute;
+  left: -webkit-calc(50% - 6px);
   left: calc(50% - 6px);
+  bottom: -webkit-calc(50% - 5px);
   bottom: calc(50% - 5px);
-  border-radius: 50%;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
   background: transparent;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -1375,7 +1420,8 @@ label {
           box-sizing: border-box;
   padding: 10px 20px 10px 10px;
   height: 40px;
-  border-radius: 0;
+  -webkit-border-radius: 0;
+          border-radius: 0;
   -webkit-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
@@ -1451,7 +1497,8 @@ label {
           box-sizing: border-box;
   padding: 10px 0 10px 0;
   height: 40px;
-  border-radius: 0;
+  -webkit-border-radius: 0;
+          border-radius: 0;
   -webkit-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
@@ -1774,9 +1821,11 @@ label {
 .header-box {
   position: relative;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
 }
@@ -1800,18 +1849,22 @@ label {
 .header-r {
   margin-left: auto;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
 .header-list {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   grid-gap: 60px;
@@ -1830,9 +1883,11 @@ label {
 
 .header-user {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   grid-gap: 10px;
@@ -1856,7 +1911,8 @@ label {
   max-height: 42px;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 50%;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
 }
 
 .header-user-menu .menu-name {
@@ -1887,9 +1943,11 @@ label {
 
 .header-user .menu-list-item a {
   display: -webkit-inline-box;
+  display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   font-family: "WorkSans-Regular";
@@ -1909,18 +1967,22 @@ label {
   border: 1px solid #F6F4FF;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border-radius: 30px;
+  -webkit-border-radius: 30px;
+          border-radius: 30px;
   font-family: "WorkSans-Medium";
   font-weight: 600;
   font-size: 14px;
   line-height: 16px;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
+  -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
   color: #FFFFFF;
@@ -1934,7 +1996,8 @@ label {
   background: #C0BCD699;
   -webkit-box-shadow: 3px 3px 8px #1711323F;
           box-shadow: 3px 3px 8px #1711323F;
-  border-radius: 6px;
+  -webkit-border-radius: 6px;
+          border-radius: 6px;
   padding: 0 8px;
   z-index: 100;
   -webkit-transform: translateY(-130px);
@@ -1944,6 +2007,7 @@ label {
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
@@ -1986,15 +2050,18 @@ label {
 
   .footer-bg .header-list {
     display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: space-evenly;
+    -webkit-justify-content: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
   }
 
   .header-box {
     -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
@@ -2082,7 +2149,9 @@ label {
     width: 100%;
     height: 100%;
     z-index: 1000;
+    top: -webkit-calc(50% - 50%);
     top: calc(50% - 50%);
+    left: -webkit-calc(50% - 50%);
     left: calc(50% - 50%);
   }
 

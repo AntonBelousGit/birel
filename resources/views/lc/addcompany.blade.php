@@ -2,7 +2,7 @@
 
 @section('content')
 <link rel="stylesheet" href="{{asset('css/pages/page-lc-add-company.min.css')}}">
-		<section class="add">
+<section class="add">
 	<div class="add-company">
 		@if(URL::previous() != route('companies.create'))
 		<div class="add-company-link active">

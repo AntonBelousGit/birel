@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <!-- Styles -->
     <link rel="stylesheet" href="{{asset('css/lib/select2.min.css')}}">
+
     <link rel="stylesheet" href="{{ asset('css/default/style-lc.min.css') }}">
     @yield('style')
 </head>

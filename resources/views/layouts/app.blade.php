@@ -14,7 +14,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
+    <link rel="stylesheet" href="{{asset('css/lib/iconmoon.min.css')}}">
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/default/style.min.css') }}">
     @yield('front_style')

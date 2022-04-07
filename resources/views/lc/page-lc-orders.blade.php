@@ -158,10 +158,9 @@
                     </td>
                     <td class="body-row-item center">
                         <div>
-                            <button class="reset-btn" type="button"
-                                    data-tippy-content="Подсказка о возможности редактирования своего ордера ">
+                            <a href="#" data-tippy-content="Подсказка о возможности редактирования своего ордера ">
                                 <i class="icon icon-pen-blue"></i>
-                            </button>
+                            </a>
                         </div>
                     </td>
                 </tr>
@@ -226,10 +225,9 @@
                     </td>
                     <td class="body-row-item center">
                         <div>
-                            <button class="reset-btn" type="button"
-                                    data-tippy-content="Подсказка о возможности редактирования своего ордера ">
+                            <a href="#" data-tippy-content="Подсказка о возможности редактирования своего ордера ">
                                 <i class="icon icon-pen-blue"></i>
-                            </button>
+                            </a>
                         </div>
                     </td>
                 </tr>
@@ -294,10 +292,9 @@
                     </td>
                     <td class="body-row-item center">
                         <div>
-                            <button class="reset-btn" type="button"
-                                    data-tippy-content="Подсказка о возможности редактирования своего ордера ">
+                            <a href="#" data-tippy-content="Подсказка о возможности редактирования своего ордера ">
                                 <i class="icon icon-pen-blue"></i>
-                            </button>
+                            </a>
                         </div>
                     </td>
                 </tr>
@@ -362,10 +359,9 @@
                     </td>
                     <td class="body-row-item center">
                         <div>
-                            <button class="reset-btn" type="button"
-                                    data-tippy-content="Подсказка о возможности редактирования своего ордера ">
+                            <a href="#" data-tippy-content="Подсказка о возможности редактирования своего ордера ">
                                 <i class="icon icon-pen-blue"></i>
-                            </button>
+                            </a>
                         </div>
                     </td>
                 </tr>
