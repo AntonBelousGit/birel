@@ -1,5 +1,19 @@
 @extends('layouts.main')
 
+@section('style')
+    <link rel="stylesheet" href="{{asset('css/pages/page-lc-one-company.min.css')}}">
+@endsection
+
+@section('scripts')
+    <script src="{{asset('js/lib/jquery.min.js')}}"></script>
+    <script src="{{asset('js/lib/select2.min.js')}}"></script>
+    <script src="{{asset('js/default/default-lc.js')}}"></script>
+
+    <script src="{{asset('js/pages/page-lc-company.js')}}" type="module"></script>
+    <script src="{{asset('js/pages/page-lc-one-company.js')}}"></script>
+@endsection
+
+
 @section('content')
 
     <section class="one">
@@ -920,15 +934,3 @@
     </section>
 @endsection
 
-@section('style')
-    <link rel="stylesheet" href="{{asset('css/pages/page-lc-one-company.min.css')}}">
-@endsection
-
-@section('scripts')
-    <script src="{{asset('js/lib/jquery.min.js')}}"></script>
-    <script src="{{asset('js/lib/select2.min.js')}}"></script>
-    <script src="{{asset('js/default/default-lc.js')}}"></script>
-
-    <script src="{{asset('js/pages/page-lc-company.js')}}" type="module"></script>
-    <script src="{{asset('js/pages/page-lc-one-company.js')}}"></script>
-@endsection

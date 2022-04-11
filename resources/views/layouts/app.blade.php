@@ -65,12 +65,9 @@
                         <i class="icon-user"></i>
                         {{ Auth::user()->name }}
                     </a>
-                    <a class="btn2 btn2-green w170" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
-                    </a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                         @csrf
+                        <input type="submit" class="btn2 btn2-green w170" value="{{ __('Logout') }}">
                     </form>
                 @endauth
             </div>

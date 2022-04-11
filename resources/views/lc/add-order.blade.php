@@ -1,7 +1,14 @@
 @extends('layouts.main')
 
 @section('style')
+    <link rel="stylesheet" href="{{asset('css/lib/daterangepicker.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/pages/page-lc-add-order.min.css')}}">
+@endsection
+
+@section('scripts')
+    <script src="{{asset('js/lib/moment.min.js')}}"></script>
+    <script src="{{asset('js/lib/daterangepicker.min.js')}}"></script>
+    <script src="{{asset('js/pages/page-lc-add-order-ask.min.js')}}" type="module"></script>
 @endsection
 
 @section('content')
