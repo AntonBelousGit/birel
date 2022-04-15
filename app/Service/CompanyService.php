@@ -5,16 +5,19 @@ namespace App\Service;
 
 
 use App\Models\Company;
+use App\Repositories\CompanyFinanceRepository;
 use App\Repositories\CompanyRepository;
 use Throwable;
 
 class CompanyService
 {
     protected $companyRepository;
+    protected $companyFinanceRepository;
 
-    public function __construct(CompanyRepository $companyRepository)
+    public function __construct(CompanyRepository $companyRepository, CompanyFinanceRepository $companyFinanceRepository)
     {
         $this->companyRepository = $companyRepository;
+        $this->companyFinanceRepository = $companyFinanceRepository;
     }
 
     public function getAllCompanies()
@@ -26,6 +29,12 @@ class CompanyService
     {
         return $this->companyRepository->getCompanyWithCategories($id);
     }
+
+    public function getAllFinancesInfo($id)
+    {
+        return $this->companyFinanceRepository->getAllFinancesInfo($id);
+    }
+
     public function store($request, $name)
     {
         try {

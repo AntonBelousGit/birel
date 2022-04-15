@@ -13,7 +13,8 @@
                         <li class="breadcrumb-item">Table</li>
                         <li class="breadcrumb-item active">Jquery Datatable</li>
                     </ul>
-                    <a href="{{ route('company.create') }}" class="btn btn-sm btn-primary" title="">Create New</a>
+                    <a href="{{ route('company.id.financing.create',$id) }}" class="btn btn-sm btn-primary" title="">Create
+                        New</a>
                 </div>
             </div>
         </div>
@@ -27,9 +28,9 @@
                             </h2>
                             <ul class="header-dropdown dropdown dropdown-animated scale-left">
                                 <li><a href="javascript:void(0);" data-toggle="cardloading" data-loading-effect="pulse"><i
-                                                class="icon-refresh"></i></a></li>
+                                            class="icon-refresh"></i></a></li>
                                 <li><a href="javascript:void(0);" class="full-screen"><i
-                                                class="icon-size-fullscreen"></i></a></li>
+                                            class="icon-size-fullscreen"></i></a></li>
                                 <li class="dropdown">
                                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"
                                        role="button" aria-haspopup="true" aria-expanded="false"></a>
@@ -46,46 +47,49 @@
                                 <table class="table table-bordered table-hover js-basic-example dataTable table-custom">
                                     <thead>
                                     <tr>
-                                        <th>Company Name</th>
-                                        <th>Company Address</th>
-                                        <th>Image</th>
-                                        <th>Description</th>
-                                        <th>Valuation</th>
-                                        <th>Valuation</th>
+                                        <th>Date</th>
+                                        <th>Transaction Name</th>
+                                        <th>Amount Raised</th>
+                                        <th>Raised To Date</th>
+                                        <th>Issue Price</th>
+                                        <th>Post Money Valuation</th>
+                                        <th>Key Investors</th>
                                         <th>Status</th>
                                     </tr>
                                     </thead>
                                     <tfoot>
                                     <tr>
-                                        <th>Company Name</th>
-                                        <th>Company Address</th>
-                                        <th>Image</th>
-                                        <th>Description</th>
-                                        <th>Valuation</th>
-                                        <th>Valuation</th>
+                                        <th>Date</th>
+                                        <th>Transaction Name</th>
+                                        <th>Amount Raised</th>
+                                        <th>Raised To Date</th>
+                                        <th>Issue Price</th>
+                                        <th>Post Money Valuation</th>
+                                        <th>Key Investors</th>
                                         <th>Status</th>
                                     </tr>
                                     </tfoot>
                                     <tbody>
-                                    @forelse($companies as $item)
+                                    @forelse($company_finances_info as $item)
                                         <tr>
-                                            <td>{{$item->companyName}}</td>
-                                            <td>{{$item->companyAddress}}</td>
-                                            <td><img src="{{asset('storage/companies/'.$item->image)}}" alt="" style="max-height:50px"></td>
-                                            <td>{{$item->description}}</td>
-                                            <td>{{number_format($item->valuation,2)}}</td>
-                                            <td>{{$item->status? 'active':'inactive'}}</td>
+                                            <td>{{$item->date}}</td>
+                                            <td>{{$item->transaction_name}}</td>
+                                            <td>{{$item->amount_raised}}</td>
+                                            <td>{{$item->raised_to_date}}</td>
+                                            <td>{{number_format($item->issue_price)}}</td>
+                                            <td>{{number_format($item->post_money_valuation)}}</td>
+                                            <td>{{$item->key_investors}}</td>
                                             <td>
-                                                <a href="{{ route('company.edit',$item) }}">Edit</a>
-                                                <a href="{{ route('company.id.financing',$item) }}">Financing</a>
-                                                <form action="{{route('company.destroy',$item)}}" class="d-inline"
-                                                      method="POST">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button class="btn btn-sm btn-icon btn-pure btn-default on-default button-remove"
-                                                            data-toggle="tooltip" data-original-title="Remove"><i
-                                                                class="icon-trash" aria-hidden="true"></i></button>
-                                                </form>
+                                                <a href="{{ route('company.id.financing.edit',['company' => $id, 'companyFinance' => $item]) }}"> Edit </a>
+{{--                                                <form action="{{route('company.destroy',$item)}}" class="d-inline"--}}
+{{--                                                      method="POST">--}}
+{{--                                                    @csrf--}}
+{{--                                                    @method('DELETE')--}}
+{{--                                                    <button--}}
+{{--                                                        class="btn btn-sm btn-icon btn-pure btn-default on-default button-remove"--}}
+{{--                                                        data-toggle="tooltip" data-original-title="Remove"><i--}}
+{{--                                                            class="icon-trash" aria-hidden="true"></i></button>--}}
+{{--                                                </form>--}}
                                             </td>
                                         </tr>
                                     @empty
