@@ -114,8 +114,10 @@ class CompanyController extends Controller
             })->first();
 
             $response = $result->finance->first()->info;
-            return new CompanyFinanceInfoResource($response);
-
+            if ($response) {
+                return new CompanyFinanceInfoResource($response);
+            }
+            return response()->json(['message' => 'Not Found!'], 404);
         } catch (Throwable $e) {
             report($e);
             return response()->json(['message' => 'Not Found!'], 404);
