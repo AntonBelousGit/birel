@@ -5,15 +5,7 @@
         <div class="block-header">
             <div class="row clearfix">
                 <div class="col-md-6 col-sm-12">
-                    <h2>Create User</h2>
-                </div>
-                <div class="col-md-6 col-sm-12 text-right">
-                    <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="/"><i class="icon-home"></i></a></li>
-                        <li class="breadcrumb-item">Table</li>
-                        <li class="breadcrumb-item active">Jquery Datatable</li>
-                    </ul>
-                    <a href="javascript:void(0);" class="btn btn-sm btn-primary" title="">Create New</a>
+                    <h2>Edit Company Finance</h2>
                 </div>
             </div>
         </div>
@@ -24,60 +16,88 @@
             <div class="row clearfix">
                 <div class="col-lg-12">
                     <div class="form-control">
-                        <form action="{{ route('company.update',$company) }}" method="post"
-                              enctype="multipart/form-data">
-                            @csrf
+                        <form action="{{ route('company.id.financing.update',['company'=> $company,'companyFinance'=>$finance]) }}" method="post">
                             @method('patch')
+                            @csrf
                             <div class="form-group">
-                                <input type="text" class="form-control" name="companyName" placeholder="Company Name"
-                                       value="{{$company->companyName}}">
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="companyAddress"
-                                       placeholder="Company Address" value="{{$company->companyAddress}}">
+                                <input type="date" class="form-control" name="date" placeholder="Date"
+                                       value="{{old('date',$finance->date->format('Y-m-d'))}}">
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control" name="description"
-                                          placeholder="Description">{{$company->description}}</textarea>
+                                <input type="text" class="form-control" name="transaction_name"
+                                       placeholder="Transaction Name" value="{{old('transaction_name',$finance->transaction_name)}}">
                             </div>
                             <div class="form-group">
-<<<<<<< Updated upstream
-                                <input type="number" class="form-control" min="0"  name="valuation"
-=======
-                                <input type="number" class="form-control" min="0" step="0.01" name="valuation"
->>>>>>> Stashed changes
-                                       placeholder="Valuation" value="{{$company->valuation}}">
+                                <input type="number" min="0" step="1" class="form-control" name="amount_raised"
+                                       placeholder="Amount raised" value="{{old('transaction_name',$finance->amount_raised)}}">
                             </div>
                             <div class="form-group">
-                                <input type="file" class="form-control" name="file" placeholder="Image">
+                                <input type="number" min="0" step="1" class="form-control" name="raised_to_date"
+                                       placeholder="Raised To Date" value="{{old('raised_to_date',$finance->raised_to_date)}}">
                             </div>
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <label class="input-group-text" for="inputGroupSelect01">Categories</label>
-                                </div>
-                                <select name="category_id[]" class="custom-select" multiple required>
-                                    @foreach($categories as $item)
-                                        <option value="{{$item->id}}" @if($company->category->pluck('id')->contains($item->id)) selected @endif>{{$item->name}}</option>
-                                    @endforeach
-                                </select>
+                            <div class="form-group">
+                                <input type="number" min="0" step="1" class="form-control" name="issue_price"
+                                       placeholder="Issue Price" value="{{old('issue_price',$finance->issue_price)}}">
                             </div>
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <label class="input-group-text" for="inputGroupSelect01">Status</label>
-                                </div>
-                                <select name="status" class="custom-select">
-                                    <option value="0" @if ($company->status === 0) selected @endif>Inactive</option>
-                                    <option value="1" @if ($company->status === 1) selected @endif>Active</option>
-                                </select>
+                            <div class="form-group">
+                                <input type="number" min="0" step="1" class="form-control" name="post_money_valuation"
+                                       placeholder="Post Money Valuation" value="{{old('post_money_valuation',$finance->post_money_valuation)}}">
                             </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <div class="form-group">
+                                <input type="text"  class="form-control" name="key_investors"
+                                       placeholder="Key Investors" value="{{old('key_investors',$finance->key_investors)}}">
+                            </div>
+
+                            <hr>
+                            <div class="form-group">
+                                <input type="number" min="0" step="0.1" class="form-control" name="info[price_per_share]"
+                                       placeholder="Price Per Share" value="{{old('info["price_per_share"]',$finance->info?->price_per_share)}}">
+                            </div>
+                            <div class="form-group">
+                                <input type="text"  class="form-control" name="info[liquidation_pref_order]"
+                                       placeholder="Liquidation Pref Order" value="{{old('info[liquidation_pref_order]',$finance->info?->liquidation_pref_order)}}">
+                            </div>
+                            <div class="form-group">
+                                <input type="number" min="0" step="0.1" class="form-control" name="info[dividend_rate]"
+                                       placeholder="Dividend Rate" value="{{old('info[dividend_rate]',$finance->info?->dividend_rate)}}">
+                            </div>
+                            <div class="form-group">
+                                <input type="text"  class="form-control" name="info[investors]"
+                                       placeholder="Investors" value="{{old('info[investors]',$finance->info?->investors)}}">
+                            </div>
+                            <div class="form-group">
+                                <input type="text"  class="form-control" name="info[shares_outstanding]"
+                                       placeholder="Shares Outstanding" value="{{old('info[shares_outstanding]',$finance->info?->shares_outstanding)}}">
+                            </div>
+                            <div class="form-group">
+                                <input type="number" min="0" step="0.1" class="form-control" name="info[liquidation_pref_as_multiplier]"
+                                       placeholder="Liquidation Pref As Multiplier" value="{{old('info[liquidation_pref_as_multiplier]',$finance->info?->liquidation_pref_as_multiplier)}}">
+                            </div>
+                            <div class="form-group">
+                                <input type="text"  class="form-control" name="info[cumulative]"
+                                       placeholder="Cumulative" value="{{old('info[cumulative]',$finance->info?->cumulative)}}">
+                            </div>
+                            <div class="form-group">
+                                <input type="number" min="0" step="0.1" class="form-control" name="info[percent_shares_outstanding]"
+                                       placeholder="Percent Shares Outstanding" value="{{old('info[percent_shares_outstanding]',$finance->info?->percent_shares_outstanding)}}">
+                            </div>
+                            <div class="form-group">
+                                <input type="number" min="0" step="0.1" class="form-control" name="info[conversion_rate]"
+                                       placeholder="Conversion Rate" value="{{old('info[conversion_rate]',$finance->info?->conversion_rate)}}">
+                            </div>
+                            <div class="form-group">
+                                <input type="text"  class="form-control" name="info[participating]"
+                                       placeholder="Participating" value="{{old('info[participating]',$finance->info?->participating)}}">
+                            </div>
+                            <div class="form-group">
+                                <input type="text"  class="form-control" name="info[participation_cap]"
+                                       placeholder="Participation Cap" value="{{old('info[participation_cap]',$finance->info?->participation_cap)}}">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Update</button>
                         </form>
                     </div>
                 </div>
-
             </div>
-
-
         </div>
     </div>
 @endsection

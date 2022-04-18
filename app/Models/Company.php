@@ -12,21 +12,27 @@ class Company extends Model
     protected $with = ['category'];
 
     protected $fillable = [
-      'companyName',
-      'companyAddress',
-      'image',
-      'description',
-      'valuation',
-      'status',
+        'companyName',
+        'companyAddress',
+        'image',
+        'description',
+        'valuation',
+        'status',
     ];
 
     public function category()
     {
         return $this->belongsToMany(Category::class);
     }
-       public function wali()
+
+    public function wali()
     {
         return $this->belongsTo(Watchlist::class, 'id', 'company_id');
         //->where('user_id', Auth::user->id);
+    }
+
+    public function finance()
+    {
+        return $this->hasMany(CompanyFinance::class,'company_id');
     }
 }

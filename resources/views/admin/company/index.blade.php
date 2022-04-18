@@ -46,6 +46,7 @@
                                 <table class="table table-bordered table-hover js-basic-example dataTable table-custom">
                                     <thead>
                                     <tr>
+                                        <th>#</th>
                                         <th>Company Name</th>
                                         <th>Company Address</th>
                                         <th>Image</th>
@@ -57,6 +58,7 @@
                                     </thead>
                                     <tfoot>
                                     <tr>
+                                        <th>#</th>
                                         <th>Company Name</th>
                                         <th>Company Address</th>
                                         <th>Image</th>
@@ -69,6 +71,7 @@
                                     <tbody>
                                     @forelse($companies as $item)
                                         <tr>
+                                            <th>{{$loop->iteration}}</th>
                                             <td>{{$item->companyName}}</td>
                                             <td>{{$item->companyAddress}}</td>
                                             <td><img src="{{asset('storage/companies/'.$item->image)}}" alt="" style="max-height:50px"></td>

@@ -20,10 +20,13 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'],
             ]
         );
 
+
+
         Route::controller(CompanyFinanceController::class)->group(function (){
             Route::get('company/{id}/financing','index')->name('company.id.financing');
             Route::get('company/{company}/financing/create','create')->name('company.id.financing.create');
             Route::post('company/{company}/financing/store','store')->name('company.id.financing.store');
             Route::get('company/{company}/financing/{companyFinance}/edit','edit')->name('company.id.financing.edit');
+            Route::patch('company/{company}/financing/{companyFinance}/update','update')->name('company.id.financing.update');
         });
     });

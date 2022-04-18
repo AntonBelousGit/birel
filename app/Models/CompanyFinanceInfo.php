@@ -9,6 +9,21 @@ class CompanyFinanceInfo extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'price_per_share',
+        'liquidation_pref_order',
+        'dividend_rate',
+        'investors',
+        'shares_outstanding',
+        'liquidation_pref_as_multiplier',
+        'cumulative',
+        'percent_shares_outstanding',
+        'conversion_rate',
+        'participating',
+        'participation_cap',
+        'company_finance_id'
+    ];
+
     public function companyFinance()
     {
         return $this->belongsTo(CompanyFinance::class);

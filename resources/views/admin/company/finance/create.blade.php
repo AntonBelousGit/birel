@@ -29,7 +29,7 @@
                             </div>
                             <div class="form-group">
                                 <input type="number" min="0" step="1" class="form-control" name="amount_raised"
-                                       placeholder="Transaction Name" value="{{old('transaction_name')}}">
+                                       placeholder="Amount raised" value="{{old('amount_raised')}}">
                             </div>
                             <div class="form-group">
                                 <input type="number" min="0" step="1" class="form-control" name="raised_to_date"
@@ -47,55 +47,52 @@
                                 <input type="text"  class="form-control" name="key_investors"
                                        placeholder="Key Investors" value="{{old('key_investors')}}">
                             </div>
-                            <div class="form-group">
-                                <input type="number" min="0" step="1" class="form-control" name="post_money_valuation"
-                                       placeholder="Post Money Valuation" value="{{old('post_money_valuation')}}">
-                            </div>
+
 
                             <hr>
                             <div class="form-group">
-                                <input type="number" min="0" step="0.1" class="form-control" name="info['price_per_share']"
-                                       placeholder="Price Per Share" value="{{old('info["price_per_share"]')}}">
+                                <input type="number" min="0" step="0.1" class="form-control" name="info[price_per_share]"
+                                       placeholder="Price Per Share" value="{{old('info[price_per_share]')}}">
                             </div>
                             <div class="form-group">
-                                <input type="text"  class="form-control" name="info['liquidation_pref_order']"
-                                       placeholder="Liquidation Pref Order" value="{{old('info["liquidation_pref_order"]')}}">
+                                <input type="text"  class="form-control" name="info[liquidation_pref_order]"
+                                       placeholder="Liquidation Pref Order" value="{{old('info[liquidation_pref_order]')}}">
                             </div>
                             <div class="form-group">
-                                <input type="number" min="0" step="0.1" class="form-control" name="info['dividend_rate']"
-                                       placeholder="Dividend Rate" value="{{old('info["dividend_rate"]')}}">
+                                <input type="number" min="0" step="0.1" class="form-control" name="info[dividend_rate]"
+                                       placeholder="Dividend Rate" value="{{old('info[dividend_rate]')}}">
                             </div>
                             <div class="form-group">
-                                <input type="text"  class="form-control" name="info['investors']"
-                                       placeholder="Investors" value="{{old('info["investors"]')}}">
+                                <input type="text"  class="form-control" name="info[investors]"
+                                       placeholder="Investors" value="{{old('info[investors]')}}">
                             </div>
                             <div class="form-group">
-                                <input type="text"  class="form-control" name="info['shares_outstanding']"
-                                       placeholder="Shares Outstanding" value="{{old('info["shares_outstanding"]')}}">
+                                <input type="text"  class="form-control" name="info[shares_outstanding]"
+                                       placeholder="Shares Outstanding" value="{{old('info[shares_outstanding]')}}">
                             </div>
                             <div class="form-group">
-                                <input type="number" min="0" step="0.1" class="form-control" name="info['liquidation_pref_as_multiplier']"
-                                       placeholder="Liquidation Pref As Multiplier" value="{{old('info["liquidation_pref_as_multiplier"]')}}">
+                                <input type="number" min="0" step="0.1" class="form-control" name="info[liquidation_pref_as_multiplier]"
+                                       placeholder="Liquidation Pref As Multiplier" value="{{old('info[liquidation_pref_as_multiplier]')}}">
                             </div>
                             <div class="form-group">
-                                <input type="text"  class="form-control" name="info['cumulative']"
-                                       placeholder="Cumulative" value="{{old('info["cumulative"]')}}">
+                                <input type="text"  class="form-control" name="info[cumulative]"
+                                       placeholder="Cumulative" value="{{old('info[cumulative]')}}">
                             </div>
                             <div class="form-group">
-                                <input type="number" min="0" step="0.1" class="form-control" name="info['percent_shares_outstanding']"
-                                       placeholder="Percent Shares Outstanding" value="{{old('info["percent_shares_outstanding"]')}}">
+                                <input type="number" min="0" step="0.1" class="form-control" name="info[percent_shares_outstanding]"
+                                       placeholder="Percent Shares Outstanding" value="{{old('info[percent_shares_outstanding]')}}">
                             </div>
                             <div class="form-group">
-                                <input type="number" min="0" step="0.1" class="form-control" name="info['conversion_rate']"
-                                       placeholder="Conversion Rate" value="{{old('info["conversion_rate"]')}}">
+                                <input type="number" min="0" step="0.1" class="form-control" name="info[conversion_rate]"
+                                       placeholder="Conversion Rate" value="{{old('info[conversion_rate]')}}">
                             </div>
                             <div class="form-group">
-                                <input type="text"  class="form-control" name="info['participating']"
-                                       placeholder="Participating" value="{{old('info["participating"]')}}">
+                                <input type="text"  class="form-control" name="info[participating]"
+                                       placeholder="Participating" value="{{old('info[participating]')}}">
                             </div>
                             <div class="form-group">
-                                <input type="text"  class="form-control" name="info['participation_cap']"
-                                       placeholder="Participation Cap" value="{{old('info["participation_cap"]')}}">
+                                <input type="text"  class="form-control" name="info[participation_cap]"
+                                       placeholder="Participation Cap" value="{{old('info[participation_cap]')}}">
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>

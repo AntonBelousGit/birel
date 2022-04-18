@@ -3,13 +3,15 @@
 namespace App\Http\Controllers\Admin\Company\Finance;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CompanyFinanceRequest;
 use App\Models\Company;
 use App\Models\CompanyFinance;
 use App\Models\CompanyFinanceInfo;
 use App\Service\CompanyService;
 use Illuminate\Contracts\View\View;
-use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Response;
+use Throwable;
 
 class CompanyFinanceController extends Controller
 {
@@ -20,6 +22,7 @@ class CompanyFinanceController extends Controller
     {
         $this->companyService = $companyService;
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -28,7 +31,7 @@ class CompanyFinanceController extends Controller
     public function index($id)
     {
         $company_finances_info = $this->companyService->getAllFinancesInfo($id);
-        return view('admin.company.finance.index',compact('company_finances_info','id'));
+        return view('admin.company.finance.index', compact('company_finances_info', 'id'));
     }
 
     /**
@@ -38,33 +41,26 @@ class CompanyFinanceController extends Controller
      */
     public function create(Company $company)
     {
-        return view('admin.company.finance.create',compact('company'));
+        return view('admin.company.finance.create', compact('company'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return Response
+     * @param Company $company
+     * @param CompanyFinanceRequest $companyFinanceRequest
+     * @return RedirectResponse
      */
-    public function store(Request $request)
+    public function store(Company $company, CompanyFinanceRequest $companyFinanceRequest)
     {
-        if(!empty(array_filter($request->input('info')))){
-            dd('не пусто');
+
+        $companyFinance = (new CompanyFinance())->create($companyFinanceRequest->validated() + ['company_id' => $company->id]);
+
+        if (!empty(array_filter($companyFinanceRequest->info))) {
+            (new CompanyFinanceInfo())->create($companyFinanceRequest->info + ['company_finance_id' => $companyFinance->id]);
         }
-        dd('пусто');
 
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param CompanyFinance $companyFinance
-     * @return void
-     */
-    public function show(CompanyFinance $companyFinance)
-    {
-        //
+        return redirect()->route('company.id.financing', $company);
     }
 
     /**
@@ -72,21 +68,47 @@ class CompanyFinanceController extends Controller
      *
      * @return void
      */
-    public function edit(Company $company,CompanyFinance $companyFinance)
+    public function edit(Company $company, $companyFinance)
     {
+        $finance = CompanyFinance::with('info')->find($companyFinance);
 
+        return view('admin.company.finance.edit', compact('company', 'finance'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param CompanyFinance $companyFinance
-     * @return Response
+     * @param CompanyFinanceRequest $companyFinanceRequest
+     * @param Company $company
+     * @param $companyFinance
+     * @return RedirectResponse
      */
-    public function update(Request $request, CompanyFinance $companyFinance)
+    public function update(CompanyFinanceRequest $companyFinanceRequest, Company $company, $companyFinance)
     {
-        //
+
+        $finance = CompanyFinance::with('info')->find($companyFinance);
+        try {
+
+            if ($company->id === $finance->company_id) {
+
+                $finance->update($companyFinanceRequest->validated());
+
+                if (is_null($finance->info)) {
+                    (new CompanyFinanceInfo())->create($companyFinanceRequest->info + ['company_finance_id' => $finance->id]);
+                } else {
+                    $finance->info->update($companyFinanceRequest->info);
+                }
+
+                return redirect()->back();
+//                return redirect()->route('company.id.financing', $company);
+            }
+
+        } catch (Throwable $e) {
+            report($e);
+            abort(500);
+        }
+
+        return redirect()->back();
     }
 
     /**

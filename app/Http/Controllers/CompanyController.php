@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreWatchlistRequest;
+use App\Http\Resources\CompanyFinanceInfoResource;
 use App\Models\Company;
 use App\Models\Category;
+use App\Models\CompanyFinance;
+use App\Models\CompanyFinanceInfo;
 use App\Models\Watchlist;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -12,7 +15,9 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreCompanyRequest;
+use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Http\Response;
+use Throwable;
 
 class CompanyController extends Controller
 {
@@ -62,8 +67,9 @@ class CompanyController extends Controller
      * @param Company $company
      * @return Application|Factory|View
      */
-    public function show(Company $company)
+    public function show($id)
     {
+        $company = Company::with('finance')->find($id);
         return view('lc.page-lc-one-company', compact('company'));
     }
 
@@ -75,7 +81,6 @@ class CompanyController extends Controller
      */
     public function edit(Company $company)
     {
-        //
     }
 
     /**
@@ -99,6 +104,22 @@ class CompanyController extends Controller
     public function destroy(Company $company)
     {
         //
+    }
+
+    public function getFinance($company, Request $request)
+    {
+        try {
+            $result = Company::where('id', $company)->with('finance', function ($q) use ($request) {
+                $q->where('id', $request->input('id'))->with('info');
+            })->first();
+
+            $response = $result->finance->first()->info;
+            return new CompanyFinanceInfoResource($response);
+
+        } catch (Throwable $e) {
+            report($e);
+            return response()->json(['message' => 'Not Found!'], 404);
+        }
     }
 
     public function wali(StoreWatchlistRequest $request)

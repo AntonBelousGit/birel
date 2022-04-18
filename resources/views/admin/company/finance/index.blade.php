@@ -47,6 +47,7 @@
                                 <table class="table table-bordered table-hover js-basic-example dataTable table-custom">
                                     <thead>
                                     <tr>
+                                        <th>#</th>
                                         <th>Date</th>
                                         <th>Transaction Name</th>
                                         <th>Amount Raised</th>
@@ -59,6 +60,7 @@
                                     </thead>
                                     <tfoot>
                                     <tr>
+                                        <th>#</th>
                                         <th>Date</th>
                                         <th>Transaction Name</th>
                                         <th>Amount Raised</th>
@@ -72,6 +74,7 @@
                                     <tbody>
                                     @forelse($company_finances_info as $item)
                                         <tr>
+                                            <th>{{$loop->iteration}}</th>
                                             <td>{{$item->date}}</td>
                                             <td>{{$item->transaction_name}}</td>
                                             <td>{{$item->amount_raised}}</td>

@@ -11,10 +11,12 @@ class CompanyFinance extends Model
 
     protected $table = 'company_finances';
 
-    protected $fillable = ['date','transaction_name','amount_raised','raised_to_date','issue_price','post_money_valuation','key_investors'];
+    protected $fillable = ['date','transaction_name','amount_raised','raised_to_date','issue_price','post_money_valuation','key_investors','company_id'];
+
+    protected $dates = ['date'];
 
     public function info()
     {
-        return $this->hasMany(CompanyFinanceInfo::class,'company_finance_id');
+        return $this->hasOne(CompanyFinanceInfo::class,'company_finance_id');
     }
 }
