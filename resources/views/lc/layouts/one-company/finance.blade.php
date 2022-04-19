@@ -89,6 +89,7 @@
                         </div>
                     </td>
                 </tr>
+                <tr class="body-row body-row-info"></tr>
             @empty
 
             @endforelse
