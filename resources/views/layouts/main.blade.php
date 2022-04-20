@@ -67,20 +67,25 @@
                     </button>
                     <div class="header-user-menu">
                         <div class="header-user-menu">
-                            <div class="menu-name arrow-icon" >
+                            <div class="menu-name arrow-icon">
                                 {{ Auth::user()->surname}} {{substr(Auth::user()->name, 0,1)}}.
                             </div>
                         </div>
                         <div class="menu-box">
                             <ul class="menu-list">
                                 <li class="menu-list-item">
-                                    <a class="icon icon-log-user-white" href="#">Account</a>
+                                    <a class="icon icon-log-user-white" href="{{ route('home') }}">Account</a>
                                 </li>
                                 <li class="menu-list-item">
-                                    <a class="icon icon-log-case-white" href="#">Companies</a>
+                                    <a class="icon icon-log-case-white" href="{{ route('orders') }}">My Orders</a>
                                 </li>
                                 <li class="menu-list-item">
-                                    <a class="icon icon-log-out-white" href="#">Log out</a>
+                                    <a class="icon icon-log-case-white" href="#">Settings</a>
+                                </li>
+                                <li class="menu-list-item">
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        <input type="submit" class="icon icon-log-out-white" value="{{ __('Log out') }}">
+                                    </form>
                                 </li>
                             </ul>
                         </div>
@@ -103,76 +108,76 @@
     </div>
 </main>
 <footer class="footer-bg">
-            <div class="container">
-                <ul class="header-list">
-                    <li class="header-list-item">
-                        <a href="#">
-                            <i class="icon icon-bells"></i>
-                            <span class="counter">2</span>
-                        </a>
-                    </li>
-                    <li class="header-list-item">
-                        <a href="#">
-                            <i class="icon icon-mail"></i>
-                            <span class="counter">24</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </footer>
-        <div class="bg-purple"></div>
+    <div class="container">
+        <ul class="header-list">
+            <li class="header-list-item">
+                <a href="#">
+                    <i class="icon icon-bells"></i>
+                    <span class="counter">2</span>
+                </a>
+            </li>
+            <li class="header-list-item">
+                <a href="#">
+                    <i class="icon icon-mail"></i>
+                    <span class="counter">24</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</footer>
+<div class="bg-purple"></div>
 
-        <div class="popUp-message-manager" id="popup-1">
-        	<div class="popUp-close">
-        		<button class="reset-btn" type="button">
-        			<i class="icon icon-close-green"></i>
-        		</button>
-        	</div>
-        	<form class="popUp-message-form" action="#">
-        		<h2 class="t-sb f22-l25 purple3">
-        			Ask Birel a Question
-        		</h2>
-        		<p class="t-r f16-l24 purple2">
-        			Enter your question or request for your Private Securities Specialist. All communications with Birel are
-        			kept confidential.
-        		</p>
-        		<label class="t-r f16-l24 purple1" for="theme">
-        			Theme
-        		</label>
-        		<select id="theme" class="js-example-basic-single">
-        			<option value="0" selected>Choose</option>
-        		</select>
-        		<label class="t-r f16-l24 purple1" for="message">
-        			How can we help?
-        		</label>
-        		<textarea name="" id="message" cols="30" rows="10" placeholder="Placeholder text" required></textarea>
-        		<button class="btn w115">
-        			Send
-        		</button>
-        	</form>
-        </div>
-        <div class="popUp-message-manager" id="popup-2">
-        	<div class="popUp-close">
-        		<button class="reset-btn" type="button">
-        			<i class="icon icon-close-green"></i>
-        		</button>
-        	</div>
-        	<form class="popUp-message-form" action="#">
-        		<h2 class="t-sb f22-l25 purple3">
-        			suggestions for the platform
-        		</h2>
-        		<p class="t-r f16-l24 purple2">
-        			Здесь вы можете оставить ваши пожелания и комментарии по поводу работы плаьформы Бирел.
-        		</p>
-        		<label class="t-r f16-l24 purple1" for="message2">
-        			Ваши комментарии
-        		</label>
-        		<textarea name="" id="message2" cols="30" rows="10" placeholder="Placeholder text" required></textarea>
-        		<button class="btn w115">
-        			Send
-        		</button>
-        	</form>
-        </div>
+<div class="popUp-message-manager" id="popup-1">
+    <div class="popUp-close">
+        <button class="reset-btn" type="button">
+            <i class="icon icon-close-green"></i>
+        </button>
+    </div>
+    <form class="popUp-message-form" action="#">
+        <h2 class="t-sb f22-l25 purple3">
+            Ask Birel a Question
+        </h2>
+        <p class="t-r f16-l24 purple2">
+            Enter your question or request for your Private Securities Specialist. All communications with Birel are
+            kept confidential.
+        </p>
+        <label class="t-r f16-l24 purple1" for="theme">
+            Theme
+        </label>
+        <select id="theme" class="js-example-basic-single">
+            <option value="0" selected>Choose</option>
+        </select>
+        <label class="t-r f16-l24 purple1" for="message">
+            How can we help?
+        </label>
+        <textarea name="" id="message" cols="30" rows="10" placeholder="Placeholder text" required></textarea>
+        <button class="btn w115">
+            Send
+        </button>
+    </form>
+</div>
+<div class="popUp-message-manager" id="popup-2">
+    <div class="popUp-close">
+        <button class="reset-btn" type="button">
+            <i class="icon icon-close-green"></i>
+        </button>
+    </div>
+    <form class="popUp-message-form" action="#">
+        <h2 class="t-sb f22-l25 purple3">
+            suggestions for the platform
+        </h2>
+        <p class="t-r f16-l24 purple2">
+            Здесь вы можете оставить ваши пожелания и комментарии по поводу работы плаьформы Бирел.
+        </p>
+        <label class="t-r f16-l24 purple1" for="message2">
+            Ваши комментарии
+        </label>
+        <textarea name="" id="message2" cols="30" rows="10" placeholder="Placeholder text" required></textarea>
+        <button class="btn w115">
+            Send
+        </button>
+    </form>
+</div>
 <script src="{{asset('js/lib/jquery.min.js')}}"></script>
 <script src="{{asset('js/lib/select2.min.js')}}"></script>
 <script src="{{asset('js/default/default-lc.js')}}" type="module"></script>
