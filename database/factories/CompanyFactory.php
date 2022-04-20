@@ -18,7 +18,7 @@ class CompanyFactory extends Factory
             'companyAddress' => $this->faker->address(),
             'description' => $this->faker->paragraph,
             'valuation' => $this->faker->randomFloat(2, 0, 10000),
-            'status' => 1
+            'status' => $this->faker->randomElement([0,1])
         ];
     }
 }

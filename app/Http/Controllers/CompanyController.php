@@ -34,7 +34,7 @@ class CompanyController extends Controller
     public function index()
     {
         $categories = Category::all();
-        $companies = Company::with('category','wali')->paginate(16);
+        $companies = Company::with('category','wali')->status()->paginate(16);
         $watchlist = Watchlist::where('user_id', auth()->id())->with('company.category')->paginate(16);
         return view('lc.companies', compact('companies', 'categories', 'watchlist'));
     }

@@ -35,4 +35,9 @@ class Company extends Model
     {
         return $this->hasMany(CompanyFinance::class,'company_id');
     }
+
+    public function scopeStatus($query)
+    {
+        $query->where('status', 1);
+    }
 }
