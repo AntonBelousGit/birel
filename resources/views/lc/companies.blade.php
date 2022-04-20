@@ -118,38 +118,52 @@
                     </p>
                     <p class="company-item-val t-r f16-l24 purple1">Last Round Est. Valuation</p>
                     <span class="company-item-numb t-r f16-l24 purple3">{{$company->valuation}}B</span>
-                    <form class="company-item-form" action="/companies/wali" method="POST">
-                        @csrf
-                        <input type="hidden" name="company_id" value="{{$company->id}}">
-                        <div class="company-item-add-watch active">
-                            <button class="btn btn-green">Add to watch list</button>
-                            <div class="company-item-drop">
-                                <p class="company-item-notifications f12-l18 t-r purple3">Specify notifications for which
-                                    orders you want to receive</p>
-                                <div class="form_radio">
-                                    <label>
-                                        <input type="radio" name="type" value="Bid">
-                                        <span></span>
-                                        BID
-                                    </label>
-                                </div>
-                                <div class="form_radio">
-                                    <label>
-                                        <input type="radio" name="type" value="Asc">
-                                        <span></span>
-                                        ASC
-                                    </label>
-                                </div>
-                                <div class="form_radio">
-                                    <label>
-                                        <input type="radio" name="type" value="All">
-                                        <span></span>
-                                        ALL
-                                    </label>
+                    @if ($company->wali)
+                        <form class="company-item-form" action="{{route('delete-wali',$company->wali->id)}}" method="POST">
+                            <div class="company-item-watch">
+                                <div class="btn2 btn2-green w170 h49 b-h">In watch list</div>
+                                @csrf
+                                <input type="hidden" name="company_id" value="{{$company->id}}">
+                                <button type="submit" class="reset-btn">
+                                    <i class="icon icon-trash"></i>
+                                </button>
+                            </div>
+                        </form>
+                    @else
+                        <form class="company-item-form" action="/companies/wali" method="POST">
+                            @csrf
+                            <input type="hidden" name="company_id" value="{{$company->id}}">
+                            <div class="company-item-add-watch active">
+                                <button class="btn btn-green">Add to watch list</button>
+                                <div class="company-item-drop">
+                                    <p class="company-item-notifications f12-l18 t-r purple3">Specify notifications for which
+                                        orders you want to receive</p>
+                                    <div class="form_radio">
+                                        <label>
+                                            <input type="radio" name="type" value="Bid">
+                                            <span></span>
+                                            BID
+                                        </label>
+                                    </div>
+                                    <div class="form_radio">
+                                        <label>
+                                            <input type="radio" name="type" value="Ask">
+                                            <span></span>
+                                            ASK
+                                        </label>
+                                    </div>
+                                    <div class="form_radio">
+                                        <label>
+                                            <input type="radio" name="type" value="All">
+                                            <span></span>
+                                            ALL
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </form>
+                        </form>
+                    @endif
+
                 </li>
             @endforeach
 

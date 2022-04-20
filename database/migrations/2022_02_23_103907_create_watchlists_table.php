@@ -17,7 +17,7 @@ class CreateWatchlistsTable extends Migration
             $table->id();
              $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->foreignId('company_id')->constrained()->onDelete('cascade');
-            $table->enum('type',['Bid','Asc','All'])->default('All');
+            $table->enum('type',['Bid','Ask','All'])->default('All');
             $table->timestamps();
         });
     }

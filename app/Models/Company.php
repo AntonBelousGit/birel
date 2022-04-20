@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Company extends Model
 {
@@ -27,8 +28,7 @@ class Company extends Model
 
     public function wali()
     {
-        return $this->belongsTo(Watchlist::class, 'id', 'company_id');
-        //->where('user_id', Auth::user->id);
+        return $this->belongsTo(Watchlist::class, 'id', 'company_id')->where('user_id', Auth::user()->id);
     }
 
     public function finance()

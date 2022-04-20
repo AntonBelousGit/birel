@@ -168,67 +168,78 @@
 				</label>
 			</div>
 			<div class="one-company-text">
-				<div class="text-wrapper" action="#">
-					<div class="text-wrapper-box">
-						<div class="btn2 btn2-green w170 h49 b-h">In watch list</div>
-						<button class="reset-btn">
-							<i class="icon icon-trash"></i>
-						</button>
-					</div>
-					<div class="text-wrapper-box">
-						<p class=" f12-l18 t-r purple3">Укажите уведомления по каким ордерам вы хотите
-							получать</p>
-						<div class="form_radio">
-							<label>
-								<input type="radio" name="variant">
-								<span></span>
-								BID
-							</label>
-						</div>
-						<div class="form_radio">
-							<label>
-								<input type="radio" name="variant">
-								<span></span>
-								ASK
-							</label>
-						</div>
-						<div class="form_radio">
-							<label>
-								<input type="radio" name="variant" checked>
-								<span></span>
-								ALL
-							</label>
-						</div>
-					</div>
-				</div>
-				<div class="text-wrapper">
-					<button class="btn btn-green w210">Add to watch list</button>
-					<div class="text-wrapper-box">
-						<p class=" f12-l18 t-r purple3">Укажите уведомления по каким ордерам вы хотите
-							получать</p>
-						<div class="form_radio">
-							<label>
-								<input type="radio" name="variant">
-								<span></span>
-								BID
-							</label>
-						</div>
-						<div class="form_radio">
-							<label>
-								<input type="radio" name="variant">
-								<span></span>
-								ASK
-							</label>
-						</div>
-						<div class="form_radio">
-							<label>
-								<input type="radio" name="variant" checked>
-								<span></span>
-								ALL
-							</label>
-						</div>
-					</div>
-				</div>
+                @if ($check_isset)
+                    <div class="text-wrapper" >
+                        <form action="{{ route('delete-wali',$check_isset->id) }}" method="POST">
+                            @csrf
+                            <div class="text-wrapper-box">
+                                <div class="btn2 btn2-green w170 h49 b-h">In watch list</div>
+                                <input type="hidden" name="company_id" value="{{$company->id}}">
+                                <button type="submit" class="reset-btn">
+                                    <i class="icon icon-trash"></i>
+                                </button>
+                            </div>
+                            <div class="text-wrapper-box">
+                                <p class=" f12-l18 t-r purple3">Укажите уведомления по каким ордерам вы хотите
+                                    получать</p>
+                                <div class="form_radio">
+                                    <label>
+                                        <input type="radio" name="variant" {{$check_isset->type === 'Bid'?'checked':''}}>
+                                        <span></span>
+                                        BID
+                                    </label>
+                                </div>
+                                <div class="form_radio">
+                                    <label>
+                                        <input type="radio" name="variant" {{$check_isset->type === 'Ask'?'checked':''}}>
+                                        <span></span>
+                                        ASK
+                                    </label>
+                                </div>
+                                <div class="form_radio">
+                                    <label>
+                                        <input type="radio" name="variant" {{$check_isset->type === 'All'?'checked':''}}>
+                                        <span></span>
+                                        ALL
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                @else
+                    <div class="text-wrapper">
+                        <form action="{{ route('wali') }}" method="POST">
+                            @csrf
+                            <input type="hidden" name="company_id" value="{{$company->id}}">
+                            <button class="btn btn-green w210">Add to watch list</button>
+                            <div class="text-wrapper-box">
+                                <p class=" f12-l18 t-r purple3">Укажите уведомления по каким ордерам вы хотите
+                                    получать</p>
+                                <div class="form_radio">
+                                    <label>
+                                        <input type="radio" name="type" value="Bid">
+                                        <span></span>
+                                        BID
+                                    </label>
+                                </div>
+                                <div class="form_radio">
+                                    <label>
+                                        <input type="radio" name="type" value="Ask">
+                                        <span></span>
+                                        ASK
+                                    </label>
+                                </div>
+                                <div class="form_radio">
+                                    <label>
+                                        <input type="radio" name="type" value="All">
+                                        <span></span>
+                                        ALL
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                @endif
 				<p class="t-r f16-l24 purple3">
 					The Walt Disney Company is one of the largest media conglomerates in the entertainment
 					industry in

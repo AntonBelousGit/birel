@@ -34,7 +34,7 @@ class CompanyController extends Controller
     public function index()
     {
         $categories = Category::all();
-        $companies = Company::with('category')->paginate();
+        $companies = Company::with('category','wali')->get();
         $watchlist = Watchlist::where('user_id', auth()->id())->with('company.category')->get();
         return view('lc.companies', compact('companies', 'categories', 'watchlist'));
     }
@@ -70,7 +70,8 @@ class CompanyController extends Controller
     public function show($id)
     {
         $company = Company::with('finance')->find($id);
-        return view('lc.page-lc-one-company', compact('company'));
+        $check_isset = Watchlist::where(['user_id' => auth()->id(), 'company_id' => $id])->first(['id','type']);
+        return view('lc.page-lc-one-company', compact('company','check_isset'));
     }
 
     /**

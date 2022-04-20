@@ -30,9 +30,8 @@ require('_admin.php');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('/companies', App\Http\Controllers\CompanyController::class);
 Route::get('/companies/{company}/get-finance/', [App\Http\Controllers\CompanyController::class, 'getFinance'])->name('company.get-finance');
-Route::post('/companies/wali', [App\Http\Controllers\CompanyController::class, 'wali']);
-Route::post('/companies/wali-delete', [App\Http\Controllers\CompanyController::class, 'deleteWali'])->name('delete-wali');
-Route::post('/companies/wali-delete', [App\Http\Controllers\CompanyController::class, 'deleteWali'])->name('delete-wali');
+Route::post('/companies/wali', [App\Http\Controllers\CompanyController::class, 'wali'])->name('wali');
+Route::post('/companies/wali-delete/{id}', [App\Http\Controllers\CompanyController::class, 'deleteWali'])->name('delete-wali');
 
 
 
