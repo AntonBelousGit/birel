@@ -75,7 +75,8 @@
                             <img class="company-item-img" src="{{asset('storage/companies/'.$item->company->image)  }}"
                                  alt=""></picture>
                     </a>
-                    <a class="company-item-company t-sb f24-l32 purple1" href="{{ route('companies.show',$item->company) }}">{{$item->company->companyName}}</a>
+                    <a class="company-item-company t-sb f24-l32 purple1"
+                       href="{{ route('companies.show',$item->company) }}">{{$item->company->companyName}}</a>
                     <p class="company-item-tech t-r f16-l24 purple3">
                         @forelse($item->company->category as $category)
                             {{$category->name }}
@@ -97,6 +98,8 @@
                     </form>
                 </li>
             @endforeach
+
+            {{ $watchlist->links() }}
         </ul>
         <ul class="company-list content-t active">
 
@@ -108,7 +111,8 @@
                             <img class="company-item-img" src="{{asset('storage/companies/'.$company->image)  }}"
                                  alt=""></picture>
                     </a>
-                    <a class="company-item-company t-sb f24-l32 purple1" href="{{ route('companies.show',$company) }}">{{$company->companyName}}</a>
+                    <a class="company-item-company t-sb f24-l32 purple1"
+                       href="{{ route('companies.show',$company) }}">{{$company->companyName}}</a>
                     <p class="company-item-tech t-r f16-l24 purple3">
                         @foreach($categories as $item)
                             @if($company->category->pluck('id')->contains($item->id))
@@ -119,7 +123,8 @@
                     <p class="company-item-val t-r f16-l24 purple1">Last Round Est. Valuation</p>
                     <span class="company-item-numb t-r f16-l24 purple3">{{$company->valuation}}B</span>
                     @if ($company->wali)
-                        <form class="company-item-form" action="{{route('delete-wali',$company->wali->id)}}" method="POST">
+                        <form class="company-item-form" action="{{route('delete-wali',$company->wali->id)}}"
+                              method="POST">
                             <div class="company-item-watch">
                                 <div class="btn2 btn2-green w170 h49 b-h">In watch list</div>
                                 @csrf
@@ -136,7 +141,8 @@
                             <div class="company-item-add-watch active">
                                 <button class="btn btn-green">Add to watch list</button>
                                 <div class="company-item-drop">
-                                    <p class="company-item-notifications f12-l18 t-r purple3">Specify notifications for which
+                                    <p class="company-item-notifications f12-l18 t-r purple3">Specify notifications for
+                                        which
                                         orders you want to receive</p>
                                     <div class="form_radio">
                                         <label>
@@ -166,7 +172,7 @@
 
                 </li>
             @endforeach
-
+            {{ $companies->links() }}
         </ul>
         <div class="company-text-bot">
             <p class="t-r purple2">

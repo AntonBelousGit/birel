@@ -18,8 +18,8 @@ class CreateCompaniesTable extends Migration
             $table->string('companyName');
             $table->string('companyAddress');
             $table->string('image')->nullable();
-            $table->string('description')->nullable();
-            $table->double('valuation',6,2)->nullable();
+            $table->text('description')->nullable();
+            $table->unsignedDouble('valuation',6,2)->nullable();
             $table->tinyInteger('status')->default(0);
             $table->timestamps();
         });
