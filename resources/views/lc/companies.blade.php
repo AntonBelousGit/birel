@@ -99,7 +99,7 @@
                 </li>
             @endforeach
 
-            {{ $watchlist->links() }}
+            {{ $watchlist->links('vendor.pagination.custom') }}
         </ul>
         <ul class="company-list content-t active">
 
@@ -172,7 +172,7 @@
 
                 </li>
             @endforeach
-            {{ $companies->links() }}
+            {{ $companies->links('vendor.pagination.custom')}}
         </ul>
         <div class="company-text-bot">
             <p class="t-r purple2">
