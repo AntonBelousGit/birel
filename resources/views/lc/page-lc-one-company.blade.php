@@ -173,8 +173,7 @@
                 </div>
                 <div class="one-company-text">
                     @if ($check_isset)
-                        <div class="text-wrapper">
-                            <form action="{{ route('delete-wali',$check_isset->id) }}" method="POST">
+                            <form class="text-wrapper" action="{{ route('delete-wali',$check_isset->id) }}" method="POST">
                                 @csrf
                                 <div class="text-wrapper-box">
                                     <div class="btn2 btn2-green w170 h49 b-h">In watch list</div>
@@ -211,7 +210,6 @@
                                     </div>
                                 </div>
                             </form>
-                        </div>
                     @else
                         <div class="text-wrapper">
                             <form action="{{ route('wali') }}" method="POST">
