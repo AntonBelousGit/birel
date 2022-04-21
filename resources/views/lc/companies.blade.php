@@ -72,20 +72,25 @@
                     <a class="company-item-link" href="#">
                         <picture>
                             <source srcset="{{asset('storage/companies/'.$item->company->image)  }}" type="image/webp">
-                            <img class="company-item-img" src="{{asset('storage/companies/'.$item->company->image)  }}"
-                                 alt=""></picture>
+                            <img class="company-item-img" src="{{asset('storage/companies/'.$item->company->image)  }}" alt="">
+                        </picture>
                     </a>
                     <a class="company-item-company t-sb f24-l32 purple1"
-                       href="{{ route('companies.show',$item->company) }}">{{$item->company->companyName}}</a>
+                        href="{{ route('companies.show',$item->company) }}">{{$item->company->companyName}}</a>
                     <p class="company-item-tech t-r f16-l24 purple3">
                         @forelse($item->company->category as $category)
-                            {{$category->name }}
+                            <span>{{$category->name }}</span>
                         @empty
-
                         @endforelse
                     </p>
+                    <p class="company-item-tech t-r f16-l24 purple3">
+                        Founded: <span> 2003 </span>
+                    </p>
+                    <p class="company-item-tech t-r f16-l24 purple3">
+                        Total funding: <span> $850MM</span>
+                    </p>
                     <p class="company-item-val t-r f16-l24 purple1">Last Round Est. Valuation</p>
-                    <span class="company-item-numb t-r f16-l24 purple3">{{$item->company?->valuation}}B</span>
+                    <span class="company-item-numb t-r f16-l24 purple3">{{$item->company?->valuation}} B</span>
                     <form class="company-item-form" action="{{route('delete-wali',$item)}}" method="POST">
                         <div class="company-item-watch">
                             <div class="btn2 btn2-green w170 h49 b-h">In watch list</div>
@@ -99,7 +104,7 @@
                 </li>
             @endforeach
 
-            {{ $watchlist->links('vendor.pagination.custom') }}
+            <li class="">{{ $watchlist->links('vendor.pagination.custom') }}</li>
         </ul>
         <ul class="company-list content-t active">
 
@@ -108,8 +113,8 @@
                     <a class="company-item-link" href="#">
                         <picture>
                             <source srcset="{{asset('storage/companies/'.$company->image)  }}" type="image/webp">
-                            <img class="company-item-img" src="{{asset('storage/companies/'.$company->image)  }}"
-                                 alt=""></picture>
+                            <img class="company-item-img" src="{{asset('storage/companies/'.$company->image)  }}" alt="">
+                        </picture>
                     </a>
                     <a class="company-item-company t-sb f24-l32 purple1"
                        href="{{ route('companies.show',$company) }}">{{$company->companyName}}</a>
@@ -120,6 +125,14 @@
                             @endif
                         @endforeach
                     </p>
+                    <div class="company-item-tech t-r f16-l24 purple3">
+
+                        Founded: 2003
+                    </div>
+                    <div class="company-item-tech t-r f16-l24 purple3">
+                        <span>Total funding:</span>
+                        <span>$850MM</span>
+                    </div>
                     <p class="company-item-val t-r f16-l24 purple1">Last Round Est. Valuation</p>
                     <span class="company-item-numb t-r f16-l24 purple3">{{$company->valuation}}B</span>
                     @if ($company->wali)
@@ -160,7 +173,7 @@
                                     </div>
                                     <div class="form_radio">
                                         <label>
-                                            <input type="radio" name="type" value="All">
+                                            <input type="radio" name="type" value="All" checked>
                                             <span></span>
                                             ALL
                                         </label>
@@ -172,7 +185,7 @@
 
                 </li>
             @endforeach
-            {{ $companies->links('vendor.pagination.custom')}}
+            <li>{{ $companies->links('vendor.pagination.custom')}}</li>
         </ul>
         <div class="company-text-bot">
             <p class="t-r purple2">
