@@ -150,7 +150,11 @@
             <div class="one-company-wrapper">
                 <div class="one-company-card">
                     <h1 class="card-title t-sb f22-l25 purple3">{{$company->companyName}}</h1>
-                    <span class="card-sub-title t-r f16-l24 purple3">BioTech</span>
+                    <span class="card-sub-title t-r f16-l24 purple3">
+                        @foreach($company->category as $category)
+                            {{$category->name}}{{!$loop->last?', ':''}}
+                        @endforeach
+                    </span>
                     <picture>
                         <source srcset="{{asset('storage/companies/'.$company->image)  }}" type="image/webp">
                         <img class="card-img" src="{{asset('storage/companies/'.$company->image)  }}" alt=""
@@ -243,31 +247,7 @@
                         </div>
                     @endif
                     <p class="t-r f16-l24 purple3">
-                        The Walt Disney Company is one of the largest media conglomerates in the entertainment
-                        industry in
-                        the
-                        world.
-                        <br><br>
-                        Founded on October 16, 1923 as a small animation studio, it is now one of the largest
-                        transnational
-                        media corporations, one of the largest Hollywood studios, the owner of 11 amusement parks
-                        and two
-                        water
-                        parks, as well as several broadcasting networks, including refers to the American
-                        Broadcasting
-                        Company
-                        (ABC).
-                        <br><br>
-                        The Disney corporation, in addition to the main headquarters in the United States, has major
-                        departments
-                        in France (The Walt Disney Company France (since 1992)), Japan (The Walt Disney Company
-                        Japan (since
-                        1959)) and Russia (The Walt Disney Company CIS (since 2006)).
-                        <br><br>
-                        The Walt Disney Company is listed on the Dow Jones Industrial Average. Market capitalization
-                        for Q4
-                        2020
-                        was $ 327 billion.
+                        {{$company->description}}
                     </p>
                 </div>
             </div>
