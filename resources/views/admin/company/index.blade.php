@@ -98,10 +98,12 @@
                                 </table>
                             </div>
                             <div>
-                                <form action="#" method="post" enctype="#">
+{{--                                @dd($setting->attribute_name)--}}
+                                <form action="{{ route('setting-update',['setting'=>'company']) }}" method="post">
+                                    @csrf()
+                                    @method('patch')
                                     <div class="form-group">
-                                        <textarea class="form-control" name="description" placeholder="Description">
-                                        </textarea>
+                                        <textarea class="form-control" name="attribute_name[description]" placeholder="Description">{{$setting->attribute_name['description']}}</textarea>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>

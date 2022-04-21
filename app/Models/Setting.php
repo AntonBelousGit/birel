@@ -9,12 +9,15 @@ class Setting extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'setting_name';
+
+
     protected $fillable = [
         'setting_name',
-        'attribute'
+        'attribute_name'
     ];
 
     protected $casts = [
-        'attribute' => 'array'
+        'attribute_name' => 'array'
     ];
 }

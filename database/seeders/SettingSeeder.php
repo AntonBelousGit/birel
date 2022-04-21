@@ -16,7 +16,7 @@ class SettingSeeder extends Seeder
     {
         Setting::create([
             'setting_name' => 'company',
-            'attribute' => ['description' => ['Lorem lorem']],
+            'attribute_name' => ['description' => 'Lorem lorem'],
         ]);
     }
 }

@@ -7,6 +7,7 @@ use App\Helpers\StorageHelper;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreCompanyAdminRequest;
 use App\Models\Company;
+use App\Models\Setting;
 use App\Service\CategoryService;
 use App\Service\CompanyService;
 use Illuminate\Contracts\Foundation\Application;
@@ -21,12 +22,14 @@ class CompanyController extends Controller
     private $storage;
     protected $companyService;
     protected $categoryService;
+    private $setting;
 
     public function __construct(Request $request, CompanyService $companyService, CategoryService $categoryService)
     {
         $this->companyService = $companyService;
         $this->categoryService = $categoryService;
         $company_id = $request->route('company');
+        $this->setting = Setting::where('setting_name', 'company')->first();
         $this->storage = new StorageHelper('image', 'companies', $request->file('file'), Company::find($company_id));
     }
 
@@ -38,7 +41,8 @@ class CompanyController extends Controller
     public function index()
     {
         $companies = $this->companyService->getAllCompanies();
-        return view('admin.company.index', compact('companies'));
+        $setting = $this->setting;
+        return view('admin.company.index', compact('companies','setting'));
     }
 
     /**
