@@ -97,6 +97,15 @@
                                     </tbody>
                                 </table>
                             </div>
+                            <div>
+                                <form action="#" method="post" enctype="#">
+                                    <div class="form-group">
+                                        <textarea class="form-control" name="description" placeholder="Description">
+                                        </textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
