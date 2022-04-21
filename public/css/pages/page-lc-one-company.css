@@ -491,7 +491,7 @@
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 350px;
+  width: 420px;
   margin-top: 10px;
 }
 
@@ -504,8 +504,8 @@
 }
 
 .one-company-card .card-img {
-  width: 350px;
-  height: 210px;
+  width: 420px;
+  height: 250px;
   -o-object-fit: contain;
      object-fit: contain;
 }
@@ -655,10 +655,25 @@
 .one-company-tab .content-t .table-wrapper {
   margin-top: 20px;
   overflow: hidden;
-  overflow-x: scroll;
+  overflow-x: auto;
   padding-bottom: 40px;
   border-bottom: 1px solid #573CDA;
   margin-bottom: 30px;
+}
+
+.one-company-tab .content-t .table-wrapper::-webkit-scrollbar {
+  background: #F6F4FF;
+  -webkit-border-radius: 8px;
+          border-radius: 8px;
+  width: 7px;
+  height: 8px;
+}
+
+.one-company-tab .content-t .table-wrapper::-webkit-scrollbar-thumb {
+  background: rgba(192, 188, 214, 0.6);
+  -webkit-border-radius: 6px;
+          border-radius: 6px;
+  height: 8px;
 }
 
 .one-company-tab .content-t .history h2 {

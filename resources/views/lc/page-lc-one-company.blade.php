@@ -267,7 +267,7 @@
                     <div class="company-philter">
                         <label class="company-philter-select">
                             <select class="js-example-basic-single">
-                                <option value="0">--</option>
+                                <option value="0" selected disabled>--</option>
                                 <option value="1">Bid</option>
                                 <option value="2">Ask</option>
                                 <option value="3">Looking for an offer</option>
@@ -275,11 +275,10 @@
                             </select>
                         </label>
                         <label class="company-philter-select">
-                            <select class="js-example-basic-single">
-                                <option value="0">--</option>
+                            <select class="js-example-basic-single-no-search">
+                                <option value="0" selected disabled>--</option>
                                 <option value="1">Data</option>
                                 <option value="2">Type</option>
-                                <option value="3">$5B +</option>
                             </select>
                         </label>
                         <button class="company-philter-btn" type="button">
@@ -518,13 +517,10 @@
                                 </select>
                             </label>
                             <label class="company-philter-select">
-                                <select class="js-example-basic-single">
-                                    <option value="0">
-                                        < $500M
-                                    </option>
-                                    <option value="1">$500M - $1B</option>
-                                    <option value="2">$1B - $5B</option>
-                                    <option value="3">$5B +</option>
+                                <select class="js-example-basic-single-no-search">
+                                    <option value="0" selected disabled>--</option>
+                                    <option value="1">Data</option>
+                                    <option value="2">Type</option>
                                 </select>
                             </label>
                             <button class="company-philter-btn" type="button">

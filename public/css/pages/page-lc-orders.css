@@ -517,7 +517,22 @@
 .orders-wrapper .table-wrapper {
   margin: 40px 0;
   overflow: hidden;
-  overflow-x: scroll;
+  overflow-x: auto;
+}
+
+.orders-wrapper .table-wrapper::-webkit-scrollbar {
+  background: #F6F4FF;
+  -webkit-border-radius: 8px;
+          border-radius: 8px;
+  width: 7px;
+  height: 8px;
+}
+
+.orders-wrapper .table-wrapper::-webkit-scrollbar-thumb {
+  background: rgba(192, 188, 214, 0.6);
+  -webkit-border-radius: 6px;
+          border-radius: 6px;
+  height: 8px;
 }
 
 @media screen and (max-width: 1540px) {

@@ -24,11 +24,10 @@
                 </select>
             </label>
             <label class="orders-philter-select">
-                <select class="js-example-basic-single">
-                    <option value="0">< $500M</option>
-                    <option value="1">$500M - $1B</option>
-                    <option value="2">$1B - $5B</option>
-                    <option value="3">$5B +</option>
+                <select class="js-example-basic-single-no-search">
+                    <option value="0" selected disabled>--</option>
+                    <option value="1">Data</option>
+                    <option value="2">Type</option>
                 </select>
             </label>
             <button class="orders-philter-btn" type="button">

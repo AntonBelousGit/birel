@@ -33,4 +33,9 @@ $(document).ready(function() {
 	$('.js-example-basic-single2').select2({
 		theme: "my-one-line",
 	});
+	$('.js-example-basic-single-no-search').select2({
+		minimumResultsForSearch: -1,
+		theme: "my",
+	})
 });
+

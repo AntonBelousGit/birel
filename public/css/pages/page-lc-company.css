@@ -331,7 +331,7 @@
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
-  grid-gap: 20px 1.87606%;
+  grid-gap: 20px 1.875%;
 }
 
 .company-item {
