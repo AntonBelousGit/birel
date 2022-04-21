@@ -6,6 +6,7 @@ use App\Http\Requests\StoreWatchlistRequest;
 use App\Http\Resources\CompanyFinanceInfoResource;
 use App\Models\Company;
 use App\Models\Category;
+use App\Models\Setting;
 use App\Models\Watchlist;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -18,6 +19,8 @@ use Throwable;
 
 class CompanyController extends Controller
 {
+    private $setting;
+
     /**
      * Display a listing of the resource.
      *
@@ -26,6 +29,7 @@ class CompanyController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->setting = Setting::where('setting_name', 'company')->first();
     }
 
     public function index()
@@ -33,7 +37,8 @@ class CompanyController extends Controller
         $categories = Category::all();
         $companies = Company::with('category','wali')->status()->orderByDesc('created_at')->paginate(16,['*'],'companies')->withQueryString();
         $watchlist = Watchlist::where('user_id', auth()->id())->with('company.category')->paginate(16,['*'],'watchlist')->withQueryString();
-        return view('lc.companies', compact('companies', 'categories', 'watchlist'));
+        $setting = $this->setting;
+        return view('lc.companies', compact('companies', 'categories', 'watchlist','setting'));
     }
 
     /**
