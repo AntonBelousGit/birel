@@ -6,8 +6,6 @@ use App\Http\Requests\StoreWatchlistRequest;
 use App\Http\Resources\CompanyFinanceInfoResource;
 use App\Models\Company;
 use App\Models\Category;
-use App\Models\CompanyFinance;
-use App\Models\CompanyFinanceInfo;
 use App\Models\Watchlist;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -15,7 +13,6 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreCompanyRequest;
-use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Http\Response;
 use Throwable;
 
@@ -72,39 +69,6 @@ class CompanyController extends Controller
         $company = Company::with('finance')->find($id);
         $check_isset = Watchlist::where(['user_id' => auth()->id(), 'company_id' => $id])->first(['id','type']);
         return view('lc.page-lc-one-company', compact('company','check_isset'));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param Company $company
-     * @return Response
-     */
-    public function edit(Company $company)
-    {
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param Request $request
-     * @param Company $company
-     * @return Response
-     */
-    public function update(Request $request, Company $company)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param Company $company
-     * @return void
-     */
-    public function destroy(Company $company)
-    {
-        //
     }
 
     public function getFinance($company, Request $request)
