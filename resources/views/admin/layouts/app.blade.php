@@ -22,6 +22,14 @@
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="{{asset('admin_panel/css/main.css')}}">
     <link rel="stylesheet" href="{{asset('admin_panel/css/color_skins.css')}}">
+    <style>
+    .table-responsive > #DataTables_Table_0_wrapper {
+        padding:0 15px;
+    }
+    .mt-30 {
+    margin-top:30px;
+    }
+    </style>
 </head>
 <body class="theme-purple">
 

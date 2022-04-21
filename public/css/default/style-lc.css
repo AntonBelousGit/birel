@@ -2092,7 +2092,8 @@ label {
   background-color: #2A206A;
 }
 
-.header-user .menu-list-item a {
+.header-user .menu-list-item a,
+.header-user .menu-list-item button {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;

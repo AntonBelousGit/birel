@@ -67,7 +67,7 @@
             </button>
         </div>
 
-        <div class="company-list content-t">
+        <div class="content-t">
             <ul class="company-list">
             @foreach($watchlist as $item)
                 <li class="company-item">
@@ -108,7 +108,7 @@
             </ul>
             <div class="">{{ $watchlist->links('vendor.pagination.custom') }}</div>
         </div>
-        <div class="company-list content-t active">
+        <div class="content-t active">
             <ul class="company-list">
             @foreach($companies as $company)
                 <li class="company-item">

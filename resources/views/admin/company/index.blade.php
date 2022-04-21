@@ -43,7 +43,7 @@
                         </div>
                         <div class="body">
                             <div class="table-responsive">
-                                <table class="table table-bordered table-hover js-basic-example dataTable table-custom">
+                                <table class="table table-bordered table-hover js-basic-example dataTable table-custom container-fluid">
                                     <thead>
                                     <tr>
                                         <th>#</th>
@@ -97,13 +97,14 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <div>
+                            <div class="mt-30">
 {{--                                @dd($setting->attribute_name)--}}
                                 <form action="{{ route('setting-update',['setting'=>'company']) }}" method="post">
                                     @csrf()
                                     @method('patch')
                                     <div class="form-group">
-                                        <textarea class="form-control" name="attribute_name[description]" placeholder="Description">{{$setting->attribute_name['description']}}</textarea>
+                                        <label for="description">Description</label>
+                                        <textarea class="form-control" name="attribute_name[description]" placeholder="Description" rows="3" id="description">{{$setting->attribute_name['description']}}</textarea>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>

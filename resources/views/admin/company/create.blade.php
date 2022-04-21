@@ -21,28 +21,31 @@
                         <form action="{{ route('company.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
-                                <label for="">Company Name</label>
+                                <label for="companyName">Company Name</label>
                                 <input type="text" class="form-control" name="companyName" placeholder="Company Name"
-                                       value="{{old('companyName')}}">
+                                       value="{{old('companyName')}}" id="companyName">
                             </div>
                             <div class="form-group">
-                                <label for="">Company Address</label>
+                                <label for="companyAddress">Company Address</label>
                                 <input type="text" class="form-control" name="companyAddress"
-                                       placeholder="Company Address" value="{{old('companyAddress')}}">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="">Description</label>
-                                <textarea class="form-control" name="description" placeholder="Description">{{old('description')}}</textarea>
+                                       placeholder="Company Address" value="{{old('companyAddress')}}" id="companyAddress">
                             </div>
                             <div class="form-group">
-                                <label for="">Valuation</label>
+                                <label for="founded">Company Founded</label>
+                                <input type="date" class="form-control" name="date" placeholder="Date" value="" id="founded">
+                            </div>
+                            <div class="form-group">
+                                <label for="description">Description</label>
+                                <textarea class="form-control" name="description" placeholder="Description" id="description">{{old('description')}}</textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="valuation">Valuation</label>
                                 <input type="number" class="form-control" min="0" name="valuation"
-                                       placeholder="Valuation" value="{{old('valuation')}}">
+                                       placeholder="Valuation" value="{{old('valuation')}}" id="valuation">
                             </div>
                             <div class="form-group">
-                                <label for="">Image</label>
-                                <input type="file" class="form-control" name="file" placeholder="Image">
+                                <label for="file">Image</label>
+                                <input type="file" class="form-control" name="file" placeholder="Image" id="file">
                             </div>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
