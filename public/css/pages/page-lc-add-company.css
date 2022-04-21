@@ -168,26 +168,6 @@
   background-color: #fff;
 }
 
-.add-company-link {
-  display: none;
-}
-
-.add-company-link.active {
-  display: block;
-}
-
-.add-company-link a {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  grid-gap: 10px;
-}
-
 .add-company-wrapper {
   margin-top: 60px;
 }

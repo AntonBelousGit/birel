@@ -144,8 +144,8 @@
         <label class="t-r f16-l24 purple1" for="theme">
             Theme subject
         </label>
-        <select id="theme" class="js-example-basic-single">
-            <option value="0" selected>Choose</option>
+        <select id="theme" class="js-example-basic-single-no-search">
+            <option value="0">Choose</option>
             <option value="1">Orders</option>
             <option value="2">Companies</option>
             <option value="3">Platform</option>
