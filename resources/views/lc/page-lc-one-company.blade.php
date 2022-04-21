@@ -151,16 +151,18 @@
                 <div class="one-company-card">
                     <h1 class="card-title t-sb f22-l25 purple3">{{$company->companyName}}</h1>
                     <p class="card-sub-title t-r f16-l24 purple3">
-                            <span>
-                                @foreach($company->category as $category)
-                                    {{$category->name}}{{!$loop->last?', ':''}}
-                                @endforeach
-                            </span>
-                            <span>Founded: </span>
-                            <span>2003</span>
-                            <span>Total funding: </span>
-                            <span>$850MM</span>
-                        </p>
+                        <span>
+                            @foreach($company->category as $category)
+                                {{$category->name}}{{!$loop->last?', ':''}}
+                            @endforeach
+                        </span>
+                        <span>Founded: </span>
+                        <span>2003</span>
+                    </p>
+                    <p class="card-sub-title t-r f16-l24 purple3">
+                        <span>Total funding: </span>
+                        <span>$850MM</span>
+                    </p>
                     <picture>
                         <source srcset="{{asset('storage/companies/'.$company->image)  }}" type="image/webp">
                         <img class="card-img" src="{{asset('storage/companies/'.$company->image)  }}" alt=""
