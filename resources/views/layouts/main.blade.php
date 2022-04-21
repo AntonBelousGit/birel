@@ -142,10 +142,14 @@
             kept confidential.
         </p>
         <label class="t-r f16-l24 purple1" for="theme">
-            Theme
+            Theme subject
         </label>
         <select id="theme" class="js-example-basic-single">
             <option value="0" selected>Choose</option>
+            <option value="1">Orders</option>
+            <option value="2">Companies</option>
+            <option value="3">Platform</option>
+            <option value="4">Other</option>
         </select>
         <label class="t-r f16-l24 purple1" for="message">
             How can we help?
@@ -167,10 +171,10 @@
             suggestions for the platform
         </h2>
         <p class="t-r f16-l24 purple2">
-            Здесь вы можете оставить ваши пожелания и комментарии по поводу работы плаьформы Бирел.
+            Here you can leave your wishes and comments about the work of the Birel platform.
         </p>
         <label class="t-r f16-l24 purple1" for="message2">
-            Ваши комментарии
+            Your comments
         </label>
         <textarea name="" id="message2" cols="30" rows="10" placeholder="Placeholder text" required></textarea>
         <button class="btn w115">

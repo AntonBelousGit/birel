@@ -270,19 +270,18 @@
                     <div class="company-philter">
                         <label class="company-philter-select">
                             <select class="js-example-basic-single">
-                                <option value="0">3D Printing</option>
-                                <option value="1">Advertising</option>
-                                <option value="2">Aerospace</option>
-                                <option value="3">Analytics/Big Data</option>
+                                <option value="0">--</option>
+                                <option value="1">Bid</option>
+                                <option value="2">Ask</option>
+                                <option value="3">Looking for an offer</option>
+                                <option value="4">Tender</option>
                             </select>
                         </label>
                         <label class="company-philter-select">
                             <select class="js-example-basic-single">
-                                <option value="0">
-                                    < $500M
-                                </option>
-                                <option value="1">$500M - $1B</option>
-                                <option value="2">$1B - $5B</option>
+                                <option value="0">--</option>
+                                <option value="1">Data</option>
+                                <option value="2">Type</option>
                                 <option value="3">$5B +</option>
                             </select>
                         </label>
@@ -661,18 +660,10 @@
                                     </td>
                                     <td class="body-row-item center">
                                         <div>
-                                            <button class="reset-btn" type="button"
-                                                    data-tippy-content="Подсказка о возможности редактирования своего ордера ">
-                                                <i class="icon icon-pen-blue"></i>
-                                            </button>
                                         </div>
                                     </td>
                                     <td class="body-row-item center ios-p">
                                         <div>
-                                            <label class="checkbox-ios">
-                                                <input type="checkbox">
-                                                <span class="checkbox-ios-switch"></span>
-                                            </label>
                                         </div>
                                     </td>
                                 </tr>
@@ -738,19 +729,10 @@
                                     </td>
                                     <td class="body-row-item center">
                                         <div>
-                                            <button class="reset-btn icons"
-                                                    data-tippy-content="Подсказка о возможности редактирования своего ордера "
-                                                    type="button">
-                                                <i class="icon icon-mail-blue"></i>
-                                            </button>
                                         </div>
                                     </td>
                                     <td class="body-row-item center ios-p">
                                         <div>
-                                            <label class="checkbox-ios">
-                                                <input type="checkbox">
-                                                <span class="checkbox-ios-switch"></span>
-                                            </label>
                                         </div>
                                     </td>
                                 </tr>
