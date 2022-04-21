@@ -5,15 +5,9 @@
         <div class="block-header">
             <div class="row clearfix">
                 <div class="col-md-6 col-sm-12">
-                    <h2>Create User</h2>
+                    <h2>Create Company</h2>
                 </div>
                 <div class="col-md-6 col-sm-12 text-right">
-                    <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html"><i class="icon-home"></i></a></li>
-                        <li class="breadcrumb-item">Table</li>
-                        <li class="breadcrumb-item active">Jquery Datatable</li>
-                    </ul>
-                    <a href="javascript:void(0);" class="btn btn-sm btn-primary" title="">Create New</a>
                 </div>
             </div>
         </div>
@@ -27,23 +21,27 @@
                         <form action="{{ route('company.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
+                                <label for="">Company Name</label>
                                 <input type="text" class="form-control" name="companyName" placeholder="Company Name"
                                        value="{{old('companyName')}}">
                             </div>
                             <div class="form-group">
+                                <label for="">Company Address</label>
                                 <input type="text" class="form-control" name="companyAddress"
                                        placeholder="Company Address" value="{{old('companyAddress')}}">
                             </div>
+
                             <div class="form-group">
-                                <textarea class="form-control" name="description" placeholder="Description">
-                                    {{old('description')}}
-                                </textarea>
+                                <label for="">Description</label>
+                                <textarea class="form-control" name="description" placeholder="Description">{{old('description')}}</textarea>
                             </div>
                             <div class="form-group">
+                                <label for="">Valuation</label>
                                 <input type="number" class="form-control" min="0" name="valuation"
                                        placeholder="Valuation" value="{{old('valuation')}}">
                             </div>
                             <div class="form-group">
+                                <label for="">Image</label>
                                 <input type="file" class="form-control" name="file" placeholder="Image">
                             </div>
                             <div class="input-group mb-3">

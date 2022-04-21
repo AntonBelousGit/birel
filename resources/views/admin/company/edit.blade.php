@@ -29,22 +29,27 @@
                             @csrf
                             @method('patch')
                             <div class="form-group">
+                                <label>Company Name </label>
                                 <input type="text" class="form-control" name="companyName" placeholder="Company Name"
                                        value="{{$company->companyName}}">
                             </div>
                             <div class="form-group">
+                                <label>Company Address</label>
                                 <input type="text" class="form-control" name="companyAddress"
                                        placeholder="Company Address" value="{{$company->companyAddress}}">
                             </div>
                             <div class="form-group">
+                                <label>Description</label>
                                 <textarea class="form-control" name="description"
                                           placeholder="Description">{{$company->description}}</textarea>
                             </div>
                             <div class="form-group">
+                                <label>Valuation</label>
                                 <input type="number" class="form-control" min="0" step="0.01" name="valuation"
                                        placeholder="Valuation" value="{{$company->valuation}}">
                             </div>
                             <div class="form-group">
+                                <label>Image</label>
                                 <input type="file" class="form-control" name="file" placeholder="Image">
                             </div>
                             <div class="input-group mb-3">
