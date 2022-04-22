@@ -141,10 +141,10 @@
 @section('content')
     <section class="one">
         <div class="one-company">
-            <div class="one-company-link active">
+            <div class="back-link active">
                 <a class="t-r f18-l32 purple4 " href="{{ route('companies.index') }}">
                     <i class="icon icon-arrow-left"></i>
-                    Вернуться назад
+                    Come back
                 </a>
             </div>
             <div class="one-company-wrapper">
