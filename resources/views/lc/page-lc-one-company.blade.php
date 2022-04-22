@@ -404,7 +404,7 @@
                                 <td class="body-row-item center">
                                     <div>
                                         <button class="reset-btn" type="button"
-                                                data-tippy-content="Базовые сценарии поведения пользователей могут быть рассмотрены исключительно в разрезе маркетинговых и финансовых предпосылок. Современные технологии достигли такого уровня, что дальнейшее развитие различных форм деятельности способствует повышению качества поставленных обществом задач.">
+                                                data-tippy-content="Basic scenarios of user behavior can be considered solely in terms of marketing and financial prerequisites. Modern technologies have reached such a level that the further development of various forms of activity contributes to improving the quality of the tasks set by society.">
                                             <i class="tree-dots"></i>
                                         </button>
                                     </div>
@@ -412,7 +412,7 @@
                                 <td class="body-row-item center">
                                     <div>
                                         <button class="reset-btn" type="button"
-                                                data-tippy-content="Подсказка о возможности редактирования своего ордера ">
+                                                data-tippy-content="Hint about the possibility of editing your order">
                                             <i class="icon icon-pen-blue"></i>
                                         </button>
                                     </div>
@@ -480,7 +480,7 @@
                                 <td class="body-row-item center">
                                     <div>
                                         <button class="reset-btn" type="button"
-                                                data-tippy-content="Базовые сценарии поведения пользователей могут быть рассмотрены исключительно в разрезе маркетинговых и финансовых предпосылок. Современные технологии достигли такого уровня, что дальнейшее развитие различных форм деятельности способствует повышению качества поставленных обществом задач.">
+                                                data-tippy-content="Basic scenarios of user behavior can be considered solely in terms of marketing and financial prerequisites. Modern technologies have reached such a level that the further development of various forms of activity contributes to improving the quality of the tasks set by society.">
                                             <i class="tree-dots"></i>
                                         </button>
                                     </div>
@@ -488,7 +488,7 @@
                                 <td class="body-row-item center">
                                     <div>
                                         <button class="reset-btn icons" type="button"
-                                                data-tippy-content="Подсказка о возможности редактирования своего ордера ">
+                                                data-tippy-content="Prompt about the possibility of sending a message">
                                             <i class="icon icon-mail-blue"></i>
                                         </button>
                                     </div>

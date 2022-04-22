@@ -43,8 +43,8 @@
                         </div>
                         <div class="ask-block-link">
                             <p class="t-r f14-l16 purple2">
-                                You can add company если компании нет в списке .
-                                <a class="" href="#">
+                                You can add company if the company is not in the list.
+                                <a class="" href="{{route('companies.create')}}">
                                     <i class="icon icon-green-circle-plus"></i>
                                 </a>
                             </p>
@@ -61,7 +61,7 @@
                         </select>
                     </div>
                     <div class="ask-block s">
-                        <h2 class="t-sb f22-l25 purple3">Описание</h2>
+                        <h2 class="t-sb f22-l25 purple3">Description</h2>
                         <p class="t-r f16-l24 purple2">You can choose deal structure: direct, spv, forward contract
                             or primary
                             round.</p>
@@ -69,7 +69,7 @@
                                   placeholder="Placeholder text"></textarea>
                     </div>
                     <div class="ask-block i" id="tabs2-bid">
-                        <h2 class="t-sb f22-l25 purple3">Информация</h2>
+                        <h2 class="t-sb f22-l25 purple3">Information</h2>
                         <ul class="nav-tabs ">
                             <li class="t-m f18-l32 purple1 tab-n2 active">
                                 Price
@@ -162,7 +162,7 @@
                         <div class="ask-block-link">
                             <p class="t-r f14-l16 purple2">
                                 You can add company if the company is not listed.
-                                <a class="" href="#">
+                                <a class="" href="{{route('companies.create')}}">
                                     <i class="icon icon-green-circle-plus"></i>
                                 </a>
                             </p>
@@ -269,10 +269,7 @@
                 <div class="looking">
                     <div class="looking-block c-n">
                         <h2 class="t-sb f22-l25 purple3">Company Name</h2>
-                        <p class="t-r f16-l24 purple2">You can выбрать компанию из списка компаний, воспользовавшись
-                            предложенными
-                            или добавить свою.
-                        </p>
+                        <p class="t-r f16-l24 purple2">You can select a company from the list of companies using proposed or add your own.</p>
                         <div class="select">
                             <select id="theme23" class="js-example-basic-single w400">
                                 <option value="0" selected>Choose</option>
@@ -280,15 +277,15 @@
                         </div>
                         <div class="looking-block-link">
                             <p class="t-r f14-l16 purple2">
-                                You can add company если компании нет в списке.
-                                <a class="" href="#">
+                                You can add company if the company is not in the list.
+                                <a class="" href="{{route('companies.create')}}">
                                     <i class="icon icon-green-circle-plus"></i>
                                 </a>
                             </p>
                         </div>
                     </div>
                     <div class="looking-block o">
-                        <h3 class="t-r f16-l24 purple1">Какой ордер вы хотите добавить?</h3>
+                        <h3 class="t-r f16-l24 purple1">What order do you want to add?</h3>
                         <div class="wrapper-radio3">
                             <div class="form_radio">
                                 <label class="t-r f14-l16 purple1">
@@ -308,23 +305,21 @@
                     </div>
                     <div class="looking-block d-s">
                         <h2 class="t-sb f22-l25 purple3">Deal Structure</h2>
-                        <p class="t-r f16-l24 purple2">You can choose deal structure: direct , spv , forward
-                            contract or primary
-                            round, выбрав из списка.
+                        <p class="t-r f16-l24 purple2">You can choose deal structure: direct , spv , forward contract or primary round by selecting from the list.
                         </p>
                         <select id="theme33" class="js-example-basic-single w400">
                             <option value="0" selected>Choose</option>
                         </select>
                     </div>
                     <div class="looking-block s">
-                        <h2 class="t-sb f22-l25 purple3">Описание</h2>
+                        <h2 class="t-sb f22-l25 purple3">Description</h2>
                         <p class="t-r f16-l24 purple2">You can choose deal structure: direct, spv, forward contract
                             or primary
                             round.</p>
                         <textarea class="i-f f14-l16 w400 h235" placeholder="Placeholder text"></textarea>
                     </div>
                     <div class="looking-block i" id="tabs2-looking">
-                        <h2 class="t-sb f22-l25 purple3">Информация</h2>
+                        <h2 class="t-sb f22-l25 purple3">Information</h2>
                         <ul class="nav-tabs">
                             <li class="t-m f18-l32 purple1 tab-n2 active">
                                 Number shares
@@ -388,9 +383,7 @@
                 <div class="tender">
                     <div class="tender-block c-n">
                         <h2 class="t-sb f22-l25 purple3">Company Name</h2>
-                        <p class="t-r f16-l24 purple2">You can выбрать компанию из списка компаний, воспользовавшись
-                            предложенными
-                            или добавить свою.
+                        <p class="t-r f16-l24 purple2">You can choose a company from the list of companies using the suggested ones or add your own.
                         </p>
                         <div class="select">
                             <select id="theme24" class="js-example-basic-single w400">
@@ -399,19 +392,19 @@
                         </div>
                         <div class="tender-block-link">
                             <p class="t-r f14-l16 purple2">
-                                You can add company если компании нет в списке.
-                                <a class="" href="#">
+                                You can add company if the company is not in the list.
+                                <a class="" href="{{route('companies.create')}}">
                                     <i class="icon icon-green-circle-plus"></i>
                                 </a>
                             </p>
                         </div>
                     </div>
                     <div class="tender-block n-c">
-                        <label class="t-r f16-l24 purple1" for="site-company4">Сайт компании</label>
+                        <label class="t-r f16-l24 purple1" for="site-company4">Site the company</label>
                         <input class="i-f w400" type="text" id="site-company4" placeholder="Placeholder">
                     </div>
                     <div class="tender-block o">
-                        <h3 class="t-r f16-l24 purple1">Какой ордер вы хотите добавить?</h3>
+                        <h3 class="t-r f16-l24 purple1">What order do you want to add?</h3>
                         <div class="wrapper-radio3">
                             <div class="form_radio">
                                 <label class="t-r f14-l16 purple1">
@@ -431,30 +424,28 @@
                     </div>
                     <div class="tender-block d-s">
                         <h2 class="t-sb f22-l25 purple3">Deal Structure</h2>
-                        <p class="t-r f16-l24 purple2">You can choose deal structure: direct , spv , forward
-                            contract or primary
-                            round, выбрав из списка.
+                        <p class="t-r f16-l24 purple2">You can choose deal structure: direct , spv , forward contract or primary round by selecting from the list.
                         </p>
                         <select id="theme34" class="js-example-basic-single w400">
                             <option value="0" selected>Choose</option>
                         </select>
                     </div>
                     <div class="tender-block s">
-                        <h2 class="t-sb f22-l25 purple3">Описание</h2>
+                        <h2 class="t-sb f22-l25 purple3">Description</h2>
                         <p class="t-r f16-l24 purple2">You can choose deal structure: direct, spv, forward contract
                             or primary
                             round.</p>
                         <textarea class="i-f f14-l16 w400 h235" placeholder="Placeholder text"></textarea>
                     </div>
                     <div class="tender-block d-r">
-                        <h2 class="t-sb f22-l25 purple3">Срок тендера</h2>
+                        <h2 class="t-sb f22-l25 purple3">Tender term</h2>
                         <div class="date-wrapper">
                             <input class="i-f w170" type="text" name="datetimes">
                             <input class="i-f w170" type="text" name="datetimes">
                         </div>
                     </div>
                     <div class="tender-block i" id="tabs2-tender">
-                        <h2 class="t-sb f22-l25 purple3">Информация</h2>
+                        <h2 class="t-sb f22-l25 purple3">Information</h2>
                         <ul class="nav-tabs">
                             <li class="t-m f18-l32 purple1 tab-n2 active">
                                 Price

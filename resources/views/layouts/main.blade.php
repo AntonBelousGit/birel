@@ -90,7 +90,7 @@
             </div>
         </div>
         <div class="notification active">
-            <p class="t-r f14-l16 purple1">Ваш ордер успешно сохранен и будет опубликован после одобрения модератора</p>
+            <p class="t-r f14-l16 purple1">Your order has been successfully saved and will be published after moderator approval</p>
             <button class="reset-btn" type="button">
                 <i class="icon icon-close-green"></i>
             </button>

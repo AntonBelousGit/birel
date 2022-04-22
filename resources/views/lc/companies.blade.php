@@ -71,7 +71,7 @@
             <ul class="company-list">
             @foreach($watchlist as $item)
                 <li class="company-item">
-                    <a class="company-item-link" href="#">
+                    <a class="company-item-link" href="{{ route('companies.show',$item->company) }}">
                         <picture>
                             <source srcset="{{asset('storage/companies/'.$item->company->image)  }}" type="image/webp">
                             <img class="company-item-img" src="{{asset('storage/companies/'.$item->company->image)  }}" alt="">
@@ -112,7 +112,7 @@
             <ul class="company-list">
             @foreach($companies as $company)
                 <li class="company-item">
-                    <a class="company-item-link" href="#">
+                    <a class="company-item-link" href="{{ route('companies.show',$company) }}">
                         <picture>
                             <source srcset="{{asset('storage/companies/'.$company->image)  }}" type="image/webp">
                             <img class="company-item-img" src="{{asset('storage/companies/'.$company->image)  }}" alt="">
