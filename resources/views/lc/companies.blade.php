@@ -106,7 +106,7 @@
                 </li>
             @endforeach
             </ul>
-            <div class="">{{ $watchlist->links('vendor.pagination.custom') }}</div>
+            <div class="">{{ $watchlist->onEachSide(0)->links('vendor.pagination.custom') }}</div>
         </div>
         <div class="content-t active">
             <ul class="company-list">
@@ -187,7 +187,7 @@
                 </li>
             @endforeach
             </ul>
-            <div>{{ $companies->links('vendor.pagination.custom')}}</div>
+            <div>{{ $companies->onEachSide(0)->links('vendor.pagination.custom')}}</div>
         </div>
         <div class="company-text-bot">
         		<p class="t-r">
