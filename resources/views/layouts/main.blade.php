@@ -60,35 +60,31 @@
                     </li>
                 </ul>
                 <div class="header-user">
-                    <button class="header-user-avatar reset-btn" type="button">
-                        <picture>
-                            <source srcset="./img/Avatar.webp" type="image/webp">
-                            <img class="avatar" src="./img/Avatar.png" alt="avatar"></picture>
-                    </button>
+                    <div class="header-user-avatar">
+                        <span class="t-sb f18-l25 purple1">SD</span>
+                    </div>
                     <div class="header-user-menu">
-                        <div class="header-user-menu">
-                            <div class="menu-name arrow-icon">
-                                {{ Auth::user()->surname}} {{substr(Auth::user()->name, 0,1)}}.
-                            </div>
+                        <div class="menu-name arrow-icon">
+                            {{ Auth::user()->surname}} {{substr(Auth::user()->name, 0,1)}}.
                         </div>
-                        <div class="menu-box">
-                            <ul class="menu-list">
-                                <li class="menu-list-item">
-                                    <a class="icon icon-log-user-white" href="{{ route('home') }}">Account</a>
-                                </li>
-                                <li class="menu-list-item">
-                                    <a class="icon icon-log-case-white" href="{{ route('orders') }}">My Orders</a>
-                                </li>
-                                <li class="menu-list-item">
-                                    <a class="icon icon-log-case-white" href="#">Settings</a>
-                                </li>
-                                <li class="menu-list-item">
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        <button type="submit" class="reset-btn icon icon-log-out-white" value="{{ __('Log out') }}">{{ __('Log out') }}</button>
-                                    </form>
-                                </li>
-                            </ul>
-                        </div>
+                    </div>
+                    <div class="menu-box">
+                        <ul class="menu-list">
+                            <li class="menu-list-item">
+                                <a class="icon icon-log-user-white" href="{{ route('home') }}">Account</a>
+                            </li>
+                            <li class="menu-list-item">
+                                <a class="icon icon-log-case-white" href="{{ route('orders') }}">My Orders</a>
+                            </li>
+                            <li class="menu-list-item">
+                                <a class="icon icon-log-case-white" href="#">Settings</a>
+                            </li>
+                            <li class="menu-list-item">
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    <button type="submit" class="reset-btn icon icon-log-out-white" value="{{ __('Log out') }}">{{ __('Log out') }}</button>
+                                </form>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>

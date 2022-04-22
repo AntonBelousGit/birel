@@ -2055,15 +2055,26 @@ label {
   max-width: 42px;
 }
 
-.header-user-avatar .avatar {
+.header-user-avatar span {
   max-width: 42px;
   min-width: 42px;
   min-height: 42px;
   max-height: 42px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  background-color: #FFFFFF;
   -webkit-border-radius: 50%;
           border-radius: 50%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .header-user-menu .menu-name {

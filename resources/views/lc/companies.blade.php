@@ -86,10 +86,10 @@
                         @endforelse
                     </p>
                     <p class="company-item-tech t-r f16-l24 purple3">
-                        Founded: <span> 2003 </span>
+                       <span>Founded:</span> <span> 2003 </span>
                     </p>
                     <p class="company-item-tech t-r f16-l24 purple3">
-                        Total funding: <span> $850MM</span>
+                        <span>Total funding:</span> <span> $850MM</span>
                     </p>
                     <p class="company-item-val t-r f16-l24 purple1">Last Round Est. Valuation</p>
                     <span class="company-item-numb t-r f16-l24 purple3">{{$item->company?->valuation}} B</span>
@@ -129,7 +129,7 @@
                     </p>
                     <div class="company-item-tech t-r f16-l24 purple3">
 
-                        Founded: 2003
+                        <span>Founded:</span> <span>2003</span>
                     </div>
                     <div class="company-item-tech t-r f16-l24 purple3">
                         <span>Total funding:</span>

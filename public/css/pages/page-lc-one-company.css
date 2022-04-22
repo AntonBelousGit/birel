@@ -452,27 +452,6 @@
   background-color: #fff;
 }
 
-.one-company-link {
-  display: none;
-  margin-bottom: 50px;
-}
-
-.one-company-link.active {
-  display: block;
-}
-
-.one-company-link a {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  grid-gap: 10px;
-}
-
 .one-company-wrapper {
   display: -webkit-box;
   display: -webkit-flex;
@@ -560,10 +539,7 @@
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.one-company-text .text-wrapper-box:first-child {
-  grid-gap: 20px;
+  grid-gap: 0 10px;
 }
 
 .one-company-text .text-wrapper-box:last-child {

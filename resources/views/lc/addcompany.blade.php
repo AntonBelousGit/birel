@@ -9,12 +9,12 @@
 <section class="add">
 	<div class="add-company">
 		@if(URL::previous() != route('companies.create'))
-		<div class="add-company-link active">
-			<a class="t-r f18-l32 purple4 " href="{{ URL::previous() }}">
-				<i class="icon icon-arrow-left"></i>
-				Return back
-			</a>
-		</div>
+		<div class="back-link active">
+            <a class="t-r f18-l32 purple4 " href="{{ URL::previous() }}">
+                <i class="icon icon-arrow-left"></i>
+                Come back
+            </a>
+        </div>
 		@endif
 		<div class="add-company-wrapper">
 			<h1 class="t-sb f22-l25 purple3 ">
