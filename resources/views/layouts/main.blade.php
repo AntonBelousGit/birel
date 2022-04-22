@@ -61,7 +61,7 @@
                 </ul>
                 <div class="header-user">
                     <div class="header-user-avatar">
-                        <span class="t-sb f18-l25 purple1">SD</span>
+                        <span class="t-sb f18-l25 purple1"> {{ substr(Auth::user()->surname, 0,1)}}{{substr(Auth::user()->name, 0,1)}}</span>
                     </div>
                     <div class="header-user-menu">
                         <div class="menu-name arrow-icon">

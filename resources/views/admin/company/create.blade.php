@@ -32,8 +32,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="total_funding">Total Funding</label>
-                                <input type="text" class="form-control" name="total_funding"
-                                       placeholder="Total Funding" value="{{old('total_funding')}}" id="total_funding">
+                                <input type="number" min="0" class="form-control" name="total_funding_decode"
+                                       placeholder="Total Funding" value="{{old('total_funding_decode')}}" id="total_funding">
                             </div>
                             <div class="form-group">
                                 <label for="founded">Company Founded</label>

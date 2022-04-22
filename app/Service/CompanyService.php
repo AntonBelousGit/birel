@@ -38,8 +38,8 @@ class CompanyService
     public function store($request, $name)
     {
         try {
-
-            $company = Company::create($request + ['image' => $name]);
+            $total_funding = encode_bigNumber($request['total_funding_decode']);
+            $company = Company::create($request + ['image' => $name,'total_funding'=> $total_funding]);
         } catch (Throwable $e) {
             report($e);
             abort(500);
@@ -49,14 +49,8 @@ class CompanyService
     public function update($request, $category, $name)
     {
         try {
-            $category->update([
-                'companyName'=> $request->input('companyName'),
-                'companyAddress' => $request->input('companyAddress'),
-                'image' => $name,
-                'description' => $request->input('description'),
-                'valuation'=> $request->input('valuation'),
-                'status' => $request->input('status'),
-            ]);
+            $total_funding = encode_bigNumber($request['total_funding_decode']);
+            $category->update($request + ['image' => $name,'total_funding'=> $total_funding]);
         } catch (Throwable $e) {
             report($e);
             abort(500);

@@ -27,7 +27,7 @@ class StoreCompanyAdminRequest extends FormRequest
             'companyName'=>'required',
             'companyAddress'=>'required',
             'founded'=>'date',
-            'total_funding'=>'nullable',
+            'total_funding_decode'=>'nullable',
             'image'=>'nullable',
             'description'=>'nullable',
             'valuation'=>'nullable',

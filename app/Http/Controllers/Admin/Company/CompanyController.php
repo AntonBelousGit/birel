@@ -94,7 +94,7 @@ class CompanyController extends Controller
     public function update(StoreCompanyAdminRequest $request, Company $company, SyncDependentsCompanyAction $action)
     {
         $name = $this->storage->saveImage();
-        $companyUpdated = $this->companyService->update($request, $company, $name);
+        $companyUpdated = $this->companyService->update($request->all(), $company, $name);
         $action->handle($companyUpdated, $request['category_id']);
         return redirect()->route('company.index');
     }

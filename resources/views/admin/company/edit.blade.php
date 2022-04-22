@@ -5,15 +5,10 @@
         <div class="block-header">
             <div class="row clearfix">
                 <div class="col-md-6 col-sm-12">
-                    <h2>Create User</h2>
+                    <h2>Edit Company</h2>
                 </div>
                 <div class="col-md-6 col-sm-12 text-right">
-                    <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="/"><i class="icon-home"></i></a></li>
-                        <li class="breadcrumb-item">Table</li>
-                        <li class="breadcrumb-item active">Jquery Datatable</li>
-                    </ul>
-                    <a href="javascript:void(0);" class="btn btn-sm btn-primary" title="">Create New</a>
+                    <a href="{{ route('company.create') }}" class="btn btn-sm btn-primary" title="">Create New</a>
                 </div>
             </div>
         </div>
@@ -40,8 +35,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="total_funding">Total Funding</label>
-                                <input type="text" class="form-control" name="total_funding"
-                                       placeholder="Total Funding" value="{{$company->total_funding}}" id="total_funding">
+                                <input type="text" class="form-control" name="total_funding_decode"
+                                       placeholder="Total Funding" value="{{$company->total_funding_decode}}" id="total_funding">
                             </div>
                             <div class="form-group">
                                 <label for="founded">Company Founded</label>
