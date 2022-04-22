@@ -157,11 +157,11 @@
                             @endforeach
                         </span>
                         <span>Founded: </span>
-                        <span>2003</span>
+                        <span>{{$company->founded->format('Y')}}</span>
                     </p>
                     <p class="card-sub-title t-r f16-l24 purple3">
                         <span>Total funding: </span>
-                        <span>$850MM</span>
+                        <span>${{$company->total_funding}}</span>
                     </p>
                     <picture>
                         <source srcset="{{asset('storage/companies/'.$company->image)  }}" type="image/webp">

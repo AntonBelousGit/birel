@@ -19,9 +19,10 @@ class CreateCompaniesTable extends Migration
             $table->string('companyAddress');
             $table->date('founded');
             $table->string('total_funding')->default(0);
+            $table->unsignedBigInteger('total_funding_decode')->default(0);
             $table->string('image')->nullable();
             $table->text('description')->nullable();
-            $table->unsignedDouble('valuation',6,2)->nullable();
+            $table->unsignedDouble('valuation',15,2)->nullable();
             $table->tinyInteger('status')->default(0);
             $table->timestamps();
         });

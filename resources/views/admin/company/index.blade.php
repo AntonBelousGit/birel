@@ -52,8 +52,8 @@
                                         <th>Image</th>
                                         <th>Description</th>
                                         <th>Valuation</th>
-                                        <th>Valuation</th>
                                         <th>Status</th>
+                                        <th>Action</th>
                                     </tr>
                                     </thead>
                                     <tfoot>
@@ -64,8 +64,8 @@
                                         <th>Image</th>
                                         <th>Description</th>
                                         <th>Valuation</th>
-                                        <th>Valuation</th>
                                         <th>Status</th>
+                                        <th>Action</th>
                                     </tr>
                                     </tfoot>
                                     <tbody>

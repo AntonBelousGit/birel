@@ -21,6 +21,7 @@ class Company extends Model
         'status',
         'founded',
         'total_funding',
+        'total_funding_decode'
     ];
 
     protected $dates = ['founded'];
