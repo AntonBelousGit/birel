@@ -40,32 +40,10 @@ class CompanyController extends Controller
      */
     public function index()
     {
-
-
-        dd($this->get_number_with_letters(500001000));
-
         $companies = $this->companyService->getAllCompanies();
         $setting = $this->setting;
         return view('admin.company.index', compact('companies', 'setting'));
     }
-
-
-    public function get_number_with_letters($n)
-    {
-        $n = (float)$n;
-
-        if ($n <= 9999 and $n >= -9999) {
-            $format = number_format($n, 0, '.', '');
-        } else if ($n <= 999999 and $n >= -999999) {
-            $format = number_format($n / 1e3, 2, '.', '') + 0 . 'К';
-        } else if ($n <= 999999999 and $n >= -999999999) {
-            $format = number_format($n / 1e6, 2, '.', '') + 0 . 'М';
-        } else {
-            $format = number_format($n / 1e9, 2, '.', '') + 0 . 'B';
-        }
-        return $format;
-    }
-
 
     /**
      * Show the form for creating a new resource.
@@ -88,7 +66,7 @@ class CompanyController extends Controller
     public function store(StoreCompanyAdminRequest $request, SyncDependentsCompanyAction $action)
     {
         $name = $this->storage->saveImage();
-        $company = $this->companyService->store($request, $name);
+        $company = $this->companyService->store($request->all(), $name);
         $action->handle($company, $request['category_id']);
         return redirect()->route('company.index');
     }

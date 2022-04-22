@@ -133,7 +133,8 @@
             <i class="icon icon-close-green"></i>
         </button>
     </div>
-    <form class="popUp-message-form" action="#">
+    <form class="popUp-message-form" action="{{ route('frontend-question') }}" method="POST">
+        @csrf
         <h2 class="t-sb f22-l25 purple3">
             Ask Birel a Question
         </h2>
@@ -144,17 +145,17 @@
         <label class="t-r f16-l24 purple1" for="theme">
             Theme subject
         </label>
-        <select id="theme" class="js-example-basic-single-no-search">
-            <option value="0">Choose</option>
-            <option value="1">Orders</option>
-            <option value="2">Companies</option>
-            <option value="3">Platform</option>
-            <option value="4">Other</option>
+        <select id="theme" class="js-example-basic-single-no-search" name="theme">
+            <option value="N/A">Choose</option>
+            <option value="Orders">Orders</option>
+            <option value="Companies">Companies</option>
+            <option value="Platform">Platform</option>
+            <option value="Other">Other</option>
         </select>
         <label class="t-r f16-l24 purple1" for="message">
             How can we help?
         </label>
-        <textarea name="" id="message" cols="30" rows="10" placeholder="Placeholder text" required></textarea>
+        <textarea name="text" id="message" cols="30" rows="10" placeholder="Placeholder text" required></textarea>
         <button class="btn w115">
             Send
         </button>
@@ -166,7 +167,8 @@
             <i class="icon icon-close-green"></i>
         </button>
     </div>
-    <form class="popUp-message-form" action="#">
+    <form class="popUp-message-form" action="{{ route('frontend-question') }}" method="POST">
+        @csrf
         <h2 class="t-sb f22-l25 purple3">
             suggestions for the platform
         </h2>
@@ -176,7 +178,8 @@
         <label class="t-r f16-l24 purple1" for="message2">
             Your comments
         </label>
-        <textarea name="" id="message2" cols="30" rows="10" placeholder="Placeholder text" required></textarea>
+        <input type="hidden" name="theme" value="Question">
+        <textarea name="text" id="message2" cols="30" rows="10" placeholder="Placeholder text" required></textarea>
         <button class="btn w115">
             Send
         </button>

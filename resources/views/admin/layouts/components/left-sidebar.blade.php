@@ -47,6 +47,12 @@
                         <li><a href="{{ route('category.create') }}">Create category</a></li>
                     </ul>
                 </li>
+                <li @if(Route::is('question.*')) class="active" @endif>
+                    <a href="#question" class="has-arrow"><i class="icon-question"></i><span>Question</span></a>
+                    <ul>
+                        <li><a href="{{ route('question.index') }}">All</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </div>

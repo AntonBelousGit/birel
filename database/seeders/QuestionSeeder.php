@@ -2,10 +2,9 @@
 
 namespace Database\Seeders;
 
-use App\Models\Company;
 use Illuminate\Database\Seeder;
 
-class CompanySeeder extends Seeder
+class QuestionSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,6 +13,6 @@ class CompanySeeder extends Seeder
      */
     public function run()
     {
-        Company::factory(100)->create();
+        //
     }
 }

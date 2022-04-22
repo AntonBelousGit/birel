@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Frontend\Question\QuestionController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
@@ -34,8 +35,6 @@ Route::post('/companies/wali', [App\Http\Controllers\CompanyController::class, '
 Route::post('/companies/wali-delete/{id}', [App\Http\Controllers\CompanyController::class, 'deleteWali'])->name('delete-wali');
 
 
-
-
 Route::controller(HomeController::class)->group(function () {
     Route::get('/orders', 'orders')->name('orders');
     Route::get('/add-order', 'addOrder')->name('add-order');
@@ -43,6 +42,6 @@ Route::controller(HomeController::class)->group(function () {
     Route::post('/changepass', 'changepass')->name('changepass');
 });
 
-Auth::routes();
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::post('/question', QuestionController::class)->name('frontend-question')->middleware('auth');

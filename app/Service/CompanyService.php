@@ -38,14 +38,8 @@ class CompanyService
     public function store($request, $name)
     {
         try {
-            $company = Company::create([
-                'companyName' => $request->input('companyName'),
-                'companyAddress' => $request->input('companyAddress'),
-                'image' => $name,
-                'description' => $request->input('description'),
-                'valuation' => $request->input('valuation'),
-                'status' => $request->input('status'),
-            ]);
+
+            $company = Company::create($request + ['image' => $name]);
         } catch (Throwable $e) {
             report($e);
             abort(500);

@@ -39,8 +39,13 @@
                                        placeholder="Company Address" value="{{$company->companyAddress}}" id="companyAddress">
                             </div>
                             <div class="form-group">
+                                <label for="total_funding">Total Funding</label>
+                                <input type="text" class="form-control" name="total_funding"
+                                       placeholder="Total Funding" value="{{$company->total_funding}}" id="total_funding">
+                            </div>
+                            <div class="form-group">
                                 <label for="founded">Company Founded</label>
-                                <input type="date" class="form-control" name="date" placeholder="Date" value="" id="founded">
+                                <input type="date" class="form-control" name="founded" placeholder="Date" value="{{$company->founded->format('Y-m-d')}}" id="founded">
                             </div>
                             <div class="form-group">
                                 <label for="description">Description</label>

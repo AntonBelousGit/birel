@@ -19,7 +19,11 @@ class Company extends Model
         'description',
         'valuation',
         'status',
+        'founded',
+        'total_funding',
     ];
+
+    protected $dates = ['founded'];
 
     public function category()
     {
