@@ -500,7 +500,7 @@
                             <div class="ask-block-info">
                                 <label class="t-r f16-l24 purple1" for="volume24">Block Volume</label>
                                 <input class="i-f w400" type="text" id="volume24"
-                                       placeholder="Высчитывается автоматически">
+                                       placeholder="Placeholder number">
                             </div>
                             <div class="ask-block-info">
                                 <label class="t-r f16-l24 purple1" for="share_number24">Valuation Start</label>
