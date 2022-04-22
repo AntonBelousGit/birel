@@ -458,6 +458,10 @@
 }
 
 .company-item-drop p {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 100%;
+      -ms-flex: 0 1 100%;
+          flex: 0 1 100%;
   margin-bottom: 5px;
 }
 
