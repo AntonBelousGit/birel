@@ -204,5 +204,7 @@
             </tr>
             </tbody>
         </table>
+
+        {{$company->finance->onEachSide(-1)->links('vendor.pagination.custom')}}
     </div>
 </div>

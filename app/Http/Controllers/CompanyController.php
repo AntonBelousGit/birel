@@ -71,7 +71,9 @@ class CompanyController extends Controller
      */
     public function show($id)
     {
-        $company = Company::with('finance')->find($id);
+        $company = Company::find($id);
+        $company->setRelation('finance', $company->finance()->paginate(10));
+
         $check_isset = Watchlist::where(['user_id' => auth()->id(), 'company_id' => $id])->first(['id','type']);
         return view('lc.page-lc-one-company', compact('company','check_isset'));
     }
