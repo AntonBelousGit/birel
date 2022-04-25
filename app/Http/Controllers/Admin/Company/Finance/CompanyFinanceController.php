@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin\Company\Finance;
 
+use App\Action\Company\SyncFinancingTotalFundingAction;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CompanyFinanceRequest;
 use App\Models\Company;
@@ -51,7 +52,7 @@ class CompanyFinanceController extends Controller
      * @param CompanyFinanceRequest $companyFinanceRequest
      * @return RedirectResponse
      */
-    public function store(Company $company, CompanyFinanceRequest $companyFinanceRequest)
+    public function store(Company $company, CompanyFinanceRequest $companyFinanceRequest, SyncFinancingTotalFundingAction $action)
     {
 
         $companyFinance = (new CompanyFinance())->create($companyFinanceRequest->validated() + ['company_id' => $company->id]);
@@ -59,6 +60,8 @@ class CompanyFinanceController extends Controller
         if (!empty(array_filter($companyFinanceRequest->info))) {
             (new CompanyFinanceInfo())->create($companyFinanceRequest->info + ['company_finance_id' => $companyFinance->id]);
         }
+
+        $action->handle($company);
 
         return redirect()->route('company.id.financing', $company);
     }
@@ -83,7 +86,7 @@ class CompanyFinanceController extends Controller
      * @param $companyFinance
      * @return RedirectResponse
      */
-    public function update(CompanyFinanceRequest $companyFinanceRequest, Company $company, $companyFinance)
+    public function update(CompanyFinanceRequest $companyFinanceRequest, Company $company, $companyFinance, SyncFinancingTotalFundingAction $action)
     {
 
         $finance = CompanyFinance::with('info')->find($companyFinance);
@@ -98,7 +101,7 @@ class CompanyFinanceController extends Controller
                 } else {
                     $finance->info->update($companyFinanceRequest->info);
                 }
-
+                $action->handle($company);
                 return redirect()->back();
 //                return redirect()->route('company.id.financing', $company);
             }
