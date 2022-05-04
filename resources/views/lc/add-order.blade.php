@@ -27,249 +27,15 @@
                 Tender
             </li>
         </ul>
-        <div class="content-t ">
-            <form class="add-order-ask" action="#">
-                <div class="ask">
-                    <div class="ask-block c-n">
-                        <h2 class="t-sb f22-l25 purple3">Company Name</h2>
-                        <p class="t-r f16-l24 purple2">You can choose deal structure: direct, spv, forward contract
-                            or primary
-                            round.
-                        </p>
-                        <div class="select">
-                            <select id="theme2-bid" class="js-example-basic-single w400">
-                                <option value="0" selected>Choose</option>
-                            </select>
-                        </div>
-                        <div class="ask-block-link">
-                            <p class="t-r f14-l16 purple2">
-                                You can add company if the company is not in the list.
-                                <a class="" href="{{route('companies.create')}}">
-                                    <i class="icon icon-green-circle-plus"></i>
-                                </a>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="ask-block d-s">
-                        <h2 class="t-sb f22-l25 purple3">Deal Structure</h2>
-                        <p class="t-r f16-l24 purple2">You can choose deal structure: direct, spv, forward contract
-                            or primary
-                            round.
-                        </p>
-                        <select id="theme3-bid" class="js-example-basic-single w400">
-                            <option value="0" selected>Choose</option>
-                        </select>
-                    </div>
-                    <div class="ask-block s">
-                        <h2 class="t-sb f22-l25 purple3">Description</h2>
-                        <p class="t-r f16-l24 purple2">You can choose deal structure: direct, spv, forward contract
-                            or primary
-                            round.</p>
-                        <textarea class="i-f f14-l16 w400 h235" cols="30" rows="10"
-                                  placeholder="Placeholder text"></textarea>
-                    </div>
-                    <div class="ask-block i" id="tabs2-bid">
-                        <h2 class="t-sb f22-l25 purple3">Information</h2>
-                        <ul class="nav-tabs ">
-                            <li class="t-m f18-l32 purple1 tab-n2 active">
-                                Price
-                            </li>
-                            <li class="t-m f18-l32 purple1 tab-n2 ">
-                                Valuation
-                            </li>
-                        </ul>
-                        <div class="content-t2 active">
-                            <div class="ask-block-info">
-                                <label class="t-r f16-l24 purple1" for="share_type-bid">
-                                    Share Type
-                                </label>
-                                <select id="share_type-bid" class="js-example-basic-single w400">
-                                    <option value="0" selected>Choose</option>
-                                </select>
-                            </div>
-                            <div class="ask-block-info">
-                                <div class="wrapper-radio">
-                                    <div class="form_radio">
-                                        <label class="t-r f14-l16 purple1">
-                                            <input type="radio" name="variant2" checked>
-                                            <span></span>
-                                            $
-                                        </label>
-                                    </div>
-                                    <div class="form_radio">
-                                        <label class="t-r f14-l16 purple1">
-                                            <input type="radio" name="variant2">
-                                            <span></span>
-                                            €
-                                        </label>
-                                    </div>
-                                </div>
-                                <label class="t-r f16-l24 purple1" for="share_price-bid">Share Price</label>
-                                <input class="i-f w400" type="text" id="share_price-bid"
-                                       placeholder="Placeholder price">
-                            </div>
-                            <div class="ask-block-info">
-                                <label class="t-r f16-l24 purple1" for="share_number-bid">Share Number</label>
-                                <input class="i-f w400" type="text" id="share_number-bid"
-                                       placeholder="Placeholder number">
-                            </div>
-                            <div class="ask-block-info">
-                                <label class="t-r f16-l24 purple1" for="volume-bid">Volume</label>
-                                <input class="i-f w400" type="text" id="volume-bid"
-                                       placeholder="Высчитывается автоматически">
-                            </div>
-                        </div>
-                        <div class="content-t2">
-                            <div class="ask-block-info">
-                                <label class="t-r f16-l24 purple1" for="share_type2-bid">Share Type</label>
-                                <select id="share_type2-bid" class="js-example-basic-single w400">
-                                    <option value="0" selected>Choose</option>
-                                </select>
-                            </div>
-                            <div class="ask-block-info">
-                                <label class="t-r f16-l24 purple1" for="volume2-bid">Volume</label>
-                                <input class="i-f w400" type="text" id="volume2-bid" placeholder="Placeholder">
-                            </div>
-                            <div class="ask-block-info">
-                                <label class="t-r f16-l24 purple1" for="share_number2-bid">Valuation</label>
-                                <input class="i-f w400" type="text" id="share_number2-bid"
-                                       placeholder="Placeholder">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="add-order-btn">
-                    <button class="btn w265">
-                        Submit
-                    </button>
-                </div>
-            </form>
-        </div>
-        <div class="content-t ">
-            <form class="add-order-ask" action="#">
-                <div class="ask">
-                    <div class="ask-block c-n">
-                        <h2 class="t-sb f22-l25 purple3">Company Name</h2>
-                        <p class="t-r f16-l24 purple2">You can choose deal structure: direct, spv, forward contract
-                            or primary
-                            round.
-                        </p>
-                        <div class="select">
-                            <select id="theme2" class="js-example-basic-single w400">
-                                <option value="0" selected>Choose</option>
-                            </select>
-                        </div>
-                        <div class="ask-block-link">
-                            <p class="t-r f14-l16 purple2">
-                                You can add company if the company is not listed.
-                                <a class="" href="{{route('companies.create')}}">
-                                    <i class="icon icon-green-circle-plus"></i>
-                                </a>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="ask-block d-s">
-                        <h2 class="t-sb f22-l25 purple3">Deal Structure</h2>
-                        <p class="t-r f16-l24 purple2">You can choose deal structure: direct, spv, forward contract
-                            or primary
-                            round.
-                        </p>
-                        <select id="theme3" class="js-example-basic-single w400">
-                            <option value="0" selected>Choose</option>
-                        </select>
-                    </div>
-                    <div class="ask-block s">
-                        <h2 class="t-sb f22-l25 purple3">Description</h2>
-                        <p class="t-r f16-l24 purple2">You can choose deal structure: direct, spv, forward contract
-                            or primary
-                            round.</p>
-                        <textarea class="i-f f14-l16 w400 h235" cols="30" rows="10"
-                                  placeholder="Placeholder text"></textarea>
-                    </div>
-                    <div class="ask-block i" id="tabs2">
-                        <h2 class="t-sb f22-l25 purple3">Information</h2>
-                        <ul class="nav-tabs ">
-                            <li class="t-m f18-l32 purple1 tab-n2 active">
-                                Price
-                            </li>
-                            <li class="t-m f18-l32 purple1 tab-n2 ">
-                                Valuation
-                            </li>
-                        </ul>
-                        <div class="content-t2 active">
-                            <div class="ask-block-info">
-                                <label class="t-r f16-l24 purple1" for="share_type">
-                                    Share Type
-                                </label>
-                                <select id="share_type" class="js-example-basic-single w400">
-                                    <option value="0" disabled selected>Choose</option>
-                                    <option value="1">Preferred</option>
-                                    <option value="2">Common</option>
-                                    <option value="3">Mix</option>
-                                </select>
-                            </div>
-                            <div class="ask-block-info">
-                                <div class="wrapper-radio">
-                                    <div class="form_radio">
-                                        <label class="t-r f14-l16 purple1">
-                                            <input type="radio" name="variant" checked>
-                                            <span></span>
-                                            $
-                                        </label>
-                                    </div>
-                                    <div class="form_radio">
-                                        <label class="t-r f14-l16 purple1">
-                                            <input type="radio" name="variant">
-                                            <span></span>
-                                            €
-                                        </label>
-                                    </div>
-                                </div>
-                                <label class="t-r f16-l24 purple1" for="share_price">Share Price</label>
-                                <input class="i-f w400" type="text" id="share_price"
-                                       placeholder="Placeholder price">
-                            </div>
-                            <div class="ask-block-info">
-                                <label class="t-r f16-l24 purple1" for="share_number">Share Number</label>
-                                <input class="i-f w400" type="text" id="share_number"
-                                       placeholder="Placeholder number">
-                            </div>
-                            <div class="ask-block-info">
-                                <label class="t-r f16-l24 purple1" for="volume">Volume</label>
-                                <input class="i-f w400" type="text" id="volume" placeholder="Placeholder">
-                            </div>
-                        </div>
-                        <div class="content-t2">
-                            <div class="ask-block-info">
-                                <label class="t-r f16-l24 purple1" for="share_type2">Share Type</label>
-                                <select id="share_type2" class="js-example-basic-single w400">
-                                    <option value="0" selected>Choose</option>
-                                </select>
-                            </div>
-                            <div class="ask-block-info">
-                                <label class="t-r f16-l24 purple1" for="volume2">Volume</label>
-                                <input class="i-f w400" type="text" id="volume2" placeholder="Placeholder">
-                            </div>
-                            <div class="ask-block-info">
-                                <label class="t-r f16-l24 purple1" for="share_number2">Valuation</label>
-                                <input class="i-f w400" type="text" id="share_number2" placeholder="Placeholder">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="add-order-btn">
-                    <button class="btn w265">
-                        Submit
-                    </button>
-                </div>
-            </form>
-        </div>
+        @include('lc.add-order.components.ask&bid-component',['type'=>"ASK",'active'=>'active','id'=>'tabs2-bid'])
+        @include('lc.add-order.components.ask&bid-component',['type'=>"ASK",'active'=>'active','id'=>'tabs2'])
         <div class="content-t ">
             <form class="add-order-looking" action="#">
                 <div class="looking">
                     <div class="looking-block c-n">
                         <h2 class="t-sb f22-l25 purple3">Company Name</h2>
-                        <p class="t-r f16-l24 purple2">You can select a company from the list of companies using proposed or add your own.</p>
+                        <p class="t-r f16-l24 purple2">You can select a company from the list of companies using
+                            proposed or add your own.</p>
                         <div class="select">
                             <select id="theme23" class="js-example-basic-single w400">
                                 <option value="0" selected>Choose</option>
@@ -305,7 +71,8 @@
                     </div>
                     <div class="looking-block d-s">
                         <h2 class="t-sb f22-l25 purple3">Deal Structure</h2>
-                        <p class="t-r f16-l24 purple2">You can choose deal structure: direct , spv , forward contract or primary round by selecting from the list.
+                        <p class="t-r f16-l24 purple2">You can choose deal structure: direct , spv , forward contract or
+                            primary round by selecting from the list.
                         </p>
                         <select id="theme33" class="js-example-basic-single w400">
                             <option value="0" selected>Choose</option>
@@ -383,7 +150,8 @@
                 <div class="tender">
                     <div class="tender-block c-n">
                         <h2 class="t-sb f22-l25 purple3">Company Name</h2>
-                        <p class="t-r f16-l24 purple2">You can choose a company from the list of companies using the suggested ones or add your own.
+                        <p class="t-r f16-l24 purple2">You can choose a company from the list of companies using the
+                            suggested ones or add your own.
                         </p>
                         <div class="select">
                             <select id="theme24" class="js-example-basic-single w400">
@@ -424,7 +192,8 @@
                     </div>
                     <div class="tender-block d-s">
                         <h2 class="t-sb f22-l25 purple3">Deal Structure</h2>
-                        <p class="t-r f16-l24 purple2">You can choose deal structure: direct , spv , forward contract or primary round by selecting from the list.
+                        <p class="t-r f16-l24 purple2">You can choose deal structure: direct , spv , forward contract or
+                            primary round by selecting from the list.
                         </p>
                         <select id="theme34" class="js-example-basic-single w400">
                             <option value="0" selected>Choose</option>

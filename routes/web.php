@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Frontend\Order\ManageOrderController;
 use App\Http\Controllers\Frontend\Question\QuestionController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MainController;
@@ -37,11 +38,18 @@ Route::post('/companies/wali-delete/{id}', [App\Http\Controllers\CompanyControll
 
 Route::controller(HomeController::class)->group(function () {
     Route::get('/orders', 'orders')->name('orders');
-    Route::get('/add-order', 'addOrder')->name('add-order');
     Route::post('/update', 'update')->name('update');
     Route::post('/changepass', 'changepass')->name('changepass');
 });
 
+//ORDERS
+Route::controller(ManageOrderController::class)->group(function () {
+    Route::get('/add-order/{type?}', 'addOrder')->name('add-order');
+});
+
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+//Question popup
 Route::post('/question', QuestionController::class)->name('frontend-question')->middleware('auth');
+
