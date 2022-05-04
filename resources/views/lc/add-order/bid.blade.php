@@ -10,6 +10,8 @@
     <script src="{{asset('js/lib/daterangepicker.min.js')}}"></script>
     <script src="{{asset('js/pages/page-lc-add-order.min.js')}}" type="module"></script>
     <script src="{{asset('js/pages/page-lc-order-bid.min.js')}}" type="module"></script>
+    <script src="{{asset('js/pages/page-lc-order-looking.min.js')}}" type="module"></script>
+
 @endsection
 
 

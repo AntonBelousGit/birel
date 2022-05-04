@@ -8,7 +8,7 @@
                     round.
                 </p>
                 <div class="select">
-                    <select id="theme2-bid" class="js-example-basic-single w400">
+                    <select class="js-example-basic-single w400">
                         <option value="0" selected>Choose</option>
                     </select>
                 </div>
@@ -27,7 +27,7 @@
                     or primary
                     round.
                 </p>
-                <select id="theme3-bid" class="js-example-basic-single w400">
+                <select  class="js-example-basic-single w400">
                     <option value="0" selected>Choose</option>
                 </select>
             </div>
@@ -54,7 +54,7 @@
                         <label class="t-r f16-l24 purple1" for="share_type-bid">
                             Share Type
                         </label>
-                        <select id="share_type-bid" class="js-example-basic-single w400">
+                        <select class="js-example-basic-single w400">
                             <option value="0" selected>Choose</option>
                         </select>
                     </div>
@@ -93,7 +93,7 @@
                 <div class="content-t2">
                     <div class="ask-block-info">
                         <label class="t-r f16-l24 purple1" for="share_type2-bid">Share Type</label>
-                        <select id="share_type2-bid" class="js-example-basic-single w400">
+                        <select class="js-example-basic-single w400">
                             <option value="0" selected>Choose</option>
                         </select>
                     </div>

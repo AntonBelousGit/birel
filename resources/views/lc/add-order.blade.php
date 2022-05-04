@@ -18,7 +18,7 @@
 @section('content')
     <div class="add-order" id="tabs">
         <ul class="tab-wrapper nav-tabs w400">
-            <li class="t-m f18-l32 purple1 tab-n ">
+            <li class="t-m f18-l32 purple1 tab-n active">
                 BID
             </li>
             <li class="t-m f18-l32 purple1 tab-n ">
@@ -27,12 +27,12 @@
             <li class="t-m f18-l32 purple1 tab-n ">
                 Looking for an offer
             </li>
-            <li class="t-m f18-l32 purple1 tab-n active">
+            <li class="t-m f18-l32 purple1 tab-n ">
                 Tender
             </li>
         </ul>
         @include('lc.add-order.components.ask&bid-component',['type'=>"ASK",'active'=>'active','id'=>'tabs2-bid'])
-        @include('lc.add-order.components.ask&bid-component',['type'=>"ASK",'active'=>'active','id'=>'tabs2'])
+        @include('lc.add-order.components.ask&bid-component',['type'=>"ASK",'active'=>'','id'=>'tabs2'])
         <div class="content-t ">
             <form class="add-order-looking" action="#">
                 <div class="looking">
@@ -149,7 +149,7 @@
                 </div>
             </form>
         </div>
-        <div class="content-t active">
+        <div class="content-t ">
             <form class="add-order-tender" action="#">
                 <div class="tender">
                     <div class="tender-block c-n">
