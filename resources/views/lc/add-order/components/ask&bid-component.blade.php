@@ -8,8 +8,11 @@
                     round.
                 </p>
                 <div class="select">
-                    <select class="js-example-basic-single w400">
+                    <select class="js-example-basic-single w400" required>
                         <option value="0" selected>Choose</option>
+                        @foreach($companies as $company)
+                            <option value="{{$company->id}}">{{$company->companyName}}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="ask-block-link">
@@ -27,8 +30,12 @@
                     or primary
                     round.
                 </p>
-                <select  class="js-example-basic-single w400">
-                    <option value="0" selected>Choose</option>
+                <select  class="js-example-basic-single w400" name="deal_structure" required>
+                    <option value="Choose" selected disabled>Choose</option>
+                    <option value="direct">direct</option>
+                    <option value="spv">spv</option>
+                    <option value="forward contract">forward contract</option>
+                    <option value="direct or spv">direct or spv</option>
                 </select>
             </div>
             <div class="ask-block s">
@@ -36,7 +43,7 @@
                 <p class="t-r f16-l24 purple2">You can choose deal structure: direct, spv, forward contract
                     or primary
                     round.</p>
-                <textarea class="i-f f14-l16 w400 h235" cols="30" rows="10"
+                <textarea class="i-f f14-l16 w400 h235" cols="30" rows="10" name="description"
                           placeholder="Placeholder text"></textarea>
             </div>
             <div class="ask-block i" id="{{$id}}">
@@ -55,7 +62,10 @@
                             Share Type
                         </label>
                         <select class="js-example-basic-single w400">
-                            <option value="0" selected>Choose</option>
+                            <option value="Choose">Choose</option>
+                            <option value="Preferred">Preferred</option>
+                            <option value="Common">Common</option>
+                            <option value="Preferred and Common">Preferred and Common</option>
                         </select>
                     </div>
                     <div class="ask-block-info">
@@ -94,7 +104,10 @@
                     <div class="ask-block-info">
                         <label class="t-r f16-l24 purple1" for="share_type2-bid">Share Type</label>
                         <select class="js-example-basic-single w400">
-                            <option value="0" selected>Choose</option>
+                            <option value="Choose">Choose</option>
+                            <option value="Preferred">Preferred</option>
+                            <option value="Common">Common</option>
+                            <option value="Preferred and Common">Preferred and Common</option>
                         </select>
                     </div>
                     <div class="ask-block-info">

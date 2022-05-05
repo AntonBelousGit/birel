@@ -19,11 +19,11 @@ class CreateCompanyOrdersTable extends Migration
             $table->foreignId('user_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
             $table->date('date')->nullable();
             $table->text('description');
-            $table->unsignedBigInteger('valuation');
+            $table->unsignedBigInteger('valuation')->nullable();
             $table->unsignedBigInteger('volume');
-            $table->unsignedBigInteger('share_price');
-            $table->unsignedBigInteger('share_price_decode');
-            $table->unsignedBigInteger('share_number');
+            $table->unsignedBigInteger('share_price')->nullable();
+            $table->unsignedBigInteger('share_price_decode')->nullable();
+            $table->unsignedBigInteger('share_number')->nullable();
             $table->enum('type',['ASK','BID','Tender']);
             $table->enum('deal_structure',['Choose','direct','spv','forward contract','direct or spv']);
             $table->enum('share_type',['Choose','Preferred','Common','Preferred and Common']);

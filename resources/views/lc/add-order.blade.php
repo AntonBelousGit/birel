@@ -31,6 +31,16 @@
                 Tender
             </li>
         </ul>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
         @include('lc.add-order.components.ask&bid-component',['type'=>"ASK",'active'=>'active','id'=>'tabs2-bid'])
         @include('lc.add-order.components.ask&bid-component',['type'=>"ASK",'active'=>'','id'=>'tabs2'])
         <div class="content-t ">
