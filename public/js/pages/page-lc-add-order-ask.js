@@ -13,13 +13,12 @@ for (let i = 0; i < itemsUl.length; i++) {
 	titleEl.addEventListener('click', e => {
 		clearName(itemsTabs);
 	});
-} 
+}
 
 function clearName(e) {
 	for (let i = 0; i < e.length; i++) {
 		let item = e[i];
 		if (!item.classList.contains('active')) {
-			console.log(item, 'eqweqw');
 			let elementInput = item.querySelectorAll('input');
 			let elementSelect = item.querySelectorAll('select');
 			deleteName(elementInput);
@@ -40,22 +39,23 @@ function clearName(e) {
 }
 
 function addName() {
-	debugger;
-	let items1 = document.querySelector('#volume2');
-	let items2 = document.querySelector('#share_number2');
-	let items3 = document.querySelector('#share_type2');
+	let items1 = document.querySelector('#volume2-bid');
+	let items2 = document.querySelector('#share_number2-bid');
+	let items3 = document.querySelector('#share_type2-bid');
+
 	items1.setAttribute('name', 'volume');
 	items2.setAttribute('name', 'valuation');
 	items3.setAttribute('name', 'share_type');
 }
 
 function addName2() {
-	let items1 = document.querySelector('#volume');
-	let items2 = document.querySelector('#share_number');
-	let items3 = document.querySelector('#share_price');
+	let items1 = document.querySelector('#volume-bid');
+	let items2 = document.querySelector('#share_number-bid');
+	let items3 = document.querySelector('#share_price-bid');
 	let items4 = document.querySelector('#share_type_currency1');
 	let items5 = document.querySelector('#share_type_currency2');
-	let items6 = document.querySelector('#share_type');
+	let items6 = document.querySelector('#share_type-bid');
+
 	items1.setAttribute('name', 'volume');
 	items2.setAttribute('name', 'share_number');
 	items3.setAttribute('name', 'share_price');
