@@ -15,7 +15,12 @@ class CreateOrderRequest extends FormRequest
             'deal_structure'        => 'required|in:direct,spv,forward contract,direct or spv',
             'share_type'            => 'required|in:Preferred,Common,Preferred and Common',
             'share_type_currency'   => 'filled|in:usd,eur',
-            'type'                  => 'required|in:ASK,BID'
+            'type'                  => 'required|in:ASK,BID',
+            'volume'                => 'required',
+            'share_price'           => 'filled|integer',
+            'share_number'          => 'required_if:share_price',
+            'valuation'             => 'filled'
+
         ];
     }
 
@@ -29,6 +34,10 @@ class CreateOrderRequest extends FormRequest
         $request = $this->validator->validated();
 
         $request['user_id'] = Auth::id();
+
+        if ($this->has('share_price')) {
+            $request['share_price_decode'] = encode_bigNumber($this->share_price);
+        }
 
         return $request;
     }

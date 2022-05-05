@@ -28,6 +28,7 @@ class CreateCompanyOrdersTable extends Migration
             $table->enum('deal_structure',['direct','spv','forward contract','direct or spv']);
             $table->enum('share_type',['Preferred','Common','Preferred and Common']);
             $table->enum('share_type_currency',['usd','eur'])->default('usd');
+            $table->enum('status',['active','inactive','moderation'])->default('moderation');
 
             $table->timestamps();
         });
