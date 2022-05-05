@@ -25,8 +25,8 @@ class CreateCompanyOrdersTable extends Migration
             $table->unsignedBigInteger('share_price_decode')->nullable();
             $table->unsignedBigInteger('share_number')->nullable();
             $table->enum('type',['ASK','BID','Tender']);
-            $table->enum('deal_structure',['Choose','direct','spv','forward contract','direct or spv']);
-            $table->enum('share_type',['Choose','Preferred','Common','Preferred and Common']);
+            $table->enum('deal_structure',['direct','spv','forward contract','direct or spv']);
+            $table->enum('share_type',['Preferred','Common','Preferred and Common']);
             $table->enum('share_type_currency',['usd','eur'])->default('usd');
 
             $table->timestamps();
