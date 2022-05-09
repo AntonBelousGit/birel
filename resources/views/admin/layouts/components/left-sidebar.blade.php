@@ -47,6 +47,14 @@
                         <li><a href="{{ route('category.create') }}">Create category</a></li>
                     </ul>
                 </li>
+                <li @if(Route::is('admin-orders.*')) class="active" @endif>
+                    <a href="#category" class="has-arrow"><i class="icon-diamond"></i><span>Orders</span></a>
+                    <ul>
+                        <li><a href="{{ route('admin-orders') }}">All</a></li>
+                        <li><a href="{{ route('admin-orders',['type'=>'ASK']) }}">ASK</a></li>
+                        <li><a href="{{ route('admin-orders',['type'=>'BID']) }}">BID</a></li>
+                    </ul>
+                </li>
                 <li @if(Route::is('question.*')) class="active" @endif>
                     <a href="#question" class="has-arrow"><i class="icon-question"></i><span>Question</span></a>
                     <ul>

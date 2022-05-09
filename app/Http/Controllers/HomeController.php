@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 use App\Http\Requests\UserUpdateRequest;
 use Illuminate\Support\Facades\Hash;
 
-// use App\Models\User;
 
 class HomeController extends Controller
 {
