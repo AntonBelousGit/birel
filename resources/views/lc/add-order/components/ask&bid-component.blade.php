@@ -61,10 +61,10 @@
                 </ul>
                 <div class="content-t2 active">
                     <div class="ask-block-info">
-                        <label class="t-r f16-l24 purple1" for="share_type-bid">
+                        <label class="t-r f16-l24 purple1" for="{{$share_type}}">
                             Share Type
                         </label>
-                        <select class="js-example-basic-single w400" id="share_type-bid" name="share_type" required>
+                        <select class="js-example-basic-single w400" id="{{$share_type}}" name="share_type" required>
                             <option value="Choose">Choose</option>
                             <option value="Preferred">Preferred</option>
                             <option value="Common">Common</option>
@@ -106,8 +106,8 @@
                 </div>
                 <div class="content-t2">
                     <div class="ask-block-info">
-                        <label class="t-r f16-l24 purple1" for="share_type2-bid">Share Type</label>
-                        <select class="js-example-basic-single w400" id="share_type2-bid">
+                        <label class="t-r f16-l24 purple1" for="{{$share_type2}}">Share Type</label>
+                        <select class="js-example-basic-single w400" id="{{$share_type2}}">
                             <option value="Choose">Choose</option>
                             <option value="Preferred">Preferred</option>
                             <option value="Common">Common</option>

@@ -34,7 +34,7 @@
                 </ul>
             </div>
         @endif
-        @include('lc.add-order.components.ask&bid-component',['type'=>"ASK",'active'=>'active','id'=>'tabs2'])
+        @include('lc.add-order.components.ask&bid-component',['type'=>"ASK",'active'=>'active','id'=>'tabs2','share_type'=>'share_type_ask','share_type2'=>'share_type_ask2'])
         @include('lc.add-order.components.looking-component',['id'=>'tabs2-looking'])
     </div>
 @endsection
