@@ -26,6 +26,15 @@
                 Looking for an offer
             </li>
         </ul>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         @include('lc.add-order.components.ask&bid-component',['type'=>"ASK",'active'=>'active','id'=>'tabs2-bid'])
         @include('lc.add-order.components.looking-component',['id'=>'tabs2-looking'])
     </div>

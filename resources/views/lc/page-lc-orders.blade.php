@@ -125,17 +125,17 @@
                         </td>
                         <td class="body-row-item">
                             <div>
-                                {{$order->valuation}}
-                            </div>
-                        </td>
-                        <td class="body-row-item">
-                            <div>
                                 {{$order->volume}}
                             </div>
                         </td>
                         <td class="body-row-item">
                             <div>
                                 {{$order->share_price}}
+                            </div>
+                        </td>
+                        <td class="body-row-item">
+                            <div>
+                                {{$order->share_number}}
                             </div>
                         </td>
                         <td class="body-row-item">
