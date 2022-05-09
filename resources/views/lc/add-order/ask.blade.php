@@ -45,8 +45,8 @@
                 'share_number'=>'share_number_ask',
                 'volume'=>'volume_ask',
                 'share_number2'=>'share_number_ask2',
-                'share_type_currency1' => 'share_type_currency1_ask',
-                'share_type_currency2' => 'share_type_currency2_ask',
+                'share_type_currency1' => 'share_type_currency_ask1',
+                'share_type_currency2' => 'share_type_currency_ask2',
                 'volume2' => 'volume_ask2',
             ])
         @include('lc.add-order.components.looking-component',['id'=>'tabs2-looking'])

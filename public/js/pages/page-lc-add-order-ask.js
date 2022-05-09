@@ -28,7 +28,7 @@ function clearName(e) {
 			deleteName(elementInput);
 			deleteName(elementSelect);
 		} else {
-			if (e[i] === e[0]) {
+			if (e[i] == e[0]) {
 				addName2();
 			} else {
 				addName();

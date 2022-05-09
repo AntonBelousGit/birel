@@ -44,7 +44,7 @@ function clearName(e) {
 
 function addName( ) {
 	let items1 = document.querySelector('#volume_bid2');
-	let items2 = document.querySelector('#share_number-bid2');
+	let items2 = document.querySelector('#share_number_bid2');
 	let items3 = document.querySelector('#share_type_bid2');
 
 	items1.setAttribute('name', 'volume');

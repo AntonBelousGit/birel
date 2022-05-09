@@ -46,8 +46,8 @@
                 'share_number'=>'share_number_bid',
                 'volume'=>'volume_bid',
                 'share_number2'=>'share_number_bid2',
-                'share_type_currency1' => 'share_type_currency1_bid',
-                'share_type_currency2' => 'share_type_currency2_bid',
+                'share_type_currency1' => 'share_type_currency_bid1',
+                'share_type_currency2' => 'share_type_currency_bid2',
                 'volume2' => 'volume_bid2',
             ])
         @include('lc.add-order.components.looking-component',['id'=>'tabs2-looking'])

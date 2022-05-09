@@ -100,8 +100,7 @@
                     </div>
                     <div class="ask-block-info">
                         <label class="t-r f16-l24 purple1" for="{{$volume}}">Volume</label>
-                        <input class="i-f w400" type="number" id="{{$volume}}"
-                               placeholder="Высчитывается автоматически" name="volume" required>
+                        <input class="i-f w400" type="number" id="{{$volume}}" name="volume" disabled required>
                     </div>
                 </div>
                 <div class="content-t2">
