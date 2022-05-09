@@ -89,18 +89,18 @@
                                 </label>
                             </div>
                         </div>
-                        <label class="t-r f16-l24 purple1" for="share_price-bid">Share Price</label>
-                        <input class="i-f w400" type="text" id="share_price-bid"
+                        <label class="t-r f16-l24 purple1" for="{{$share_price}}">Share Price</label>
+                        <input class="i-f w400" type="text" id="{{$share_price}}"
                                placeholder="Placeholder price" name="share_price" required>
                     </div>
                     <div class="ask-block-info">
-                        <label class="t-r f16-l24 purple1" for="share_number-bid">Share Number</label>
-                        <input class="i-f w400" type="text" id="share_number-bid"
+                        <label class="t-r f16-l24 purple1" for="{{$share_number}}">Share Number</label>
+                        <input class="i-f w400" type="text" id="{{$share_number}}"
                                placeholder="Placeholder number" name="share_number" required>
                     </div>
                     <div class="ask-block-info">
-                        <label class="t-r f16-l24 purple1" for="volume-bid">Volume</label>
-                        <input class="i-f w400" type="number" id="volume-bid"
+                        <label class="t-r f16-l24 purple1" for="{{$volume}}">Volume</label>
+                        <input class="i-f w400" type="number" id="{{$volume}}"
                                placeholder="Высчитывается автоматически" name="volume" required>
                     </div>
                 </div>
