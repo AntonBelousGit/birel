@@ -64,7 +64,7 @@
                         <label class="t-r f16-l24 purple1" for="share_type-bid">
                             Share Type
                         </label>
-                        <select class="js-example-basic-single w400" id="share_type-bid" name="share_type">
+                        <select class="js-example-basic-single w400" id="share_type-bid" name="share_type" required>
                             <option value="Choose">Choose</option>
                             <option value="Preferred">Preferred</option>
                             <option value="Common">Common</option>
@@ -76,14 +76,14 @@
                         <div class="wrapper-radio">
                             <div class="form_radio">
                                 <label class="t-r f14-l16 purple1">
-                                    <input type="radio" id="share_type_currency1" name="share_type_currency" value="usd" checked>
+                                    <input type="radio" id="share_type_currency1" name="share_type_currency" value="usd" required checked>
                                     <span></span>
                                     $
                                 </label>
                             </div>
                             <div class="form_radio">
                                 <label class="t-r f14-l16 purple1">
-                                    <input type="radio" id="share_type_currency2" name="share_type_currency" value="eur">
+                                    <input type="radio" id="share_type_currency2" name="share_type_currency" value="eur" required>
                                     <span></span>
                                     €
                                 </label>
@@ -91,17 +91,17 @@
                         </div>
                         <label class="t-r f16-l24 purple1" for="share_price-bid">Share Price</label>
                         <input class="i-f w400" type="text" id="share_price-bid"
-                               placeholder="Placeholder price" name="share_price">
+                               placeholder="Placeholder price" name="share_price" required>
                     </div>
                     <div class="ask-block-info">
                         <label class="t-r f16-l24 purple1" for="share_number-bid">Share Number</label>
                         <input class="i-f w400" type="text" id="share_number-bid"
-                               placeholder="Placeholder number" name="share_number">
+                               placeholder="Placeholder number" name="share_number" required>
                     </div>
                     <div class="ask-block-info">
                         <label class="t-r f16-l24 purple1" for="volume-bid">Volume</label>
                         <input class="i-f w400" type="number" id="volume-bid"
-                               placeholder="Высчитывается автоматически" name="volume">
+                               placeholder="Высчитывается автоматически" name="volume" required>
                     </div>
                 </div>
                 <div class="content-t2">
