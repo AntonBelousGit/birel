@@ -7,6 +7,11 @@ use Illuminate\Support\Facades\Auth;
 
 class CreateOrderRequest extends FormRequest
 {
+    public function authorize(): bool
+    {
+        return true;
+    }
+
     public function rules(): array
     {
         return [
@@ -14,8 +19,7 @@ class CreateOrderRequest extends FormRequest
             'description'           => 'required|string',
             'deal_structure'        => 'required|in:direct,spv,forward contract,direct or spv,any',
             'share_type'            => 'required|in:Preferred,Common,Preferred and Common,any',
-            'usd'                   => 'filled',
-            'eur'                   => 'filled',
+            'share_type_currency'   => 'filled|in:usd,eur',
             'type'                  => 'filled|in:ASK,BID,TENDER,LOOKING',
             'sub_type'              => 'filled|in:ASK,BID',
             'volume'                => 'required',
@@ -24,11 +28,6 @@ class CreateOrderRequest extends FormRequest
             'valuation'             => 'filled'
 
         ];
-    }
-
-    public function authorize(): bool
-    {
-        return true;
     }
 
     public function validated()
@@ -41,14 +40,8 @@ class CreateOrderRequest extends FormRequest
             $request['share_price_decode'] = encode_bigNumber($this->share_price);
         }
 
-        if ($this->has('eur')) {
-            $request['share_type_currency'] = 'eur';
-        }
-        else
-        {
-            $request['share_type_currency'] = 'usd';
-        }
-
         return $request;
     }
+
+
 }

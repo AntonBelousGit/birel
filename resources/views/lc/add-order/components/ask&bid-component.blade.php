@@ -76,14 +76,14 @@
                         <div class="wrapper-radio">
                             <div class="form_radio">
                                 <label class="t-r f14-l16 purple1">
-                                    <input type="radio" id="share_type_currency1" name="usd" checked>
+                                    <input type="radio" id="share_type_currency1" name="share_type_currency" value="usd" checked>
                                     <span></span>
                                     $
                                 </label>
                             </div>
                             <div class="form_radio">
                                 <label class="t-r f14-l16 purple1">
-                                    <input type="radio" id="share_type_currency2" name="eur">
+                                    <input type="radio" id="share_type_currency2" name="share_type_currency" value="eur">
                                     <span></span>
                                     €
                                 </label>
