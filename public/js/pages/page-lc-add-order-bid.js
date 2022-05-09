@@ -1,12 +1,12 @@
 import {bindTabs2} from '../default/module-lc.js';
 
-bindTabs2('#tabs2');
+bindTabs2('#tabs2-bid');
 
 
 
 
 
-f('#tabs2');
+f('#tabs2-bid');
 function f(item) {
 	let items = document.querySelector(item);
 	let itemsUl = items.querySelectorAll('.tab-n2');
