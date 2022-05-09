@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\Category\CategoryController;
 use App\Http\Controllers\Admin\Company\CompanyController;
 use App\Http\Controllers\Admin\Company\Finance\CompanyFinanceController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\Order\OrderController;
 use App\Http\Controllers\Admin\Question\QuestionController;
 use App\Http\Controllers\Admin\Setting\SettingController;
 use App\Http\Controllers\Admin\User\UserController;
@@ -30,6 +31,10 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'],
             Route::post('company/{company}/financing/store', 'store')->name('company.id.financing.store');
             Route::get('company/{company}/financing/{companyFinance}/edit', 'edit')->name('company.id.financing.edit');
             Route::patch('company/{company}/financing/{companyFinance}/update', 'update')->name('company.id.financing.update');
+        });
+
+        Route::controller(OrderController::class)->group(function () {
+//            Ro
         });
 
         Route::controller(SettingController::class)->prefix('setting')->group(function () {

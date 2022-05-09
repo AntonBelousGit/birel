@@ -22,7 +22,7 @@ class CreateCompanyOrdersTable extends Migration
             $table->unsignedBigInteger('valuation')->nullable();
             $table->unsignedBigInteger('volume');
             $table->unsignedBigInteger('share_price')->nullable();
-            $table->unsignedBigInteger('share_price_decode')->nullable();
+            $table->string('share_price_decode')->nullable();
             $table->unsignedBigInteger('share_number')->nullable();
             $table->enum('type',['ASK','BID','Tender']);
             $table->enum('sub_type',['ASK','BID'])->nullable();
