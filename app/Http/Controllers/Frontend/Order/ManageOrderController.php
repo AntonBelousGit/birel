@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\Frontend\Order;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Orders\CreateOrderRequest;
 use App\Models\Company;
-use Illuminate\Http\Request;
+use App\Models\CompanyOrder;
 
 class ManageOrderController extends Controller
 {
@@ -18,5 +19,11 @@ class ManageOrderController extends Controller
             return view('lc.add-order.bid',compact('companies'));
         }
         return view('lc.add-order',compact('companies'));
+    }
+
+    public function storeOrder(CreateOrderRequest $createOrderRequest)
+    {
+        (new CompanyOrder())->create($createOrderRequest->validated());
+        return redirect()->route('orders');
     }
 }

@@ -20,7 +20,7 @@ require('_clear.php');
 
 Route::controller(MainController::class)->group(function () {
     Route::get('/', 'index');
-    Route::get('/mission',  'mission')->name('mission');
+    Route::get('/mission', 'mission')->name('mission');
     Route::get('/explore', 'explore')->name('explore');
     Route::get('/terms-of-use', 'termsOfUse')->name('terms-of-use');
 });
@@ -45,6 +45,7 @@ Route::controller(HomeController::class)->group(function () {
 //ORDERS
 Route::controller(ManageOrderController::class)->group(function () {
     Route::get('/add-order/{type?}', 'addOrder')->name('add-order');
+    Route::post('/add-order/', 'storeOrder')->name('store-order');
 });
 
 

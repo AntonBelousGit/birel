@@ -96,274 +96,278 @@
                 </tr>
                 </thead>
                 <tbody class="table-body">
-                <tr class="body-row new">
-                    <td class="body-row-item">
-                        <div>
-                            1
-                        </div>
-                    </td>
-                    <td class="body-row-item">
-                        <div>
-                            01/01/22
-                        </div>
-                    </td>
-                    <td class="body-row-item">
-                        <div>
-                            Company name
-                        </div>
-                    </td>
-                    <td class="body-row-item">
-                        <div>
-                            Ask
-                        </div>
-                    </td>
-                    <td class="body-row-item">
-                        <div>
-                            0000000000
-                        </div>
-                    </td>
-                    <td class="body-row-item">
-                        <div>
-                            0000000000
-                        </div>
-                    </td>
-                    <td class="body-row-item">
-                        <div>
-                            0000000000
-                        </div>
-                    </td>
-                    <td class="body-row-item">
-                        <div>
-                            0000000000
-                        </div>
-                    </td>
-                    <td class="body-row-item">
-                        <div>
-                            Text
-                        </div>
-                    </td>
-                    <td class="body-row-item">
-                        <div>
-                            Text
-                        </div>
-                    </td>
-                    <td class="body-row-item center">
-                        <div>
-                            <button class="reset-btn" type="button"
-                                    data-tippy-content="Базовые сценарии поведения пользователей могут быть рассмотрены исключительно в разрезе маркетинговых и финансовых предпосылок. Современные технологии достигли такого уровня, что дальнейшее развитие различных форм деятельности способствует повышению качества поставленных обществом задач.">
-                                <i class="tree-dots"></i>
-                            </button>
-                        </div>
-                    </td>
-                    <td class="body-row-item center">
-                        <div>
-                            <a href="#" data-tippy-content="Подсказка о возможности редактирования своего ордера ">
-                                <i class="icon icon-pen-blue"></i>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-                <tr class="body-row bid">
-                    <td class="body-row-item">
-                        <div>
-                            2
-                        </div>
-                    </td>
-                    <td class="body-row-item">
-                        <div>
-                            01/01/22
-                        </div>
-                    </td>
-                    <td class="body-row-item">
-                        <div>
-                            Company name
-                        </div>
-                    </td>
-                    <td class="body-row-item">
-                        <div>
-                            Аsk
-                        </div>
-                    </td>
-                    <td class="body-row-item">
-                        <div>
-                            0000000000
-                        </div>
-                    </td>
-                    <td class="body-row-item">
-                        <div>
-                            0000000000
-                        </div>
-                    </td>
-                    <td class="body-row-item">
-                        <div>
-                            0000000000
-                        </div>
-                    </td>
-                    <td class="body-row-item">
-                        <div>
-                            0000000000
-                        </div>
-                    </td>
-                    <td class="body-row-item">
-                        <div>
-                            Text
-                        </div>
-                    </td>
-                    <td class="body-row-item">
-                        <div>
-                            Text
-                        </div>
-                    </td>
-                    <td class="body-row-item center">
-                        <div>
-                            <button class="reset-btn" type="button"
-                                    data-tippy-content="Базовые сценарии поведения пользователей могут быть рассмотрены исключительно в разрезе маркетинговых и финансовых предпосылок. Современные технологии достигли такого уровня, что дальнейшее развитие различных форм деятельности способствует повышению качества поставленных обществом задач.">
-                                <i class="tree-dots"></i>
-                            </button>
-                        </div>
-                    </td>
-                    <td class="body-row-item center">
-                        <div>
-                            <a href="#" data-tippy-content="Подсказка о возможности редактирования своего ордера ">
-                                <i class="icon icon-pen-blue"></i>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-                <tr class="body-row">
-                    <td class="body-row-item">
-                        <div>
-                            3
-                        </div>
-                    </td>
-                    <td class="body-row-item">
-                        <div>
-                            01/01/22
-                        </div>
-                    </td>
-                    <td class="body-row-item">
-                        <div>
-                            Company name
-                        </div>
-                    </td>
-                    <td class="body-row-item">
-                        <div>
-                            Ask
-                        </div>
-                    </td>
-                    <td class="body-row-item">
-                        <div>
-                            0000000000
-                        </div>
-                    </td>
-                    <td class="body-row-item">
-                        <div>
-                            0000000000
-                        </div>
-                    </td>
-                    <td class="body-row-item">
-                        <div>
-                            0000000000
-                        </div>
-                    </td>
-                    <td class="body-row-item">
-                        <div>
-                            0000000000
-                        </div>
-                    </td>
-                    <td class="body-row-item">
-                        <div>
-                            Text
-                        </div>
-                    </td>
-                    <td class="body-row-item">
-                        <div>
-                            Text
-                        </div>
-                    </td>
-                    <td class="body-row-item center">
-                        <div>
-                            <button class="reset-btn" type="button"
-                                    data-tippy-content="Базовые сценарии поведения пользователей могут быть рассмотрены исключительно в разрезе маркетинговых и финансовых предпосылок. Современные технологии достигли такого уровня, что дальнейшее развитие различных форм деятельности способствует повышению качества поставленных обществом задач.">
-                                <i class="tree-dots"></i>
-                            </button>
-                        </div>
-                    </td>
-                    <td class="body-row-item center">
-                        <div>
-                            <a href="#" data-tippy-content="Подсказка о возможности редактирования своего ордера ">
-                                <i class="icon icon-pen-blue"></i>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-                <tr class="body-row history">
-                    <td class="body-row-item">
-                        <div>
-                            4
-                        </div>
-                    </td>
-                    <td class="body-row-item">
-                        <div>
-                            01/01/22
-                        </div>
-                    </td>
-                    <td class="body-row-item">
-                        <div>
-                            Company name
-                        </div>
-                    </td>
-                    <td class="body-row-item">
-                        <div>
-                            Ask
-                        </div>
-                    </td>
-                    <td class="body-row-item">
-                        <div>
-                            0000000000
-                        </div>
-                    </td>
-                    <td class="body-row-item">
-                        <div>
-                            0000000000
-                        </div>
-                    </td>
-                    <td class="body-row-item">
-                        <div>
-                            0000000000
-                        </div>
-                    </td>
-                    <td class="body-row-item">
-                        <div>
-                            0000000000
-                        </div>
-                    </td>
-                    <td class="body-row-item">
-                        <div>
-                            Text
-                        </div>
-                    </td>
-                    <td class="body-row-item">
-                        <div>
-                            Text
-                        </div>
-                    </td>
-                    <td class="body-row-item center">
-                        <div>
-                            <button class="reset-btn" type="button"
-                                    data-tippy-content="Базовые сценарии поведения пользователей могут быть рассмотрены исключительно в разрезе маркетинговых и финансовых предпосылок. Современные технологии достигли такого уровня, что дальнейшее развитие различных форм деятельности способствует повышению качества поставленных обществом задач.">
-                                <i class="tree-dots"></i>
-                            </button>
-                        </div>
-                    </td>
-                    <td class="body-row-item center">
-                        <div>
-                            <a href="#" data-tippy-content="Подсказка о возможности редактирования своего ордера ">
-                                <i class="icon icon-pen-blue"></i>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
+                @forelse($orders as $order)
+                    <tr class="body-row new">
+                        <td class="body-row-item">
+                            <div>
+                                {{$loop->iteration}}
+                            </div>
+                        </td>
+                        <td class="body-row-item">
+                            <div>
+                                01/01/22
+                            </div>
+                        </td>
+                        <td class="body-row-item">
+                            <div>
+                                {{$order->company->companyName}}
+                            </div>
+                        </td>
+                        <td class="body-row-item">
+                            <div>
+                                {{$order->type}}
+                            </div>
+                        </td>
+                        <td class="body-row-item">
+                            <div>
+                                {{$order->valuation}}
+                            </div>
+                        </td>
+                        <td class="body-row-item">
+                            <div>
+                                {{$order->valuation}}
+                            </div>
+                        </td>
+                        <td class="body-row-item">
+                            <div>
+                                {{$order->volume}}
+                            </div>
+                        </td>
+                        <td class="body-row-item">
+                            <div>
+                                {{$order->share_price}}
+                            </div>
+                        </td>
+                        <td class="body-row-item">
+                            <div>
+                                {{$order->share_type}}
+                            </div>
+                        </td>
+                        <td class="body-row-item">
+                            <div>
+                                {{$order->deal_structure}}
+                            </div>
+                        </td>
+                        <td class="body-row-item center">
+                            <div>
+                                <button class="reset-btn" type="button"
+                                        data-tippy-content="Базовые сценарии поведения пользователей могут быть рассмотрены исключительно в разрезе маркетинговых и финансовых предпосылок. Современные технологии достигли такого уровня, что дальнейшее развитие различных форм деятельности способствует повышению качества поставленных обществом задач.">
+                                    <i class="tree-dots"></i>
+                                </button>
+                            </div>
+                        </td>
+                        <td class="body-row-item center">
+                            <div>
+                                <a href="#" data-tippy-content="Подсказка о возможности редактирования своего ордера ">
+                                    <i class="icon icon-pen-blue"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                @empty
+                @endforelse
+
+                {{--                <tr class="body-row bid">--}}
+                {{--                    <td class="body-row-item">--}}
+                {{--                        <div>--}}
+                {{--                            2--}}
+                {{--                        </div>--}}
+                {{--                    </td>--}}
+                {{--                    <td class="body-row-item">--}}
+                {{--                        <div>--}}
+                {{--                            01/01/22--}}
+                {{--                        </div>--}}
+                {{--                    </td>--}}
+                {{--                    <td class="body-row-item">--}}
+                {{--                        <div>--}}
+                {{--                            Company name--}}
+                {{--                        </div>--}}
+                {{--                    </td>--}}
+                {{--                    <td class="body-row-item">--}}
+                {{--                        <div>--}}
+                {{--                            Аsk--}}
+                {{--                        </div>--}}
+                {{--                    </td>--}}
+                {{--                    <td class="body-row-item">--}}
+                {{--                        <div>--}}
+                {{--                            0000000000--}}
+                {{--                        </div>--}}
+                {{--                    </td>--}}
+                {{--                    <td class="body-row-item">--}}
+                {{--                        <div>--}}
+                {{--                            0000000000--}}
+                {{--                        </div>--}}
+                {{--                    </td>--}}
+                {{--                    <td class="body-row-item">--}}
+                {{--                        <div>--}}
+                {{--                            0000000000--}}
+                {{--                        </div>--}}
+                {{--                    </td>--}}
+                {{--                    <td class="body-row-item">--}}
+                {{--                        <div>--}}
+                {{--                            0000000000--}}
+                {{--                        </div>--}}
+                {{--                    </td>--}}
+                {{--                    <td class="body-row-item">--}}
+                {{--                        <div>--}}
+                {{--                            Text--}}
+                {{--                        </div>--}}
+                {{--                    </td>--}}
+                {{--                    <td class="body-row-item">--}}
+                {{--                        <div>--}}
+                {{--                            Text--}}
+                {{--                        </div>--}}
+                {{--                    </td>--}}
+                {{--                    <td class="body-row-item center">--}}
+                {{--                        <div>--}}
+                {{--                            <button class="reset-btn" type="button"--}}
+                {{--                                    data-tippy-content="Базовые сценарии поведения пользователей могут быть рассмотрены исключительно в разрезе маркетинговых и финансовых предпосылок. Современные технологии достигли такого уровня, что дальнейшее развитие различных форм деятельности способствует повышению качества поставленных обществом задач.">--}}
+                {{--                                <i class="tree-dots"></i>--}}
+                {{--                            </button>--}}
+                {{--                        </div>--}}
+                {{--                    </td>--}}
+                {{--                    <td class="body-row-item center">--}}
+                {{--                        <div>--}}
+                {{--                            <a href="#" data-tippy-content="Подсказка о возможности редактирования своего ордера ">--}}
+                {{--                                <i class="icon icon-pen-blue"></i>--}}
+                {{--                            </a>--}}
+                {{--                        </div>--}}
+                {{--                    </td>--}}
+                {{--                </tr>--}}
+                {{--                <tr class="body-row">--}}
+                {{--                    <td class="body-row-item">--}}
+                {{--                        <div>--}}
+                {{--                            3--}}
+                {{--                        </div>--}}
+                {{--                    </td>--}}
+                {{--                    <td class="body-row-item">--}}
+                {{--                        <div>--}}
+                {{--                            01/01/22--}}
+                {{--                        </div>--}}
+                {{--                    </td>--}}
+                {{--                    <td class="body-row-item">--}}
+                {{--                        <div>--}}
+                {{--                            Company name--}}
+                {{--                        </div>--}}
+                {{--                    </td>--}}
+                {{--                    <td class="body-row-item">--}}
+                {{--                        <div>--}}
+                {{--                            Ask--}}
+                {{--                        </div>--}}
+                {{--                    </td>--}}
+                {{--                    <td class="body-row-item">--}}
+                {{--                        <div>--}}
+                {{--                            0000000000--}}
+                {{--                        </div>--}}
+                {{--                    </td>--}}
+                {{--                    <td class="body-row-item">--}}
+                {{--                        <div>--}}
+                {{--                            0000000000--}}
+                {{--                        </div>--}}
+                {{--                    </td>--}}
+                {{--                    <td class="body-row-item">--}}
+                {{--                        <div>--}}
+                {{--                            0000000000--}}
+                {{--                        </div>--}}
+                {{--                    </td>--}}
+                {{--                    <td class="body-row-item">--}}
+                {{--                        <div>--}}
+                {{--                            0000000000--}}
+                {{--                        </div>--}}
+                {{--                    </td>--}}
+                {{--                    <td class="body-row-item">--}}
+                {{--                        <div>--}}
+                {{--                            Text--}}
+                {{--                        </div>--}}
+                {{--                    </td>--}}
+                {{--                    <td class="body-row-item">--}}
+                {{--                        <div>--}}
+                {{--                            Text--}}
+                {{--                        </div>--}}
+                {{--                    </td>--}}
+                {{--                    <td class="body-row-item center">--}}
+                {{--                        <div>--}}
+                {{--                            <button class="reset-btn" type="button"--}}
+                {{--                                    data-tippy-content="Базовые сценарии поведения пользователей могут быть рассмотрены исключительно в разрезе маркетинговых и финансовых предпосылок. Современные технологии достигли такого уровня, что дальнейшее развитие различных форм деятельности способствует повышению качества поставленных обществом задач.">--}}
+                {{--                                <i class="tree-dots"></i>--}}
+                {{--                            </button>--}}
+                {{--                        </div>--}}
+                {{--                    </td>--}}
+                {{--                    <td class="body-row-item center">--}}
+                {{--                        <div>--}}
+                {{--                            <a href="#" data-tippy-content="Подсказка о возможности редактирования своего ордера ">--}}
+                {{--                                <i class="icon icon-pen-blue"></i>--}}
+                {{--                            </a>--}}
+                {{--                        </div>--}}
+                {{--                    </td>--}}
+                {{--                </tr>--}}
+                {{--                <tr class="body-row history">--}}
+                {{--                    <td class="body-row-item">--}}
+                {{--                        <div>--}}
+                {{--                            4--}}
+                {{--                        </div>--}}
+                {{--                    </td>--}}
+                {{--                    <td class="body-row-item">--}}
+                {{--                        <div>--}}
+                {{--                            01/01/22--}}
+                {{--                        </div>--}}
+                {{--                    </td>--}}
+                {{--                    <td class="body-row-item">--}}
+                {{--                        <div>--}}
+                {{--                            Company name--}}
+                {{--                        </div>--}}
+                {{--                    </td>--}}
+                {{--                    <td class="body-row-item">--}}
+                {{--                        <div>--}}
+                {{--                            Ask--}}
+                {{--                        </div>--}}
+                {{--                    </td>--}}
+                {{--                    <td class="body-row-item">--}}
+                {{--                        <div>--}}
+                {{--                            0000000000--}}
+                {{--                        </div>--}}
+                {{--                    </td>--}}
+                {{--                    <td class="body-row-item">--}}
+                {{--                        <div>--}}
+                {{--                            0000000000--}}
+                {{--                        </div>--}}
+                {{--                    </td>--}}
+                {{--                    <td class="body-row-item">--}}
+                {{--                        <div>--}}
+                {{--                            0000000000--}}
+                {{--                        </div>--}}
+                {{--                    </td>--}}
+                {{--                    <td class="body-row-item">--}}
+                {{--                        <div>--}}
+                {{--                            0000000000--}}
+                {{--                        </div>--}}
+                {{--                    </td>--}}
+                {{--                    <td class="body-row-item">--}}
+                {{--                        <div>--}}
+                {{--                            Text--}}
+                {{--                        </div>--}}
+                {{--                    </td>--}}
+                {{--                    <td class="body-row-item">--}}
+                {{--                        <div>--}}
+                {{--                            Text--}}
+                {{--                        </div>--}}
+                {{--                    </td>--}}
+                {{--                    <td class="body-row-item center">--}}
+                {{--                        <div>--}}
+                {{--                            <button class="reset-btn" type="button"--}}
+                {{--                                    data-tippy-content="Базовые сценарии поведения пользователей могут быть рассмотрены исключительно в разрезе маркетинговых и финансовых предпосылок. Современные технологии достигли такого уровня, что дальнейшее развитие различных форм деятельности способствует повышению качества поставленных обществом задач.">--}}
+                {{--                                <i class="tree-dots"></i>--}}
+                {{--                            </button>--}}
+                {{--                        </div>--}}
+                {{--                    </td>--}}
+                {{--                    <td class="body-row-item center">--}}
+                {{--                        <div>--}}
+                {{--                            <a href="#" data-tippy-content="Подсказка о возможности редактирования своего ордера ">--}}
+                {{--                                <i class="icon icon-pen-blue"></i>--}}
+                {{--                            </a>--}}
+                {{--                        </div>--}}
+                {{--                    </td>--}}
+                {{--                </tr>--}}
                 </tbody>
             </table>
         </div>

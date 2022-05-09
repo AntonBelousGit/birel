@@ -1,6 +1,8 @@
 <div class="content-t {{$active}}">
-    <form class="add-order-ask" action="{{$type}}">
+    <form class="add-order-ask" action="{{ route('store-order') }}" method="POST">
+        @csrf
         <div class="ask">
+            <input type="hidden" name="type" value="{{$type}}">
             <div class="ask-block c-n">
                 <h2 class="t-sb f22-l25 purple3">Company Name</h2>
                 <p class="t-r f16-l24 purple2">You can choose deal structure: direct, spv, forward contract
@@ -8,8 +10,8 @@
                     round.
                 </p>
                 <div class="select">
-                    <select class="js-example-basic-single w400" required>
-                        <option value="0" selected>Choose</option>
+                    <select class="js-example-basic-single w400" required name="company_id">
+                        <option value="0" selected disabled>Choose</option>
                         @foreach($companies as $company)
                             <option value="{{$company->id}}">{{$company->companyName}}</option>
                         @endforeach
@@ -36,6 +38,7 @@
                     <option value="spv">spv</option>
                     <option value="forward contract">forward contract</option>
                     <option value="direct or spv">direct or spv</option>
+                    <option value="any">any</option>
                 </select>
             </div>
             <div class="ask-block s">
@@ -66,20 +69,21 @@
                             <option value="Preferred">Preferred</option>
                             <option value="Common">Common</option>
                             <option value="Preferred and Common">Preferred and Common</option>
+                            <option value="any">Any</option>
                         </select>
                     </div>
                     <div class="ask-block-info">
                         <div class="wrapper-radio">
                             <div class="form_radio">
                                 <label class="t-r f14-l16 purple1">
-                                    <input type="radio" id="share_type_currency1" name="share_type_currency" checked>
+                                    <input type="radio" id="share_type_currency1" name="usd" checked>
                                     <span></span>
                                     $
                                 </label>
                             </div>
                             <div class="form_radio">
                                 <label class="t-r f14-l16 purple1">
-                                    <input type="radio" id="share_type_currency2" name="share_type_currency">
+                                    <input type="radio" id="share_type_currency2" name="eur">
                                     <span></span>
                                     €
                                 </label>
@@ -96,7 +100,7 @@
                     </div>
                     <div class="ask-block-info">
                         <label class="t-r f16-l24 purple1" for="volume-bid">Volume</label>
-                        <input class="i-f w400" type="text" id="volume-bid"
+                        <input class="i-f w400" type="number" id="volume-bid"
                                placeholder="Высчитывается автоматически" name="volume">
                     </div>
                 </div>
@@ -108,15 +112,16 @@
                             <option value="Preferred">Preferred</option>
                             <option value="Common">Common</option>
                             <option value="Preferred and Common">Preferred and Common</option>
+                            <option value="any">Any</option>
                         </select>
                     </div>
                     <div class="ask-block-info">
                         <label class="t-r f16-l24 purple1" for="volume2-bid">Volume</label>
-                        <input class="i-f w400" type="text" id="volume2-bid" placeholder="Placeholder">
+                        <input class="i-f w400" type="number" id="volume2-bid" placeholder="Placeholder">
                     </div>
                     <div class="ask-block-info">
                         <label class="t-r f16-l24 purple1" for="share_number2-bid">Valuation</label>
-                        <input class="i-f w400" type="text" id="share_number2-bid"
+                        <input class="i-f w400" type="number" id="share_number2-bid"
                                placeholder="Placeholder">
                     </div>
                 </div>

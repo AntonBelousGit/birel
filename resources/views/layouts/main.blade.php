@@ -81,6 +81,7 @@
                             </li>
                             <li class="menu-list-item">
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
                                     <button type="submit" class="reset-btn icon icon-log-out-white" value="{{ __('Log out') }}">{{ __('Log out') }}</button>
                                 </form>
                             </li>

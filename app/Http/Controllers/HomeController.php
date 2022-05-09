@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CompanyOrder;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use App\Http\Requests\UserUpdateRequest;
@@ -33,7 +34,8 @@ class HomeController extends Controller
 
     public function orders()
     {
-        return view('lc.page-lc-orders');
+        $orders = CompanyOrder::with('user','company')->get();
+        return view('lc.page-lc-orders',compact('orders'));
     }
 
     public function update(UserUpdateRequest $request)
