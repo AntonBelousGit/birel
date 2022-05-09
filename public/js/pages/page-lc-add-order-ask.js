@@ -1,12 +1,11 @@
-import {bindTabs2} from '../default/module-lc.js';
+import {bindTabs2, multiplication} from '../default/module-lc.js';
 
-bindTabs2('#tabs2');
+bindTabs2('#tabs_ask');
 
+multiplication('#tabs_ask' ,'#share_price_ask','#share_number_ask','#volume_ask');
 
+f('#tabs_ask');
 
-
-
-f('#tabs2');
 function f(item) {
 	let items = document.querySelector(item);
 	let itemsUl = items.querySelectorAll('.tab-n2');
@@ -39,27 +38,32 @@ function clearName(e) {
 	function deleteName(e) {
 		for (let i = 0; i < e.length; i++) {
 			e[i].removeAttribute("name");
+			e[i].removeAttribute("required");
 		}
 	}
 }
 
-function addName() {
-	let items1 = document.querySelector('#volume2-bid');
-	let items2 = document.querySelector('#share_number2-bid');
-	let items3 = document.querySelector('#share_type2-bid');
+function addName( ) {
+	let items1 = document.querySelector('#volume_ask2');
+	let items2 = document.querySelector('#share_number_ask2');
+	let items3 = document.querySelector('#share_type_ask2');
 
 	items1.setAttribute('name', 'volume');
 	items2.setAttribute('name', 'valuation');
 	items3.setAttribute('name', 'share_type');
+
+	items1.required = true;
+	items2.required = true;
+	items3.required = true;
 }
 
 function addName2() {
-	let items1 = document.querySelector('#volume-bid');
-	let items2 = document.querySelector('#share_number-bid');
-	let items3 = document.querySelector('#share_price-bid');
-	let items4 = document.querySelector('#share_type_currency1');
-	let items5 = document.querySelector('#share_type_currency2');
-	let items6 = document.querySelector('#share_type-bid');
+	let items1 = document.querySelector('#volume_ask');
+	let items2 = document.querySelector('#share_number_ask');
+	let items3 = document.querySelector('#share_price_ask');
+	let items4 = document.querySelector('#share_type_currency_ask1');
+	let items5 = document.querySelector('#share_type_currency_ask2');
+	let items6 = document.querySelector('#share_type_ask');
 
 	items1.setAttribute('name', 'volume');
 	items2.setAttribute('name', 'share_number');
@@ -67,4 +71,11 @@ function addName2() {
 	items4.setAttribute('name', 'share_type_currency');
 	items5.setAttribute('name', 'share_type_currency');
 	items6.setAttribute('name', 'share_type');
+
+	items1.required = true;
+	items2.required = true;
+	items3.required = true;
+	items4.required = true;
+	items5.required = true;
+	items6.required = true;
 }

@@ -1,8 +1,9 @@
-import {bindTabs2} from '../default/module-lc.js';
+import {bindTabs2, multiplication} from '../default/module-lc.js';
 
-bindTabs2('#tabs2-bid');
+bindTabs2('#tabs_bid');
+multiplication('#tabs_bid' ,'#share_price_bid','#share_number_bid','#volume_bid');
 
-f('#tabs2-bid');
+f('#tabs_bid');
 
 function f(item) {
 	let items = document.querySelector(item);
@@ -42,9 +43,9 @@ function clearName(e) {
 }
 
 function addName( ) {
-	let items1 = document.querySelector('#volume2-bid');
-	let items2 = document.querySelector('#share_number2-bid');
-	let items3 = document.querySelector('#share_type2-bid');
+	let items1 = document.querySelector('#volume_bid2');
+	let items2 = document.querySelector('#share_number-bid2');
+	let items3 = document.querySelector('#share_type_bid2');
 
 	items1.setAttribute('name', 'volume');
 	items2.setAttribute('name', 'valuation');
@@ -55,13 +56,13 @@ function addName( ) {
 	items3.required = true;
 }
 
-function addName2(qualifiedName, value) {
-	let items1 = document.querySelector('#volume-bid');
-	let items2 = document.querySelector('#share_number-bid');
-	let items3 = document.querySelector('#share_price-bid');
-	let items4 = document.querySelector('#share_type_currency1');
-	let items5 = document.querySelector('#share_type_currency2');
-	let items6 = document.querySelector('#share_type-bid');
+function addName2() {
+	let items1 = document.querySelector('#volume_bid');
+	let items2 = document.querySelector('#share_number_bid');
+	let items3 = document.querySelector('#share_price_bid');
+	let items4 = document.querySelector('#share_type_currency_bid1');
+	let items5 = document.querySelector('#share_type_currency_bid2');
+	let items6 = document.querySelector('#share_type_bid');
 
 	items1.setAttribute('name', 'volume');
 	items2.setAttribute('name', 'share_number');

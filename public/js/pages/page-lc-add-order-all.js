@@ -1,12 +1,13 @@
-import {bindTabs2} from '../default/module-lc.js';
+import {bindTabs2, multiplication} from '../default/module-lc.js';
 
-bindTabs2('#tabs2-bid');
-bindTabs2('#tabs2');
+multiplication('#tabs_bid' ,'#share_price_bid','#share_number_bid','#volume_bid');
+multiplication('#tabs_ask' ,'#share_price_ask','#share_number_ask','#volume_ask');
 
+bindTabs2('#tabs_bid');
+bindTabs2('#tabs_ask');
 
-
-f('#tabs2');
-f('#tabs2-bid');
+f('#tabs_ask');
+f('#tabs_bid');
 function f(item) {
 	let items = document.querySelector(item);
 	let itemsUl = items.querySelectorAll('.tab-n2');

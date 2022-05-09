@@ -35,7 +35,7 @@
             </div>
         @endif
         @include('lc.add-order.components.ask&bid-component',
-        ['type'=>"ASK",'active'=>'','id'=>'tabs2','share_type'=>'share_type_ask','share_type2'=>'share_type_ask2','share_price'=>'share_price_ask','share_number'=>'share_number_ask','volume'=>'volume_ask'])
+        ['type'=>"ASK",'active'=>'active','id'=>'tabs_ask','share_type'=>'share_type_ask','share_type2'=>'share_type_ask2','share_price'=>'share_price_ask','share_number'=>'share_number_ask','volume'=>'volume_ask','share_number2'=>'share_number_ask2'])
         @include('lc.add-order.components.looking-component',['id'=>'tabs2-looking'])
     </div>
 @endsection

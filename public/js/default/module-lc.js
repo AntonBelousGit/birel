@@ -88,4 +88,21 @@ function bindTabs2(container) {
 		}
 	}
 }
-export  {bindTabs, createPopUp, bindTabs2};
+function multiplication(container,prise,number, id2) {
+	if (typeof container === 'string') {
+		container = document.querySelector(container);
+	}
+	const inputElem = container.querySelectorAll('.m-bid');
+	const inputNumber = container.querySelector(number);
+	const inputPrise = container.querySelector(prise);
+	let inpRes = container.querySelector(id2);
+	let res;
+	for (let i = 0; i < inputElem.length; i++) {
+		inputElem[i].addEventListener('input',
+			function () {
+				res = inputPrise.value * inputNumber.value;
+				inpRes.value = res;
+			})
+	}
+}
+export  {bindTabs, createPopUp, bindTabs2,multiplication};

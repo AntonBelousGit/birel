@@ -90,12 +90,12 @@
                             </div>
                         </div>
                         <label class="t-r f16-l24 purple1" for="{{$share_price}}">Share Price</label>
-                        <input class="i-f w400" type="text" id="{{$share_price}}"
+                        <input class="i-f w400 m-bid" type="text" id="{{$share_price}}"
                                placeholder="Placeholder price" name="share_price" required>
                     </div>
                     <div class="ask-block-info">
                         <label class="t-r f16-l24 purple1" for="{{$share_number}}">Share Number</label>
-                        <input class="i-f w400" type="text" id="{{$share_number}}"
+                        <input class="i-f w400 m-bid" type="text" id="{{$share_number}}"
                                placeholder="Placeholder number" name="share_number" required>
                     </div>
                     <div class="ask-block-info">
@@ -120,8 +120,8 @@
                         <input class="i-f w400" type="number" id="volume2-bid" placeholder="Placeholder">
                     </div>
                     <div class="ask-block-info">
-                        <label class="t-r f16-l24 purple1" for="share_number2-bid">Valuation</label>
-                        <input class="i-f w400" type="number" id="share_number2-bid"
+                        <label class="t-r f16-l24 purple1" for="{{$share_number2}}">Valuation</label>
+                        <input class="i-f w400" type="number" id="{{$share_number2}}"
                                placeholder="Placeholder">
                     </div>
                 </div>
