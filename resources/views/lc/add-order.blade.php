@@ -41,10 +41,36 @@
         @endif
 
         @include('lc.add-order.components.ask&bid-component',
-        ['type'=>"BID",'active'=>'active','id'=>'tabs_bid','share_type'=>'share_type_bid','share_type2'=>'share_type_bid2','share_price'=>'share_price_bid','share_number'=>'share_number_bid','volume'=>'volume_bid','share_number2'=>'share_number_bid2'])
-
+        [
+            'type'=>"BID",
+            'active'=>'active',
+            'id'=>'tabs_bid',
+            'share_type'=>'share_type_bid',
+            'share_type2'=>'share_type_bid2',
+            'share_price'=>'share_price_bid',
+            'share_number'=>'share_number_bid',
+            'volume'=>'volume_bid',
+            'share_number2'=>'share_number_bid2',
+            'share_type_currency1' => 'share_type_currency1_bid',
+            'share_type_currency2' => 'share_type_currency2_bid',
+            'volume2' => 'volume_bid2',
+            ]
+        )
         @include('lc.add-order.components.ask&bid-component',
-        ['type'=>"ASK",'active'=>'','id'=>'tabs_ask','share_type'=>'share_type_ask','share_type2'=>'share_type_ask2','share_price'=>'share_price_ask','share_number'=>'share_number_ask','volume'=>'volume_ask','share_number2'=>'share_number_ask2'])
+      [
+          'type'=>"ASK",
+          'active'=>'active',
+          'id'=>'tabs_ask',
+          'share_type'=>'share_type_ask',
+          'share_type2'=>'share_type_ask2',
+          'share_price'=>'share_price_ask',
+          'share_number'=>'share_number_ask',
+          'volume'=>'volume_ask',
+          'share_number2'=>'share_number_ask2',
+          'share_type_currency1' => 'share_type_currency1_ask',
+          'share_type_currency2' => 'share_type_currency2_ask',
+          'volume2' => 'volume_ask2',
+      ])
         <div class="content-t ">
             <form class="add-order-looking" action="#">
                 <div class="looking">

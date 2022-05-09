@@ -76,14 +76,14 @@
                         <div class="wrapper-radio">
                             <div class="form_radio">
                                 <label class="t-r f14-l16 purple1">
-                                    <input type="radio" id="share_type_currency1" name="share_type_currency" value="usd" required checked>
+                                    <input type="radio" id="{{$share_type_currency1}}" name="share_type_currency" value="usd" required checked>
                                     <span></span>
                                     $
                                 </label>
                             </div>
                             <div class="form_radio">
                                 <label class="t-r f14-l16 purple1">
-                                    <input type="radio" id="share_type_currency2" name="share_type_currency" value="eur" required>
+                                    <input type="radio" id="{{$share_type_currency2}}" name="share_type_currency" value="eur" required>
                                     <span></span>
                                     €
                                 </label>
@@ -116,8 +116,8 @@
                         </select>
                     </div>
                     <div class="ask-block-info">
-                        <label class="t-r f16-l24 purple1" for="volume2-bid">Volume</label>
-                        <input class="i-f w400" type="number" id="volume2-bid" placeholder="Placeholder">
+                        <label class="t-r f16-l24 purple1" for="{{$volume2}}">Volume</label>
+                        <input class="i-f w400" type="number" id="{{$volume2}}" placeholder="Placeholder">
                     </div>
                     <div class="ask-block-info">
                         <label class="t-r f16-l24 purple1" for="{{$share_number2}}">Valuation</label>
