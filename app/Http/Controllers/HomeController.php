@@ -6,6 +6,7 @@ use App\Models\CompanyOrder;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use App\Http\Requests\UserUpdateRequest;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 
@@ -33,7 +34,7 @@ class HomeController extends Controller
 
     public function orders()
     {
-        $orders = CompanyOrder::with('user','company')->get();
+        $orders = CompanyOrder::with('user','company')->where('user_id',Auth::id())->get();
         return view('lc.page-lc-orders',compact('orders'));
     }
 

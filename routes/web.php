@@ -43,9 +43,11 @@ Route::controller(HomeController::class)->group(function () {
 });
 
 //ORDERS
-Route::controller(ManageOrderController::class)->group(function () {
-    Route::get('/add-order/{type?}', 'addOrder')->name('add-order');
-    Route::post('/add-order/', 'storeOrder')->name('store-order');
+Route::resource('order-lc', ManageOrderController::class)->except(['index','destroy'])->middleware('auth');
+
+Route::controller(ManageOrderController::class)->middleware('auth')->group(function () {
+    Route::get('/order/{type?}', 'addOrder')->name('order');
+    Route::post('/order/', 'storeOrder')->name('store-order');
 });
 
 

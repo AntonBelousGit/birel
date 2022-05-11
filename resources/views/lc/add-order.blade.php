@@ -40,7 +40,7 @@
             </div>
         @endif
 
-        @include('lc.add-order.components.ask&bid-component',
+        @include('lc.order.components.ask&bid-component',
         [
             'type'=>"BID",
             'active'=>'active',
@@ -56,7 +56,7 @@
             'volume2' => 'volume_bid2',
             ]
         )
-        @include('lc.add-order.components.ask&bid-component',
+        @include('lc.order.components.ask&bid-component',
       [
           'type'=>"ASK",
           'active'=>'',

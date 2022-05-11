@@ -17,7 +17,7 @@
             </a>
         </li>
         <li class="sidebar-nav-item">
-            <a class="nav-link {{ Route::is('add-order') ? 'active' : '' }}" href="{{ route('add-order') }}">
+            <a class="nav-link {{ Route::is('order') ? 'active' : '' }}" href="{{ route('order') }}">
                 <i class="icon icon-stack-plus-purple"></i>
                 <i class="icon icon-stack-plus-green"></i>
                 <i class="icon icon-stack-plus-white"></i>

@@ -23,10 +23,10 @@
                 </li>
             </ul>
             <div class="link-wrapper">
-                <a class="btn w115" href="{{ route('add-order',['type'=>'ASK']) }}">
+                <a class="btn w115" href="{{ route('order',['type'=>'ASK']) }}">
                     Buy
                 </a>
-                <a class="btn w115" href="{{ route('add-order',['type'=>'BID']) }}">
+                <a class="btn w115" href="{{ route('order',['type'=>'BID']) }}">
                     Sell
                 </a>
             </div>

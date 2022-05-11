@@ -158,7 +158,7 @@
                         </td>
                         <td class="body-row-item center">
                             <div>
-                                <a href="#" data-tippy-content="Подсказка о возможности редактирования своего ордера ">
+                                <a href="{{ route('order-lc.show',$order) }}" data-tippy-content="Подсказка о возможности редактирования своего ордера ">
                                     <i class="icon icon-pen-blue"></i>
                                 </a>
                             </div>
