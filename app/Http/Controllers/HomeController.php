@@ -39,21 +39,17 @@ class HomeController extends Controller
 
     public function update(UserUpdateRequest $request)
     {
-
         auth()->user()->update($request->validated());
-
         return redirect()->back()->with('success', 'Profile updated.');
     }
 
     public function changepass(Request $request)
     {
-
         $validated = $request->validate([
             'password' => ['required', 'string', 'min:6', 'confirmed'],
         ]);
 
         auth()->user()->update(['password' => Hash::make($validated['password'])]);
-
 
         return redirect()->back()->with('success', 'password updated.');
     }

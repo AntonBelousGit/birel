@@ -92,14 +92,14 @@
                             <div class="wrapper-radio">
                                 <div class="form_radio">
                                     <label class="t-r f14-l16 purple1">
-                                        <input type="radio" id="share_type_currency1" name="share_type_currency" value="usd" @if ($order->share_type_currency == 'usd') checked @endif>
+                                        <input type="radio" id="share_type_currency1" name="share_type_currency" value="usd" @if ($order->share_type_currency == '$') checked @endif>
                                         <span></span>
                                         $
                                     </label>
                                 </div>
                                 <div class="form_radio">
                                     <label class="t-r f14-l16 purple1">
-                                        <input type="radio" id="share_type_currency2" name="share_type_currency" value="eur" @if ($order->share_type_currency == 'eur') checked @endif>
+                                        <input type="radio" id="share_type_currency2" name="share_type_currency" value="eur" @if ($order->share_type_currency == '€') checked @endif>
                                         <span></span>
                                         €
                                     </label>
@@ -107,12 +107,12 @@
                             </div>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
-                                    <label class="input-group-text" for="inputGroupSelect01">Share Type</label>
+                                    <label class="input-group-text" for="inputGroupSelect01">Status</label>
                                 </div>
                                 <select name="share_type" class="custom-select" required>
-                                    <option value="active" @if($order->share_type == 'Preferred') selected @endif>Active</option>
-                                    <option value="inactive" @if($order->share_type == 'Common') selected @endif>Inactive</option>
-                                    <option value="moderation" @if($order->share_type == 'Preferred and Common') selected @endif>Moderation</option>
+                                    <option value="active" @if($order->status == 'active') selected @endif>Active</option>
+                                    <option value="inactive" @if($order->status == 'inactive') selected @endif>Inactive</option>
+                                    <option value="moderation" @if($order->status == 'moderation') selected @endif>Moderation</option>
                                 </select>
                             </div>
 {{--                            <button type="submit" class="btn btn-primary">Submit</button>--}}
