@@ -107,7 +107,7 @@
                     @else
                         <div class="ask-block-info">
                             <label class="t-r f16-l24 purple1" for="{{$share_type2}}">Share Type</label>
-                            <select class="js-example-basic-single w400" id="{{$share_type2}}">
+                            <select class="js-example-basic-single w400" id="{{$share_type2}}" name="share_type">
                                 <option value="Choose" disabled>Choose</option>
                                 <option value="Preferred" {{$order->share_type == 'Preferred'? 'selected':''}}>Preferred</option>
                                 <option value="Common" {{$order->share_type == 'Common'? 'selected':''}}>Common</option>

@@ -2,7 +2,7 @@
     <label class="t-r f16-l24 purple1" for="{{$share_type}}">
         Share Type
     </label>
-    <select class="js-example-basic-single w400" id="{{$share_type}}" name="share_type" >
+    <select class="js-example-basic-single w400" id="{{$share_type}}" >
         <option value="Choose">Choose</option>
         <option value="Preferred">Preferred</option>
         <option value="Common">Common</option>
