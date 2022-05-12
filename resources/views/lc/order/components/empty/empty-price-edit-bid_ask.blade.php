@@ -1,0 +1,42 @@
+<div class="ask-block-info">
+    <label class="t-r f16-l24 purple1" for="{{$share_type}}">
+        Share Type
+    </label>
+    <select class="js-example-basic-single w400" id="{{$share_type}}" name="share_type" required>
+        <option value="Choose">Choose</option>
+        <option value="Preferred">Preferred</option>
+        <option value="Common">Common</option>
+        <option value="Preferred and Common">Preferred and Common</option>
+        <option value="any">Any</option>
+    </select>
+</div>
+<div class="ask-block-info">
+    <div class="wrapper-radio">
+        <div class="form_radio">
+            <label class="t-r f14-l16 purple1">
+                <input type="radio" id="{{$share_type_currency1}}" name="share_type_currency" value="$" required checked>
+                <span></span>
+                $
+            </label>
+        </div>
+        <div class="form_radio">
+            <label class="t-r f14-l16 purple1">
+                <input type="radio" id="{{$share_type_currency2}}" name="share_type_currency" value="€" required>
+                <span></span>
+                €
+            </label>
+        </div>
+    </div>
+    <label class="t-r f16-l24 purple1" for="{{$share_price}}">Share Price</label>
+    <input class="i-f w400 m-bid" type="text" id="{{$share_price}}"
+           placeholder="Placeholder price" name="share_price" required>
+</div>
+<div class="ask-block-info">
+    <label class="t-r f16-l24 purple1" for="{{$share_number}}">Share Number</label>
+    <input class="i-f w400 m-bid" type="text" id="{{$share_number}}"
+           placeholder="Placeholder number" name="share_number" required>
+</div>
+<div class="ask-block-info">
+    <label class="t-r f16-l24 purple1" for="{{$volume}}">Volume</label>
+    <input class="i-f w400" type="number" id="{{$volume}}" name="volume" required>
+</div>

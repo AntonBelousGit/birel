@@ -115,37 +115,37 @@
                         </td>
                         <td class="body-row-item">
                             <div>
-                                {{$order->type}}
+                                {{$order->type ?? '-'}}
                             </div>
                         </td>
                         <td class="body-row-item">
                             <div>
-                                {{$order->valuation}}
+                                {{$order->valuation ?? '-'}}
                             </div>
                         </td>
                         <td class="body-row-item">
                             <div>
-                                {{$order->volume}}
+                                {{$order->volume ?? '-'}}
                             </div>
                         </td>
                         <td class="body-row-item">
                             <div>
-                                {{$order->share_price}}
+                                {{$order->share_price ?? '-'}}
                             </div>
                         </td>
                         <td class="body-row-item">
                             <div>
-                                {{$order->share_number}}
+                                {{$order->share_number ?? '-'}}
                             </div>
                         </td>
                         <td class="body-row-item">
                             <div>
-                                {{$order->share_type}}
+                                {{$order->share_type ?? '-'}}
                             </div>
                         </td>
                         <td class="body-row-item">
                             <div>
-                                {{$order->deal_structure}}
+                                {{$order->deal_structure ?? '-'}}
                             </div>
                         </td>
                         <td class="body-row-item center">

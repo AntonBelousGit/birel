@@ -31,7 +31,7 @@
                 </div>
 
                 @if(empty($order->share_number))
-                    @include('lc.order.components.empty-price')
+                    @include('lc.order.components.empty.empty-price')
                 @else
                     <div class="wrapper-cont">
                         <h2 class="t-m f18-l32 purple3">Price</h2>
@@ -57,8 +57,8 @@
                         </div>
                     </div>
                 @endif
-                @if(empty($order->valutation))
-                    @include('lc.order.components.empty-valutation')
+                @if(empty($order->valuation))
+                    @include('lc.order.components.empty.empty-valuation')
                 @else
                     <div class="wrapper-cont">
                         <h2 class="t-m f18-l32 purple3">Valuation</h2>

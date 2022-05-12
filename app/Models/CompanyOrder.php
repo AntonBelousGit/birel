@@ -17,7 +17,7 @@ class CompanyOrder extends Model
         'valuation',
         'volume',
         'share_price',
-        'share_price_decode',
+        'share_price_encode',
         'share_number',
         'type',
         'sub_type',

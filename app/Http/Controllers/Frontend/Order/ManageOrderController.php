@@ -11,14 +11,14 @@ class ManageOrderController extends Controller
 {
     public function addOrder($type = null)
     {
-        $companies = Company::get(['id','companyName']);
+        $companies = Company::get(['id', 'companyName']);
 
         if ($type === 'ASK') {
-            return view('lc.order.ask',compact('companies'));
+            return view('lc.order.ask', compact('companies'));
         } elseif ($type === 'BID') {
-            return view('lc.order.bid',compact('companies'));
+            return view('lc.order.bid', compact('companies'));
         }
-        return view('lc.add-order',compact('companies'));
+        return view('lc.add-order', compact('companies'));
     }
 
     public function storeOrder(CreateOrderRequest $createOrderRequest)
@@ -27,16 +27,30 @@ class ManageOrderController extends Controller
         return redirect()->route('orders');
     }
 
-    public function show($id){
+    public function show($id)
+    {
         $order = CompanyOrder::with('company')->findOrFail($id);
-        return view('lc.order.show',compact('order'));
+        return view('lc.order.show', compact('order'));
     }
 
-    public function edit(){
+    public function edit($id)
+    {
+        $order = CompanyOrder::with('company')->findOrFail($id);
+        $companies = Company::get(['id', 'companyName']);
 
+        if ($order->type === 'ASK') {
+            return view('lc.order.ask-edit', compact('order','companies'));
+        } elseif ($order->type === 'BID') {
+            return view('lc.order.bid-edit', compact('order','companies'));
+        }
+
+        return view('lc.order.ask-edit', compact('order','companies'));
     }
 
-    public function update(){
+    public function update(CreateOrderRequest $createOrderRequest, CompanyOrder $order_lc)
+    {
 
+        $order_lc->update($createOrderRequest->validated());
+        return redirect()->route('orders');
     }
 }
