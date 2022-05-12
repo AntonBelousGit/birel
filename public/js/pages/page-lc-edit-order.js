@@ -67,13 +67,15 @@ function clearName(e) {
 
 
 		} else {
-			items1.removeAttribute("name");
-			items6.removeAttribute("name");
-			items7.removeAttribute("name");
-			items8.removeAttribute("name");
+
+
 			if (e[i] === e[0]) {
+				items7.removeAttribute("name");
+				items8.removeAttribute("name");
 				addName2(items6, items5, items4, items2, items3, items1);
 			} else {
+				items1.removeAttribute("name");
+				items6.removeAttribute("name");
 				addName(items8, items9, items7);
 			}
 		}
