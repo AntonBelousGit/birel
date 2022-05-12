@@ -7,7 +7,6 @@ use App\Http\Requests\Orders\CreateOrderRequest;
 use App\Http\Requests\Orders\UpdateOrderRequest;
 use App\Models\Company;
 use App\Models\CompanyOrder;
-use Illuminate\Http\Request;
 
 class ManageOrderController extends Controller
 {
