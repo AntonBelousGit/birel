@@ -30,7 +30,6 @@ function clearName(e) {
 
 			items32.removeAttribute("value");
 			items22.removeAttribute("value");
-			items2.removeAttribute("value");
 			deleteName(elementInput);
 			deleteName(elementSelect);
 			let items222 = document.querySelector('#share_number_bid');
