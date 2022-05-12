@@ -117,7 +117,7 @@
                         </div>
                         <div class="ask-block-info">
                             <label class="t-r f16-l24 purple1" for="{{$volume2}}">Volume</label>
-                            <input class="i-f w400" type="number" id="{{$volume2}}" placeholder="Placeholder"  value="{{$order->volume}}">
+                            <input class="i-f w400" type="number" id="{{$volume2}}" placeholder="Placeholder" name="volume"  value="{{$order->volume}}">
                         </div>
                         <div class="ask-block-info">
                             <label class="t-r f16-l24 purple1" for="{{$share_number2}}">Valuation</label>

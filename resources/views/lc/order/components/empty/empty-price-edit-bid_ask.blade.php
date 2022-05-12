@@ -2,8 +2,8 @@
     <label class="t-r f16-l24 purple1" for="{{$share_type}}">
         Share Type
     </label>
-    <select class="js-example-basic-single w400" id="{{$share_type}}" name="share_type" required>
-        <option value="Choose">Choose</option>
+    <select class="js-example-basic-single w400" id="{{$share_type}}" name="share_type" >
+        <option value="Choose" disabled>Choose</option>
         <option value="Preferred">Preferred</option>
         <option value="Common">Common</option>
         <option value="Preferred and Common">Preferred and Common</option>
@@ -14,14 +14,14 @@
     <div class="wrapper-radio">
         <div class="form_radio">
             <label class="t-r f14-l16 purple1">
-                <input type="radio" id="{{$share_type_currency1}}" name="share_type_currency" value="$" required checked>
+                <input type="radio" id="{{$share_type_currency1}}" name="share_type_currency" value="$"  checked>
                 <span></span>
                 $
             </label>
         </div>
         <div class="form_radio">
             <label class="t-r f14-l16 purple1">
-                <input type="radio" id="{{$share_type_currency2}}" name="share_type_currency" value="€" required>
+                <input type="radio" id="{{$share_type_currency2}}" name="share_type_currency" value="€" >
                 <span></span>
                 €
             </label>
@@ -29,14 +29,14 @@
     </div>
     <label class="t-r f16-l24 purple1" for="{{$share_price}}">Share Price</label>
     <input class="i-f w400 m-bid" type="text" id="{{$share_price}}"
-           placeholder="Placeholder price" name="share_price" required>
+           placeholder="Placeholder price" name="share_price" >
 </div>
 <div class="ask-block-info">
     <label class="t-r f16-l24 purple1" for="{{$share_number}}">Share Number</label>
     <input class="i-f w400 m-bid" type="text" id="{{$share_number}}"
-           placeholder="Placeholder number" name="share_number" required>
+           placeholder="Placeholder number" name="share_number" >
 </div>
 <div class="ask-block-info">
     <label class="t-r f16-l24 purple1" for="{{$volume}}">Volume</label>
-    <input class="i-f w400" type="number" id="{{$volume}}" name="volume" required>
+    <input class="i-f w400" type="number" id="{{$volume}}" name="volume" >
 </div>
