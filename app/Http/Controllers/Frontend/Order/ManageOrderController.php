@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Frontend\Order;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Orders\CreateOrderRequest;
+use App\Http\Requests\Orders\UpdateOrderRequest;
 use App\Models\Company;
 use App\Models\CompanyOrder;
+use Illuminate\Http\Request;
 
 class ManageOrderController extends Controller
 {
@@ -47,10 +49,10 @@ class ManageOrderController extends Controller
         return view('lc.order.ask-edit', compact('order','companies'));
     }
 
-    public function update(CreateOrderRequest $createOrderRequest, CompanyOrder $order_lc)
+    public function update(UpdateOrderRequest $updateOrderRequest, CompanyOrder $order_lc)
     {
-
-        $order_lc->update($createOrderRequest->validated());
+//        dd($request->all());
+        $order_lc->update($updateOrderRequest->validated());
         return redirect()->route('orders');
     }
 }

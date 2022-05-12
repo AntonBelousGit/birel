@@ -9,7 +9,7 @@
     <script src="{{asset('js/lib/moment.min.js')}}"></script>
     <script src="{{asset('js/lib/daterangepicker.min.js')}}"></script>
     <script src="{{asset('js/pages/page-lc-add-order.min.js')}}" type="module"></script>
-    <script src="{{asset('js/pages/page-lc-add-order-ask.min.js')}}" type="module"></script>
+    <script src="{{asset('js/pages/page-lc-edit-order.min.js')}}" type="module"></script>
 <!--     <script src="{{asset('js/pages/page-lc-add-order-looking.min.js')}}" type="module"></script> -->
 
 @endsection
