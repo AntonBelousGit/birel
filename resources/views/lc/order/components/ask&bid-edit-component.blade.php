@@ -18,14 +18,6 @@
                         @endforeach
                     </select>
                 </div>
-                <div class="ask-block-link">
-                    <p class="t-r f14-l16 purple2">
-                        You can add company if the company is not in the list.
-                        <a class="" href="{{route('companies.create')}}">
-                            <i class="icon icon-green-circle-plus"></i>
-                        </a>
-                    </p>
-                </div>
             </div>
             <div class="ask-block d-s">
                 <h2 class="t-sb f22-l25 purple3">Deal Structure</h2>

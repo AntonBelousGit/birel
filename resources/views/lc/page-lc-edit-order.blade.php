@@ -13,7 +13,7 @@
 @endsection
 
 @section('content')
-   <section class="edit">
+<section class="edit">
    	<div class="edit-wrapper">
    		<div class="edit-left">
    			<h1 class="t-sb f22-l25 purple3">Order #123456</h1>
@@ -80,7 +80,7 @@
    			Edit
    		</a>
    	</div>
-   </section>
+</section>
 
 
    <!--<section class="edit">-->
