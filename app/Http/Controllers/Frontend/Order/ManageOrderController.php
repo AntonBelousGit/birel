@@ -49,9 +49,9 @@ class ManageOrderController extends Controller
         return view('lc.order.ask-edit', compact('order','companies'));
     }
 
-    public function update(UpdateOrderRequest $updateOrderRequest, CompanyOrder $order_lc)
+    public function update(Request $request, CompanyOrder $order_lc)
     {
-//        dd($request->all());
+        dd($request->all());
         $order_lc->update($updateOrderRequest->validated());
         return redirect()->route('orders');
     }

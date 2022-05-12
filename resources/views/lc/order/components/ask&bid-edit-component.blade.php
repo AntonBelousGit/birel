@@ -45,14 +45,14 @@
             <div class="ask-block i" id="{{$id}}">
                 <h2 class="t-sb f22-l25 purple3">Information</h2>
                 <ul class="nav-tabs ">
-                    <li class="t-m f18-l32 purple1 tab-n2 active">
+                    <li class="t-m f18-l32 purple1 tab-n2 {{!empty($order->share_number)?'active':''}}">
                         Price
                     </li>
-                    <li class="t-m f18-l32 purple1 tab-n2 ">
+                    <li class="t-m f18-l32 purple1 tab-n2 {{!empty($order->valuation)?'active':''}}">
                         Valuation
                     </li>
                 </ul>
-                <div class="content-t2 active">
+                <div class="content-t2 {{!empty($order->share_number)?'active':''}}">
                     @if(empty($order->share_number))
                         @include('lc.order.components.empty.empty-price-edit-bid_ask')
                     @else
@@ -101,7 +101,7 @@
                     @endif
 
                 </div>
-                <div class="content-t2">
+                <div class="content-t2" {{!empty($order->valuation)?'active':''}}>
                     @if(empty($order->valuation))
                         @include('lc.order.components.empty.empty-valuation-edit-bid_ask')
                     @else
