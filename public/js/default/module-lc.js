@@ -23,6 +23,7 @@ function bindTabs(container) {
 		}
 	}
 }
+
 function createPopUp(btn, popup, bg = ".bg-purple") {
 	if (typeof btn === 'string' && typeof popup === 'string') {
 		btn = document.querySelector(btn);
@@ -32,16 +33,17 @@ function createPopUp(btn, popup, bg = ".bg-purple") {
 
 
 	const removeBtn = popup.firstElementChild.firstElementChild;
-
+	const body = document.querySelector('body');
 	const togglePopUp = () => {
 		popup.classList.toggle('active');
 		bg.classList.toggle('active');
-
+		body.classList.toggle('lock');
 	}
 
 	const removePopUp = () => {
 		popup.classList.remove('active');
 		bg.classList.remove('active');
+		body.classList.remove('lock');
 	}
 
 	btn.addEventListener('click', e => {
@@ -63,6 +65,7 @@ function createPopUp(btn, popup, bg = ".bg-purple") {
 		}
 	});
 }
+
 function bindTabs2(container) {
 	if (typeof container === 'string') {
 		container = document.querySelector(container);
@@ -88,7 +91,8 @@ function bindTabs2(container) {
 		}
 	}
 }
-function multiplication(container,prise,number, id2) {
+
+function multiplication(container, prise, number, id2) {
 	if (typeof container === 'string') {
 		container = document.querySelector(container);
 	}
@@ -105,4 +109,5 @@ function multiplication(container,prise,number, id2) {
 			})
 	}
 }
-export  {bindTabs, createPopUp, bindTabs2,multiplication};
+
+export {bindTabs, createPopUp, bindTabs2, multiplication};

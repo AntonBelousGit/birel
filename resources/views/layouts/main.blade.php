@@ -47,10 +47,50 @@
             <div class="header-r">
                 <ul class="header-list">
                     <li class="header-list-item">
-                        <a href="#">
+                        <button id="h-n-b" class="reset-btn" type="button">
                             <i class="icon icon-bells"></i>
                             <span class="counter">2</span>
-                        </a>
+                        </button>
+                        <div class="notice-popup">
+                            <ul class="notice_list">
+                                <li class="notice_item new">
+                                    <div class="user-avatar s">
+                                        <span class="t-sb purple1">SD</span>
+                                    </div>
+                                    <span class="notice_item-link t-r purple3">
+                                        User <a class="t-sb purple1" href="#">user1</a> accept/denied your request to move to a new stage
+                                    </span>
+                                    <span class="notice_item-hour t-r">1 hour</span>
+                                </li>
+                                <li class="notice_item new">
+                                    <div class="user-avatar s">
+                                        <span class="t-sb purple1">SD</span>
+                                    </div>
+                                    <span class="notice_item-link t-r purple3">
+                                        You got a new offer from<a class="t-sb purple1" href="#"> user2</a>
+                                    </span>
+                                    <span class="notice_item-hour t-r">999 hour</span>
+                                </li>
+                                <li class="notice_item">
+                                    <div class="user-avatar s">
+                                        <span class="t-sb purple1">SD</span>
+                                    </div>
+                                    <span class="notice_item-link t-r purple3">
+                                        User <a class="t-sb purple1" href="#">user1</a> accept/denied your request to move to a new stage
+                                    </span>
+                                    <span class="notice_item-hour t-r">999 hour</span>
+                                </li>
+                                <li class="notice_item">
+                                    <div class="user-avatar s">
+                                        <span class="t-sb purple1">SD</span>
+                                    </div>
+                                    <span class="notice_item-link t-r purple3">
+                                        You got a new offer from<a class="t-sb purple1" href="#"> user2</a>
+                                    </span>
+                                    <span class="notice_item-hour t-r">999 hour</span>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
                     <li class="header-list-item">
                         <a href="#">
@@ -108,10 +148,10 @@
     <div class="container">
         <ul class="header-list">
             <li class="header-list-item">
-                <a href="#">
+                <button id="f-n-b" class="reset-btn" type="button">
                     <i class="icon icon-bells"></i>
                     <span class="counter">2</span>
-                </a>
+                </button>
             </li>
             <li class="header-list-item">
                 <a href="#">
@@ -123,6 +163,29 @@
     </div>
 </footer>
 <div class="bg-purple"></div>
+
+<div class="notice-popup-f" id="popup-3">
+	<ul class="notice_list">
+		<li class="notice_item new">
+			<div class="user-avatar s">
+				<span class="t-sb purple1">SD</span>
+			</div>
+			<span class="notice_item-link t-r  purple3">
+				User <a class="t-sb purple1" href="#">user1</a> accept/denied your request to move to a new stage
+			</span>
+			<span class="notice_item-hour t-r ">1 hour</span>
+		</li>
+		<li class="notice_item new">
+			<div class="user-avatar s">
+				<span class="t-sb purple1">SD</span>
+			</div>
+			<span class="notice_item-link t-r purple3">
+				You got a new offer from<a class="t-sb purple1" href="#"> user2</a>
+			</span>
+			<span class="notice_item-hour t-r">999 hour</span>
+		</li>
+	</ul>
+</div>
 
 <div class="popUp-message-manager" id="popup-1">
     <div class="popUp-close">

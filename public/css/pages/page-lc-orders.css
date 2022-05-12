@@ -541,17 +541,17 @@
   }
 }
 
-@media screen and (max-width: 1085px) {
+@media screen and (max-width: 1280px) {
   .orders-wrapper .orders-philter {
-    grid-gap: 20px;
+    grid-gap: 12px;
   }
 }
 
 @media screen and (max-width: 1024px) {
   .sidebar {
     display: none;
-    height: -webkit-calc(100vh - 120px);
-    height: calc(100vh - 120px);
+    height: -webkit-calc(100vh - 165px);
+    height: calc(100vh - 165px);
     width: 100vw;
     min-width: 100vw;
     overflow-x: hidden;
@@ -611,8 +611,17 @@
 }
 
 @media screen and (max-width: 768px) {
+  .sidebar {
+    height: -webkit-calc(100vh - 123px);
+    height: calc(100vh - 123px);
+  }
+
   .orders-wrapper {
     padding: 35px 25px;
+  }
+
+  .orders-wrapper .orders-philter {
+    grid-gap: 10px;
   }
 }
 

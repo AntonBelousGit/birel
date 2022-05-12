@@ -580,8 +580,8 @@
 @media screen and (max-width: 1024px) {
   .sidebar {
     display: none;
-    height: -webkit-calc(100vh - 120px);
-    height: calc(100vh - 120px);
+    height: -webkit-calc(100vh - 165px);
+    height: calc(100vh - 165px);
     width: 100vw;
     min-width: 100vw;
     overflow-x: hidden;
@@ -664,6 +664,11 @@
 }
 
 @media screen and (max-width: 768px) {
+  .sidebar {
+    height: -webkit-calc(100vh - 123px);
+    height: calc(100vh - 123px);
+  }
+
   .company {
     padding: 35px 20px;
   }
