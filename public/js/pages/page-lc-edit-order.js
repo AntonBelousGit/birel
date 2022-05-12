@@ -1,9 +1,46 @@
 import {bindTabs2, multiplication} from '../default/module-lc.js';
 
 bindTabs2('#tabs_bid');
-multiplication('#tabs_bid' ,'#share_price_bid','#share_number_bid','#volume_bid');
+multiplication('#tabs_bid', '#share_price_bid', '#share_number_bid', '#volume_bid');
+
+
+const items1 = document.querySelector('#share_type_bid');
+const items2 = document.querySelector('#share_type_currency_bid1');
+const items3 = document.querySelector('#share_type_currency_bid2');
+const items4 = document.querySelector('#share_price_bid');
+const items5 = document.querySelector('#share_number_bid');
+const items6 = document.querySelector('#volume_bid');
+const items7 = document.querySelector('#share_type_bid2');
+const items8 = document.querySelector('#volume_bid2');
+const items9 = document.querySelector('#share_number_bid2');
 
 f('#tabs_bid');
+
+function formSubmission(elTabs) {
+	const form = document.querySelector('#form');
+	let btn = document.querySelector('#submit_orm');
+	btn.addEventListener('click', e => {
+		e.preventDefault();
+		clearValue(elTabs);
+		form.submit();
+	});
+
+	function clearValue(e) {
+		for (let i = 0; i < e.length; i++) {
+			let item = e[i];
+			if (!item.classList.contains('active')) {
+				if (e[i] === e[0]) {
+					items4.removeAttribute('value');
+					items5.removeAttribute('value');
+				} else {
+					items9.removeAttribute('value');
+				}
+			} else {
+				return;
+			}
+		}
+	}
+}
 
 function f(item) {
 	let items = document.querySelector(item);
@@ -13,6 +50,7 @@ function f(item) {
 		const titleEl = itemsUl[i];
 		titleEl.addEventListener('click', e => {
 			clearName(itemsTabs);
+			formSubmission(itemsTabs);
 		});
 	}
 }
@@ -24,73 +62,53 @@ function clearName(e) {
 		if (!item.classList.contains('active')) {
 			let elementInput = item.querySelectorAll('input');
 			let elementSelect = item.querySelectorAll('select');
-			let items2 = document.querySelector('#share_number_bid2');
-			let items22 = document.querySelector('#share_number_bid');
-			let items32 = document.querySelector('#share_price_bid');
-
-			items32.removeAttribute("value");
-			items22.removeAttribute("value");
 			deleteName(elementInput);
 			deleteName(elementSelect);
-			let items222 = document.querySelector('#share_number_bid');
-			let items322 = document.querySelector('#share_price_bid');
-			items2.setAttribute('name', 'valuation');
-			items222.setAttribute('name', 'share_number');
-			items322.setAttribute('name', 'share_price');
+
+
 		} else {
+			items1.removeAttribute("name");
+			items6.removeAttribute("name");
+			items7.removeAttribute("name");
+			items8.removeAttribute("name");
 			if (e[i] === e[0]) {
-				addName2();
+				addName2(items6, items5, items4, items2, items3, items1);
 			} else {
-				addName();
+				addName(items8, items9, items7);
 			}
 		}
 	}
+
 	function deleteName(e) {
 		for (let i = 0; i < e.length; i++) {
-			e[i].removeAttribute("name");
 			e[i].removeAttribute("required");
+
 		}
 	}
 }
 
-function addName( ) {
-	let items1 = document.querySelector('#volume_bid2');
-	let items2 = document.querySelector('#share_number_bid2');
-	let items3 = document.querySelector('#share_type_bid2');
+function addName(volume, valuation, share_type) {
+	volume.setAttribute('name', 'volume');
+	valuation.setAttribute('name', 'valuation');
+	share_type.setAttribute('name', 'share_type');
 
-	items1.setAttribute('name', 'volume');
-	items2.setAttribute('name', 'valuation');
-	items3.setAttribute('name', 'share_type');
-
-	// items2.value = '';
-
-	items1.required = true;
-	items2.required = true;
-	items3.required = true;
+	volume.required = true;
+	valuation.required = true;
+	share_type.required = true;
 }
 
-function addName2() {
-	let items1 = document.querySelector('#volume_bid');
-	let items2 = document.querySelector('#share_number_bid');
-	let items3 = document.querySelector('#share_price_bid');
-	let items4 = document.querySelector('#share_type_currency_bid1');
-	let items5 = document.querySelector('#share_type_currency_bid2');
-	let items6 = document.querySelector('#share_type_bid');
+function addName2(volume, share_number, share_price, share_type_currency1, share_type_currency2, share_type) {
+	volume.setAttribute('name', 'volume');
+	share_number.setAttribute('name', 'share_number');
+	share_price.setAttribute('name', 'share_price');
+	share_type_currency1.setAttribute('name', 'share_type_currency');
+	share_type_currency2.setAttribute('name', 'share_type_currency');
+	share_type.setAttribute('name', 'share_type');
 
-	items1.setAttribute('name', 'volume');
-	items2.setAttribute('name', 'share_number');
-	items3.setAttribute('name', 'share_price');
-	items4.setAttribute('name', 'share_type_currency');
-	items5.setAttribute('name', 'share_type_currency');
-	items6.setAttribute('name', 'share_type');
-
-	// items3.value = '';
-	// items2.value = '';
-
-	items1.required = true;
-	items2.required = true;
-	items3.required = true;
-	items4.required = true;
-	items5.required = true;
-	items6.required = true;
+	volume.required = true;
+	share_number.required = true;
+	share_price.required = true;
+	share_type_currency1.required = true;
+	share_type_currency2.required = true;
+	share_type.required = true;
 }

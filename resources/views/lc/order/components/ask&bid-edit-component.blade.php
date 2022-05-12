@@ -1,5 +1,5 @@
 <div class="content-t {{$active}}">
-    <form class="add-order-ask" action="{{ route('order-lc.update',$order) }}" method="POST">
+    <form class="add-order-ask" action="{{ route('order-lc.update',$order) }}" method="POST" id='form'>
         @csrf
         @method('put')
         <div class="ask">
@@ -129,7 +129,7 @@
             </div>
         </div>
         <div class="add-order-btn">
-            <button class="btn w265">
+            <button class="btn w265" id='submit_orm' type='submit'>
                 Update
             </button>
         </div>
