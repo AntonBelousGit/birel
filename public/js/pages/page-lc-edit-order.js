@@ -24,6 +24,13 @@ function clearName(e) {
 		if (!item.classList.contains('active')) {
 			let elementInput = item.querySelectorAll('input');
 			let elementSelect = item.querySelectorAll('select');
+			let items2 = document.querySelector('#share_number_bid2');
+			let items22 = document.querySelector('#share_number_bid');
+			let items32 = document.querySelector('#share_price_bid');
+
+			items32.value = '';
+			items22.value = '';
+			items2.value = '';
 			deleteName(elementInput);
 			deleteName(elementSelect);
 		} else {
@@ -51,7 +58,7 @@ function addName( ) {
 	items2.setAttribute('name', 'valuation');
 	items3.setAttribute('name', 'share_type');
 
-	items2.value = '';
+	// items2.value = '';
 
 	items1.required = true;
 	items2.required = true;
@@ -73,8 +80,8 @@ function addName2() {
 	items5.setAttribute('name', 'share_type_currency');
 	items6.setAttribute('name', 'share_type');
 
-	items3.value = '';
-	items2.value = '';
+	// items3.value = '';
+	// items2.value = '';
 
 	items1.required = true;
 	items2.required = true;
