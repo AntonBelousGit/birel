@@ -28,9 +28,9 @@ function clearName(e) {
 			let items22 = document.querySelector('#share_number_bid');
 			let items32 = document.querySelector('#share_price_bid');
 
-			items32.value = '';
-			items22.value = '';
-			items2.value = '';
+			items32.removeAttribute("value");
+			items22.removeAttribute("value");
+			items2.removeAttribute("value");
 			deleteName(elementInput);
 			deleteName(elementSelect);
 		} else {
