@@ -22,7 +22,7 @@ function formSubmission(elTabs) {
 	btn.addEventListener('click', e => {
 		e.preventDefault();
 		clearValue(elTabs);
-		// form.submit();
+		form.submit();
 	});
 
 	function clearValue(e) {
