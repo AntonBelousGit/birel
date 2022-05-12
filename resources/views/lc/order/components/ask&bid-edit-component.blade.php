@@ -101,7 +101,7 @@
                     @endif
 
                 </div>
-                <div class="content-t2" {{!empty($order->valuation)?'active':''}}>
+                <div class="content-t2 {{!empty($order->valuation)?'active':''}}">
                     @if(empty($order->valuation))
                         @include('lc.order.components.empty.empty-valuation-edit-bid_ask')
                     @else
