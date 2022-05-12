@@ -45,7 +45,7 @@
                             </div>
                             <label for="share-price" class="t-r f16-l24 purple1">Share Price</label>
                             <input id="share-price" type="text" class="i-f " disabled
-                                   value="{{$order->share_type_currency}}">
+                                   value="{{$order->share_price}}">
                         </div>
                         <div class="edit-wrapper-box">
                             <label for="share-number" class="t-r f16-l24 purple1">Share Number</label>
