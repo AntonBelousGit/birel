@@ -5,7 +5,7 @@
 @endsection
 
 @section('scripts')
-    <script src="{{asset('js/pages/page-lc-edit-order.min.js')}}" type="module"></script>
+    <script src="{{asset('js/pages/page-lc-edit-order-bid.min.js')}}" type="module"></script>
 
 @endsection
 
