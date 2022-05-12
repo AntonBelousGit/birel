@@ -33,6 +33,11 @@ function clearName(e) {
 			items2.removeAttribute("value");
 			deleteName(elementInput);
 			deleteName(elementSelect);
+			let items222 = document.querySelector('#share_number_bid');
+			let items322 = document.querySelector('#share_price_bid');
+			items2.setAttribute('name', 'valuation');
+			items222.setAttribute('name', 'share_number');
+			items322.setAttribute('name', 'share_price');
 		} else {
 			if (e[i] === e[0]) {
 				addName2();
