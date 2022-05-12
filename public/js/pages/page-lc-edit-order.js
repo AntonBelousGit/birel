@@ -31,12 +31,15 @@ function formSubmission(elTabs) {
 			if (!item.classList.contains('active')) {
 				if (e[i] === e[0]) {
 					items4.removeAttribute('value');
+					items4.value = null;
 					items5.removeAttribute('value');
+					items5.value = null;
+
 				} else {
 					items9.removeAttribute('value');
+					items9.value = null;
 				}
 			} else {
-				return;
 			}
 		}
 	}
