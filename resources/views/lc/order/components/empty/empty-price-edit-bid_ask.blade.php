@@ -3,7 +3,7 @@
         Share Type
     </label>
     <select class="js-example-basic-single w400" id="{{$share_type}}" name="share_type" >
-        <option value="Choose" disabled>Choose</option>
+        <option value="Choose">Choose</option>
         <option value="Preferred">Preferred</option>
         <option value="Common">Common</option>
         <option value="Preferred and Common">Preferred and Common</option>
