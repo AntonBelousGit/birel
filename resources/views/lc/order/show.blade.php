@@ -1,18 +1,10 @@
 @extends('layouts.main')
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/lib/daterangepicker.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/pages/page-lc-edit-order.min.css')}}">
 @endsection
 
-@section('scripts')
-    <script src="{{asset('js/lib/moment.min.js')}}"></script>
-    <script src="{{asset('js/lib/daterangepicker.min.js')}}"></script>
-    <script src="{{asset('js/pages/page-lc-order.min.js')}}" type="module"></script>
-    <script src="{{asset('js/pages/page-lc-order-all.min.js')}}" type="module"></script>
-    <script src="{{asset('js/pages/page-lc-order-looking.min.js')}}" type="module"></script>
-    <script src="{{asset('js/pages/page-lc-order-tender.min.js')}}" type="module"></script>
-@endsection
+
 
 @section('content')
 {{--    @dump($order)--}}

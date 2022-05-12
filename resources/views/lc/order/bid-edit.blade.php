@@ -1,16 +1,11 @@
 @extends('layouts.main')
 
 @section('style')
-    <link rel="stylesheet" href="{{asset('css/lib/daterangepicker.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/pages/page-lc-add-order.min.css')}}">
 @endsection
 
 @section('scripts')
-    <script src="{{asset('js/lib/moment.min.js')}}"></script>
-    <script src="{{asset('js/lib/daterangepicker.min.js')}}"></script>
-{{--    <script src="{{asset('js/pages/page-lc-add-order.min.js')}}" type="module"></script>--}}
     <script src="{{asset('js/pages/page-lc-edit-order.min.js')}}" type="module"></script>
-<!--     <script src="{{asset('js/pages/page-lc-add-order-looking.min.js')}}" type="module"></script> -->
 
 @endsection
 
@@ -22,9 +17,6 @@
             <li class="t-m f18-l32 purple1 tab-n active">
                 BID
             </li>
-{{--            <li class="t-m f18-l32 purple1 tab-n ">--}}
-{{--                Looking for an offer--}}
-{{--            </li>--}}
         </ul>
         @if ($errors->any())
             <div class="alert alert-danger">
