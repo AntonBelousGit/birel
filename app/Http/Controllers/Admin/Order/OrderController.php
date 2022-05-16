@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin\Order;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Orders\Admin\AdminUpdateOrderRequest;
 use App\Models\Company;
 use App\Models\CompanyOrder;
 use Illuminate\Contracts\View\View;
@@ -80,11 +81,12 @@ class OrderController extends Controller
      *
      * @param \Illuminate\Http\Request $request
      * @param \App\Models\CompanyOrder $companyOrder
-     * @return Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, CompanyOrder $companyOrder)
+    public function update(AdminUpdateOrderRequest $adminUpdateOrderRequest, CompanyOrder $order)
     {
-        //
+        $order->update($adminUpdateOrderRequest->validated());
+        return back();
     }
 
     /**

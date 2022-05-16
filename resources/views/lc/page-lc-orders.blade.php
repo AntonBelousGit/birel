@@ -120,17 +120,17 @@
                         </td>
                         <td class="body-row-item">
                             <div>
-                                {{$order->valuation ?? '-'}}
+                                {{$order->valuation_encode ?? '-'}}
                             </div>
                         </td>
                         <td class="body-row-item">
                             <div>
-                                {{$order->volume ?? '-'}}
+                                {{$order->volume_encode ?? '-'}}
                             </div>
                         </td>
                         <td class="body-row-item">
                             <div>
-                                {{$order->share_price ?? '-'}}
+                                {{$order->share_price_encode ?? '-'}}
                             </div>
                         </td>
                         <td class="body-row-item">

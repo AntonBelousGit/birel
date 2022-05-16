@@ -16,6 +16,7 @@ class CompanyOrder extends Model
         'description',
         'valuation',
         'volume',
+        'volume_encode',
         'share_price',
         'share_price_encode',
         'share_number',
@@ -24,15 +25,55 @@ class CompanyOrder extends Model
         'deal_structure',
         'share_type',
         'share_type_currency',
-        'status'
+        'status',
+        'publish_time'
+    ];
+
+    protected $dates = [
+        'publish_time'
     ];
 
     public function user()
     {
         return $this->belongsTo(User::class);
     }
+
     public function company()
     {
         return $this->belongsTo(Company::class);
+    }
+
+    public function setValuationAttribute($value)
+    {
+        $this->attributes['valuation'] = $value;
+        $this->attributes['valuation_encode'] = encode_bigNumber($value);
+    }
+
+    public function setVolumeAttribute($value)
+    {
+        $this->attributes['volume'] = $value;
+        $this->attributes['volume_encode'] = encode_bigNumber($value);
+    }
+
+    public function setSharePriceAttribute($value)
+    {
+        $this->attributes['share_price'] = $value;
+        $this->attributes['share_price_encode'] = encode_bigNumber($value);
+    }
+
+    public function setStatusAttribute($value)
+    {
+        $this->attributes['status'] = $value;
+        if ($value == 'active') {
+            $this->attributes['publish_time'] = now();
+        }
+
+    }
+
+    public function getDateAttribute()
+    {
+        if ($this->publish_time) {
+            return $this->publish_time->format('d/m/y');
+        }
     }
 }

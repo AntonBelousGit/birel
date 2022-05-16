@@ -1,17 +1,11 @@
 <?php
 
-namespace App\Http\Requests\Orders;
+namespace App\Http\Requests\Orders\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Support\Facades\Auth;
 
-class UpdateOrderRequest extends FormRequest
+class AdminUpdateOrderRequest extends FormRequest
 {
-    public function authorize(): bool
-    {
-        return true;
-    }
-
     public function rules(): array
     {
         return [
@@ -20,24 +14,18 @@ class UpdateOrderRequest extends FormRequest
             'deal_structure'        => 'required|in:direct,spv,forward contract,direct or spv,any',
             'share_type'            => 'required|in:Preferred,Common,Preferred and Common,any',
             'share_type_currency'   => 'filled|in:$,€',
-            'type'                  => 'filled|in:ASK,BID,TENDER,LOOKING',
-            'sub_type'              => 'filled|in:ASK,BID',
+//            'type'                  => 'filled|in:ASK,BID,TENDER,LOOKING',
+//            'sub_type'              => 'filled|in:ASK,BID',
             'volume'                => 'required',
-            'share_price'           => 'present|nullable|integer',
+            'share_price'           => 'filled|integer',
             'share_number'          => 'required_unless:share_price,null',
-            'valuation'             => 'present|nullable|integer'
-
+            'status'                => 'required',
+            'valuation'             => 'filled|integer'
         ];
     }
 
-    public function validated()
+    public function authorize(): bool
     {
-        $request = $this->validator->validated();
-
-        $request['user_id'] = Auth::id();
-
-        return $request;
+        return true;
     }
-
-
 }

@@ -31,6 +31,11 @@ class Company extends Model
         return $this->belongsToMany(Category::class);
     }
 
+    public function orders()
+    {
+        return $this->hasMany(CompanyOrder::class,'company_id')->where('status','active');
+    }
+
     public function wali()
     {
         return $this->belongsTo(Watchlist::class, 'id', 'company_id')->where('user_id', Auth::user()->id);

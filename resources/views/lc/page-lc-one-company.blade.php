@@ -350,158 +350,84 @@
                             </tr>
                             </thead>
                             <tbody class="table-body">
-                            <tr class="body-row bid">
-                                <td class="body-row-item">
-                                    <div>
-                                        1
-                                    </div>
-                                </td>
-                                <td class="body-row-item">
-                                    <div>
-                                        01/01/22
-                                    </div>
-                                </td>
-                                <td class="body-row-item">
-                                    <div>
-                                        Company name
-                                    </div>
-                                </td>
-                                <td class="body-row-item">
-                                    <div>
-                                        Аsk
-                                    </div>
-                                </td>
-                                <td class="body-row-item">
-                                    <div>
-                                        0000000000
-                                    </div>
-                                </td>
-                                <td class="body-row-item">
-                                    <div>
-                                        0000000000
-                                    </div>
-                                </td>
-                                <td class="body-row-item">
-                                    <div>
-                                        0000000000
-                                    </div>
-                                </td>
-                                <td class="body-row-item">
-                                    <div>
-                                        0000000000
-                                    </div>
-                                </td>
-                                <td class="body-row-item">
-                                    <div>
-                                        Text
-                                    </div>
-                                </td>
-                                <td class="body-row-item">
-                                    <div>
-                                        Text
-                                    </div>
-                                </td>
-                                <td class="body-row-item center">
-                                    <div>
-                                        <button class="reset-btn" type="button"
-                                                data-tippy-content="Basic scenarios of user behavior can be considered solely in terms of marketing and financial prerequisites. Modern technologies have reached such a level that the further development of various forms of activity contributes to improving the quality of the tasks set by society.">
-                                            <i class="tree-dots"></i>
-                                        </button>
-                                    </div>
-                                </td>
-                                <td class="body-row-item center">
-                                    <div>
-                                        <button class="reset-btn" type="button"
-                                                data-tippy-content="Hint about the possibility of editing your order">
-                                            <i class="icon icon-pen-blue"></i>
-                                        </button>
-                                    </div>
-                                </td>
-                                <td class="body-row-item center ios-p">
-                                    <div>
-                                        <label class="checkbox-ios">
-                                            <input type="checkbox">
-                                            <span class="checkbox-ios-switch"></span>
-                                        </label>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="body-row">
-                                <td class="body-row-item">
-                                    <div>
-                                        2
-                                    </div>
-                                </td>
-                                <td class="body-row-item">
-                                    <div>
-                                        01/01/22
-                                    </div>
-                                </td>
-                                <td class="body-row-item">
-                                    <div>
-                                        Company name
-                                    </div>
-                                </td>
-                                <td class="body-row-item">
-                                    <div>
-                                        Ask
-                                    </div>
-                                </td>
-                                <td class="body-row-item">
-                                    <div>
-                                        0000000000
-                                    </div>
-                                </td>
-                                <td class="body-row-item">
-                                    <div>
-                                        0000000000
-                                    </div>
-                                </td>
-                                <td class="body-row-item">
-                                    <div>
-                                        0000000000
-                                    </div>
-                                </td>
-                                <td class="body-row-item">
-                                    <div>
-                                        0000000000
-                                    </div>
-                                </td>
-                                <td class="body-row-item">
-                                    <div>
-                                        Text
-                                    </div>
-                                </td>
-                                <td class="body-row-item">
-                                    <div>
-                                        Text
-                                    </div>
-                                </td>
-                                <td class="body-row-item center">
-                                    <div>
-                                        <button class="reset-btn" type="button"
-                                                data-tippy-content="Basic scenarios of user behavior can be considered solely in terms of marketing and financial prerequisites. Modern technologies have reached such a level that the further development of various forms of activity contributes to improving the quality of the tasks set by society.">
-                                            <i class="tree-dots"></i>
-                                        </button>
-                                    </div>
-                                </td>
-                                <td class="body-row-item center">
-                                    <div>
-                                        <button class="reset-btn icons" type="button"
-                                                data-tippy-content="Prompt about the possibility of sending a message">
-                                            <i class="icon icon-mail-blue"></i>
-                                        </button>
-                                    </div>
-                                </td>
-                                <td class="body-row-item center ios-p">
-                                    <div>
-                                        <label class="checkbox-ios">
-                                            <input type="checkbox">
-                                            <span class="checkbox-ios-switch"></span>
-                                        </label>
-                                    </div>
-                                </td>
-                            </tr>
+                            @foreach($company->orders as $orders)
+                                <tr class="body-row {{$orders->type === 'BID'? 'bid':''}}">
+                                    <td class="body-row-item">
+                                        <div>
+                                            {{$loop->iteration}}
+                                        </div>
+                                    </td>
+                                    <td class="body-row-item">
+                                        <div>
+                                            {{$orders->date}}
+                                        </div>
+                                    </td>
+                                    <td class="body-row-item">
+                                        <div>
+                                            {{$company->companyName}}
+                                        </div>
+                                    </td>
+                                    <td class="body-row-item">
+                                        <div>
+                                            {{$orders->type ?? '-'}}
+                                        </div>
+                                    </td>
+                                    <td class="body-row-item">
+                                        <div>
+                                            {{$orders->valuation_encode ?? '-'}}
+                                        </div>
+                                    </td>
+                                    <td class="body-row-item">
+                                        <div>
+                                            {{$orders->volume_encode ?? '-'}}
+                                        </div>
+                                    </td>
+                                    <td class="body-row-item">
+                                        <div>
+                                            {{$orders->share_price_encode ?? '-'}}
+                                        </div>
+                                    </td>
+                                    <td class="body-row-item">
+                                        <div>
+                                            {{$orders->share_number ?? '-'}}
+                                        </div>
+                                    </td>
+                                    <td class="body-row-item">
+                                        <div>
+                                            {{$orders->share_type ?? '-'}}
+                                        </div>
+                                    </td>
+                                    <td class="body-row-item">
+                                        <div>
+                                            {{$orders->deal_structure ?? '-'}}
+                                        </div>
+                                    </td>
+                                    <td class="body-row-item center">
+                                        <div>
+                                            <button class="reset-btn" type="button"
+                                                    data-tippy-content="Basic scenarios of user behavior can be considered solely in terms of marketing and financial prerequisites. Modern technologies have reached such a level that the further development of various forms of activity contributes to improving the quality of the tasks set by society.">
+                                                <i class="tree-dots"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                    <td class="body-row-item center">
+                                        <div>
+                                            <button class="reset-btn" type="button"
+                                                    data-tippy-content="Hint about the possibility of editing your order">
+                                                <i class="icon icon-pen-blue"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                    <td class="body-row-item center ios-p">
+                                        <div>
+                                            <label class="checkbox-ios">
+                                                <input type="checkbox">
+                                                <span class="checkbox-ios-switch"></span>
+                                            </label>
+                                        </div>
+                                    </td>
+                                </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>

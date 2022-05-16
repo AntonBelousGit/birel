@@ -20,7 +20,9 @@ class CreateCompanyOrdersTable extends Migration
             $table->date('date')->nullable();
             $table->text('description');
             $table->unsignedBigInteger('valuation')->nullable();
+            $table->string('valuation_encode')->nullable();
             $table->unsignedBigInteger('volume');
+            $table->string('volume_encode');
             $table->unsignedBigInteger('share_price')->nullable();
             $table->string('share_price_encode')->nullable();
             $table->unsignedBigInteger('share_number')->nullable();
@@ -30,7 +32,8 @@ class CreateCompanyOrdersTable extends Migration
             $table->enum('share_type',['Preferred','Common','Preferred and Common','any']);
             $table->enum('share_type_currency',['$','€'])->default('$');
             $table->enum('status',['active','inactive','moderation'])->default('moderation');
-
+            $table->enum('user_status',['active','inactive'])->default('active');
+            $table->date('publish_time')->nullable();
             $table->timestamps();
         });
     }

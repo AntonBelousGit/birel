@@ -36,10 +36,6 @@ class CreateOrderRequest extends FormRequest
 
         $request['user_id'] = Auth::id();
 
-        if ($this->has('share_price')) {
-            $request['share_price_encode'] = encode_bigNumber($this->share_price);
-        }
-
         return $request;
     }
 
