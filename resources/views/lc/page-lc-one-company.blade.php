@@ -350,8 +350,8 @@
                             </tr>
                             </thead>
                             <tbody class="table-body">
-                            @foreach($company->orders as $orders)
-                                <tr class="body-row {{$orders->type === 'BID'? 'bid':''}}">
+                            @foreach($company->orders as $order)
+                                <tr class="body-row {{$order->type === 'BID'? 'bid':''}}">
                                     <td class="body-row-item">
                                         <div>
                                             {{$loop->iteration}}
@@ -359,7 +359,7 @@
                                     </td>
                                     <td class="body-row-item">
                                         <div>
-                                            {{$orders->date}}
+                                            {{$order->date}}
                                         </div>
                                     </td>
                                     <td class="body-row-item">
@@ -369,67 +369,95 @@
                                     </td>
                                     <td class="body-row-item">
                                         <div>
-                                            {{$orders->type ?? '-'}}
+                                            {{$order->type ?? '-'}}
                                         </div>
                                     </td>
                                     <td class="body-row-item">
                                         <div>
-                                            {{$orders->valuation_encode ?? '-'}}
+                                            {{$order->valuation_encode ?? '-'}}
                                         </div>
                                     </td>
                                     <td class="body-row-item">
                                         <div>
-                                            {{$orders->volume_encode ?? '-'}}
+                                            {{$order->volume_encode ?? '-'}}
                                         </div>
                                     </td>
                                     <td class="body-row-item">
                                         <div>
-                                            {{$orders->share_price_encode ?? '-'}}
+                                            {{$order->share_price_encode ?? '-'}}
                                         </div>
                                     </td>
                                     <td class="body-row-item">
                                         <div>
-                                            {{$orders->share_number ?? '-'}}
+                                            {{$order->share_number ?? '-'}}
                                         </div>
                                     </td>
                                     <td class="body-row-item">
                                         <div>
-                                            {{$orders->share_type ?? '-'}}
+                                            {{$order->share_type ?? '-'}}
                                         </div>
                                     </td>
                                     <td class="body-row-item">
                                         <div>
-                                            {{$orders->deal_structure ?? '-'}}
+                                            {{$order->deal_structure ?? '-'}}
                                         </div>
                                     </td>
-                                    <td class="body-row-item center">
-                                        <div>
-                                            <button class="reset-btn" type="button"
-                                                    data-tippy-content="Basic scenarios of user behavior can be considered solely in terms of marketing and financial prerequisites. Modern technologies have reached such a level that the further development of various forms of activity contributes to improving the quality of the tasks set by society.">
-                                                <i class="tree-dots"></i>
-                                            </button>
-                                        </div>
-                                    </td>
-                                    <td class="body-row-item center">
-                                        <div>
-                                            <button class="reset-btn" type="button"
-                                                    data-tippy-content="Hint about the possibility of editing your order">
-                                                <i class="icon icon-pen-blue"></i>
-                                            </button>
-                                        </div>
-                                    </td>
-                                    <td class="body-row-item center ios-p">
-                                        <div>
-                                            <label class="checkbox-ios">
-                                                <input type="checkbox">
-                                                <span class="checkbox-ios-switch"></span>
-                                            </label>
-                                        </div>
-                                    </td>
+                                    @can('show-order',$order)
+                                        <td class="body-row-item center">
+                                            <div>
+                                                <button class="reset-btn" type="button"
+                                                        data-tippy-content="Basic scenarios of user behavior can be considered solely in terms of marketing and financial prerequisites. Modern technologies have reached such a level that the further development of various forms of activity contributes to improving the quality of the tasks set by society.">
+                                                    <i class="tree-dots"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                        <td class="body-row-item center">
+                                            <div>
+                                                <a href="{{ route('order-lc.show',$order) }}" class="reset-btn" type="button"
+                                                        data-tippy-content="Hint about the possibility of editing your order">
+                                                    <i class="icon icon-pen-blue"></i>
+                                                </a>
+                                            </div>
+                                        </td>
+                                        <td class="body-row-item center ios-p">
+                                            <div>
+                                                <label class="checkbox-ios">
+                                                    <input type="checkbox">
+                                                    <span class="checkbox-ios-switch"></span>
+                                                </label>
+                                            </div>
+                                        </td>
+                                    @else
+                                        <td class="body-row-item center">
+                                            <div>
+                                                <button class="reset-btn" type="button"
+                                                        data-tippy-content="Basic scenarios of user behavior can be considered solely in terms of marketing and financial prerequisites. Modern technologies have reached such a level that the further development of various forms of activity contributes to improving the quality of the tasks set by society.">
+                                                    <i class="tree-dots"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                        <td class="body-row-item center">
+                                            <div>
+                                                <button class="reset-btn icons" type="button"
+                                                        data-tippy-content="Prompt about the possibility of sending a message">
+                                                    <i class="icon icon-mail-blue"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                        <td class="body-row-item center ios-p">
+                                            <div>
+                                                <label class="checkbox-ios">
+                                                    <input type="checkbox">
+                                                    <span class="checkbox-ios-switch"></span>
+                                                </label>
+                                            </div>
+                                        </td>
+                                    @endcan
                                 </tr>
                             @endforeach
                             </tbody>
                         </table>
+                        {{$company->orders->onEachSide(-1)->links('vendor.pagination.custom')}}
                     </div>
                     <div class="history">
                         <h2 class="t-m f18-l32 purple1">History</h2>

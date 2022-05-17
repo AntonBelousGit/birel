@@ -14,6 +14,6 @@
 </div>
 <div class="ask-block-info">
     <label class="t-r f16-l24 purple1" for="{{$share_number2}}">Valuation</label>
-    <input class="i-f w400" type="number" id="{{$share_number2}}"
+    <input class="i-f w400" type="number" id="{{$share_number2}}" name="valuation"
            placeholder="Placeholder">
 </div>

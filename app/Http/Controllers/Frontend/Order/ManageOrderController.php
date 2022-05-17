@@ -7,6 +7,7 @@ use App\Http\Requests\Orders\CreateOrderRequest;
 use App\Http\Requests\Orders\UpdateOrderRequest;
 use App\Models\Company;
 use App\Models\CompanyOrder;
+use Illuminate\Support\Facades\Gate;
 
 class ManageOrderController extends Controller
 {
@@ -31,26 +32,42 @@ class ManageOrderController extends Controller
     public function show($id)
     {
         $order = CompanyOrder::with('company')->findOrFail($id);
+
+        if (!Gate::allows('show-order', $order)) {
+            abort(403);
+        }
+
         return view('lc.order.show', compact('order'));
     }
 
     public function edit($id)
     {
         $order = CompanyOrder::with('company')->findOrFail($id);
+
+        if (!Gate::allows('edit-order', $order)) {
+            abort(403);
+        }
+
         $companies = Company::get(['id', 'companyName']);
 
         if ($order->type === 'ASK') {
-            return view('lc.order.ask-edit', compact('order','companies'));
+            return view('lc.order.ask-edit', compact('order', 'companies'));
         } elseif ($order->type === 'BID') {
-            return view('lc.order.bid-edit', compact('order','companies'));
+            return view('lc.order.bid-edit', compact('order', 'companies'));
         }
 
-        return view('lc.order.ask-edit', compact('order','companies'));
+        return view('lc.order.ask-edit', compact('order', 'companies'));
     }
 
     public function update(UpdateOrderRequest $updateOrderRequest, CompanyOrder $order_lc)
     {
-        $order_lc->update($updateOrderRequest->validated());
-        return redirect()->route('orders');
+        if (!Gate::allows('edit-order', $order_lc)) {
+            abort(403);
+        }
+        if (!Gate::allows('update-order', $order_lc)) {
+            return back()->with('error','You have run out of attempts to update, you can only make changes once');
+        }
+        $order_lc->update($updateOrderRequest->validated() + ['user_can_update'=> 0,'status'=> 'moderation']);
+        return back();
     }
 }

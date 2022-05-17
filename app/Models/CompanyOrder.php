@@ -26,7 +26,8 @@ class CompanyOrder extends Model
         'share_type',
         'share_type_currency',
         'status',
-        'publish_time'
+        'publish_time',
+        'user_can_update'
     ];
 
     protected $dates = [

@@ -26,6 +26,11 @@
                 </ul>
             </div>
         @endif
+        @if(session()->has('error'))
+            <div class="alert alert-danger">
+                {{ session()->get('error') }}
+            </div>
+        @endif
         @include('lc.order.components.ask&bid-edit-component',
             [
                 'type'=>"ASK",
