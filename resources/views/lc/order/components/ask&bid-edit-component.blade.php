@@ -86,17 +86,21 @@
                                 </div>
                             </div>
                             <label class="t-r f16-l24 purple1" for="{{$share_price}}">Share Price</label>
-                            <input class="i-f w400 m-bid" type="text" id="{{$share_price}}"
+                            <input class="i-f w400 m-bid" type="number" id="{{$share_price}}"
                                    placeholder="Placeholder price" name="share_price" required value="{{$order->share_price}}">
                         </div>
                         <div class="ask-block-info">
                             <label class="t-r f16-l24 purple1" for="{{$share_number}}">Share Number</label>
-                            <input class="i-f w400 m-bid" type="text" id="{{$share_number}}"
+                            <input class="i-f w400 m-bid" type="number" id="{{$share_number}}"
                                    placeholder="Placeholder number" name="share_number" required value="{{$order->share_number}}">
                         </div>
                         <div class="ask-block-info">
                             <label class="t-r f16-l24 purple1" for="{{$volume}}">Volume</label>
                             <input class="i-f w400" type="number" id="{{$volume}}" name="volume" required value="{{$order->volume}}">
+                            <button class="btn-green w265" type="button" id="{{$btn_calc}}">
+                                Calculate
+                            </button>
+                            <div class=" t-r f14-l16 red error"></div>
                         </div>
                     @endif
 

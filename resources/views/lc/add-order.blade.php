@@ -54,6 +54,7 @@
             'share_type_currency1' => 'share_type_currency_bid1',
             'share_type_currency2' => 'share_type_currency_bid2',
             'volume2' => 'volume_bid2',
+            'btn_calc' => 'btn_calc_bid',
             ]
         )
         @include('lc.order.components.ask&bid-component',
@@ -70,6 +71,7 @@
           'share_type_currency1' => 'share_type_currency_ask1',
           'share_type_currency2' => 'share_type_currency_ask2',
           'volume2' => 'volume_ask2',
+          'btn_calc' => 'btn_calc_ask',
       ])
         <div class="content-t ">
             <form class="add-order-looking" action="#">

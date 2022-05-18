@@ -49,6 +49,7 @@
                 'share_type_currency1' => 'share_type_currency_bid1',
                 'share_type_currency2' => 'share_type_currency_bid2',
                 'volume2' => 'volume_bid2',
+                'btn_calc' => 'btn_calc_bid',
             ])
         @include('lc.order.components.looking-component',['id'=>'tabs2-looking'])
     </div>

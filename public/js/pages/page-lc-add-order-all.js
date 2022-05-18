@@ -1,71 +1,52 @@
-import {bindTabs2, multiplication} from '../default/module-lc.js';
+// import {bindTabs2, multiplication , addName, addName2} from '../default/module-lc.js';
+//
+// // multiplication('#tabs_bid' ,'#share_price_bid','#share_number_bid','#volume_bid');
+// // multiplication('#tabs_ask' ,'#share_price_ask','#share_number_ask','#volume_ask');
+//
+// bindTabs2('#tabs_bid');
+// bindTabs2('#tabs_ask');
+//
+// f('#tabs_ask');
+// f('#tabs_bid');
+// function f(item) {
+// 	let items = document.querySelector(item);
+// 	let itemsUl = items.querySelectorAll('.tab-n2');
+// 	let itemsTabs = items.querySelectorAll('.content-t2');
+// 	for (let i = 0; i < itemsUl.length; i++) {
+// 		const titleEl = itemsUl[i];
+// 		titleEl.addEventListener('click', e => {
+// 			clearName(itemsTabs);
+// 		});
+// 	}
+// }
+//
+//
+// function clearName(e) {
+// 	for (let i = 0; i < e.length; i++) {
+// 		let item = e[i];
+// 		if (!item.classList.contains('active')) {
+// 			let elementInput = item.querySelectorAll('input');
+// 			let elementSelect = item.querySelectorAll('select');
+// 			deleteName(elementInput);
+// 			deleteName(elementSelect);
+// 		} else {
+// 			if (e[i] == e[0]) {
+// 				items7.removeAttribute("name");
+// 				items8.removeAttribute("name");
+// 				addName2(items6, items5, items4, items2, items3, items1);
+// 			} else {
+// 				items1.removeAttribute("name");
+// 				items6.removeAttribute("name");
+// 				addName(items8, items9, items7);
+// 			}
+// 		}
+// 	}
+// 	function deleteName(e) {
+// 		for (let i = 0; i < e.length; i++) {
+// 			e[i].removeAttribute("name");
+// 			e[i].removeAttribute("required");
+// 		}
+// 	}
+// }
 
-multiplication('#tabs_bid' ,'#share_price_bid','#share_number_bid','#volume_bid');
-multiplication('#tabs_ask' ,'#share_price_ask','#share_number_ask','#volume_ask');
 
-bindTabs2('#tabs_bid');
-bindTabs2('#tabs_ask');
-
-f('#tabs_ask');
-f('#tabs_bid');
-function f(item) {
-	let items = document.querySelector(item);
-	let itemsUl = items.querySelectorAll('.tab-n2');
-	let itemsTabs = items.querySelectorAll('.content-t2');
-	for (let i = 0; i < itemsUl.length; i++) {
-		const titleEl = itemsUl[i];
-		titleEl.addEventListener('click', e => {
-			clearName(itemsTabs);
-		});
-	}
-}
-
-
-function clearName(e) {
-	for (let i = 0; i < e.length; i++) {
-		let item = e[i];
-		if (!item.classList.contains('active')) {
-			let elementInput = item.querySelectorAll('input');
-			let elementSelect = item.querySelectorAll('select');
-			deleteName(elementInput);
-			deleteName(elementSelect);
-		} else {
-			if (e[i] === e[0]) {
-				addName2();
-			} else {
-				addName();
-			}
-		}
-	}
-	function deleteName(e) {
-		for (let i = 0; i < e.length; i++) {
-			e[i].removeAttribute("name");
-		}
-	}
-}
-
-function addName() {
-	let items1 = document.querySelector('#volume_bid2');
-	let items2 = document.querySelector('#share_number_bid2');
-	let items3 = document.querySelector('#share_type_bid2');
-
-	items1.setAttribute('name', 'volume');
-	items2.setAttribute('name', 'valuation');
-	items3.setAttribute('name', 'share_type');
-}
-
-function addName2() {
-	let items1 = document.querySelector('#volume_bid');
-	let items2 = document.querySelector('#share_number_bid');
-	let items3 = document.querySelector('#share_price_bid');
-	let items4 = document.querySelector('#share_type_currency1');
-	let items5 = document.querySelector('#share_type_currency2');
-	let items6 = document.querySelector('#share_type_bid');
-
-	items1.setAttribute('name', 'volume');
-	items2.setAttribute('name', 'share_number');
-	items3.setAttribute('name', 'share_price');
-	items4.setAttribute('name', 'share_type_currency');
-	items5.setAttribute('name', 'share_type_currency');
-	items6.setAttribute('name', 'share_type');
-}
