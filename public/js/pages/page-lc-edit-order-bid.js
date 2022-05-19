@@ -1,8 +1,6 @@
-import {bindTabs2, multiplication} from '../default/module-lc.js';
+import {bindTabs2, addName, addName2, calculate} from '../default/module-lc.js';
 
 bindTabs2('#tabs_bid');
-multiplication('#tabs_bid', '#share_price_bid', '#share_number_bid', '#volume_bid');
-
 
 const items1 = document.querySelector('#share_type_bid');
 const items2 = document.querySelector('#share_type_currency_bid1');
@@ -13,7 +11,8 @@ const items6 = document.querySelector('#volume_bid');
 const items7 = document.querySelector('#share_type_bid2');
 const items8 = document.querySelector('#volume_bid2');
 const items9 = document.querySelector('#share_number_bid2');
-
+const items10 = document.querySelector('#btn_calc_bid');
+calculate(items10,items4,items5,items6);
 f('#tabs_bid');
 
 function formSubmission(elTabs) {
@@ -34,7 +33,6 @@ function formSubmission(elTabs) {
 					items4.value = null;
 					items5.removeAttribute('value');
 					items5.value = null;
-
 				} else {
 					items9.removeAttribute('value');
 					items9.value = null;
@@ -58,7 +56,6 @@ function f(item) {
 	}
 }
 
-
 function clearName(e) {
 	for (let i = 0; i < e.length; i++) {
 		let item = e[i];
@@ -67,11 +64,7 @@ function clearName(e) {
 			let elementSelect = item.querySelectorAll('select');
 			deleteName(elementInput);
 			deleteName(elementSelect);
-
-
 		} else {
-
-
 			if (e[i] === e[0]) {
 				items7.removeAttribute("name");
 				items8.removeAttribute("name");
@@ -90,30 +83,4 @@ function clearName(e) {
 
 		}
 	}
-}
-
-function addName(volume, valuation, share_type) {
-	volume.setAttribute('name', 'volume');
-	valuation.setAttribute('name', 'valuation');
-	share_type.setAttribute('name', 'share_type');
-
-	volume.required = true;
-	valuation.required = true;
-	share_type.required = true;
-}
-
-function addName2(volume, share_number, share_price, share_type_currency1, share_type_currency2, share_type) {
-	volume.setAttribute('name', 'volume');
-	share_number.setAttribute('name', 'share_number');
-	share_price.setAttribute('name', 'share_price');
-	share_type_currency1.setAttribute('name', 'share_type_currency');
-	share_type_currency2.setAttribute('name', 'share_type_currency');
-	share_type.setAttribute('name', 'share_type');
-
-	volume.required = true;
-	share_number.required = true;
-	share_price.required = true;
-	share_type_currency1.required = true;
-	share_type_currency2.required = true;
-	share_type.required = true;
 }

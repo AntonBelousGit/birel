@@ -1895,6 +1895,10 @@ label {
   color: #2E2E2E;
 }
 
+.red {
+  color: #FF3939;
+}
+
 .w400 {
   width: 400px;
 }
@@ -2199,12 +2203,12 @@ label {
   position: relative;
 }
 
-.header-list-item .reset-btn > a {
+.header-list-item .reset-btn {
   position: relative;
   display: block;
 }
 
-.header-list-item .reset-btn > a i {
+.header-list-item .reset-btn i {
   display: block;
   width: 30px;
   height: 30px;
