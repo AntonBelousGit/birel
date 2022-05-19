@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\AdminUser;
 use App\Models\Role;
 use Illuminate\Database\Seeder;
 
@@ -20,5 +21,11 @@ class DatabaseSeeder extends Seeder
         $this->call(SettingSeeder::class);
         //$this->call(RoleSeeder::class);
         $this->call(CategorySeeder::class);
+
+        AdminUser::factory(1)->create([
+            "name" => "Admin",
+            "email" => "admin@admin.com",
+            "password" => "123",
+        ]);
     }
 }

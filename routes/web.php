@@ -27,8 +27,6 @@ Route::controller(MainController::class)->group(function () {
 
 Auth::routes();
 
-require('_admin.php');
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('/companies', App\Http\Controllers\CompanyController::class);
 Route::get('/companies/{company}/get-finance/', [App\Http\Controllers\CompanyController::class, 'getFinance'])->name('company.get-finance');
