@@ -120,14 +120,13 @@ function addName2(volume, share_number, share_price, share_type_currency1, share
 function calculate(btn,share_price,share_number,volume) {
 	btn.addEventListener('click',function() {
 		checkValue();
-
 	});
 
 	function checkValue() {
 		let shareNumber = Number(share_number.value);
 		let volume1 = Number(volume.value);
 		let sharePrice = Number(share_price.value);
-		const errorCalc = document.querySelector('.error');
+		const errorCalc = btn.nextElementSibling;
 		if (volume1 !== null && volume1 !== 0 && shareNumber !== null && shareNumber !== 0 && sharePrice !== null && sharePrice !== 0) {
 			errorCalc.innerText = 'No count when 3 fields are filled';
 		} else if(sharePrice !== null && sharePrice !== 0 && shareNumber !== null && shareNumber !== 0) {
