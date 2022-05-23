@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers\Admin\Order;
 
+use App\Events\OrderUpdateEvent;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Orders\Admin\AdminUpdateOrderRequest;
 use App\Models\Company;
 use App\Models\CompanyOrder;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -26,8 +28,8 @@ class OrderController extends Controller
         } else {
             $orders_query->where('type', $type);
         }
-        $orders = $orders_query->with('user','company')->get();
-        return view('admin.orders.index',compact('orders'));
+        $orders = $orders_query->with('user', 'company')->get();
+        return view('admin.orders.index', compact('orders'));
     }
 
     /**
@@ -70,22 +72,42 @@ class OrderController extends Controller
      */
     public function edit($order)
     {
-        $companies = Company::get(['id','companyName']);
-        $order = CompanyOrder::with('user','company')->find($order);
+        $companies = Company::get(['id', 'companyName']);
+        $order = CompanyOrder::with('user', 'company')->find($order);
 
-        return view('admin.orders.edit',compact('companies','order'));
+        return view('admin.orders.edit', compact('companies', 'order'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param \App\Models\CompanyOrder $companyOrder
-     * @return \Illuminate\Http\RedirectResponse
+     * @param AdminUpdateOrderRequest $adminUpdateOrderRequest
+     * @param CompanyOrder $order
+     * @return RedirectResponse
      */
     public function update(AdminUpdateOrderRequest $adminUpdateOrderRequest, CompanyOrder $order)
     {
-        $order->update($adminUpdateOrderRequest->validated());
+        $data = $adminUpdateOrderRequest->validated();
+
+        if ($data['status'] == 'active') {
+            $order->load('user');
+            $user = $order->user;
+
+            if ($user->active_order > 0) {
+                event(new OrderUpdateEvent($user, '-'));
+            } else {
+                return back()->with('error', 'The error message here!');
+            }
+        }
+
+        if ($order->status == 'active' && $data['status'] != 'active') {
+            $order->load('user');
+            $user = $order->user;
+
+            event(new OrderUpdateEvent($user, '+'));
+        }
+
+        $order->update($data);
         return back();
     }
 
