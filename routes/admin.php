@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('login', [AuthController::class, 'index'])->name('admin.login');
 Route::post('login_process', [AuthController::class, 'login'])->name('admin.login_process');
 
-Route::group(['middleware' => 'auth:admin'], function () {
+Route::group(['middleware' => 'is_admin'], function () {
 
     Route::get('/', [DashboardController::class, 'index'])->name('index');
 
@@ -28,7 +28,7 @@ Route::group(['middleware' => 'auth:admin'], function () {
     );
 
     Route::resource('question', QuestionController::class)->except(['show', 'create', 'store'])->middleware('auth');
-    Route::resource('orders', OrderController::class)->except(['show', 'index'])->middleware('auth');
+    Route::resource('orders', OrderController::class)->only(['show', 'index'])->middleware('auth');
     Route::get('/orders/{type?}', [OrderController::class, 'index'])->name('admin-orders');
 
     Route::controller(CompanyFinanceController::class)->group(function () {
