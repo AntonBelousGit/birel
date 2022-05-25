@@ -134,10 +134,10 @@ function calculate(btn,share_price,share_number,volume) {
 			volume.value = sharePrice * shareNumber;
 		} else if (sharePrice !== null && sharePrice !== 0 && volume1 !== null && volume1 !== 0) {
 			errorCalc.innerText = '';
-			share_number.value = sharePrice / volume1;
+			share_number.value =  volume1 / sharePrice;
 		} else if (volume1 !== null && volume1 !== 0 && shareNumber !== null && shareNumber !== 0) {
 			errorCalc.innerText = '';
-			share_price.value = volume1 / shareNumber;
+			share_price.value = volume1 / shareNumber ;
 		}
 	}
 }
