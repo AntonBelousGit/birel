@@ -28,7 +28,6 @@ class CompanyController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
         $this->setting = Setting::where('setting_name', 'company')->first();
     }
 
