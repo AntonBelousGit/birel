@@ -97,7 +97,7 @@
                 </thead>
                 <tbody class="table-body">
                 @forelse($orders as $order)
-                    <tr class="body-row new">
+                    <tr class="body-row {{$order->type === 'BID'? 'bid':'ask'}} {{$order->status}}">
                         <td class="body-row-item">
                             <div>
                                 {{$loop->iteration}}

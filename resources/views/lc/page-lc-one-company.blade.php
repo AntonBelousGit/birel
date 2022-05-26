@@ -168,86 +168,91 @@
                         <img class="card-img" src="{{asset('storage/companies/'.$company->image)  }}" alt=""
                              width="350px" height="210px">
                     </picture>
-                    <label class="card-wrapper">
-                        <select class="card-wrapper-select js-example-basic-single2">
-                            <option value="0" disabled selected>Choose offer</option>
-                            <option value="1">Bid</option>
-                            <option value="2">Ask</option>
-                            <option value="3">Looking for an offer</option>
-                            <option value="4">Tender</option>
-                        </select>
-                        <button class="card-wrapper-btn btn btn-green">Add +</button>
-                    </label>
+                    <form action="{{ route('order') }}" method="">
+                        <label class="card-wrapper">
+                            <select class="card-wrapper-select js-example-basic-single2" name="type">
+                                <option value="0" disabled>Choose offer</option>
+                                <option value="bid">Bid</option>
+                                <option value="ask">Ask</option>
+                                <option value="lfo">Looking for an offer</option>
+                                <option value="tender">Tender</option>
+                            </select>
+                            <button class="card-wrapper-btn btn btn-green">Add +</button>
+                        </label>
+                        <input type="hidden" name="company_id" value="{{$company->id}}">
+                    </form>
                 </div>
                 <div class="one-company-text">
                     @if ($check_isset)
-                            <form class="text-wrapper" action="{{ route('delete-wali',$check_isset->id) }}" method="POST">
-                                @csrf
-                                <div class="text-wrapper-box">
-                                    <div class="btn2 btn2-green w170 h49 b-h">In watch list</div>
-                                    <input type="hidden" name="company_id" value="{{$company->id}}">
-                                    <button type="submit" class="reset-btn">
-                                        <i class="icon icon-trash"></i>
-                                    </button>
-                                </div>
-                                <div class="text-wrapper-box">
-                                    <p class=" f12-l18 t-r purple3">Specify notifications for which orders you want to receive</p>
-                                    <div class="form_radio">
-                                        <label>
-                                            <input type="radio"
-                                                   name="variant" {{$check_isset->type === 'Bid'?'checked':''}}>
-                                            <span></span>
-                                            BID
-                                        </label>
-                                    </div>
-                                    <div class="form_radio">
-                                        <label>
-                                            <input type="radio"
-                                                   name="variant" {{$check_isset->type === 'Ask'?'checked':''}}>
-                                            <span></span>
-                                            ASK
-                                        </label>
-                                    </div>
-                                    <div class="form_radio">
-                                        <label>
-                                            <input type="radio"
-                                                   name="variant" {{$check_isset->type === 'All'?'checked':''}}>
-                                            <span></span>
-                                            ALL
-                                        </label>
-                                    </div>
-                                </div>
-                            </form>
-                    @else
-                            <form class="text-wrapper" action="{{ route('wali') }}" method="POST">
-                                @csrf
+                        <form class="text-wrapper" action="{{ route('delete-wali',$check_isset->id) }}" method="POST">
+                            @csrf
+                            <div class="text-wrapper-box">
+                                <div class="btn2 btn2-green w170 h49 b-h">In watch list</div>
                                 <input type="hidden" name="company_id" value="{{$company->id}}">
-                                <button class="btn btn-green w210">Add to watch list</button>
-                                <div class="text-wrapper-box">
-                                    <p class=" f12-l18 t-r purple3">Specify notifications for which orders you want to receive</p>
-                                    <div class="form_radio">
-                                        <label>
-                                            <input type="radio" name="type" value="Bid">
-                                            <span></span>
-                                            BID
-                                        </label>
-                                    </div>
-                                    <div class="form_radio">
-                                        <label>
-                                            <input type="radio" name="type" value="Ask">
-                                            <span></span>
-                                            ASK
-                                        </label>
-                                    </div>
-                                    <div class="form_radio">
-                                        <label>
-                                            <input type="radio" name="type" value="All" checked>
-                                            <span></span>
-                                            ALL
-                                        </label>
-                                    </div>
+                                <button type="submit" class="reset-btn">
+                                    <i class="icon icon-trash"></i>
+                                </button>
+                            </div>
+                            <div class="text-wrapper-box">
+                                <p class=" f12-l18 t-r purple3">Specify notifications for which orders you want to
+                                    receive</p>
+                                <div class="form_radio">
+                                    <label>
+                                        <input type="radio"
+                                               name="variant" {{$check_isset->type === 'Bid'?'checked':''}}>
+                                        <span></span>
+                                        BID
+                                    </label>
                                 </div>
-                            </form>
+                                <div class="form_radio">
+                                    <label>
+                                        <input type="radio"
+                                               name="variant" {{$check_isset->type === 'Ask'?'checked':''}}>
+                                        <span></span>
+                                        ASK
+                                    </label>
+                                </div>
+                                <div class="form_radio">
+                                    <label>
+                                        <input type="radio"
+                                               name="variant" {{$check_isset->type === 'All'?'checked':''}}>
+                                        <span></span>
+                                        ALL
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                    @else
+                        <form class="text-wrapper" action="{{ route('wali') }}" method="POST">
+                            @csrf
+                            <input type="hidden" name="company_id" value="{{$company->id}}">
+                            <button class="btn btn-green w210">Add to watch list</button>
+                            <div class="text-wrapper-box">
+                                <p class=" f12-l18 t-r purple3">Specify notifications for which orders you want to
+                                    receive</p>
+                                <div class="form_radio">
+                                    <label>
+                                        <input type="radio" name="type" value="Bid">
+                                        <span></span>
+                                        BID
+                                    </label>
+                                </div>
+                                <div class="form_radio">
+                                    <label>
+                                        <input type="radio" name="type" value="Ask">
+                                        <span></span>
+                                        ASK
+                                    </label>
+                                </div>
+                                <div class="form_radio">
+                                    <label>
+                                        <input type="radio" name="type" value="All" checked>
+                                        <span></span>
+                                        ALL
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
                     @endif
                     <p class="t-r f16-l24 purple3">
                         {{$company->description}}
@@ -351,7 +356,7 @@
                             </thead>
                             <tbody class="table-body">
                             @foreach($company->orders as $order)
-                                <tr class="body-row {{$order->type === 'BID'? 'bid':''}}">
+                                <tr class="body-row {{$order->type === 'BID'? 'bid':'ask'}} {{$order->status}}">
                                     <td class="body-row-item">
                                         <div>
                                             {{$loop->iteration}}
@@ -413,8 +418,9 @@
                                         </td>
                                         <td class="body-row-item center">
                                             <div>
-                                                <a href="{{ route('order-lc.show',$order) }}" class="reset-btn" type="button"
-                                                        data-tippy-content="Hint about the possibility of editing your order">
+                                                <a href="{{ route('order-lc.show',$order) }}" class="reset-btn"
+                                                   type="button"
+                                                   data-tippy-content="Hint about the possibility of editing your order">
                                                     <i class="icon icon-pen-blue"></i>
                                                 </a>
                                             </div>

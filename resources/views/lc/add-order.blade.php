@@ -17,10 +17,10 @@
 @section('content')
     <div class="add-order" id="tabs">
         <ul class="tab-wrapper nav-tabs w400">
-            <li class="t-m f18-l32 purple1 tab-n active">
+            <li class="t-m f18-l32 purple1 tab-n {{((empty($data)) ? 'active' : ($data['type'] == 'bid')) ? 'active' : ''}}">
                 BID
             </li>
-            <li class="t-m f18-l32 purple1 tab-n ">
+            <li class="t-m f18-l32 purple1 tab-n {{(!empty($data))?($data['type'] == 'ask')?'active':'':''}}">
                 ASK
             </li>
             <li class="t-m f18-l32 purple1 tab-n ">
@@ -41,38 +41,41 @@
         @endif
 
         @include('lc.order.components.ask&bid-component',
-        [
-            'type'=>"BID",
-            'active'=>'active',
-            'id'=>'tabs_bid',
-            'share_type'=>'share_type_bid',
-            'share_type2'=>'share_type_bid2',
-            'share_price'=>'share_price_bid',
-            'share_number'=>'share_number_bid',
-            'volume'=>'volume_bid',
-            'share_number2'=>'share_number_bid2',
-            'share_type_currency1' => 'share_type_currency_bid1',
-            'share_type_currency2' => 'share_type_currency_bid2',
-            'volume2' => 'volume_bid2',
-            'btn_calc' => 'btn_calc_bid',
+            [
+                'type'=>"BID",
+                'active'=> ((empty($data)) ? 'active' : ($data['type'] == 'bid')) ? 'active' : '',
+                'id'=>'tabs_bid',
+                'share_type'=>'share_type_bid',
+                'share_type2'=>'share_type_bid2',
+                'share_price'=>'share_price_bid',
+                'share_number'=>'share_number_bid',
+                'volume'=>'volume_bid',
+                'share_number2'=>'share_number_bid2',
+                'share_type_currency1' => 'share_type_currency_bid1',
+                'share_type_currency2' => 'share_type_currency_bid2',
+                'volume2' => 'volume_bid2',
+                'btn_calc' => 'btn_calc_bid',
+                'company_id' => $data['company_id'] ?? '',
             ]
         )
         @include('lc.order.components.ask&bid-component',
-          [
-              'type'=>"ASK",
-              'active'=>'',
-              'id'=>'tabs_ask',
-              'share_type'=>'share_type_ask',
-              'share_type2'=>'share_type_ask2',
-              'share_price'=>'share_price_ask',
-              'share_number'=>'share_number_ask',
-              'volume'=>'volume_ask',
-              'share_number2'=>'share_number_ask2',
-              'share_type_currency1' => 'share_type_currency_ask1',
-              'share_type_currency2' => 'share_type_currency_ask2',
-              'volume2' => 'volume_ask2',
-              'btn_calc' => 'btn_calc_ask',
-          ])
+            [
+                'type'=>"ASK",
+                'active'=>(!empty($data))?($data['type'] == 'ask')?'active':'':'',
+                'id'=>'tabs_ask',
+                'share_type'=>'share_type_ask',
+                'share_type2'=>'share_type_ask2',
+                'share_price'=>'share_price_ask',
+                'share_number'=>'share_number_ask',
+                'volume'=>'volume_ask',
+                'share_number2'=>'share_number_ask2',
+                'share_type_currency1' => 'share_type_currency_ask1',
+                'share_type_currency2' => 'share_type_currency_ask2',
+                'volume2' => 'volume_ask2',
+                'btn_calc' => 'btn_calc_ask',
+                'company_id' => $data['company_id'] ?? '',
+            ]
+          )
         <div class="content-t ">
             <form class="add-order-looking" action="#">
                 <div class="looking">

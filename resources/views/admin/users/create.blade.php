@@ -48,22 +48,13 @@
                                 <input type="text"  class="form-control"  name="receive_news" placeholder="Receive news" value="{{old('receive_news')}}">
                             </div>
                             <div class="form-group">
+                                <input type="number"  class="form-control"  name="active_order" placeholder="Active order" value="{{old('active_order')}}">
+                            </div>
+                            <div class="form-group">
                                 <input type="password" class="form-control" placeholder="Password" name="password"/>
                             </div>
                             <div class="form-group">
                                 <input type="password" class="form-control" placeholder="Password confirmation" name="password_confirmation"/>
-                            </div>
-
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <label class="input-group-text" for="inputGroupSelect01">Выбрать
-                                        роль</label>
-                                </div>
-                                <select name="role_id" class="custom-select">
-                                    @foreach($roles as $item)
-                                        <option value="{{$item->id}}" {{old('role_id') == $item->id? 'selected':'' }}>{{$item->name}}</option>
-                                    @endforeach
-                                </select>
                             </div>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">

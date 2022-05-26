@@ -28,7 +28,7 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
 
         Gate::define('show-order', function (User $user, CompanyOrder $companyOrder) {
-            return $user->id === $companyOrder->user_id;
+            return $user->id === (int)$companyOrder->user_id;
         });
 
         Gate::define('edit-order', function (User $user, CompanyOrder $companyOrder) {

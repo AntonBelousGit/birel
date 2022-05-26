@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend\Order;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\AddOrderFromCompanyRequest;
 use App\Http\Requests\Orders\CreateOrderRequest;
 use App\Http\Requests\Orders\UpdateOrderRequest;
 use App\Models\Company;
@@ -11,16 +12,18 @@ use Illuminate\Support\Facades\Gate;
 
 class ManageOrderController extends Controller
 {
-    public function addOrder($type = null)
+    public function addOrder(AddOrderFromCompanyRequest $request, $type = null)
     {
         $companies = Company::get(['id', 'companyName']);
 
-        if ($type === 'ASK') {
+        $data = $request->validated();
+
+        if ($type == 'ask') {
             return view('lc.order.ask', compact('companies'));
-        } elseif ($type === 'BID') {
+        } elseif ($type == 'bid') {
             return view('lc.order.bid', compact('companies'));
         }
-        return view('lc.add-order', compact('companies'));
+        return view('lc.add-order', compact('companies', 'data'));
     }
 
     public function storeOrder(CreateOrderRequest $createOrderRequest)
@@ -65,9 +68,9 @@ class ManageOrderController extends Controller
             abort(403);
         }
         if (!Gate::allows('update-order', $order_lc)) {
-            return back()->with('error','You have run out of attempts to update, you can only make changes once');
+            return back()->with('error', 'You have run out of attempts to update, you can only make changes once');
         }
-        $order_lc->update($updateOrderRequest->validated() + ['user_can_update'=> 0,'status'=> 'moderation']);
+        $order_lc->update($updateOrderRequest->validated() + ['user_can_update' => 0, 'status' => 'moderation']);
         return back();
     }
 }

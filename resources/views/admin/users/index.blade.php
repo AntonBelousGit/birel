@@ -45,7 +45,7 @@
                                         <th>Name</th>
                                         <th>Surname</th>
                                         <th>Email</th>
-                                        <th>Role</th>
+                                        <th>Order left</th>
                                         <th>User Type</th>
                                         <th>Action</th>
                                     </tr>
@@ -55,7 +55,7 @@
                                         <th>Name</th>
                                         <th>Surname</th>
                                         <th>Email</th>
-                                        <th>Role</th>
+                                        <th>Order left</th>
                                         <th>User Type</th>
                                         <th>Action</th>
 
@@ -68,9 +68,9 @@
                                             <td>{{$item->surname}}</td>
                                             <td>{{$item->email}}</td>
                                             <td>
-                                               
-                                                {{$item->role->pluck('name')->first()}}
-                                               
+
+                                                {{$item->active_order}}
+
                                             </td>
                                             <td>{{$item->type}}</td>
                                             <td>

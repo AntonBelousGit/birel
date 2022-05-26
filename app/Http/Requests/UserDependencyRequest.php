@@ -9,8 +9,8 @@ class UserDependencyRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'role_id' => 'required',
             'type' => 'required',
+            'active_order' => 'required'
         ];
     }
 

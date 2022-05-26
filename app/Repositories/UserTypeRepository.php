@@ -3,7 +3,7 @@
 
 namespace App\Repositories;
 
-use App\Models\UserType as Model;
+use App\Models\User as Model;
 
 class UserTypeRepository extends CoreRepository
 {
@@ -21,6 +21,6 @@ class UserTypeRepository extends CoreRepository
      */
     public function getAllUserTypes()
     {
-        return $this->startCondition()->toBase()->get(['id', 'name']);
+        return $this->startCondition()->toBase()->get(['id', 'name','type','surname','email','active_order']);
     }
 }

@@ -40,7 +40,7 @@ class UserService
 
     public function gatAllUserTypes()
     {
-        return $this->userTypeRepository->getAllUserTypes();
+        return $this->userRepository->getAllUserTypes();
     }
 
 }

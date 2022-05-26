@@ -5,16 +5,9 @@
         <div class="block-header">
             <div class="row clearfix">
                 <div class="col-md-6 col-sm-12">
-                    <h2>Create User</h2>
+                    <h2>Edit User</h2>
                 </div>
-                <div class="col-md-6 col-sm-12 text-right">
-                    <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html"><i class="icon-home"></i></a></li>
-                        <li class="breadcrumb-item">Table</li>
-                        <li class="breadcrumb-item active">Jquery Datatable</li>
-                    </ul>
-                    <a href="javascript:void(0);" class="btn btn-sm btn-primary" title="">Create New</a>
-                </div>
+
             </div>
         </div>
         <div class="container-fluid">
@@ -27,20 +20,10 @@
                         <form action="{{ route('users.update',$user) }}" method="post">
                             @csrf
                             @method('patch')
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <label class="input-group-text" for="inputGroupSelect01">Выбрать
-                                        роль</label>
-                                </div>
-                                <select name="role_id" class="custom-select">
-                                    @foreach($roles as $item)
-                                        <option value="{{$item->id}}"
-                                        @if ($item->id == $user->role->first()->id)
-                                            selected
-                                        @endif
-                                            >{{$item->name}}</option>
-                                    @endforeach
-                                </select>
+
+                            <div class="form-group">
+                                <input type="number" min="1" class="form-control" name="active_order" placeholder="Active order"
+                                       value="{{old('active_order',$user->active_order)}}">
                             </div>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">

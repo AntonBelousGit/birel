@@ -30,7 +30,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = $this->userService->getUsersWithRole();
+        $users = $this->userService->gatAllUserTypes();
         return view('admin.users.index', compact('users'));
     }
 
@@ -41,8 +41,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        $roles = $this->userService->getAllRoles();
-        return view('admin.users.create', compact('roles'));
+        return view('admin.users.create');
     }
 
     /**
@@ -54,8 +53,7 @@ class UserController extends Controller
     {
         try {
             if (!$data['password']) unset($data['password']);
-            $user = User::create($data->toArray());
-            $user->role()->attach($data['role_id']);
+             User::create($data->toArray());
         } catch (Throwable $e) {
             report($e);
             abort(500);
@@ -71,14 +69,13 @@ class UserController extends Controller
     {
         try {
             $user = $this->userService->getUsersWithRoleByID($id);
-            $roles = $this->userService->getAllRoles();
         }
         catch (Throwable $e)
         {
             report($e);
             abort(404);
         }
-        return view('admin.users.edit',compact('user','roles'));
+        return view('admin.users.edit',compact('user'));
     }
 
     /**
@@ -89,11 +86,7 @@ class UserController extends Controller
      */
     public function update(UserDependencyRequest $request,User $user)
     {
-        $data = [
-            'type' => $request->input('type')
-        ];
-        $user->update($data);
-        $user->role()->sync($request['role_id']);
+        $user->update($request->validated());
         return redirect()->route('users.index');
     }
 

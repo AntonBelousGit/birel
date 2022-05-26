@@ -28,4 +28,9 @@ class UserRepository extends CoreRepository
     {
         return $this->startCondition()->with('role')->where('id', $id)->first();
     }
+
+    public function getAllUserTypes()
+    {
+        return $this->startCondition()->get(['id', 'name','type','surname','email','active_order']);
+    }
 }
