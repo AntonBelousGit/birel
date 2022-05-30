@@ -7,12 +7,14 @@
 @section('content')
 <section class="add">
 	<div class="content-box ">
-		<div class="back-link active">
-			<a class="t-r f18-l32 purple4 " href="">
-				<i class="icon icon-arrow-left"></i>
-				Come back
-			</a>
-		</div>
+        @if(URL::previous() != route('companies.create'))
+            <div class="back-link active">
+                <a class="t-r f18-l32 purple4 " href="{{ URL::previous() }}">
+                    <i class="icon icon-arrow-left"></i>
+                    Come back
+                </a>
+            </div>
+        @endif
 		<div class="notification-cont-content">
 			<h2 class="notification-cont-title t-sb f22-l25 black2">
 				Notification settings

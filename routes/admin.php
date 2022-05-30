@@ -27,8 +27,8 @@ Route::group(['middleware' => 'is_admin'], function () {
         ]
     );
 
-    Route::resource('question', QuestionController::class)->except(['show', 'create', 'store'])->middleware('auth');
-    Route::resource('orders', OrderController::class)->except(['show', 'index'])->middleware('auth');
+    Route::resource('question', QuestionController::class)->except(['show', 'create', 'store']);
+    Route::resource('orders', OrderController::class)->except(['show', 'index']);
     Route::get('/orders/{type?}', [OrderController::class, 'index'])->name('admin-orders');
 
     Route::controller(CompanyFinanceController::class)->group(function () {

@@ -117,7 +117,7 @@
                                 <a class="icon icon-order" href="{{ route('orders') }}">My Orders</a>
                             </li>
                             <li class="menu-list-item">
-                                <a class="icon icon-settings" href="#">Settings</a>
+                                <a class="icon icon-settings" href="{{route('settings-notification')}}">Settings</a>
                             </li>
                             <li class="menu-list-item">
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

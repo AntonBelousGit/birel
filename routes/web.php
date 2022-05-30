@@ -52,4 +52,7 @@ Route::group(['middleware' => ['auth', 'user']], function () {
 //Question popup
     Route::post('/question', QuestionController::class)->name('frontend-question');
 
+    Route::get('/settings',function (){
+       return view('lc.page-lc-notification');
+    })->name('settings-notification');
 });
