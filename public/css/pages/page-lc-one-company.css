@@ -681,6 +681,27 @@
 }
 
 @media screen and (max-width: 1440px) {
+  .sidebar {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .sidebar-nav {
+    padding: 20px 20px 50px 20px;
+  }
+
+  .sidebar-btn {
+    padding: 15px 20px;
+  }
+
+  .sidebar-btn.grey {
+    padding: 15px 20px;
+  }
+
+  .sidebar-list {
+    padding: 15px 20px;
+  }
+
   .one-company-wrapper {
     grid-gap: 35px;
   }
@@ -765,8 +786,8 @@
 
 @media screen and (max-width: 768px) {
   .sidebar {
-    height: -webkit-calc(100vh - 123px);
-    height: calc(100vh - 123px);
+    height: -webkit-calc(100vh - 120px);
+    height: calc(100vh - 120px);
   }
 
   .one-company {

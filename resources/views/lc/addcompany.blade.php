@@ -17,9 +17,9 @@
         </div>
 		@endif
 		<div class="add-company-wrapper">
-			<h1 class="t-sb f22-l25 purple3 ">
+			<h2 class="t-sb f22-l25 purple3 ">
 				Add company
-			</h1>
+			</h2>
 			<p class="t-r f16-l24 purple2">
 				You can add a company. To do this, you need to correctly enter its name and the address of its website.
 			</p>

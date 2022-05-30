@@ -114,10 +114,10 @@
                                 <a class="icon icon-log-user-white" href="{{ route('home') }}">Account</a>
                             </li>
                             <li class="menu-list-item">
-                                <a class="icon icon-log-case-white" href="{{ route('orders') }}">My Orders</a>
+                                <a class="icon icon-order" href="{{ route('orders') }}">My Orders</a>
                             </li>
                             <li class="menu-list-item">
-                                <a class="icon icon-log-case-white" href="#">Settings</a>
+                                <a class="icon icon-settings" href="#">Settings</a>
                             </li>
                             <li class="menu-list-item">
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

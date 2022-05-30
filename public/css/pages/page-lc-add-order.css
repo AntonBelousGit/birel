@@ -300,6 +300,7 @@
   -webkit-flex: 0 1 100%;
       -ms-flex: 0 1 100%;
           flex: 0 1 100%;
+  margin-bottom: 8px;
 }
 
 .ask-block-info:last-child > input {
@@ -324,6 +325,10 @@
   -webkit-flex: 0 1 100%;
       -ms-flex: 0 1 100%;
           flex: 0 1 100%;
+}
+
+.ask-block-info > label {
+  margin-bottom: 8px;
 }
 
 .ask-block .wrapper-radio {
@@ -688,6 +693,22 @@
   margin-bottom: 8px;
 }
 
+.tender-block .wrapper-radio {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-gap: 10px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+
 .tender-prompt {
   position: absolute;
   right: -290px;
@@ -782,6 +803,29 @@
   }
 }
 
+@media screen and (max-width: 1440px) {
+  .sidebar {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .sidebar-nav {
+    padding: 20px 20px 50px 20px;
+  }
+
+  .sidebar-btn {
+    padding: 15px 20px;
+  }
+
+  .sidebar-btn.grey {
+    padding: 15px 20px;
+  }
+
+  .sidebar-list {
+    padding: 15px 20px;
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .sidebar {
     display: none;
@@ -873,8 +917,8 @@
 
 @media screen and (max-width: 768px) {
   .sidebar {
-    height: -webkit-calc(100vh - 123px);
-    height: calc(100vh - 123px);
+    height: -webkit-calc(100vh - 120px);
+    height: calc(100vh - 120px);
   }
 
   .add-order {

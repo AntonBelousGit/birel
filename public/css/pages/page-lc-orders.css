@@ -506,6 +506,8 @@
   font-size: 16px;
   line-height: 21px;
   color: #573CDA;
+  -webkit-border-radius: 6px;
+          border-radius: 6px;
 }
 
 .orders-wrapper .orders-philter-btn:hover i:before {
@@ -538,6 +540,29 @@
 @media screen and (max-width: 1540px) {
   .orders-wrapper {
     padding: 35px 100px 35px 25px;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .sidebar {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .sidebar-nav {
+    padding: 20px 20px 50px 20px;
+  }
+
+  .sidebar-btn {
+    padding: 15px 20px;
+  }
+
+  .sidebar-btn.grey {
+    padding: 15px 20px;
+  }
+
+  .sidebar-list {
+    padding: 15px 20px;
   }
 }
 
@@ -612,8 +637,8 @@
 
 @media screen and (max-width: 768px) {
   .sidebar {
-    height: -webkit-calc(100vh - 123px);
-    height: calc(100vh - 123px);
+    height: -webkit-calc(100vh - 120px);
+    height: calc(100vh - 120px);
   }
 
   .orders-wrapper {
