@@ -20,6 +20,7 @@
 
 .content-block {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
@@ -81,11 +82,14 @@
 .slider {
   padding: 150px 0;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
 }
@@ -95,12 +99,15 @@
   width: 150px;
   height: 100px;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
+  -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
 }
@@ -160,6 +167,7 @@
   z-index: 10;
   position: absolute;
   top: 0;
+  left: -webkit-calc(50% - 200px);
   left: calc(50% - 200px);
   background-image: url("../../img/candels.svg");
   background-repeat: no-repeat;
@@ -172,13 +180,16 @@
 .investor .content-block-left {
   padding-left: 147px;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
   -webkit-box-pack: center;
+  -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
@@ -202,13 +213,16 @@
 .shareholders .content-block-right {
   padding-left: 147px;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
   -webkit-box-pack: center;
+  -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
@@ -243,11 +257,14 @@
 
 .content-features-cont {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
   -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
@@ -292,6 +309,12 @@
 .contact .content-block-right {
   padding: 80px 100px 60px 95px;
   background: #fff;
+  -webkit-border-radius: 6px;
+          border-radius: 6px;
+  -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  background: -o-linear-gradient(234.04deg, #FFFFFF 9.21%, #E5DDFA 96.76%);
+  background: linear-gradient(215.96deg, #FFFFFF 9.21%, #E5DDFA 96.76%);
 }
 
 .contact .content-block-right h4 {
@@ -359,12 +382,15 @@
 
   .mission .content-block-right {
     display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
         -ms-flex-pack: start;
             justify-content: flex-start;
     -webkit-box-align: center;
+    -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
     overflow: hidden;
@@ -397,6 +423,7 @@
   .content-block {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
   }
@@ -456,6 +483,7 @@
   .shareholders {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
+    -webkit-flex-direction: column-reverse;
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
   }
@@ -546,8 +574,9 @@
   }
 
   .slider {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
   }
 
   .content-features {

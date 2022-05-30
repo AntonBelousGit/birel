@@ -2497,6 +2497,12 @@ label {
 
 /*--- дефолтные стили по сайту ---*/
 
+@media screen and (max-width: 1440px) {
+  .box-container {
+    padding-left: 270px;
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .box-container {
     padding-left: 0;

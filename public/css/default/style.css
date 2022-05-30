@@ -301,9 +301,11 @@ label {
 
 .btn-group {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   grid-gap: 10px;
@@ -323,12 +325,15 @@ label {
   width: 21px;
   height: 21px;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
+  -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
 }
@@ -336,7 +341,8 @@ label {
 .btn {
   width: 116px;
   height: 60px;
-  border-radius: 30px;
+  -webkit-border-radius: 30px;
+          border-radius: 30px;
   background: #573CDA;
   border: 1px solid #573CDA;
   font-family: "WorkSans-Medium";
@@ -344,12 +350,15 @@ label {
   font-size: 18px;
   line-height: 24px;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
+  -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   color: #fff;
@@ -424,7 +433,8 @@ label {
 .btn2 {
   width: 116px;
   height: 60px;
-  border-radius: 30px;
+  -webkit-border-radius: 30px;
+          border-radius: 30px;
   background: #fff;
   border: 1px solid #573CDA;
   font-family: "WorkSans-Medium";
@@ -432,12 +442,15 @@ label {
   font-size: 18px;
   line-height: 24px;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
+  -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   color: #573CDA;
@@ -496,7 +509,8 @@ label {
 .btn3 {
   width: 144px;
   height: 60px;
-  border-radius: 30px;
+  -webkit-border-radius: 30px;
+          border-radius: 30px;
   background: #fff;
   border: 1px solid transparent;
   color: #573CDA;
@@ -505,12 +519,15 @@ label {
   font-size: 18px;
   line-height: 24px;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
+  -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   grid-gap: 10px;
@@ -554,6 +571,7 @@ label {
 
 .option {
   display: -webkit-inline-box;
+  display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
 }
@@ -589,6 +607,7 @@ label {
   width: 24px;
   height: 24px;
   left: 0;
+  top: -webkit-calc(50% - 12px);
   top: calc(50% - 12px);
   overflow: hidden;
   background-color: #fff;
@@ -602,10 +621,12 @@ label {
   content: '';
   display: block;
   position: absolute;
-  border-radius: 2px;
+  -webkit-border-radius: 2px;
+          border-radius: 2px;
   width: 18px;
   height: 18px;
   left: 3px;
+  top: -webkit-calc(50% - 9px);
   top: calc(50% - 9px);
   background-color: #C0BCD6;
 }
@@ -620,6 +641,7 @@ label {
   position: absolute;
   z-index: 10;
   left: 3px;
+  top: -webkit-calc(50% - 9px);
   top: calc(50% - 9px);
   opacity: 1;
   background-size: 79%;
@@ -638,9 +660,11 @@ label {
   position: absolute;
   left: 0;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
@@ -1167,7 +1191,8 @@ label {
   border: none;
   border-bottom: 1px solid #573CDA;
   padding: 10px 8px;
-  border-radius: 0;
+  -webkit-border-radius: 0;
+          border-radius: 0;
   -webkit-appearance: none;
   background-color: transparent;
   width: 100%;
@@ -1251,11 +1276,13 @@ label {
   content: '';
   display: block;
   position: absolute;
+  top: -webkit-calc(50% - 7.5px);
   top: calc(50% - 7.5px);
   left: 0;
   height: 15px;
   width: 15px;
-  border-radius: 50%;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
   background-color: #1BC082;
 }
 
@@ -1335,6 +1362,7 @@ label {
   z-index: -1;
   bottom: 20px;
   left: 3px;
+  width: -webkit-calc(100% - 4px);
   width: calc(100% - 4px);
   height: 14px;
   display: inline-block;
@@ -1357,6 +1385,7 @@ label {
   z-index: -1;
   bottom: 5px;
   left: 2px;
+  width: -webkit-calc(100% - 4px);
   width: calc(100% - 4px);
   height: 14px;
   display: inline-block;
@@ -1427,12 +1456,14 @@ label {
 .footer-logo {
   grid-area: logo;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
 .footer-logo .list-soc {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   grid-gap: 15px;
@@ -1470,13 +1501,16 @@ label {
 .footer-mail {
   grid-area: mail;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
   -webkit-box-align: start;
+  -webkit-align-items: flex-start;
       -ms-flex-align: start;
           align-items: flex-start;
 }
@@ -1488,9 +1522,11 @@ label {
 
 .footer-mail form label {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
 }
@@ -1523,12 +1559,15 @@ label {
 
 .header-container {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
   position: relative;
@@ -1552,9 +1591,11 @@ label {
 
 .header-menu {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   grid-gap: 142px;
@@ -1562,9 +1603,11 @@ label {
 
 .header-btn-cont {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   grid-gap: 10px;
@@ -1615,6 +1658,7 @@ label {
   .footer-logo {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
   }
@@ -1654,16 +1698,20 @@ label {
 
   .drop-down.active {
     display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
     -webkit-box-align: center;
+    -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
   }
@@ -1671,6 +1719,7 @@ label {
   .drop-down.active .header-nav {
     margin-top: 30px;
     display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
   }
@@ -1751,6 +1800,7 @@ label {
     margin-left: 0;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
         -ms-flex-direction: row;
             flex-direction: row;
   }
@@ -1787,12 +1837,14 @@ label {
   }
 
   .drop-down.active {
+    height: -webkit-calc(100vh - 101px);
     height: calc(100vh - 101px);
   }
 
   .drop-down.active .header-nav .header-menu {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
   }
@@ -1800,6 +1852,7 @@ label {
   .drop-down.active .btn-group {
     margin-left: 0;
     -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between;
   }

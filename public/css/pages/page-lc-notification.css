@@ -162,6 +162,14 @@
   height: calc(100vh - 102px);
 }
 
+.content-box {
+  padding: 40px 65px 0;
+  background-color: #fff;
+  max-width: 550px;
+  width: auto;
+  min-width: 350px;
+}
+
 .notification-cont-content {
   margin-top: 40px;
 }
@@ -183,6 +191,8 @@
   .sidebar {
     overflow-x: hidden;
     overflow-y: auto;
+    width: 270px;
+    min-width: 270px;
   }
 
   .sidebar-nav {
@@ -199,6 +209,13 @@
 
   .sidebar-list {
     padding: 15px 20px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .content-box {
+    width: auto;
+    padding: 40px 20px 80px 20px;
   }
 }
 
@@ -265,6 +282,12 @@
   .sidebar {
     height: -webkit-calc(100vh - 120px);
     height: calc(100vh - 120px);
+  }
+
+  .content-box {
+    max-width: 100%;
+    min-width: 320px;
+    padding: 40px 15px 40px 15px;
   }
 }
 

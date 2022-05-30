@@ -807,6 +807,8 @@
   .sidebar {
     overflow-x: hidden;
     overflow-y: auto;
+    width: 270px;
+    min-width: 270px;
   }
 
   .sidebar-nav {
