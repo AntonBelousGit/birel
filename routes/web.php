@@ -25,7 +25,7 @@ Route::controller(MainController::class)->group(function () {
     Route::get('/terms-of-use', 'termsOfUse')->name('terms-of-use');
 });
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::group(['middleware' => ['auth', 'user']], function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
