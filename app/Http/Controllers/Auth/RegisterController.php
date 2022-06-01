@@ -88,8 +88,6 @@ class RegisterController extends Controller
                 'type' => $data['type'],
                 'active_order' => 8,
             ]);
-            $user->role()->attach('2');
-
             return $user;
         }
         return User::create([
