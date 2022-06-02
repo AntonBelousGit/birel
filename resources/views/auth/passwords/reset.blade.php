@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('front_style')
-    <link rel="stylesheet" href="{{asset('css/default/style.css')}}">
+    <link rel="stylesheet" href="{{asset('css/pages/page-password-recovery.min.css')}}">
 @endsection
 
 @section('content')
