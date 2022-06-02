@@ -1262,6 +1262,10 @@ label {
   border-bottom: 1px solid transparent;
 }
 
+.link.active {
+  color: #1BC082;
+}
+
 .list-box {
   margin-bottom: 60px;
 }
