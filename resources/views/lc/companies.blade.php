@@ -113,7 +113,7 @@
             <ul class="company-list">
             @foreach($companies as $company)
                 <li class="company-item">
-                    <span class="company-item-count t-r">0 order</span>
+                    <span class="company-item-count t-r">{{$company->orders_count}} order{{$company->orders_count>1?'s':''}}</span>
                     <a class="company-item-link" href="{{ route('companies.show',$company) }}">
                         <picture>
                             <source srcset="{{asset('storage/companies/'.$company->image)  }}" type="image/webp">
