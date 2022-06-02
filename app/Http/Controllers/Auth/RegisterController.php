@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -88,20 +89,24 @@ class RegisterController extends Controller
                 'type' => $data['type'],
                 'active_order' => 8,
             ]);
-            return $user;
+        } else {
+            $user = User::create([
+                'name' => $data['name'],
+                'surname' => $data['surname'],
+                'linkedin' => $data['linkedin'],
+                // 'fund_address' => $data['fund_address'],
+                // 'fund_name' => $data['fund_name'],
+                'email' => $data['email'],
+                'password' => Hash::make($data['password']),
+                'receive_news' => $data['receive_news'] ?? null,
+                'type' => $data['type'],
+                'active_order' => 4,
+            ]);
         }
-        return User::create([
-            'name' => $data['name'],
-            'surname' => $data['surname'],
-            'linkedin' => $data['linkedin'],
-            // 'fund_address' => $data['fund_address'],
-            // 'fund_name' => $data['fund_name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-            'receive_news' => $data['receive_news'] ?? null,
-            'type' => $data['type'],
-            'active_order' => 4,
-        ]);
 
+
+        event(new Registered($user));
+
+        return $user;
     }
 }
