@@ -71,10 +71,10 @@
 
             </div>
             <div class="edit-right">
-                <h2 class="t-sb f22-l25 purple3">Description</h2>
+                <h2 class="t-sb f22-l25 purple3">Details</h2>
                 <div class="edit-wrapper-box">
                     <label for="description" class="t-r f16-l24 purple3">
-                        You can choose deal structure: direct , spv , forward contract or primary round.
+                        Here you can enter important details. For example, SPV - layers, management fee, carry ... / Escrow / ROFR / requirements for the second side of the transaction and so on.
                     </label>
                     <textarea id="description" cols="30" rows="10" class="i-f f14-l16 purple3 h235" disabled>{{$order->description}}</textarea>
                 </div>

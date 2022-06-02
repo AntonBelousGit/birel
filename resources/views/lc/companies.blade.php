@@ -39,7 +39,7 @@
                 </button>
             </form>
             <p class="company-search-text t-r f16-l24 purple2">
-                You can add company if the company is not listed.
+                You can offer to add company if the company is not listed.
                 <a class="company-search-link" href="{{route('companies.create')}}">
                     <i class="icon icon-green-circle-plus"></i>
                 </a>

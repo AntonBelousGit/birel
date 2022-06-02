@@ -93,6 +93,9 @@
                     <th class="head-row-item">
                         <div></div>
                     </th>
+                    <th class="head-row-item">
+                        <div></div>
+                    </th>
                 </tr>
                 </thead>
                 <tbody class="table-body">
@@ -161,6 +164,14 @@
                                 <a href="{{ route('order-lc.show',$order) }}" data-tippy-content="Подсказка о возможности редактирования своего ордера ">
                                     <i class="icon icon-pen-blue"></i>
                                 </a>
+                            </div>
+                        </td>
+                        <td class="body-row-item center">
+                            <div>
+                                <label class="checkbox-ios">
+                                    <input type="checkbox">
+                                    <span class="checkbox-ios-switch"></span>
+                                </label>
                             </div>
                         </td>
                     </tr>
