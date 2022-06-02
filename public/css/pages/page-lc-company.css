@@ -355,6 +355,19 @@
   position: relative;
 }
 
+.company-item-count {
+  background: #1BC082;
+  color: #fff;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 2px 4px;
+  position: absolute;
+  top: 15px;
+  right: 0;
+  -webkit-border-radius: 3px 0 0 3px;
+          border-radius: 3px 0 0 3px;
+}
+
 .company-item-img {
   max-height: 118px;
   min-height: 118px;
