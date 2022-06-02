@@ -35,7 +35,7 @@
 
 
                             <div class="password-recovery-form-box">
-                                    <input id="password" type="password" class="i-f @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="password">
+                                    <input id="password" type="password" class="i-f @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Password">
 
                                     @error('password')
                                         <span class="password-recovery-error" role="alert">
@@ -44,7 +44,7 @@
                                     @enderror
                             </div>
                             <div class="password-recovery-form-box">
-                                    <input id="password-confirm" type="password" class="i-f" name="password_confirmation" required autocomplete="new-password" placeholder="password_confirmation">
+                                    <input id="password-confirm" type="password" class="i-f" name="password_confirmation" required autocomplete="new-password" placeholder="Password confirmation">
 
                             </div>
                             <div class="password-recovery-form-box">
