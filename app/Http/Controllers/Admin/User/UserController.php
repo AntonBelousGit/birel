@@ -11,7 +11,7 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Hash;
 use Throwable;
 
 class UserController extends Controller
@@ -52,8 +52,9 @@ class UserController extends Controller
     public function store(UserCreateRequest $data)
     {
         try {
-            if (!$data['password']) unset($data['password']);
-             User::create($data->toArray());
+
+            $data['password'] = Hash::make($data['password']);
+            User::create($data->toArray());
         } catch (Throwable $e) {
             report($e);
             abort(500);
@@ -69,13 +70,11 @@ class UserController extends Controller
     {
         try {
             $user = $this->userService->getUsersWithRoleByID($id);
-        }
-        catch (Throwable $e)
-        {
+        } catch (Throwable $e) {
             report($e);
             abort(404);
         }
-        return view('admin.users.edit',compact('user'));
+        return view('admin.users.edit', compact('user'));
     }
 
     /**
@@ -84,7 +83,7 @@ class UserController extends Controller
      * @param User $user
      * @return RedirectResponse
      */
-    public function update(UserDependencyRequest $request,User $user)
+    public function update(UserDependencyRequest $request, User $user)
     {
         $user->update($request->validated());
         return redirect()->route('users.index');
