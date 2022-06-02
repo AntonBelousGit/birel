@@ -34,12 +34,12 @@
             <nav class="header-nav">
                 <menu class="header-menu">
                     <li class="header-menu-item">
-                        <a class="link" href="{{ route('mission')}}">
+                        <a class="link {{ Route::is('mission') ? 'active' : '' }}" href="{{ route('mission')}}">
                             Mission
                         </a>
                     </li>
                     <li class="header-menu-item">
-                        <a class="link" href="{{ route('explore')}}">
+                        <a class="link {{ Route::is('explore') ? 'active' : '' }}" href="{{ route('explore')}}">
                             Explore
                         </a>
                     </li>

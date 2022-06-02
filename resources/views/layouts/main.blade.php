@@ -111,13 +111,13 @@
                     <div class="menu-box">
                         <ul class="menu-list">
                             <li class="menu-list-item">
-                                <a class="icon icon-log-user-white {{ Route::is('home') ? 'active' : '' }}" href="{{ route('home') }}">Account</a>
+                                <a class="icon icon-log-user-white" href="{{ route('home') }}">Account</a>
                             </li>
                             <li class="menu-list-item">
-                                <a class="icon icon-order {{ Route::is('orders') ? 'active' : '' }}" href="{{ route('orders') }}">My Orders</a>
+                                <a class="icon icon-order" href="{{ route('orders') }}">My Orders</a>
                             </li>
                             <li class="menu-list-item">
-                                <a class="icon icon-settings {{ Route::is('settings-notification') ? 'active' : '' }}" href="{{route('settings-notification')}}">Settings</a>
+                                <a class="icon icon-settings" href="{{route('settings-notification')}}">Settings</a>
                             </li>
                             <li class="menu-list-item">
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
