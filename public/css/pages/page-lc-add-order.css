@@ -4,8 +4,8 @@
           box-shadow: 3px 0px 6px rgba(10, 12, 80, 0.15);
   width: 350px;
   min-width: 350px;
-  height: -webkit-calc(100vh - 102px);
-  height: calc(100vh - 102px);
+  height: -webkit-calc(100vh - 72px);
+  height: calc(100vh - 72px);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -831,8 +831,8 @@
 @media screen and (max-width: 1024px) {
   .sidebar {
     display: none;
-    height: -webkit-calc(100vh - 165px);
-    height: calc(100vh - 165px);
+    height: -webkit-calc(100vh - 135px);
+    height: calc(100vh - 135px);
     width: 100vw;
     min-width: 100vw;
     overflow-x: hidden;
