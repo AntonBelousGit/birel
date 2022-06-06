@@ -160,13 +160,13 @@
             <div class="footer-nav1">
                 <ul class="list-nav">
                     <li class="list-nav-item">
-                        <a class="t-r f18-l32 white" href="#">Mission</a>
+                        <a class="t-r f18-l32 white" href="{{ route('mission') }}">Mission</a>
                     </li>
                     <li class="list-nav-item">
-                        <a class="t-r f18-l32 white" href="#">Explore</a>
+                        <a class="t-r f18-l32 white" href="{{ route('explore') }}">Explore</a>
                     </li>
                     <li class="list-nav-item">
-                        <a class="t-r f18-l32 white" href="#">Pricing</a>
+                        <a class="t-r f18-l32 white" href="{{ route('pricing') }}">Pricing</a>
                     </li>
 
                 </ul>

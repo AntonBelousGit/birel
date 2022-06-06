@@ -21,12 +21,12 @@ class CreateCompanyOrdersTable extends Migration
             $table->text('description');
             $table->unsignedBigInteger('valuation')->nullable();
             $table->string('valuation_encode')->nullable();
-            $table->unsignedBigInteger('volume');
-            $table->string('volume_encode');
+            $table->unsignedBigInteger('volume')->nullable();
+            $table->string('volume_encode')->nullable();
             $table->unsignedBigInteger('share_price')->nullable();
             $table->string('share_price_encode')->nullable();
             $table->unsignedBigInteger('share_number')->nullable();
-            $table->enum('type',['ASK','BID','Tender']);
+            $table->enum('type',['ASK','BID','LFO','Tender']);
             $table->enum('sub_type',['ASK','BID'])->nullable();
             $table->enum('deal_structure',['direct','spv','forward contract','direct or spv','any']);
             $table->enum('share_type',['Preferred','Common','Preferred and Common','any']);
