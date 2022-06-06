@@ -42,7 +42,7 @@
   font-style: normal;
 }
 
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -563,6 +563,10 @@ label {
   width: 170px;
 }
 
+.w200 {
+  width: 200px;
+}
+
 .w265 {
   width: 265px;
 }
@@ -654,6 +658,7 @@ label {
 
 /* Disabled */
 
+.f-bg,
 #f-bg3,
 #f-bg2,
 #f-bg {
@@ -670,6 +675,7 @@ label {
   width: 100%;
 }
 
+.f-bg .g-p,
 #f-bg3 .g-p,
 #f-bg2 .g-p,
 #f-bg .g-p {
@@ -677,6 +683,7 @@ label {
   position: relative;
 }
 
+.f-bg .g-p:after,
 #f-bg3 .g-p:after,
 #f-bg2 .g-p:after,
 #f-bg .g-p:after {
@@ -1451,7 +1458,8 @@ label {
 
 .footer-grid {
   display: grid;
-  grid-template-areas: "logo nav1 nav2 mail" "copyright nav1 nav2 mail";
+  grid-template-areas: "logo nav1 nav2 mail"
+ "copyright nav1 nav2 mail";
   grid-template-columns: 23% 23% 23% 23%;
   grid-template-rows: 50%;
   grid-gap: 2.66667%;
@@ -1769,7 +1777,9 @@ label {
   }
 
   .footer-grid {
-    grid-template-areas: "logo nav2" "nav1 mail" "copyright copyright";
+    grid-template-areas: "logo nav2"
+ "nav1 mail"
+ "copyright copyright";
     grid-template-columns: 48% 48%;
     grid-template-rows: 50%;
     grid-gap: 4%;
@@ -1794,7 +1804,10 @@ label {
   }
 
   .footer-grid {
-    grid-template-areas: "logo logo" "nav1 nav2" "mail mail" "copyright copyright";
+    grid-template-areas: "logo logo"
+ "nav1 nav2"
+ "mail mail"
+ "copyright copyright";
     grid-template-columns: 41% 49%;
     grid-template-rows: auto;
     grid-gap: 20px 10%;

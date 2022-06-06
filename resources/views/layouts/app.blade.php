@@ -44,7 +44,7 @@
                         </a>
                     </li>
                     <li class="header-menu-item">
-                        <a class="link" href="#">
+                        <a class="link {{ Route::is('pricing') ? 'active' : '' }}" href="{{ route('pricing')}}">
                             Pricing
                         </a>
                     </li>
@@ -83,17 +83,17 @@
             <nav class="header-nav">
                 <menu class="header-menu">
                     <li class="header-menu-item">
-                        <a class="link" href="#">
+                        <a class="link {{ Route::is('mission') ? 'active' : '' }}" href="{{ route('mission')}}">
                             Mission
                         </a>
                     </li>
                     <li class="header-menu-item">
-                        <a class="link" href="#">
+                        <a class="link {{ Route::is('explore') ? 'active' : '' }}" href="{{ route('explore')}}">
                             Explore
                         </a>
                     </li>
                     <li class="header-menu-item">
-                        <a class="link" href="#">
+                        <a class="link {{ Route::is('pricing') ? 'active' : '' }}" href="{{ route('pricing')}}">
                             Pricing
                         </a>
                     </li>

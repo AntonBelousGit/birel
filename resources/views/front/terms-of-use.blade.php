@@ -19,7 +19,7 @@
                     <h1 class="t-sb f36-l42 purple1">
                         Terms of Use
                     </h1>
-                    <h4 class="t-r f18-l32">
+                    <h4 class="t-r f18-l32 lite-grey">
                         Version 2107.02•September 30, 2021
                     </h4>
                     <p class="t-r f18-l32 purple2">
