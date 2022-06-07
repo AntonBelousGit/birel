@@ -16,13 +16,13 @@
             <div class="tou-box">
                 @include('front.layouts.nav')
                 <div class="text-tou">
-                    <h1 class="t-sb f36-l42 purple1">
+                    <h1>
                         Terms of Use
                     </h1>
-                    <h4 class="t-r f18-l32 lite-grey">
+                    <h4>
                         Version 2107.02•September 30, 2021
                     </h4>
-                    <p class="t-r f18-l32 purple2">
+                    <p>
                         Forge Global, Inc. and its affiliated companies (<strong>“Forge”</strong>, us, we, etc.)
                         collectively publish
                         and operate a
@@ -76,10 +76,10 @@
                         use the Site
                         or the Services.
                     </p>
-                    <h2 class="t-sb f30-l42 purple2">
+                    <h2>
                         Description of Transactions
                     </h2>
-                    <p class="t-r f18-l32 purple2">
+                    <p>
                         Forge facilitates Transactions between (i) <strong>“Shareholders”</strong>, who own Shares,
                         either
                         directly or

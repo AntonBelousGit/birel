@@ -8,8 +8,8 @@
                         Terms of Use
                     </a>
                 </li>
-                <li class="sidebar-tou-item">
-                    <a class="sidebar-tou-link t-m f18-l32 purple2" href="#">
+                <li class="sidebar-tou-item {{ Route::is('privacy-policy') ? 'active' : '' }}">
+                    <a class="sidebar-tou-link t-m f18-l32 purple2" href="{{ route('privacy-policy') }}">
                         Privacy Policy
                     </a>
                 </li>

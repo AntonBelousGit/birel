@@ -24,6 +24,7 @@ Route::controller(MainController::class)->group(function () {
     Route::get('/explore', 'explore')->name('explore');
     Route::get('/pricing', 'pricing')->name('pricing');
     Route::get('/terms-of-use', 'termsOfUse')->name('terms-of-use');
+    Route::get('/privacy-policy', 'privacyPolicy')->name('privacy-policy');
 });
 
 Auth::routes(['verify' => true]);

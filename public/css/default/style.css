@@ -42,7 +42,7 @@
   font-style: normal;
 }
 
-/* http://meyerweb.com/eric/tools/css/reset/
+/* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -1451,6 +1451,10 @@ label {
   color: #1BC082;
 }
 
+.lite-grey {
+  color: rgba(81, 89, 148, 0.5);
+}
+
 .footer-bg {
   padding: 65px 0 70px;
   background: #2A206A;
@@ -1458,8 +1462,7 @@ label {
 
 .footer-grid {
   display: grid;
-  grid-template-areas: "logo nav1 nav2 mail"
- "copyright nav1 nav2 mail";
+  grid-template-areas: "logo nav1 nav2 mail" "copyright nav1 nav2 mail";
   grid-template-columns: 23% 23% 23% 23%;
   grid-template-rows: 50%;
   grid-gap: 2.66667%;
@@ -1777,9 +1780,7 @@ label {
   }
 
   .footer-grid {
-    grid-template-areas: "logo nav2"
- "nav1 mail"
- "copyright copyright";
+    grid-template-areas: "logo nav2" "nav1 mail" "copyright copyright";
     grid-template-columns: 48% 48%;
     grid-template-rows: 50%;
     grid-gap: 4%;
@@ -1804,10 +1805,7 @@ label {
   }
 
   .footer-grid {
-    grid-template-areas: "logo logo"
- "nav1 nav2"
- "mail mail"
- "copyright copyright";
+    grid-template-areas: "logo logo" "nav1 nav2" "mail mail" "copyright copyright";
     grid-template-columns: 41% 49%;
     grid-template-rows: auto;
     grid-gap: 20px 10%;

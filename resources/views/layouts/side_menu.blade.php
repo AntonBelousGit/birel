@@ -65,7 +65,7 @@
             </a>
         </li>
         <li class="sidebar-list-item">
-            <a class="item-link t-r f18-l32 white" href="#">
+            <a class="item-link t-r f18-l32 white" href="{{ route('privacy-policy') }}">
                 Privacy Policy
             </a>
         </li>

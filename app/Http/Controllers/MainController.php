@@ -18,14 +18,20 @@ class MainController extends Controller
     {
         return view('explore');
     }
-      public function pricing()
-        {
-            return view('pricing');
-        }
+
+    public function pricing()
+    {
+        return view('pricing');
+    }
+
     public function termsOfUse()
     {
         return view('front.terms-of-use');
     }
 
+    public function privacyPolicy()
+    {
+        return view('front.privacy-policy');
+    }
 
 }
