@@ -168,7 +168,6 @@
                     <li class="list-nav-item">
                         <a class="t-r f18-l32 white" href="{{ route('pricing') }}">Pricing</a>
                     </li>
-
                 </ul>
             </div>
             <div class="footer-nav2">
