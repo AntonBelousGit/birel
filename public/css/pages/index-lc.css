@@ -159,8 +159,8 @@
   grid-template-columns: 550px -webkit-calc(100% - 550px);
   grid-template-columns: 550px calc(100% - 550px);
   background-color: #F6F4FF;
-  height: -webkit-calc(100vh - 102px);
-  height: calc(100vh - 102px);
+  height: -webkit-calc(100vh - 72px);
+  height: calc(100vh - 72px);
 }
 
 .content-box {

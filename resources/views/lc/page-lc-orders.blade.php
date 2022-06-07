@@ -41,60 +41,78 @@
                 <tr class="head-row">
                     <th class="head-row-item">
                         <div>
+                        <div>
                             #
                         </div>
+                        </div>
                     </th>
                     <th class="head-row-item">
                         <div>
+                        <div class="date">
                             Date
                         </div>
+                        </div>
                     </th>
                     <th class="head-row-item">
                         <div>
+                        <div class="company">
                             Company
                         </div>
+                        </div>
                     </th>
                     <th class="head-row-item">
-                        <div></div>
+                        <div><div></div></div>
                     </th>
                     <th class="head-row-item">
                         <div>
+                        <div class="valuation">
                             Valuation
                         </div>
+                        </div>
                     </th>
                     <th class="head-row-item">
                         <div>
+                        <div class="volume">
                             Volume
                         </div>
+                        </div>
                     </th>
                     <th class="head-row-item">
                         <div>
+                        <div class="share-price">
                             Share price
                         </div>
+                        </div>
                     </th>
                     <th class="head-row-item">
                         <div>
+                        <div class="number-of-shares">
                             Number of shares
                         </div>
+                        </div>
                     </th>
                     <th class="head-row-item">
                         <div>
+                        <div class="share-type">
                             Share type
                         </div>
-                    </th>
-                    <th class="head-row-item">
-                        <div>
-                            Deal Structure
                         </div>
                     </th>
                     <th class="head-row-item">
-                        <div></div>
+                        <div>
+                        <div class="deal-structure">
+                            Deal Structure
+                        </div>
+                        </div>
                     </th>
                     <th class="head-row-item">
-                        <div></div>
+                        <div><div></div></div>
                     </th>
                     <th class="head-row-item">
-                        <div></div>
+                        <div><div></div></div>
+                    </th>
+                    <th class="head-row-item">
+                        <div><div></div></div>
                     </th>
                 </tr>
                 </thead>
@@ -103,75 +121,101 @@
                     <tr class="body-row {{$order->type === 'BID'? 'bid':'ask'}} {{$order->status}}">
                         <td class="body-row-item">
                             <div>
+                            <div>
                                 {{$loop->iteration}}
                             </div>
+                            </div>
                         </td>
                         <td class="body-row-item">
                             <div>
+                            <div class="date">
                                 01/01/22
                             </div>
-                        </td>
-                        <td class="body-row-item">
-                            <div>
-                                {{$order->company->companyName}}
                             </div>
                         </td>
                         <td class="body-row-item">
+                            <div>
+                            <div class="company" data-tippy-content="{{$order->company->companyName}}">
+                                {{$order->company->companyName}}
+                            </div>
+                            </div>
+                        </td>
+                        <td class="body-row-item">
+                            <div>
                             <div>
                                 {{$order->type ?? '-'}}
                             </div>
+                            </div>
                         </td>
                         <td class="body-row-item">
                             <div>
+                            <div class="valuation">
                                 {{$order->valuation_encode ?? '-'}}
                             </div>
+                            </div>
                         </td>
                         <td class="body-row-item">
                             <div>
+                            <div class="volume" data-tippy-content="{{$order->volume_encode ?? '-'}}">
                                 {{$order->volume_encode ?? '-'}}
                             </div>
+                            </div>
                         </td>
                         <td class="body-row-item">
                             <div>
+                            <div class="share-price" data-tippy-content="{{$order->share_price_encode ?? '-'}}">
                                 {{$order->share_price_encode ?? '-'}}
                             </div>
+                            </div>
                         </td>
                         <td class="body-row-item">
                             <div>
+                            <div class="number-of-shares">
                                 {{$order->share_number ?? '-'}}
                             </div>
-                        </td>
-                        <td class="body-row-item">
-                            <div>
-                                {{$order->share_type ?? '-'}}
                             </div>
                         </td>
                         <td class="body-row-item">
                             <div>
+                            <div class="share-type"  data-tippy-content="{{$order->share_type ?? '-'}}">
+                                {{$order->share_type ?? '-'}}
+                            </div>
+                            </div>
+                        </td>
+                        <td class="body-row-item">
+                            <div>
+                            <div class="deal-structure" data-tippy-content="{{$order->deal_structure ?? '-'}}">
                                 {{$order->deal_structure ?? '-'}}
+                            </div>
                             </div>
                         </td>
                         <td class="body-row-item center">
+                            <div>
                             <div>
                                 <button class="reset-btn" type="button"
                                         data-tippy-content="Базовые сценарии поведения пользователей могут быть рассмотрены исключительно в разрезе маркетинговых и финансовых предпосылок. Современные технологии достигли такого уровня, что дальнейшее развитие различных форм деятельности способствует повышению качества поставленных обществом задач.">
                                     <i class="tree-dots"></i>
                                 </button>
                             </div>
+                            </div>
                         </td>
                         <td class="body-row-item center">
+                            <div>
                             <div>
                                 <a href="{{ route('order-lc.show',$order) }}" data-tippy-content="Подсказка о возможности редактирования своего ордера ">
                                     <i class="icon icon-pen-blue"></i>
                                 </a>
                             </div>
+                            </div>
                         </td>
                         <td class="body-row-item center">
+                            <div>
                             <div>
                                 <label class="checkbox-ios">
                                     <input type="checkbox">
                                     <span class="checkbox-ios-switch"></span>
                                 </label>
+                            </div>
                             </div>
                         </td>
                     </tr>

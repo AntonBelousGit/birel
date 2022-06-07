@@ -33,7 +33,6 @@
                     round.
                 </p>
                 <select  class="js-example-basic-single w400" name="deal_structure" required>
-                    <option value="Choose" selected disabled>Choose</option>
                     <option value="direct">direct</option>
                     <option value="spv">spv</option>
                     <option value="forward contract">forward contract</option>
@@ -45,7 +44,7 @@
                 <h2 class="t-sb f22-l25 purple3">Details</h2>
                 <p class="t-r f16-l24 purple2">Here you can enter important details. For example, SPV - layers, management fee, carry ... / Escrow / ROFR / requirements for the second side of the transaction and so on.</p>
                 <textarea class="i-f f14-l16 w400 h235" cols="30" rows="10" name="description"
-                          placeholder="Placeholder text"></textarea>
+                          placeholder="Placeholder text" required></textarea>
             </div>
             <div class="ask-block i" id="{{$id}}">
                 <h2 class="t-sb f22-l25 purple3">Information</h2>
@@ -63,7 +62,6 @@
                             Share Type
                         </label>
                         <select class="js-example-basic-single w400" id="{{$share_type}}" name="share_type" required>
-                            <option value="Choose">Choose</option>
                             <option value="Preferred">Preferred</option>
                             <option value="Common">Common</option>
                             <option value="Preferred and Common">Preferred and Common</option>
@@ -109,7 +107,6 @@
                     <div class="ask-block-info">
                         <label class="t-r f16-l24 purple1" for="{{$share_type2}}">Share Type</label>
                         <select class="js-example-basic-single w400" id="{{$share_type2}}">
-                            <option value="Choose">Choose</option>
                             <option value="Preferred">Preferred</option>
                             <option value="Common">Common</option>
                             <option value="Preferred and Common">Preferred and Common</option>

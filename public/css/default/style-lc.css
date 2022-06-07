@@ -2455,7 +2455,7 @@ label {
 .notification {
   opacity: 0;
   position: absolute;
-  top: 72px;
+  top: 57px;
   left: 415px;
   background: #C0BCD699;
   -webkit-box-shadow: 3px 3px 8px #1711323F;
@@ -2558,7 +2558,7 @@ label {
 
   .notification {
     left: 40px;
-    top: 72px;
+    top: 57px;
   }
 }
 
