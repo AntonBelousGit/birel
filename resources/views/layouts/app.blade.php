@@ -174,7 +174,7 @@
             <div class="footer-nav2">
                 <ul class="list-nav">
                     <li class="list-nav-item">
-                        <a class="t-r f18-l32 grey-lite" href="#">Privacy policy</a>
+                        <a class="t-r f18-l32 grey-lite" href="{{ route('privacy-policy') }}">Privacy policy</a>
                     </li>
                     <li class="list-nav-item">
                         <a class="t-r f18-l32 grey-lite" href="#">Company detail</a>
