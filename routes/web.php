@@ -49,12 +49,13 @@ Route::group(['middleware' => ['auth', 'user']], function () {
     Route::controller(ManageOrderController::class)->middleware('auth')->group(function () {
         Route::get('/order/{type?}', 'addOrder')->name('order');
         Route::post('/order/', 'storeOrder')->name('store-order');
+        Route::post('/order/storeLfo', 'storeLfo')->name('store-lfo');
     });
 
 //Question popup
     Route::post('/question', QuestionController::class)->name('frontend-question');
 
-    Route::get('/settings',function (){
-       return view('lc.page-lc-notification');
+    Route::get('/settings', function () {
+        return view('lc.page-lc-notification');
     })->name('settings-notification');
 });

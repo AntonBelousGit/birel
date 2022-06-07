@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend\Order;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AddOrderFromCompanyRequest;
+use App\Http\Requests\Orders\CreateOrderLfoRequest;
 use App\Http\Requests\Orders\CreateOrderRequest;
 use App\Http\Requests\Orders\UpdateOrderRequest;
 use App\Models\Company;
@@ -31,6 +32,14 @@ class ManageOrderController extends Controller
         (new CompanyOrder())->create($createOrderRequest->validated());
         return redirect()->route('orders');
     }
+
+    public function storeLfo(CreateOrderLfoRequest $createOrderLfoRequest)
+    {
+        (new CompanyOrder())->create($createOrderLfoRequest->validated());
+        return redirect()->route('orders');
+    }
+
+
 
     public function show($id)
     {

@@ -12,6 +12,9 @@ if (!function_exists('encode_bigNumber')) {
             $i++;
         }
 
-        return $number . $count[$i];
+        if ($i<4) {
+            return round(number_format($number,1),1). $count[$i];
+        }
+        return number_format($number,2). $count[$i];
     }
 }
