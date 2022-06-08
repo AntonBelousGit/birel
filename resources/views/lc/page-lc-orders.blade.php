@@ -6,7 +6,17 @@
 @section('scripts')
     <script src="{{asset('/js/lib/propper.min.js')}}"></script>
     <script src="{{asset('/js/lib/tippy.min.js')}}"></script>
-    <script src="{{asset('js/pages/page-lc-one-company.min.js')}}"></script>
+    <script>
+        tippy('[data-tippy-content]',
+            {
+                placement: 'left',
+                arrow: true,
+                theme: 'my',
+                duration: 0,
+                delay: [700, 500],
+                dynamicTitle: true,
+            });
+    </script>
 @endsection
 @section('content')
     <div class="orders-wrapper">
