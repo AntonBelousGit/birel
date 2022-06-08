@@ -3,7 +3,12 @@
 @section('style')
     <link rel="stylesheet" href="{{asset('css/pages/page-lc-orders.min.css')}}">
 @endsection
+@section('scripts')
+    <script src="{{asset('/js/lib/propper.min.js')}}"></script>
+    <script src="{{asset('/js/lib/tippy.min.js')}}"></script>
 
+    <script src="{{asset('js/pages/page-lc-one-company.min.js')}}"></script>
+@endsection
 @section('content')
     <div class="orders-wrapper">
         <div class="orders-search">
