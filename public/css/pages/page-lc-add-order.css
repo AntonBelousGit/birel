@@ -228,7 +228,7 @@
 .ask-block-link {
   grid-area: link;
   padding: 5px;
-  width: 255px;
+  width: 260px;
   height: 42px;
   background: #F6F4FF;
   -webkit-border-radius: 6px;
@@ -463,7 +463,7 @@
 .looking-block-link {
   grid-area: link;
   padding: 5px;
-  width: 255px;
+  width: 260px;
   height: 42px;
   background: #F6F4FF;
   -webkit-border-radius: 6px;
@@ -638,7 +638,7 @@
 .tender-block-link {
   grid-area: link;
   padding: 5px;
-  width: 255px;
+  width: 260px;
   height: 42px;
   background: #F6F4FF;
   -webkit-border-radius: 6px;

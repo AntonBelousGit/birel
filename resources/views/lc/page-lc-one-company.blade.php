@@ -698,20 +698,12 @@
                                         <td class="body-row-item center">
                                             <div>
                                                 <div>
-                                                    <button class="reset-btn" type="button"
-                                                            data-tippy-content="Подсказка о возможности редактирования своего ордера ">
-                                                        <i class="icon icon-pen-blue"></i>
-                                                    </button>
                                                 </div>
                                             </div>
                                         </td>
                                         <td class="body-row-item center ios-p">
                                             <div>
                                                 <div>
-                                                    <label class="checkbox-ios">
-                                                        <input type="checkbox">
-                                                        <span class="checkbox-ios-switch"></span>
-                                                    </label>
                                                 </div>
                                             </div>
                                         </td>
@@ -800,20 +792,12 @@
                                         <td class="body-row-item center">
                                             <div>
                                                 <div>
-                                                    <button class="reset-btn" type="button"
-                                                            data-tippy-content="Подсказка о возможности редактирования своего ордера ">
-                                                        <i class="icon icon-pen-blue"></i>
-                                                    </button>
                                                 </div>
                                             </div>
                                         </td>
                                         <td class="body-row-item center ios-p">
                                             <div>
                                                 <div>
-                                                    <label class="checkbox-ios">
-                                                        <input type="checkbox">
-                                                        <span class="checkbox-ios-switch"></span>
-                                                    </label>
                                                 </div>
                                             </div>
                                         </td>

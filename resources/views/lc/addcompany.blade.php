@@ -51,7 +51,7 @@
 <!-- </section> -->
 <section class="add">
 	<div class="add-order" id="tabs">
-		<ul class="tab-wrapper nav-tabs w400">
+		<ul class="tab-wrapper nav-tabs w310">
 			<li class="t-m f18-l32 purple1 tab-n active">
 				BID
 			</li>
@@ -144,7 +144,7 @@
 							</div>
 							<div class="ask-block-info">
 								<label class="t-r f16-l24 purple1" for="volume_bid">Volume</label>
-								<input class="i-f w400" type="number" id="volume_bid" placeholder="Высчитывается автоматически">
+								<input class="i-f w400" type="number" id="volume_bid" placeholder="">
 								<button class="btn-green w265" type="button" id="btn_calc_bid">
 									Calculate
 								</button>
@@ -391,7 +391,7 @@
 								</select>
 							</div>
 							<div class="looking-block-info">
-								<label class="t-r f16-l24 purple1" for="volume_looking">Block Volume Мн us </label>
+								<label class="t-r f16-l24 purple1" for="volume_looking">Block Volume</label>
 								<input class="i-f w400" type="text" id="volume_looking" placeholder="Placeholder">
 							</div>
 						</div>

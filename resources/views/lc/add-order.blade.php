@@ -89,22 +89,15 @@
                 <div class="tender">
                     <div class="tender-block c-n">
                         <h2 class="t-sb f22-l25 purple3">Company Name</h2>
-                        <p class="t-r f16-l24 purple2">You can choose a company from the list of companies using the
-                            suggested ones or add your own.
+                        <p class="t-r f16-l24 purple2">You can choose deal structure: direct, spv, forward contract
+                                                                        or primary round.
                         </p>
                         <div class="select">
                             <select id="theme24" class="js-example-basic-single w400">
                                 <option value="0" selected>Choose</option>
                             </select>
                         </div>
-                        <div class="tender-block-link">
-                            <p class="t-r f14-l16 purple2">
-                                You can add company if the company is not in the list.
-                                <a class="" href="{{route('companies.create')}}">
-                                    <i class="icon icon-green-circle-plus"></i>
-                                </a>
-                            </p>
-                        </div>
+
                     </div>
                     <div class="tender-block n-c">
                         <label class="t-r f16-l24 purple1" for="site-company4">Site the company</label>

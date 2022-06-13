@@ -76,7 +76,7 @@
 }
 
 .text-tou h1 {
-  font-family: "WorkSans-SemiBold";
+  font-family: "WorkSans-SemiBold", sans-serif;
   font-weight: 600;
   font-size: 36px;
   line-height: 42px;
@@ -85,7 +85,7 @@
 }
 
 .text-tou h2 {
-  font-family: "WorkSans-SemiBold";
+  font-family: "WorkSans-SemiBold", sans-serif;
   font-weight: 600;
   font-size: 30px;
   line-height: 42px;
@@ -94,7 +94,7 @@
 }
 
 .text-tou h3 {
-  font-family: "WorkSans-SemiBold";
+  font-family: "WorkSans-SemiBold", sans-serif;
   font-weight: 600;
   font-size: 24px;
   line-height: 42px;
@@ -111,7 +111,7 @@
 }
 
 .text-tou h4 {
-  font-family: "WorkSans-Regular";
+  font-family: "WorkSans-Regular", sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 42px;
@@ -120,7 +120,7 @@
 }
 
 .text-tou p {
-  font-family: "WorkSans-Regular";
+  font-family: "WorkSans-Regular", sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 30px;
@@ -128,7 +128,7 @@
 }
 
 .text-tou p strong {
-  font-family: "WorkSans-SemiBold";
+  font-family: "WorkSans-SemiBold", sans-serif;
   font-weight: 600;
 }
 
@@ -137,7 +137,7 @@
 }
 
 .text-tou ul li {
-  font-family: "WorkSans-Regular";
+  font-family: "WorkSans-Regular", sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 30px;
@@ -145,13 +145,13 @@
 }
 
 .text-tou ul li strong {
-  font-family: "WorkSans-SemiBold";
+  font-family: "WorkSans-SemiBold", sans-serif;
   font-weight: 600;
   padding-left: 12px;
 }
 
 .text-tou ol li {
-  font-family: "WorkSans-Regular";
+  font-family: "WorkSans-Regular", sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 30px;
@@ -159,13 +159,13 @@
 }
 
 .text-tou ol li strong {
-  font-family: "WorkSans-SemiBold";
+  font-family: "WorkSans-SemiBold", sans-serif;
   font-weight: 600;
   padding-left: 12px;
 }
 
 .text-tou a {
-  font-family: "WorkSans-Regular";
+  font-family: "WorkSans-Regular", sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 30px;

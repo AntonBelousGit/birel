@@ -6,8 +6,8 @@
 
             <div class="looking-block c-n">
                 <h2 class="t-sb f22-l25 purple3">Company Name</h2>
-                <p class="t-r f16-l24 purple2">You can select a company from the list of companies using
-                    proposed or add your own.</p>
+                <p class="t-r f16-l24 purple2">You can choose deal structure: direct, spv, forward contract
+                 or primary round.</p>
                 <div class="select">
                     <select class="js-example-basic-single w400" required name="company_id">
                         <option value="0" selected disabled>Choose</option>
@@ -18,7 +18,7 @@
                 </div>
                 <div class="looking-block-link">
                     <p class="t-r f14-l16 purple2">
-                        You can add company if the company is not in the list.
+                        You can offer to add company if the company is not listed.
                         <a class="" href="{{route('companies.create')}}">
                             <i class="icon icon-green-circle-plus"></i>
                         </a>
@@ -58,9 +58,8 @@
                 </select>
             </div>
             <div class="looking-block s">
-                <h2 class="t-sb f22-l25 purple3">Description</h2>
-                <p class="t-r f16-l24 purple2">You can choose deal structure: direct, spv, forward contract
-                    or primary round.</p>
+                <h2 class="t-sb f22-l25 purple3">Details</h2>
+                <p class="t-r f16-l24 purple2">Here you can enter important details. For example, SPV - layers, management fee, carry ... / Escrow / ROFR / requirements for the second side of the transaction and so on.</p>
                 <textarea class="i-f f14-l16 w400 h235" name="description" placeholder="Placeholder text"></textarea>
             </div>
             <div class="looking-block i" id="tabs_looking">

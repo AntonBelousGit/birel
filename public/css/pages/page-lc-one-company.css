@@ -219,7 +219,7 @@
 .table-head .head-row-item > div > div {
   padding: 8px 12px;
   height: 40px;
-  font-family: "WorkSans-SemiBold";
+  font-family: "WorkSans-SemiBold", sans-serif;
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
@@ -326,7 +326,7 @@
   text-align: left;
   vertical-align: middle;
   padding: 4px 12px;
-  font-family: "WorkSans-Regular";
+  font-family: "WorkSans-Regular", sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -388,7 +388,7 @@
 .table-two .table-head .head-row-item div {
   padding: 8px 12px;
   height: 40px;
-  font-family: "WorkSans-SemiBold";
+  font-family: "WorkSans-SemiBold", sans-serif;
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
@@ -416,7 +416,7 @@
   text-align: left;
   vertical-align: middle;
   padding: 4px 12px;
-  font-family: "WorkSans-Regular";
+  font-family: "WorkSans-Regular", sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -507,7 +507,7 @@
 
 .list-t-item div {
   padding: 4px 12px;
-  font-family: "WorkSans-Regular";
+  font-family: "WorkSans-Regular", sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
@@ -689,7 +689,7 @@
           align-items: center;
   grid-gap: 8px;
   border: none;
-  font-family: "WorkSans-Regular";
+  font-family: "WorkSans-Regular", sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 21px;

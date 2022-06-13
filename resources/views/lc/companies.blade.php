@@ -93,7 +93,7 @@
                         <span>Total funding:</span> <span> ${{$item->company->total_funding}}</span>
                     </p>
                     <p class="company-item-val t-r f16-l24 purple1">Last Round Est. Valuation</p>
-                    <span class="company-item-numb t-r f16-l24 purple3">{{$item->company?->valuation}} B</span>
+                    <span class="company-item-numb t-r f16-l24 purple3">{{$item->company?->valuation}}B</span>
                     <form class="company-item-form" action="{{route('delete-wali',$item)}}" method="POST">
                         <div class="company-item-watch">
                             <div class="btn2 btn2-green w170 h49 b-h">In watch list</div>
