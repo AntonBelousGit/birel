@@ -705,27 +705,27 @@
     <div id="f-bg"></div>
 </div>
     </div>
+<!--     <div class="container"> -->
+<!--         <div class="slider"> -->
+<!--             <div class="slider-item"> -->
+<!--                 <picture><source srcset="./img/Bloomberg.webp" type="image/webp"><img class="slider-item-img" src="./img/Bloomberg.png" alt=""></picture> -->
+<!--             </div> -->
+<!--             <div class="slider-item"> -->
+<!--                 <picture><source srcset="./img/CNBC.webp" type="image/webp"><img class="slider-item-img" src="./img/CNBC.png" alt=""></picture> -->
+<!--             </div> -->
+<!--             <div class="slider-item"> -->
+<!--                 <picture><source srcset="./img/Forbes.webp" type="image/webp"><img class="slider-item-img" src="./img/Forbes.png" alt=""></picture> -->
+<!--             </div> -->
+<!--             <div class="slider-item"> -->
+<!--                 <picture><source srcset="./img/FT.webp" type="image/webp"><img class="slider-item-img" src="./img/FT.png" alt=""></picture> -->
+<!--             </div> -->
+<!--             <div class="slider-item"> -->
+<!--                 <picture><source srcset="./img/WSJ.webp" type="image/webp"><img class="slider-item-img" src="./img/WSJ.png" alt=""></picture> -->
+<!--             </div> -->
+<!--         </div> -->
+<!--     </div> -->
     <div class="container">
-        <div class="slider">
-    <div class="slider-item">
-        <picture><source srcset="./img/Bloomberg.webp" type="image/webp"><img class="slider-item-img" src="./img/Bloomberg.png" alt=""></picture>
-    </div>
-    <div class="slider-item">
-        <picture><source srcset="./img/CNBC.webp" type="image/webp"><img class="slider-item-img" src="./img/CNBC.png" alt=""></picture>
-    </div>
-    <div class="slider-item">
-        <picture><source srcset="./img/Forbes.webp" type="image/webp"><img class="slider-item-img" src="./img/Forbes.png" alt=""></picture>
-    </div>
-    <div class="slider-item">
-        <picture><source srcset="./img/FT.webp" type="image/webp"><img class="slider-item-img" src="./img/FT.png" alt=""></picture>
-    </div>
-    <div class="slider-item">
-        <picture><source srcset="./img/WSJ.webp" type="image/webp"><img class="slider-item-img" src="./img/WSJ.png" alt=""></picture>
-    </div>
-</div>
-    </div>
-    <div class="container">
-        <div class="content-block mission">
+        <div class="content-block mission" style="margin-top:40px;">
     <div class="content-block-left">
         <h2 class="title s f54-l70 purple1">Our Mission</h2>
         <p class="t-r f18-l32 purple2">By uniting all ecosystem participants into a single network, Birel makes
@@ -830,7 +830,7 @@
             </button>
         </form>
     </div>
-    
+
 </div>
         </div>
         <div id="f-bg2"></div>

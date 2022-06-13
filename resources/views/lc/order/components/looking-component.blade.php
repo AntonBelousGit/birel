@@ -61,13 +61,6 @@
                     </li>
                 </ul>
                 <div class="content-t2 active">
-                    <!--				<div class="looking-prompt">-->
-                    <!--					<p class="t-r f16-l24 purple2">-->
-                    <!--						Текст-подсказка о том, что пользователь, выбирая BID, указывает предполагаемый объем сделки, а-->
-                    <!--						выбирая ASK, указывает количество акций, которые хочет продать.-->
-                    <!--					</p>-->
-                    <!--				</div>-->
-                    <!-- Этот кусок возможно не нужен пусть пока полежит  -->
                     <div class="looking-block-info">
                         <label class="t-r f16-l24 purple1" for="share_type3">
                             Share Type
@@ -83,13 +76,6 @@
                     </div>
                 </div>
                 <div class="content-t2">
-                    <!--				<div class="looking-prompt">-->
-                    <!--					<p class="t-r f16-l24 purple2">-->
-                    <!--						Текст-подсказка о том, что пользователь, выбирая BID, указывает предполагаемый объем сделки, а-->
-                    <!--						выбирая ASK, указывает количество акций, которые хочет продать.-->
-                    <!--					</p>-->
-                    <!--				</div>-->
-                    <!-- Этот кусок возможно не нужен пусть пока полежит  -->
                     <div class="looking-block-info">
                         <label class="t-r f16-l24 purple1" for="share_type23">Share Type</label>
                         <select id="share_type23" class="js-example-basic-single w400">

@@ -10,7 +10,7 @@
     <script src="{{asset('js/lib/daterangepicker.min.js')}}"></script>
     <script src="{{asset('js/pages/page-lc-add-order.min.js')}}" type="module"></script>
     <script src="{{asset('js/pages/page-lc-add-order-all.min.js')}}" type="module"></script>
-    <script src="{{asset('js/pages/page-lc-add-order-looking.min.js')}}" type="module"></script>
+<!--     <script src="{{asset('js/pages/page-lc-add-order-looking.min.js')}}" type="module"></script> -->
     <script src="{{asset('js/pages/page-lc-add-order-tender.min.js')}}" type="module"></script>
 @endsection
 

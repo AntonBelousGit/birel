@@ -27,7 +27,6 @@ function f(item) {
 	}
 }
 
-
 function clearName(e) {
 	for (let i = 0; i < e.length; i++) {
 		let item = e[i];

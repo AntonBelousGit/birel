@@ -92,7 +92,7 @@ function bindTabs2(container) {
 	}
 }
 
-function addName(volume, valuation, share_type) {
+function addName(share_type, volume, valuation) {
 	volume.setAttribute('name', 'volume');
 	valuation.setAttribute('name', 'valuation');
 	share_type.setAttribute('name', 'share_type');
@@ -102,7 +102,7 @@ function addName(volume, valuation, share_type) {
 	share_type.required = true;
 }
 
-function addName2(volume, share_number, share_price, share_type_currency1, share_type_currency2, share_type) {
+function addName2(share_type,share_number, volume,  share_price, share_type_currency1, share_type_currency2) {
 	volume.setAttribute('name', 'volume');
 	share_number.setAttribute('name', 'share_number');
 	share_price.setAttribute('name', 'share_price');

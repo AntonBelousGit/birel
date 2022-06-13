@@ -23,7 +23,6 @@ function formSubmission(elTabs) {
 		clearValue(elTabs);
 		form.submit();
 	});
-
 	function clearValue(e) {
 		for (let i = 0; i < e.length; i++) {
 			let item = e[i];
