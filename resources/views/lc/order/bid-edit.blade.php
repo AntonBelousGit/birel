@@ -49,5 +49,6 @@
                 'btn_calc' => 'btn_calc_bid',
             ])
 {{--        @include('lc.order.components.looking-component',['id'=>'tabs2-looking'])--}}
+
     </div>
 @endsection

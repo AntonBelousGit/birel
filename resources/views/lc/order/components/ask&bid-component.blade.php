@@ -9,9 +9,13 @@
                     or primary
                     round.
                 </p>
+                @php
+                    $company_id = $company_id ?? '';
+                @endphp
                 <div class="select">
                     <select class="js-example-basic-single w400" required name="company_id">
                         <option value="0" selected disabled>Choose</option>
+
                         @foreach($companies as $company)
                             <option value="{{$company->id}}" @if ($company->id == $company_id) selected @endif>{{$company->companyName}}</option>
                         @endforeach
