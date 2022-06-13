@@ -50,7 +50,6 @@
                     primary round by selecting from the list.
                 </p>
                 <select  class="js-example-basic-single w400" name="deal_structure" required>
-                    <option value="Choose" selected disabled>Choose</option>
                     <option value="direct">direct</option>
                     <option value="spv">spv</option>
                     <option value="forward contract">forward contract</option>
@@ -97,7 +96,6 @@
                     <div class="looking-block-info">
                         <label class="t-r f16-l24 purple1" for="share_type_looking2">Share Type</label>
                         <select class="js-example-basic-single w400" id="share_type_looking2">
-                            <option value="Choose">Choose</option>
                             <option value="Preferred">Preferred</option>
                             <option value="Common">Common</option>
                             <option value="Preferred and Common">Preferred and Common</option>
