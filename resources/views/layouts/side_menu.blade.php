@@ -70,8 +70,8 @@
             </a>
         </li>
         <li class="sidebar-list-item">
-            <a class="item-link t-r f18-l32 white" href="#">
-                Further Disclosures
+            <a class="item-link t-r f18-l32 white" href="{{ route('disclaimer') }}">
+                Further Disclaimer
             </a>
         </li>
     </ul>

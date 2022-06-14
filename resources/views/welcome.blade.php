@@ -6,7 +6,7 @@
     <div class="container">
         <div class="content-block birel">
     <div class="content-block-left">
-        <h1 class="title b f80-l88 purple1">Birel <span>makes</span> private equity <span>liquid</span></h1>
+        <h1 class="title b f80-l88 purple1"></h1>
         <p class="t-r f18-l32 purple2">
             P2P network that allows the shareholders to find a demand
             for their assets before a liquidity event, and the investors to
