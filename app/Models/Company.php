@@ -50,4 +50,10 @@ class Company extends Model
     {
         $query->where('status', 1);
     }
+
+    public function setValuationAttribute($value)
+    {
+        $this->attributes['valuation'] = $value;
+        $this->attributes['valuation_encode'] = encode_bigNumber($value);
+    }
 }

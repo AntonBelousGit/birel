@@ -23,6 +23,7 @@ class CreateCompaniesTable extends Migration
             $table->string('image')->nullable();
             $table->text('description')->nullable();
             $table->unsignedDouble('valuation',15,2)->nullable();
+            $table->string('valuation_encode')->default(0);
             $table->tinyInteger('status')->default(0);
             $table->timestamps();
         });
