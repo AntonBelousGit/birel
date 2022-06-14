@@ -22,7 +22,7 @@ class CompanyFactory extends Factory
             'total_funding' => $funding_encode,
             'total_funding_decode' => $funding,
             'description' => $this->faker->paragraph,
-            'valuation' => $this->faker->randomFloat(2, 0, 10000),
+            'valuation' => $this->faker->randomFloat(2, 0, 10000000000),
             'status' => $this->faker->randomElement([0,1])
         ];
     }

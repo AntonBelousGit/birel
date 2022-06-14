@@ -14,6 +14,8 @@ class CompanySeeder extends Seeder
      */
     public function run()
     {
-        Company::factory(200)->create();
+        Company::factory(200)->create()->each(function ($company){
+            $company->category()->attach(rand(1,2));
+        });
     }
 }
