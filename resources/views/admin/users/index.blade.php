@@ -46,6 +46,9 @@
                                         <th>Surname</th>
                                         <th>Email</th>
                                         <th>Order left</th>
+                                        <th>Foundation fund name</th>
+                                        <th>Fund address</th>
+                                        <th>Linkedin</th>
                                         <th>User Type</th>
                                         <th>Action</th>
                                     </tr>
@@ -56,6 +59,9 @@
                                         <th>Surname</th>
                                         <th>Email</th>
                                         <th>Order left</th>
+                                        <th>Foundation fund name</th>
+                                        <th>Fund address</th>
+                                        <th>Linkedin</th>
                                         <th>User Type</th>
                                         <th>Action</th>
 
@@ -67,12 +73,11 @@
                                             <td>{{$item->name}}</td>
                                             <td>{{$item->surname}}</td>
                                             <td>{{$item->email}}</td>
-                                            <td>
-
-                                                {{$item->active_order}}
-
-                                            </td>
+                                            <td>{{$item->active_order}}</td>
                                             <td>{{$item->type}}</td>
+                                            <td>{{$item->fund_address}}</td>
+                                            <td>{{$item->fund_name}}</td>
+                                            <td>{{$item->linkedin}}</td>
                                             <td>
                                                 <a href="{{ route('users.edit',$item->id) }}">Edit</a>
                                                 <form action="{{route('users.destroy',$item)}}" class="d-inline" method="POST">

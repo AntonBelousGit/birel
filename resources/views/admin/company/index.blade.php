@@ -76,7 +76,7 @@
                                             <td>{{$item->companyAddress}}</td>
                                             <td><img src="{{asset('storage/companies/'.$item->image)}}" alt="" style="max-height:50px"></td>
                                             <td>{{Str::of($item->description)->words(5)}}</td>
-                                            <td>{{number_format($item->valuation,2)}}</td>
+                                            <td>{{$item->valuation_encode}}</td>
                                             <td>{{$item->status? 'active':'inactive'}}</td>
                                             <td>
                                                 <a href="{{ route('company.edit',$item) }}">Edit</a>
