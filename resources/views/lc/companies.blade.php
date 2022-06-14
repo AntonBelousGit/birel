@@ -31,10 +31,15 @@
                 </a>
             </div>
         </div>
+        @php
+            $companyName = $_GET['companyName'] ?? '';
+            $valuation = $_GET['valuation']?? '';
+            $category_id = $_GET['category_id'] ?? '';
+        @endphp
         <div class="company-search">
             <form class="company-search-form w310" action="{{ route('companies.index') }}" method="GET">
                 <input class="i-f2" type="search" name="companyName" placeholder="Search"
-                       value="{{$_GET['companyName']??''}}">
+                       value="{{$companyName??''}}">
                 <button class="reset-btn">
                     <i class="icon icon-search"></i>
                 </button>
@@ -51,22 +56,22 @@
                 <select class="js-example-basic-single" name="category_id">
                     @foreach($categories as $item)
                         <option
-                            value="{{$item->id}}" {{$_GET['category_id'] == $item->id?'selected':''}}>{{$item->name}}</option>
+                            value="{{$item->id}}" {{$category_id == $item->id?'selected':''}}>{{$item->name}}</option>
                     @endforeach
                 </select>
             </div>
             <div class="company-philter-select">
                 <select class="js-example-basic-single" name="valuation">
-                    <option {{$_GET['valuation'] == '0-499999999'?'selected':''}} value="0-499999999">< $500M</option>
-                    <option {{$_GET['valuation'] == '500000000-999999999'?'selected':''}} value="500000000-999999999">
+                    <option {{$valuation == '0-499999999'?'selected':''}} value="0-499999999">< $500M</option>
+                    <option {{$valuation == '500000000-999999999'?'selected':''}} value="500000000-999999999">
                         $500M - $1B
                     </option>
                     <option
-                        {{$_GET['valuation'] == '1000000000-4999999999'?'selected':''}} value="1000000000-4999999999">
+                        {{$valuation == '1000000000-4999999999'?'selected':''}} value="1000000000-4999999999">
                         $1B - $5B
                     </option>
                     <option
-                        {{$_GET['valuation'] == '5000000000-10000000000000'?'selected':''}} value="5000000000-10000000000000">
+                        {{$valuation == '5000000000-10000000000000'?'selected':''}} value="5000000000-10000000000000">
                         $5B +
                     </option>
                 </select>
