@@ -1,11 +1,11 @@
 import { animateText, createBg} from "../default/script.js";
 
 const box = document.querySelector('h1.title');
-const str = 'makes private equity flexible';
+const str = 'mission';
 const widthW = window.screen.width;
 const column = document.getElementById('f-bg3');
 
-animateText(box, str, 3000);
+animateText(box, str, 1000);
 
 if (widthW > 1440) {
 	createBg(column, 28);

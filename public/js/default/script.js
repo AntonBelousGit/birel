@@ -97,6 +97,9 @@ function addGreenLine(elem) {
 		if (textArr[i]== 'helps') {
 			textArr[i] = `<span>${textArr[i]}</span>`;
 		}
+		if (textArr[i]== 'mission') {
+			textArr[i] = `<span>${textArr[i]}</span>`;
+		}
 	}
 	elem.innerHTML = textArr.join(' ');
 }
