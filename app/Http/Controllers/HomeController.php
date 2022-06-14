@@ -24,7 +24,7 @@ class HomeController extends Controller
 
     public function orders()
     {
-        $orders = CompanyOrder::with('user','company')->where('user_id',Auth::id())->get();
+        $orders = CompanyOrder::with('user','company')->where('user_id',Auth::id())->orderByDesc('created_at')->get();
         return view('lc.page-lc-orders',compact('orders'));
     }
 
