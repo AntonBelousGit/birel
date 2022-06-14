@@ -10,7 +10,7 @@ class AdminUpdateOrderRequest extends FormRequest
     {
         return [
             'company_id'            => 'exists:App\Models\Company,id',
-            'description'           => 'required|string',
+            'description'           => 'nullable',
             'deal_structure'        => 'required|in:direct,spv,forward contract,direct or spv,any',
             'share_type'            => 'required|in:Preferred,Common,Preferred and Common,any',
             'share_type_currency'   => 'filled|in:$,€',
