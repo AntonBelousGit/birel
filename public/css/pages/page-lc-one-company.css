@@ -757,13 +757,7 @@
   }
 }
 
-@media screen and (max-width: 1540px) {
-  .one-company {
-    padding: 35px 25px;
-  }
-}
-
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1580px) {
   .sidebar {
     overflow-x: hidden;
     overflow-y: auto;
@@ -786,7 +780,15 @@
   .sidebar-list {
     padding: 15px 20px;
   }
+}
 
+@media screen and (max-width: 1540px) {
+  .one-company {
+    padding: 35px 25px;
+  }
+}
+
+@media screen and (max-width: 1440px) {
   .one-company-wrapper {
     grid-gap: 35px;
   }

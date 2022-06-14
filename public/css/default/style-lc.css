@@ -2497,7 +2497,7 @@ label {
 
 /*--- дефолтные стили по сайту ---*/
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1580px) {
   .box-container {
     padding-left: 270px;
   }

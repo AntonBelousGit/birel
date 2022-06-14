@@ -687,31 +687,7 @@
   line-height: 32px;
 }
 
-@media screen and (max-width: 1540px) {
-  .add-order {
-    padding: 35px 25px;
-  }
-}
-
-@media screen and (max-width: 1470px) {
-  .ask .w400 {
-    width: 300px;
-  }
-
-  .looking .w400 {
-    width: 300px;
-  }
-
-  .looking-block-link {
-    margin-top: 10px;
-  }
-
-  .tender .w400 {
-    width: 300px;
-  }
-}
-
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1580px) {
   .sidebar {
     overflow-x: hidden;
     overflow-y: auto;
@@ -733,6 +709,30 @@
 
   .sidebar-list {
     padding: 15px 20px;
+  }
+}
+
+@media screen and (max-width: 1540px) {
+  .add-order {
+    padding: 35px 25px;
+  }
+}
+
+@media screen and (max-width: 1470px) {
+  .ask .w400 {
+    width: 300px;
+  }
+
+  .looking .w400 {
+    width: 300px;
+  }
+
+  .looking-block-link {
+    margin-top: 10px;
+  }
+
+  .tender .w400 {
+    width: 300px;
   }
 }
 

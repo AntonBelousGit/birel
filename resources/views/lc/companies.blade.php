@@ -45,7 +45,7 @@
                 </a>
             </p>
         </div>
-        <div class="company-philter">
+        <form class="company-philter" action="#">
             <div class="company-philter-select">
                 <select class="js-example-basic-single">
                     @foreach($categories as $item)
@@ -61,11 +61,14 @@
                     <option value="3">$5B +</option>
                 </select>
             </div>
-            <button class="company-philter-btn" type="button">
+            <button class="company-philter-btn-s btn btn-green w140" type="submit">
+                Filter
+            </button>
+            <button class="company-philter-btn" type="reset">
                 Clear filters
                 <i class="icon icon-close-green"></i>
             </button>
-        </div>
+        </form>
 
         <div class="content-t">
             <ul class="company-list">

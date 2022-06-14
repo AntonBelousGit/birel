@@ -620,13 +620,7 @@
   height: 8px;
 }
 
-@media screen and (max-width: 1540px) {
-  .orders-wrapper {
-    padding: 35px 35px 35px 25px;
-  }
-}
-
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1580px) {
   .sidebar {
     overflow-x: hidden;
     overflow-y: auto;
@@ -648,6 +642,12 @@
 
   .sidebar-list {
     padding: 15px 20px;
+  }
+}
+
+@media screen and (max-width: 1540px) {
+  .orders-wrapper {
+    padding: 35px 35px 35px 25px;
   }
 }
 

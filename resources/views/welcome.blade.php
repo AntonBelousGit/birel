@@ -13,12 +13,12 @@
             purchase the shares in high-demand assets.
         </p>
         <div class="btn-group btn-group-w50">
-            <button class="btn w170">
+            <a class="btn w170" href="{{ route('order') }}">
                 Add BID/ASK
-            </button>
-            <button class="btn2 w170">
+            </a>
+            <a class="btn2 w170" href="{{ route('explore') }}">
                 How it works
-            </button>
+            </a>
         </div>
     </div>
     <div class="content-block-right">
@@ -732,7 +732,7 @@
             the secondary market of the private companies (unicorns and high-profile companies) liquid and
             transparent, simplifies the search for the partners between the buyers and sellers, and increases
             the likelihood of the successful closing of deals.</p>
-        <button class="btn w140">See more</button>
+        <a class="btn w140" href="{{ route('mission')}}">See more</a>
     </div>
     <div class="content-block-right">
         <div class="bg-lattice"></div>
@@ -823,14 +823,13 @@
             <h4 class="t-m f24-l32 green">Feel free to reach out to us.</h4>
             <input class="i-f" type="text" placeholder="Name">
             <input class="i-f" type="email" placeholder="Email">
-            <input class="i-f" placeholder="Message">
+            <textarea class="i-f" placeholder="Message"></textarea>
             <p class="t-r f12-l18 purple2">By clicking the button, you agree to the processing of personal data.</p>
             <button class="btn w140">
                 Subscribe
             </button>
         </form>
     </div>
-
 </div>
         </div>
         <div id="f-bg2"></div>

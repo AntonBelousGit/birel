@@ -470,14 +470,7 @@
           flex: 0 1 calc(100% - 745px);
 }
 
-@media screen and (max-width: 1540px) {
-  .message {
-    padding: 35px 25px;
-    grid-gap: 50px;
-  }
-}
-
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1580px) {
   .sidebar {
     overflow-x: hidden;
     overflow-y: auto;
@@ -499,6 +492,13 @@
 
   .sidebar-list {
     padding: 15px 20px;
+  }
+}
+
+@media screen and (max-width: 1540px) {
+  .message {
+    padding: 35px 25px;
+    grid-gap: 50px;
   }
 }
 

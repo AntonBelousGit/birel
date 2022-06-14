@@ -71,7 +71,7 @@
                     </div>
                     <div class="looking-block-info">
                         <label class="t-r f16-l24 purple1" for="share_number3">Share Number</label>
-                        <input class="i-f w400" type="text" id="share_number3"
+                        <input class="i-f w400" type="number" id="share_number3"
                                placeholder="Placeholder number">
                     </div>
                 </div>
@@ -84,7 +84,7 @@
                     </div>
                     <div class="looking-block-info">
                         <label class="t-r f16-l24 purple1" for="volume23">Block Volume Мн us </label>
-                        <input class="i-f w400" type="text" id="volume23" placeholder="Placeholder">
+                        <input class="i-f w400" type="number" id="volume23" placeholder="Placeholder">
                     </div>
                 </div>
             </div>

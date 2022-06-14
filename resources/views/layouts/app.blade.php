@@ -176,20 +176,11 @@
                         <a class="t-r f18-l32 grey-lite" href="{{ route('privacy-policy') }}">Privacy policy</a>
                     </li>
                     <li class="list-nav-item">
-                        <a class="t-r f18-l32 grey-lite" href="#">Company detail</a>
-                    </li>
-                    <li class="list-nav-item">
-                        <a class="t-r f18-l32 grey-lite" href="#">FAQ</a>
+                        <a class="t-r f18-l32 grey-lite" href="#">Birel OÜ , Estonia</a>
                     </li>
                 </ul>
             </div>
             <div class="footer-mail">
-                <form action="#">
-                    <label>
-                        <input class="i-f grey-lite" type="email" placeholder="Your e-mail">
-                        <button class="reset-btn" type="submit"><i class="icon-telegram-2"></i></button>
-                    </label>
-                </form>
                 <p class="t-r f18-l32 white">E–mail: <a class="t-r f18-l32 white" href="mailto:orders@birel.io">
                         orders@birel.io</a></p>
                 <p class="t-r f18-l32 grey-lite wg">Development <a class="t-r f18-l32 grey-lite"

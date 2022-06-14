@@ -87,7 +87,7 @@
                     </div>
                     <div class="looking-block-info">
                         <label class="t-r f16-l24 purple1" for="share_number_looking">Share Number</label>
-                        <input class="i-f w400" type="text" id="share_number_looking" name="share_number"
+                        <input class="i-f w400" type="number" id="share_number_looking" name="share_number"
                             placeholder="Placeholder number" required>
                     </div>
                 </div>
@@ -103,7 +103,7 @@
                     </div>
                     <div class="looking-block-info">
                         <label class="t-r f16-l24 purple1" for="volume_looking">Volume</label>
-                        <input class="i-f w400" type="text" id="volume_looking" placeholder="Placeholder">
+                        <input class="i-f w400" type="number" id="volume_looking" placeholder="Placeholder">
                     </div>
                 </div>
             </div>

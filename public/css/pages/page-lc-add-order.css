@@ -759,6 +759,31 @@
   line-height: 32px;
 }
 
+@media screen and (max-width: 1580px) {
+  .sidebar {
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 270px;
+    min-width: 270px;
+  }
+
+  .sidebar-nav {
+    padding: 20px 20px 50px 20px;
+  }
+
+  .sidebar-btn {
+    padding: 15px 20px;
+  }
+
+  .sidebar-btn.grey {
+    padding: 15px 20px;
+  }
+
+  .sidebar-list {
+    padding: 15px 20px;
+  }
+}
+
 @media screen and (max-width: 1540px) {
   .add-order {
     padding: 35px 25px;
@@ -800,31 +825,6 @@
 
   .tender-block-link {
     margin-top: 10px;
-  }
-}
-
-@media screen and (max-width: 1440px) {
-  .sidebar {
-    overflow-x: hidden;
-    overflow-y: auto;
-    width: 270px;
-    min-width: 270px;
-  }
-
-  .sidebar-nav {
-    padding: 20px 20px 50px 20px;
-  }
-
-  .sidebar-btn {
-    padding: 15px 20px;
-  }
-
-  .sidebar-btn.grey {
-    padding: 15px 20px;
-  }
-
-  .sidebar-list {
-    padding: 15px 20px;
   }
 }
 

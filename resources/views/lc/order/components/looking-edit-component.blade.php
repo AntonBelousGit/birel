@@ -124,7 +124,7 @@
                         </div>
                         <div class="looking-block-info">
                             <label class="t-r f16-l24 purple1" for="volume23">Block Volume</label>
-                            <input class="i-f w400" type="text" id="volume23" placeholder="Placeholder" required
+                            <input class="i-f w400" type="number" id="volume23" placeholder="Placeholder" required
                                    value="{{$order->volume}}">
                         </div>
                     @endif
