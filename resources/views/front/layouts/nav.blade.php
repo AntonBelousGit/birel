@@ -13,9 +13,9 @@
                         Privacy Policy
                     </a>
                 </li>
-                <li class="sidebar-tou-item">
-                    <a class="sidebar-tou-link t-m f18-l32 purple2" href="#">
-                        Further Disclosures
+                <li class="sidebar-tou-item {{ Route::is('disclaimer') ? 'active' : '' }}">
+                    <a class="sidebar-tou-link t-m f18-l32 purple2" href="{{ route('disclaimer') }}">
+                        Further Disclaimer
                     </a>
                 </li>
             </ul>

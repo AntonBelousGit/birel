@@ -34,4 +34,9 @@ class MainController extends Controller
         return view('front.privacy-policy');
     }
 
+    public function disclaimer()
+    {
+        return view('front.disclaimer');
+    }
+
 }
