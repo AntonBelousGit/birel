@@ -50,6 +50,7 @@ Route::group(['middleware' => ['auth', 'user']], function () {
         Route::get('/order/{type?}', 'addOrder')->name('order');
         Route::post('/order/', 'storeOrder')->name('store-order');
         Route::post('/order/storeLfo', 'storeLfo')->name('store-lfo');
+        Route::post('/order/updateLfo', 'updateLfo')->name('update-lfo');
     });
 
 //Question popup
