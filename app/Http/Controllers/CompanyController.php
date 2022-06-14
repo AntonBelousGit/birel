@@ -83,8 +83,8 @@ class CompanyController extends Controller
     public function show($id)
     {
         $company = Company::find($id);
-        $company->setRelation('orders', $company->orders()->paginate(10, ['*'], 'orders')->withQueryString());
-        $company->setRelation('finance', $company->finance()->paginate(10, ['*'], 'finance')->withQueryString());
+        $company->setRelation('orders', $company->orders()->paginate(10, ['*'], 'orders')->orderByDesc('created_at')->withQueryString());
+        $company->setRelation('finance', $company->finance()->paginate(10, ['*'], 'finance')->orderByDesc('created_at')->withQueryString());
 
         $check_isset = Watchlist::where(['user_id' => auth()->id(), 'company_id' => $id])->first(['id', 'type']);
         return view('lc.page-lc-one-company', compact('company', 'check_isset'));
