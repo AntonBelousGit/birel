@@ -2,10 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Action\Filter\GetFilteredCompanyAction;
+use App\Action\Filter\SetFilterAction;
+use App\Http\Filters\CompanyFilter;
+use App\Http\Requests\Orders\FilterRequest;
+use App\Http\Requests\StoreCompanyRequest;
 use App\Http\Requests\StoreWatchlistRequest;
 use App\Http\Resources\CompanyFinanceInfoResource;
-use App\Models\Company;
 use App\Models\Category;
+use App\Models\Company;
 use App\Models\Setting;
 use App\Models\Watchlist;
 use Illuminate\Contracts\Foundation\Application;
@@ -13,7 +18,6 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use App\Http\Requests\StoreCompanyRequest;
 use Illuminate\Http\Response;
 use Throwable;
 
@@ -24,20 +28,28 @@ class CompanyController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return Response
+     * @return void
      */
     public function __construct()
     {
         $this->setting = Setting::where('setting_name', 'company')->first();
     }
 
-    public function index()
+    /**
+     * @param FilterRequest $request
+     * @param SetFilterAction $action
+     * @param GetFilteredCompanyAction $companyAction
+     * @return Application|Factory|View
+     */
+    public function index(FilterRequest $request, SetFilterAction $action, GetFilteredCompanyAction $companyAction)
     {
+
+        $data = $request->all();
         $categories = Category::all();
-        $companies = Company::with('category','wali')->withCount('orders')->status()->orderByDesc('created_at')->paginate(16,['*'],'companies')->withQueryString();
-        $watchlist = Watchlist::where('user_id', auth()->id())->with('company.category')->paginate(16,['*'],'watchlist')->withQueryString();
+        $companies = $companyAction->handle($action->handle(CompanyFilter::class, $data));
+        $watchlist = Watchlist::where('user_id', auth()->id())->with('company.category')->paginate(16, ['*'], 'watchlist')->withQueryString();
         $setting = $this->setting;
-        return view('lc.companies', compact('companies', 'categories', 'watchlist','setting'));
+        return view('lc.companies', compact('companies', 'categories', 'watchlist', 'setting'));
     }
 
     /**
@@ -71,11 +83,11 @@ class CompanyController extends Controller
     public function show($id)
     {
         $company = Company::find($id);
-        $company->setRelation('orders', $company->orders()->paginate(10,['*'],'orders')->withQueryString());
-        $company->setRelation('finance', $company->finance()->paginate(10,['*'],'finance')->withQueryString());
+        $company->setRelation('orders', $company->orders()->paginate(10, ['*'], 'orders')->withQueryString());
+        $company->setRelation('finance', $company->finance()->paginate(10, ['*'], 'finance')->withQueryString());
 
-        $check_isset = Watchlist::where(['user_id' => auth()->id(), 'company_id' => $id])->first(['id','type']);
-        return view('lc.page-lc-one-company', compact('company','check_isset'));
+        $check_isset = Watchlist::where(['user_id' => auth()->id(), 'company_id' => $id])->first(['id', 'type']);
+        return view('lc.page-lc-one-company', compact('company', 'check_isset'));
     }
 
     public function getFinance($company, Request $request)
