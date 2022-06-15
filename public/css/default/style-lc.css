@@ -1683,6 +1683,23 @@ label {
 
 .select2-container--my .select2-dropdown {
   border-color: #AB9DEC;
+  max-height: 220px;
+  overflow: auto;
+}
+
+.select2-container--my .select2-dropdown::-webkit-scrollbar {
+  background: #F6F4FF;
+  -webkit-border-radius: 8px;
+          border-radius: 8px;
+  width: 7px;
+  height: 8px;
+}
+
+.select2-container--my .select2-dropdown::-webkit-scrollbar-thumb {
+  background: rgba(192, 188, 214, 0.6);
+  -webkit-border-radius: 6px;
+          border-radius: 6px;
+  height: 8px;
 }
 
 .select2-container--my .select2-dropdown .select2-search__field {
