@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Action\Filter\GetFilteredCompanyAction;
+use App\Action\Filter\GetFilteredOneCompanyAction;
 use App\Action\Filter\SetFilterAction;
 use App\Http\Filters\CompanyFilter;
+use App\Http\Filters\OneCompanyFilter;
+use App\Http\Requests\Filter\OneCompanyFilterRequest;
 use App\Http\Requests\Orders\FilterRequest;
 use App\Http\Requests\StoreCompanyRequest;
 use App\Http\Requests\StoreWatchlistRequest;
@@ -12,6 +15,7 @@ use App\Http\Resources\CompanyFinanceInfoResource;
 use App\Models\Category;
 use App\Models\Company;
 use App\Models\Setting;
+use App\Models\Traits\Filterable;
 use App\Models\Watchlist;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -77,15 +81,30 @@ class CompanyController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param Company $company
+     * @param $id
+     * @param OneCompanyFilterRequest $request
      * @return Application|Factory|View
      */
-    public function show($id)
+    public function show($id, OneCompanyFilterRequest $request)
     {
+        $data = $request->all();
         $company = Company::find($id);
-        $company->setRelation('orders', $company->orders()->paginate(10, ['*'], 'orders')->withQueryString());
-        $company->setRelation('finance', $company->finance()->paginate(10, ['*'], 'finance')->withQueryString());
+        $queryOrders = $company->orders();
 
+        if (isset($data['type']) && $data['type'] !== '--') {
+            $queryOrders->where('type', $data['type']);
+        }
+        if (isset($data['sort']) && $data['sort'] === 'Data') {
+            $queryOrders->orderByDesc('publish_time');
+        }
+        if (isset($data['sort']) && $data['sort'] === 'Type') {
+            $queryOrders->orderByDesc('share_type');
+        }
+        if (!isset($data['sort']) && !isset($data['type'])) {
+            $queryOrders->orderByDesc('created_at');
+        }
+        $company->setRelation('orders', $queryOrders->paginate(10, ['*'], 'orders')->withQueryString());
+        $company->setRelation('finance', $company->finance()->paginate(10, ['*'], 'finance')->withQueryString());
         $check_isset = Watchlist::where(['user_id' => auth()->id(), 'company_id' => $id])->first(['id', 'type']);
         return view('lc.page-lc-one-company', compact('company', 'check_isset'));
     }
