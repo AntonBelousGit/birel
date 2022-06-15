@@ -694,12 +694,20 @@
   font-size: 16px;
   line-height: 21px;
   color: #573CDA;
+  -webkit-border-radius: 6px;
+          border-radius: 6px;
 }
 
 .one-company .company-philter-btn:hover i:before {
   -webkit-transform: scale(1.1);
       -ms-transform: scale(1.1);
           transform: scale(1.1);
+}
+
+.one-company .company-philter-btn-s {
+  height: 40px;
+  -webkit-border-radius: 6px;
+          border-radius: 6px;
 }
 
 .one-company-tab {

@@ -173,7 +173,13 @@
             <div class="footer-nav2">
                 <ul class="list-nav">
                     <li class="list-nav-item">
+                        <a class="t-r f18-l32 grey-lite" href="{{ route('terms-of-use') }}">Terms of Use</a>
+                    </li>
+                    <li class="list-nav-item">
                         <a class="t-r f18-l32 grey-lite" href="{{ route('privacy-policy') }}">Privacy policy</a>
+                    </li>
+                    <li class="list-nav-item">
+                        <a class="t-r f18-l32 grey-lite" href="{{ route('disclaimer') }}">Further Disclaimer</a>
                     </li>
                 </ul>
             </div>

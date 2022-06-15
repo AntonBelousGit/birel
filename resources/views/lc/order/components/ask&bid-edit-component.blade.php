@@ -27,11 +27,11 @@
                 </p>
                 <select  class="js-example-basic-single w400" name="deal_structure" required>
                     <option value="Choose" disabled>Choose</option>
-                    <option value="direct" {{$order->deal_structure == 'direct'? 'selected':''}}>direct</option>
-                    <option value="spv" {{$order->deal_structure == 'spv'? 'selected':''}}>spv</option>
-                    <option value="forward contract" {{$order->deal_structure == 'forward contract'? 'selected':''}}>forward contract</option>
-                    <option value="direct or spv" {{$order->deal_structure == 'direct or spv'? 'selected':''}}>direct or spv</option>
-                    <option value="any" {{$order->deal_structure == 'any'? 'selected':''}}>any</option>
+                    <option value="direct" {{$order->deal_structure == 'direct'? 'selected':''}}>Direct</option>
+                    <option value="spv" {{$order->deal_structure == 'spv'? 'selected':''}}>Spv</option>
+                    <option value="forward contract" {{$order->deal_structure == 'forward contract'? 'selected':''}}>Forward contract</option>
+                    <option value="direct or spv" {{$order->deal_structure == 'direct or spv'? 'selected':''}}>Direct or spv</option>
+                    <option value="any" {{$order->deal_structure == 'any'? 'selected':''}}>Any</option>
                 </select>
             </div>
             <div class="ask-block s">

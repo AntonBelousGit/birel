@@ -1,3 +1,6 @@
+import {bindTabs,} from '../default/module-lc.js';
+
+bindTabs('#tabs');
 
 function openMenuTr(container) {
 	if (typeof container === 'string') {
@@ -27,6 +30,7 @@ function openMenuTr(container) {
 		}
 	}
 }
+
 
 openMenuTr('.table-two');
 

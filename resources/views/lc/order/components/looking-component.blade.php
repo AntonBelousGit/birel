@@ -62,29 +62,29 @@
                 </ul>
                 <div class="content-t2 active">
                     <div class="looking-block-info">
-                        <label class="t-r f16-l24 purple1" for="share_type3">
+                        <label class="t-r f16-l24 purple1" for="share_type_looking">
                             Share Type
                         </label>
-                        <select id="share_type3" class="js-example-basic-single w400">
+                        <select id="share_type_looking" class="js-example-basic-single w400" name="share_type" required>
                             <option value="0" selected>Choose</option>
                         </select>
                     </div>
                     <div class="looking-block-info">
-                        <label class="t-r f16-l24 purple1" for="share_number3">Share Number</label>
-                        <input class="i-f w400" type="number" id="share_number3"
-                               placeholder="Enter the Number">
+                        <label class="t-r f16-l24 purple1" for="share_number_looking">Share Number</label>
+                        <input class="i-f w400" type="number" id="share_number_looking"
+                               placeholder="Enter the Number" name="share_number" required>
                     </div>
                 </div>
                 <div class="content-t2">
                     <div class="looking-block-info">
-                        <label class="t-r f16-l24 purple1" for="share_type23">Share Type</label>
-                        <select id="share_type23" class="js-example-basic-single w400">
+                        <label class="t-r f16-l24 purple1" for="share_type_looking2">Share Type</label>
+                        <select id="share_type_looking2" class="js-example-basic-single w400">
                             <option value="0" selected>Choose</option>
                         </select>
                     </div>
                     <div class="looking-block-info">
-                        <label class="t-r f16-l24 purple1" for="volume23">Block Volume</label>
-                        <input class="i-f w400" type="number" id="volume23" placeholder="Enter the Volume">
+                        <label class="t-r f16-l24 purple1" for="volume_looking">Block Volume</label>
+                        <input class="i-f w400" type="number" id="volume_looking" placeholder="Enter the Volume">
                     </div>
                 </div>
             </div>

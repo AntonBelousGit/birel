@@ -8,8 +8,7 @@
     <script src="{{asset('/js/lib/propper.min.js')}}"></script>
     <script src="{{asset('/js/lib/tippy.min.js')}}"></script>
 
-    <script src="{{asset('js/pages/page-lc-company.min.js')}}" type="module"></script>
-    <script src="{{asset('js/pages/page-lc-one-company.min.js')}}"></script>
+    <script src="{{asset('js/pages/page-lc-one-company.min.js')}}" type="module"></script>
 
     <script>
         let token = '{{csrf_token()}}';
