@@ -819,14 +819,15 @@
             and purchase of the private assets.</p>
     </div>
     <div class="content-block-right">
-        <form action="#">
+        <form action="{{ route('contactUsRequest') }}" method="POST">
+            @csrf
             <h4 class="t-m f24-l32 green">Feel free to reach out to us.</h4>
-            <input class="i-f" type="text" placeholder="Name">
-            <input class="i-f" type="email" placeholder="Email">
-            <textarea class="i-f" placeholder="Message"></textarea>
+            <input class="i-f" name="name" type="text" placeholder="Name">
+            <input class="i-f" name="email" type="email" placeholder="Email">
+            <textarea class="i-f" name="msg" placeholder="Message"></textarea>
             <p class="t-r f12-l18 purple2">By clicking the button, you agree to the processing of personal data.</p>
             <button class="btn w140">
-                Subscribe
+                Send
             </button>
         </form>
     </div>

@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\OrderUpdateEvent;
+use App\Events\SendFormMailEvent;
+use App\Http\Requests\Question\ContactUsRequest;
+
 class MainController extends Controller
 {
     public function index()
@@ -37,6 +41,12 @@ class MainController extends Controller
     public function disclaimer()
     {
         return view('front.disclaimer');
+    }
+
+    public function contactUsRequest(ContactUsRequest $request)
+    {
+        event(new SendFormMailEvent($request->validated()));
+        return back();
     }
 
 }

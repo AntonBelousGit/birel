@@ -15,9 +15,6 @@ class NewOrderHasBeenModeratedChangeCountOrders
      */
     public function handle(OrderUpdateEvent $event)
     {
-
-
         $event->user->update(['active_order' => ($event->symbol == '-') ? $event->user->active_order - 1 : $event->user->active_order + 1]);
-
     }
 }
