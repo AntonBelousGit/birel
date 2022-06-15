@@ -50,7 +50,7 @@
                 'volume2' => 'volume_ask2',
                 'btn_calc' => 'btn_calc_ask',
             ])
-        @include('lc.order.components.looking-component',['id'=>'tabs_looking'])
+        @include('lc.order.components.looking-component',['id'=>'tabs_looking','type'=>'LFO'])
     </div>
 @endsection
 
