@@ -35,7 +35,7 @@ class Company extends Model
 
     public function orders()
     {
-        return $this->hasMany(CompanyOrder::class,'company_id')->where('status','active');
+        return $this->hasMany(CompanyOrder::class,'company_id')->where('status','active')->orderByDesc('created_at');
     }
 
     public function wali()
@@ -45,7 +45,7 @@ class Company extends Model
 
     public function finance()
     {
-        return $this->hasMany(CompanyFinance::class,'company_id');
+        return $this->hasMany(CompanyFinance::class,'company_id')->orderByDesc('created_at');
     }
 
     public function scopeStatus($query)
