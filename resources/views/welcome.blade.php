@@ -826,7 +826,7 @@
             <textarea class="i-f" placeholder="Message"></textarea>
             <p class="t-r f12-l18 purple2">By clicking the button, you agree to the processing of personal data.</p>
             <button class="btn w140">
-                Subscribe
+                Send
             </button>
         </form>
     </div>

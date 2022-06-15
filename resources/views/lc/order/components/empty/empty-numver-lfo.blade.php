@@ -6,6 +6,6 @@
     </div>
     <div class="edit-wrapper-box">
         <label for="share-number" class="t-r f16-l24 purple1">Share Number</label>
-        <input id="share-number" type="text" class="i-f " disabled value="">
+        <input id="share-number" type="text" class="i-f " disabled value="" placeholder="Enter the Number">
     </div>
 </div>

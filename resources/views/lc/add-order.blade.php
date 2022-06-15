@@ -101,7 +101,7 @@
                     </div>
                     <div class="tender-block n-c">
                         <label class="t-r f16-l24 purple1" for="site-company4">Site the company</label>
-                        <input class="i-f w400" type="text" id="site-company4" placeholder="Placeholder">
+                        <input class="i-f w400" type="text" id="site-company4" placeholder="Enter the Company">
                     </div>
                     <div class="tender-block o">
                         <h3 class="t-r f16-l24 purple1">What order do you want to add?</h3>
@@ -136,7 +136,7 @@
                         <p class="t-r f16-l24 purple2">You can choose deal structure: direct, spv, forward contract
                             or primary
                             round.</p>
-                        <textarea class="i-f f14-l16 w400 h235" placeholder="Placeholder text"></textarea>
+                        <textarea class="i-f f14-l16 w400 h235" placeholder="Enter the Text"></textarea>
                     </div>
                     <div class="tender-block d-r">
                         <h2 class="t-sb f22-l25 purple3">Tender term</h2>
@@ -183,12 +183,12 @@
                                 </div>
                                 <label class="t-r f16-l24 purple1" for="share_price4">Start Share Price</label>
                                 <input class="i-f w400" type="text" id="share_price4"
-                                       placeholder="Placeholder price">
+                                       placeholder="Enter the Price">
                             </div>
                             <div class="ask-block-info">
                                 <label class="t-r f16-l24 purple1" for="share_number4">Number of Share</label>
                                 <input class="i-f w400" type="text" id="share_number4"
-                                       placeholder="Placeholder number">
+                                       placeholder="Enter the Number">
                             </div>
                         </div>
                         <div class="content-t2">
@@ -201,12 +201,12 @@
                             <div class="ask-block-info">
                                 <label class="t-r f16-l24 purple1" for="volume24">Block Volume</label>
                                 <input class="i-f w400" type="text" id="volume24"
-                                       placeholder="Placeholder number">
+                                       placeholder="Enter the Volume">
                             </div>
                             <div class="ask-block-info">
                                 <label class="t-r f16-l24 purple1" for="share_number24">Valuation Start</label>
                                 <input class="i-f w400" type="text" id="share_number24"
-                                       placeholder="Placeholder number">
+                                       placeholder="Enter the Valuation">
                             </div>
                         </div>
                     </div>

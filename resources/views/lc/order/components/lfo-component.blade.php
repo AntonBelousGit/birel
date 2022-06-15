@@ -60,7 +60,7 @@
             <div class="looking-block s">
                 <h2 class="t-sb f22-l25 purple3">Details</h2>
                 <p class="t-r f16-l24 purple2">Here you can enter important details. For example, SPV - layers, management fee, carry ... / Escrow / ROFR / requirements for the second side of the transaction and so on.</p>
-                <textarea class="i-f f14-l16 w400 h235" name="description" placeholder="Placeholder text"></textarea>
+                <textarea class="i-f f14-l16 w400 h235" name="description" placeholder="Enter the Text"></textarea>
             </div>
             <div class="looking-block i" id="tabs_looking">
                 <h2 class="t-sb f22-l25 purple3">Information</h2>
@@ -88,7 +88,7 @@
                     <div class="looking-block-info">
                         <label class="t-r f16-l24 purple1" for="share_number_looking">Share Number</label>
                         <input class="i-f w400" type="number" id="share_number_looking" name="share_number"
-                            placeholder="Placeholder number" required>
+                            placeholder="Enter the Number" required>
                     </div>
                 </div>
                 <div class="content-t2">
@@ -103,7 +103,7 @@
                     </div>
                     <div class="looking-block-info">
                         <label class="t-r f16-l24 purple1" for="volume_looking">Volume</label>
-                        <input class="i-f w400" type="number" id="volume_looking" placeholder="Placeholder">
+                        <input class="i-f w400" type="number" id="volume_looking" placeholder="Enter the Volume">
                     </div>
                 </div>
             </div>

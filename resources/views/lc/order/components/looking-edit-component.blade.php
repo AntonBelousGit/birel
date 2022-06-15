@@ -60,7 +60,7 @@
                     management fee, carry ... / Escrow / ROFR / requirements for the second side of the transaction and
                     so on.</p>
                 <textarea class="i-f f14-l16 w400 h235"
-                          placeholder="Placeholder text">{{$order->description}}</textarea>
+                          placeholder="Enter the Text">{{$order->description}}</textarea>
             </div>
             <div class="looking-block i" id="{{$id}}">
                 <h2 class="t-sb f22-l25 purple3">Information</h2>
@@ -97,7 +97,7 @@
                         <div class="looking-block-info">
                             <label class="t-r f16-l24 purple1" for="share_number">Share Number</label>
                             <input class="i-f w400 m-bid" type="number" id="share_number"
-                                   placeholder="Placeholder number" name="share_number" required
+                                   placeholder="Enter the Number" name="share_number" required
                                    value="{{$order->share_number}}">
                         </div>
                     @endif
@@ -124,7 +124,7 @@
                         </div>
                         <div class="looking-block-info">
                             <label class="t-r f16-l24 purple1" for="volume23">Block Volume</label>
-                            <input class="i-f w400" type="number" id="volume23" placeholder="Placeholder" required
+                            <input class="i-f w400" type="number" id="volume23" placeholder="Enter the Volume" required
                                    value="{{$order->volume}}">
                         </div>
                     @endif

@@ -48,7 +48,7 @@
             <div class="looking-block s">
                 <h2 class="t-sb f22-l25 purple3">Details</h2>
                 <p class="t-r f16-l24 purple2">Here you can enter important details. For example, SPV - layers, management fee, carry ... / Escrow / ROFR / requirements for the second side of the transaction and so on.</p>
-                <textarea class="i-f f14-l16 w400 h235" placeholder="Placeholder text"></textarea>
+                <textarea class="i-f f14-l16 w400 h235" placeholder="Enter the Text"></textarea>
             </div>
             <div class="looking-block i" id="{{$id}}">
                 <h2 class="t-sb f22-l25 purple3">Information</h2>
@@ -72,7 +72,7 @@
                     <div class="looking-block-info">
                         <label class="t-r f16-l24 purple1" for="share_number3">Share Number</label>
                         <input class="i-f w400" type="number" id="share_number3"
-                               placeholder="Placeholder number">
+                               placeholder="Enter the Number">
                     </div>
                 </div>
                 <div class="content-t2">
@@ -83,8 +83,8 @@
                         </select>
                     </div>
                     <div class="looking-block-info">
-                        <label class="t-r f16-l24 purple1" for="volume23">Block Volume Мн us </label>
-                        <input class="i-f w400" type="number" id="volume23" placeholder="Placeholder">
+                        <label class="t-r f16-l24 purple1" for="volume23">Block Volume</label>
+                        <input class="i-f w400" type="number" id="volume23" placeholder="Enter the Volume">
                     </div>
                 </div>
             </div>

@@ -38,7 +38,7 @@
                 <h2 class="t-sb f22-l25 purple3">Details</h2>
                 <p class="t-r f16-l24 purple2">Here you can enter important details. For example, SPV - layers, management fee, carry ... / Escrow / ROFR / requirements for the second side of the transaction and so on.</p>
                 <textarea class="i-f f14-l16 w400 h235" cols="30" rows="10" name="description"
-                          placeholder="Placeholder text">{{$order->description}}</textarea>
+                          placeholder="Enter the Text">{{$order->description}}</textarea>
             </div>
             <div class="ask-block i" id="{{$id}}">
                 <h2 class="t-sb f22-l25 purple3">Information</h2>
@@ -85,16 +85,16 @@
                             </div>
                             <label class="t-r f16-l24 purple1" for="{{$share_price}}">Share Price</label>
                             <input class="i-f w400 m-bid" type="number" id="{{$share_price}}"
-                                   placeholder="Placeholder price" name="share_price" required value="{{$order->share_price}}">
+                                   placeholder="Enter the Price" name="share_price" required value="{{$order->share_price}}">
                         </div>
                         <div class="ask-block-info">
                             <label class="t-r f16-l24 purple1" for="{{$share_number}}">Share Number</label>
                             <input class="i-f w400 m-bid" type="number" id="{{$share_number}}"
-                                   placeholder="Placeholder number" name="share_number" required value="{{$order->share_number}}">
+                                   placeholder="Enter the Number" name="share_number" required value="{{$order->share_number}}">
                         </div>
                         <div class="ask-block-info">
                             <label class="t-r f16-l24 purple1" for="{{$volume}}">Volume</label>
-                            <input class="i-f w400" type="number" id="{{$volume}}" name="volume" required value="{{$order->volume}}">
+                            <input class="i-f w400" type="number" id="{{$volume}}" name="volume" required value="{{$order->volume}}" placeholder="Enter the Volume">
                             <button class="btn-green w265" type="button" id="{{$btn_calc}}">
                                 Calculate
                             </button>
@@ -119,12 +119,12 @@
                         </div>
                         <div class="ask-block-info">
                             <label class="t-r f16-l24 purple1" for="{{$volume2}}">Volume</label>
-                            <input class="i-f w400" type="number" id="{{$volume2}}" placeholder="Placeholder" name="volume"  value="{{$order->volume}}">
+                            <input class="i-f w400" type="number" id="{{$volume2}}" placeholder="Enter the Volume" name="volume"  value="{{$order->volume}}">
                         </div>
                         <div class="ask-block-info">
                             <label class="t-r f16-l24 purple1" for="{{$share_number2}}">Valuation</label>
                             <input class="i-f w400" type="number" id="{{$share_number2}}" name="valuation"
-                                   placeholder="Placeholder" value="{{$order->valuation}}">
+                                   placeholder="Enter the Valuation" value="{{$order->valuation}}">
                         </div>
                     @endif
                 </div>
