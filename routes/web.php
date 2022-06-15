@@ -26,6 +26,7 @@ Route::controller(MainController::class)->group(function () {
     Route::get('/terms-of-use', 'termsOfUse')->name('terms-of-use');
     Route::get('/privacy-policy', 'privacyPolicy')->name('privacy-policy');
     Route::get('/disclaimer', 'disclaimer')->name('disclaimer');
+    Route::post('/contact-us-request', 'contactUsRequest')->name('contactUsRequest');
 });
 
 Auth::routes(['verify' => true]);

@@ -40,6 +40,7 @@ Route::group(['middleware' => 'is_admin'], function () {
     });
 
     Route::controller(SettingController::class)->prefix('setting')->group(function () {
+        Route::get('/settings','index')->name('settings');
         Route::patch('{setting}', 'updateSetting')->name('setting-update');
     });
 });

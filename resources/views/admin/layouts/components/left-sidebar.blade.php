@@ -63,6 +63,12 @@
                         <li><a href="{{ route('question.index') }}">All</a></li>
                     </ul>
                 </li>
+                <li @if(Route::is('settings.*')) class="active" @endif>
+                    <a href="#question" class="has-arrow"><i class="icon-settings"></i><span>Settings</span></a>
+                    <ul>
+                        <li><a href="{{ route('settings') }}">All</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </div>
