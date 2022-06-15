@@ -16,7 +16,7 @@ class ManageOrderController extends Controller
 {
     public function addOrder(AddOrderFromCompanyRequest $request, $type = null)
     {
-        $companies = Company::get(['id', 'companyName']);
+        $companies = Company::status()->get(['id', 'companyName']);
 
         $data = $request->validated();
 
@@ -64,7 +64,7 @@ class ManageOrderController extends Controller
             abort(403);
         }
 
-        $companies = Company::get(['id', 'companyName']);
+        $companies = Company::status()->get(['id', 'companyName']);
 
         if ($order->type === 'ASK') {
             return view('lc.order.ask-edit', compact('order', 'companies'));

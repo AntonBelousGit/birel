@@ -72,7 +72,7 @@ class OrderController extends Controller
      */
     public function edit($order)
     {
-        $companies = Company::get(['id', 'companyName']);
+        $companies = Company::status()->get(['id', 'companyName']);
         $order = CompanyOrder::with('user', 'company')->find($order);
 
         return view('admin.orders.edit', compact('companies', 'order'));
