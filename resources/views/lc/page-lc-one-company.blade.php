@@ -271,7 +271,7 @@
                     </li>
                 </ul>
                 <div class="content-t active">
-                    <div class="company-philter">
+                    <form class="company-philter" active="#">
                         <label class="company-philter-select">
                             <select class="js-example-basic-single">
                                 <option value="0" selected disabled>--</option>
@@ -281,18 +281,21 @@
                                 <option value="4">Tender</option>
                             </select>
                         </label>
-                        <label class="company-philter-select">
+                        <label class="company-philter-select-no-search">
                             <select class="js-example-basic-single-no-search">
                                 <option value="0" selected disabled>--</option>
                                 <option value="1">Data</option>
                                 <option value="2">Type</option>
                             </select>
                         </label>
-                        <button class="company-philter-btn" type="button">
+                        <button class="company-philter-btn-s btn btn-green w140" type="submit">
+                            Filter
+                        </button>
+                        <button class="company-philter-btn" type="reset">
                             Clear filters
                             <i class="icon icon-close-green"></i>
                         </button>
-                    </div>
+                    </form>
                     <div class="table-wrapper">
                         <table class="color-t table">
                             <thead class="table-head">

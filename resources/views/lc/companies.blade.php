@@ -61,7 +61,7 @@
                 </select>
             </div>
             <div class="company-philter-select">
-                <select class="js-example-basic-single" name="valuation">
+                <select class="js-example-basic-single-no-search" name="valuation">
                     <option {{$valuation == '0-499999999'?'selected':''}} value="0-499999999">< $500M</option>
                     <option {{$valuation == '500000000-999999999'?'selected':''}} value="500000000-999999999">
                         $500M - $1B

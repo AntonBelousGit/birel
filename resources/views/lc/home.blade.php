@@ -21,7 +21,7 @@
                     <ul class="form-list">
                         <li class="form-list-item">
                             <label class="t-r f16-l24 purple1" for="name">First Name</label>
-                            <input class="i-f" id="name" type="text" name="name" value="{{Auth::user()->name}}">
+                            <input class="i-f" id="name" type="text" name="name" value="{{Auth::user()->name}}" placeholder="Enter the First Name">
                             @error('name')
                             <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -31,7 +31,7 @@
                         <li class="form-list-item">
                             <label class="t-r f16-l24 purple1" for="secondName">Last Name</label>
                             <input class="i-f" id="secondName" type="text" name="surname"
-                                   value="{{Auth::user()->surname}}">
+                                   value="{{Auth::user()->surname}}" placeholder="Enter the Last Name">
                             @error('surname')
                             <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -40,7 +40,7 @@
                         </li>
                         <li class="form-list-item">
                             <label class="t-r f16-l24 purple1" for="email">Email</label>
-                            <input class="i-f" id="email" type="email" name="email" value="{{Auth::user()->email}}">
+                            <input class="i-f" id="email" type="email" name="email" value="{{Auth::user()->email}}" placeholder="Enter the Email">
                             @error('email')
                             <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -50,7 +50,7 @@
                         <li class="form-list-item">
                             <label class="t-r f16-l24 purple1" for="linkedin">Linkedin</label>
                             <input class="i-f" id="linkedin" type="text" name="linkedin"
-                                   value="{{Auth::user()->linkedin}}">
+                                   value="{{Auth::user()->linkedin}}" placeholder="Enter the you Linkedin">
                             @error('linkedin')
                             <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -84,7 +84,7 @@
                     <ul class="form-list">
                         <li class="form-list-item">
                             <label class="t-r f16-l24 purple1" for="name2">First Name</label>
-                            <input class="i-f" id="name2" type="text" name="name" value="{{Auth::user()->name}}">
+                            <input class="i-f" id="name2" type="text" name="name" value="{{Auth::user()->name}}" placeholder="Enter the First Name">
                             @error('name')
                             <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -94,7 +94,7 @@
                         <li class="form-list-item">
                             <label class="t-r f16-l24 purple1" for="secondName2">Last Name</label>
                             <input class="i-f" id="secondName2" type="text" name="surname"
-                                   value="{{Auth::user()->surname}}">
+                                   value="{{Auth::user()->surname}}" placeholder="Enter the Last Name">
                             @error('surname')
                             <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -103,7 +103,7 @@
                         </li>
                         <li class="form-list-item">
                             <label class="t-r f16-l24 purple1" for="email2">Email</label>
-                            <input class="i-f" id="email2" type="email" name="email" value="{{Auth::user()->email}}">
+                            <input class="i-f" id="email2" type="email" name="email" value="{{Auth::user()->email}}" placeholder="Enter the Email">
                             @error('email')
                             <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -113,7 +113,7 @@
                         <li class="form-list-item">
                             <label class="t-r f16-l24 purple1" for="linkedin2">Linkedin</label>
                             <input class="i-f" id="linkedin2" type="text" name="linkedin"
-                                   value="{{Auth::user()->linkedin}}">
+                                   value="{{Auth::user()->linkedin}}" placeholder="Enter the Linkedin">
                             @error('linkedin')
                             <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -123,7 +123,7 @@
                         <li class="form-list-item">
                             <label class="t-r f16-l24 purple1" for="nameFund">Name Fund</label>
                             <input class="i-f" id="nameFund" type="text" name="fund_name"
-                                   value="{{Auth::user()->fund_name}}">
+                                   value="{{Auth::user()->fund_name}}" placeholder="Enter the Name Fund">
                             @error('fund_name')
                             <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -133,7 +133,7 @@
                         <li class="form-list-item">
                             <label class="t-r f16-l24 purple1" for="fundAddress">Fund address</label>
                             <input class="i-f" id="fundAddress" type="text" name="fund_address"
-                                   value="{{Auth::user()->fund_address}}">
+                                   value="{{Auth::user()->fund_address}}" placeholder="Enter the Fund web address">
                             @error('fund_address')
                             <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -143,7 +143,7 @@
                         <li class="form-list-item">
                             <label class="t-r f16-l24 purple1" for="position">Position</label>
                             <input class="i-f" id="position" type="text" name="position"
-                                   value="{{Auth::user()->position}}">
+                                   value="{{Auth::user()->position}}" placeholder="Enter the Position">
                             @error('position')
                             <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -178,7 +178,7 @@
                     <ul class="form-list">
                         <li class="form-list-item">
                             <label class="t-r f16-l24 purple1" for="password">New password</label>
-                            <input class="i-f" id="password" type="text" placeholder="Password" name="password" required
+                            <input class="i-f" id="password" type="text" placeholder="Enter the Password" name="password" required
                                    autocomplete="new-password">
                             @error('password')
                             <span class="invalid-feedback" role="alert">
@@ -189,7 +189,7 @@
                         <li class="form-list-item">
                             <label class="t-r f16-l24 purple1" for="secondPassword">Re-enter new password</label>
                             <input class="i-f" id="secondPassword" type="text" name="password_confirmation" required
-                                   autocomplete="new-password">
+                                   autocomplete="new-password" placeholder="Enter the Password">
                         </li>
                     </ul>
                     <div class="form-btn">
