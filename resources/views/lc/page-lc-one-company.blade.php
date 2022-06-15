@@ -280,7 +280,7 @@
                                 <option value="4">Tender</option>
                             </select>
                         </label>
-                        <label class="company-philter-select-no-search">
+                        <label class="company-philter-select">
                             <select class="js-example-basic-single-no-search">
                                 <option value="0" selected disabled>--</option>
                                 <option value="1">Data</option>
