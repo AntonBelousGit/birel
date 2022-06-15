@@ -30,6 +30,7 @@ Route::group(['middleware' => 'is_admin'], function () {
     Route::resource('question', QuestionController::class)->except(['show', 'create', 'store']);
     Route::resource('orders', OrderController::class)->except(['show', 'index']);
     Route::get('/orders/{type?}', [OrderController::class, 'index'])->name('admin-orders');
+    Route::patch('/orders/updateLfo/{order}', [OrderController::class, 'updateLFO'])->name('update-lfo');
 
     Route::controller(CompanyFinanceController::class)->group(function () {
         Route::get('company/{id}/financing', 'index')->name('company.id.financing');
