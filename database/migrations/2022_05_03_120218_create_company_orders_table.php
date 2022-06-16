@@ -34,6 +34,7 @@ class CreateCompanyOrdersTable extends Migration
             $table->enum('status', ['active', 'inactive', 'moderation'])->default('moderation');
             $table->enum('user_status', ['active', 'inactive'])->default('active');
             $table->boolean('user_can_update')->default(1);
+            $table->boolean('history')->default(0);
             $table->date('publish_time')->nullable();
             $table->timestamps();
         });
