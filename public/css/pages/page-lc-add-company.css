@@ -719,16 +719,18 @@
 }
 
 @media screen and (max-width: 1470px) {
+  .looking-block-link {
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 1170px) {
   .ask .w400 {
     width: 300px;
   }
 
   .looking .w400 {
     width: 300px;
-  }
-
-  .looking-block-link {
-    margin-top: 10px;
   }
 
   .tender .w400 {

@@ -791,20 +791,12 @@
 }
 
 @media screen and (max-width: 1470px) {
-  .ask .w400 {
-    width: 300px;
-  }
-
   .ask .c-n {
     grid-template-areas: "title fix" "text fix" "select fix" "link fix";
   }
 
   .ask-block-link {
     margin-top: 10px;
-  }
-
-  .looking .w400 {
-    width: 300px;
   }
 
   .looking .c-n {
@@ -815,16 +807,26 @@
     margin-top: 10px;
   }
 
-  .tender .w400 {
-    width: 300px;
-  }
-
   .tender .c-n {
     grid-template-areas: "title fix" "text fix" "select fix" "link fix";
   }
 
   .tender-block-link {
     margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 1170px) {
+  .ask .w400 {
+    width: 300px;
+  }
+
+  .looking .w400 {
+    width: 300px;
+  }
+
+  .tender .w400 {
+    width: 300px;
   }
 }
 

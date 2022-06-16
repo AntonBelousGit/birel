@@ -77,11 +77,11 @@
 						</p>
 						<div class="ask-block-inp">
 							<label class="t-r f16-l24 purple1" for="companyName_bid">Company name</label>
-							<input class="i-f" type="text" id="companyName_bid" placeholder="Placeholder text">
+							<input class="i-f w400" type="text" id="companyName_bid" placeholder="Enter the Name" name="" required>
 						</div>
 						<div class="ask-block-inp">
 							<label class="t-r f16-l24 purple1" for="companyAddress_bid">Company web address</label>
-							<input class="i-f" type="text" id="companyAddress_bid" placeholder="Placeholder">
+							<input class="i-f w400" type="text" id="companyAddress_bid" placeholder="Enter the Web Address" name="" required>
 						</div>
 					</div>
 					<div class="ask-block d-s">
@@ -89,15 +89,18 @@
 						<p class="t-r f16-l24 purple2">You can choose deal structure: direct, spv, forward contract or primary
 							round.
 						</p>
-						<select id="theme3-bid" class="js-example-basic-single w400">
-							<option value="0" selected>Choose</option>
+						<select id="theme3-bid" class="js-example-basic-single w400" name="deal_structure" required>
+							<option value="direct">direct</option>
+                            <option value="spv">spv</option>
+                            <option value="forward contract">forward contract</option>
+                            <option value="direct or spv">direct or spv</option>
+                            <option value="any">any</option>
 						</select>
 					</div>
 					<div class="ask-block s">
-						<h2 class="t-sb f22-l25 purple3">Description</h2>
-						<p class="t-r f16-l24 purple2">You can choose deal structure: direct, spv, forward contract or primary
-							round.</p>
-						<textarea class="i-f f14-l16 w400 h235" cols="30" rows="10" placeholder="Placeholder text"></textarea>
+						<h2 class="t-sb f22-l25 purple3">Details</h2>
+						<p class="t-r f16-l24 purple2">Here you can enter important details. For example, SPV - layers, management fee, carry ... / Escrow / ROFR / requirements for the second side of the transaction and so on.</p>
+						<textarea class="i-f f14-l16 w400 h235" cols="30" rows="10" name="description" placeholder="Enter the Text"></textarea>
 					</div>
 					<div class="ask-block i" id="tabs_bid">
 						<h2 class="t-sb f22-l25 purple3">Information</h2>
@@ -114,37 +117,40 @@
 								<label class="t-r f16-l24 purple1" for="share_type_bid">
 									Share Type
 								</label>
-								<select id="share_type_bid" class="js-example-basic-single w400">
-									<option value="0" selected>Choose</option>
+								<select id="share_type_bid" class="js-example-basic-single w400" name="share_type" required>
+									<option value="Preferred">Preferred</option>
+                                    <option value="Common">Common</option>
+                                    <option value="Preferred and Common">Preferred and Common</option>
+                                    <option value="any">Any</option>
 								</select>
 							</div>
 							<div class="ask-block-info">
 								<div class="wrapper-radio">
 									<div class="form_radio">
 										<label class="t-r f14-l16 purple1" for="share_type_currency_bid1">
-											<input type="radio" id="share_type_currency_bid1" name="share_type_currency" checked>
+											<input type="radio" id="share_type_currency_bid1" name="share_type_currency_bid" checked>
 											<span></span>
 											$
 										</label>
 									</div>
 									<div class="form_radio">
 										<label class="t-r f14-l16 purple1" for="share_type_currency_bid2">
-											<input type="radio" id="share_type_currency_bid2" name="share_type_currency">
+											<input type="radio" id="share_type_currency_bid2" name="share_type_currency_bid">
 											<span></span>
 											€
 										</label>
 									</div>
 								</div>
 								<label class="t-r f16-l24 purple1" for="share_price_bid">Share Price</label>
-								<input class="i-f w400 m-bid" type="number" id="share_price_bid" placeholder="Placeholder price">
+								<input class="i-f w400 m-bid" type="number" id="share_price_bid" placeholder="Enter the Price" name="share_price" required>
 							</div>
 							<div class="ask-block-info">
 								<label class="t-r f16-l24 purple1" for="share_number_bid">Share Number</label>
-								<input class="i-f w400 m-bid" type="number" id="share_number_bid" placeholder="Placeholder number">
+								<input class="i-f w400 m-bid" type="number" id="share_number_bid" placeholder="Enter the Number" name="share_number" required>
 							</div>
 							<div class="ask-block-info">
 								<label class="t-r f16-l24 purple1" for="volume_bid">Volume</label>
-								<input class="i-f w400" type="number" id="volume_bid" placeholder="">
+								<input class="i-f w400" type="number" id="volume_bid" placeholder="Enter the Volume" name="volume" required>
 								<button class="btn-green w265" type="button" id="btn_calc_bid">
 									Calculate
 								</button>
@@ -155,7 +161,10 @@
 							<div class="ask-block-info">
 								<label class="t-r f16-l24 purple1" for="share_type_bid2">Share Type</label>
 								<select id="share_type_bid2" class="js-example-basic-single w400">
-									<option value="0" selected>Choose</option>
+									<option value="Preferred">Preferred</option>
+                                    <option value="Common">Common</option>
+                                    <option value="Preferred and Common">Preferred and Common</option>
+                                    <option value="any">Any</option>
 								</select>
 							</div>
 							<div class="ask-block-info">
@@ -188,11 +197,11 @@
 						</p>
 						<div class="ask-block-inp">
 							<label class="t-r f16-l24 purple1" for="companyName_ask">Company name</label>
-							<input class="i-f" type="text" id="companyName_ask" placeholder="Placeholder text">
+							<input class="i-f w400" type="text" id="companyName_ask" placeholder="Enter the Name" name="" required>
 						</div>
 						<div class="ask-block-inp">
 							<label class="t-r f16-l24 purple1" for="companyAddress_ask">Company web address</label>
-							<input class="i-f" type="text" id="companyAddress_ask" placeholder="Placeholder">
+							<input class="i-f w400" type="text" id="companyAddress_ask" placeholder="Enter the Web Address" name="" required>
 						</div>
 					</div>
 					<div class="ask-block d-s">
@@ -209,10 +218,9 @@
 						</select>
 					</div>
 					<div class="ask-block s">
-						<h2 class="t-sb f22-l25 purple3">Description</h2>
-						<p class="t-r f16-l24 purple2">You can choose deal structure: direct, spv, forward contract or primary
-							round.</p>
-						<textarea class="i-f f14-l16 w400 h235" cols="30" rows="10" placeholder="Placeholder text"></textarea>
+						<h2 class="t-sb f22-l25 purple3">Details</h2>
+						<p class="t-r f16-l24 purple2">Here you can enter important details. For example, SPV - layers, management fee, carry ... / Escrow / ROFR / requirements for the second side of the transaction and so on.</p>
+						<textarea class="i-f f14-l16 w400 h235" cols="30" rows="10" placeholder="Enter the Text"></textarea>
 					</div>
 					<div class="ask-block i" id="tabs_ask">
 						<h2 class="t-sb f22-l25 purple3">Information</h2>
@@ -230,39 +238,39 @@
 									Share Type
 								</label>
 								<select id="share_type_ask" name="share_type_ask" class="js-example-basic-single w400" required>
-									<option value="0" disabled selected>Choose</option>
-									<option value="1" >Preferred</option>
-									<option value="2" >Common</option>
-									<option value="3" >Mix</option>
+									<option value="Preferred">Preferred</option>
+                                    <option value="Common">Common</option>
+                                    <option value="Preferred and Common">Preferred and Common</option>
+                                    <option value="any">Any</option>
 								</select>
 							</div>
 							<div class="ask-block-info">
 								<div class="wrapper-radio">
 									<div class="form_radio">
 										<label class="t-r f14-l16 purple1">
-											<input type="radio" id="share_type_currency_ask1" name="share_type_currency" value="usd" required checked>
+											<input type="radio" id="share_type_currency_ask1" name="share_type_currency_ask" value="usd" required checked>
 											<span></span>
 											$
 										</label>
 									</div>
 									<div class="form_radio">
 										<label class="t-r f14-l16 purple1">
-											<input type="radio" id="share_type_currency_ask2" name="share_type_currency" value="eur" required>
+											<input type="radio" id="share_type_currency_ask2" name="share_type_currency_ask" value="eur" required>
 											<span></span>
 											€
 										</label>
 									</div>
 								</div>
 								<label class="t-r f16-l24 purple1" for="share_price_ask">Share Price</label>
-								<input class="i-f w400 m-bid" type="number" id="share_price_ask" name="share_price" placeholder="Placeholder price" required>
+								<input class="i-f w400 m-bid" type="number" id="share_price_ask" name="share_price" placeholder="Enter the Price" required>
 							</div>
 							<div class="ask-block-info">
 								<label class="t-r f16-l24 purple1" for="share_number_ask">Share Number</label>
-								<input class="i-f w400 m-bid" type="number" id="share_number_ask" name="share_number" placeholder="Placeholder number" required>
+								<input class="i-f w400 m-bid" type="number" id="share_number_ask" name="share_number" placeholder="Enter the Number" required>
 							</div>
 							<div class="ask-block-info">
 								<label class="t-r f16-l24 purple1" for="volume_ask">Volume</label>
-								<input class="i-f w400" type="number" id="volume_ask" name="volume" placeholder="Placeholder" required>
+								<input class="i-f w400" type="number" id="volume_ask" name="volume" placeholder="Enter the Volume" required>
 								<button class="btn-green w265" type="button" id="btn_calc_ask">
 									Calculate
 								</button>
@@ -278,11 +286,11 @@
 							</div>
 							<div class="ask-block-info">
 								<label class="t-r f16-l24 purple1" for="volume_ask2">Volume</label>
-								<input class="i-f w400" type="number" id="volume_ask2" placeholder="Placeholder">
+								<input class="i-f w400" type="number" id="volume_ask2" placeholder="Enter the Volume">
 							</div>
 							<div class="ask-block-info">
 								<label class="t-r f16-l24 purple1" for="share_number_ask2">Valuation</label>
-								<input class="i-f w400" type="number" id="share_number_ask2" placeholder="Placeholder">
+								<input class="i-f w400" type="number" id="share_number_ask2" placeholder="Enter the Valuation">
 							</div>
 						</div>
 					</div>
@@ -306,11 +314,11 @@
 						</p>
 						<div class="looking-block-inp">
 							<label class="t-r f16-l24 purple1" for="companyName_looking">Company name</label>
-							<input class="i-f" type="text" id="companyName_looking" placeholder="Placeholder text">
+							<input class="i-f w400" type="text" id="companyName_looking" placeholder="Enter the Name" required name="">
 						</div>
 						<div class="looking-block-inp">
 							<label class="t-r f16-l24 purple1" for="companyAddress_looking">Company web address</label>
-							<input class="i-f" type="text" id="companyAddress_looking" placeholder="Placeholder">
+							<input class="i-f w400" type="text" id="companyAddress_looking" placeholder="Enter the Web Address" required name="">
 						</div>
 					</div>
 					<div class="looking-block o">
@@ -346,10 +354,11 @@
 						</select>
 					</div>
 					<div class="looking-block s">
-						<h2 class="t-sb f22-l25 purple3">Description</h2>
-						<p class="t-r f16-l24 purple2">You can choose deal structure: direct, spv, forward contract or primary
-							round.</p>
-						<textarea class="i-f f14-l16 w400 h235" placeholder="Placeholder text" name="description"></textarea>
+						<h2 class="t-sb f22-l25 purple3">Details</h2>
+						<p class="t-r f16-l24 purple2">Here you can enter important details. For example, SPV - layers,
+                           management fee, carry ... / Escrow / ROFR / requirements for the second side of the transaction and
+                           so on.</p>
+						<textarea class="i-f f14-l16 w400 h235" placeholder="Enter the Text" name="description"></textarea>
 					</div>
 					<div class="looking-block i" id="tabs_looking">
 						<h2 class="t-sb f22-l25 purple3">Information</h2>
@@ -367,7 +376,7 @@
 								<label class="t-r f16-l24 purple1" for="share_type_looking">
 									Share Type
 								</label>
-								<select id="share_type_looking" class="js-example-basic-single w400">
+								<select id="share_type_looking" class="js-example-basic-single w400" name="share_type" required>
 									<option value="Preferred">Preferred</option>
                                     <option value="Common">Common</option>
                                     <option value="Preferred and Common">Preferred and Common</option>
@@ -376,14 +385,14 @@
 							</div>
 							<div class="looking-block-info">
 								<label class="t-r f16-l24 purple1" for="share_number_looking">Share Number</label>
-								<input class="i-f w400" type="text" id="share_number_looking"  name="share_number" placeholder="Placeholder number"required>
+								<input class="i-f w400" type="text" id="share_number_looking"  name="share_number" placeholder="Enter the Number"required>
 							</div>
 						</div>
 						<div class="content-t2">
 
 							<div class="looking-block-info">
 								<label class="t-r f16-l24 purple1" for="share_type_looking2">Share Type</label>
-								<select id="share_type_looking2" class="js-example-basic-single w400">
+								<select id="share_type_looking2" class="js-example-basic-single w400" >
 									<option value="Preferred">Preferred</option>
                                     <option value="Common">Common</option>
                                     <option value="Preferred and Common">Preferred and Common</option>
@@ -392,7 +401,7 @@
 							</div>
 							<div class="looking-block-info">
 								<label class="t-r f16-l24 purple1" for="volume_looking">Block Volume</label>
-								<input class="i-f w400" type="text" id="volume_looking" placeholder="Placeholder">
+								<input class="i-f w400" type="text" id="volume_looking" placeholder="Enter the Volume">
 							</div>
 						</div>
 					</div>

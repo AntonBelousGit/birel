@@ -4,8 +4,8 @@
 
 .bg-login {
   background-color: #573CDA;
-  height: -webkit-calc(100vh - 276px);
-  height: calc(100vh - 276px);
+  height: -webkit-calc(100vh - 271px);
+  height: calc(100vh - 271px);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
