@@ -269,22 +269,28 @@
                         Financing
                     </li>
                 </ul>
+
+                @php
+                    $type = $_GET['type'] ?? '';
+                    $sort = $_GET['sort']?? '';
+                @endphp
+
                 <div class="content-t active">
-                    <form class="company-philter" active="#">
+                    <form class="company-philter" action="{{ route('companies.show',$company->id) }}" method="GET">
                         <label class="company-philter-select">
-                            <select class="js-example-basic-single">
+                            <select class="js-example-basic-single" name="type">
                                 <option value="0" selected disabled>--</option>
-                                <option value="1">Bid</option>
-                                <option value="2">Ask</option>
-                                <option value="3">Looking for an offer</option>
-                                <option value="4">Tender</option>
+                                <option value="BID" {{$type == 'BID'?'selected':''}}>Bid</option>
+                                <option value="ASK" {{$type == 'ASK'?'selected':''}}>Ask</option>
+                                <option value="LFO" {{$type == 'LFO'?'selected':''}}>Looking for an offer</option>
+                                <option value="TD" {{$type == 'TD'?'selected':''}}>Tender</option>
                             </select>
                         </label>
                         <label class="company-philter-select">
-                            <select class="js-example-basic-single-no-search">
+                            <select class="js-example-basic-single-no-search" name="sort">
                                 <option value="0" selected disabled>--</option>
-                                <option value="1">Data</option>
-                                <option value="2">Type</option>
+                                <option value="Data" {{$sort == 'Data'?'selected':''}}>Data</option>
+                                <option value="Type" {{$sort == 'Type'?'selected':''}}>Type</option>
                             </select>
                         </label>
                         <button class="company-philter-btn-s btn btn-green w140" type="submit">
@@ -298,137 +304,163 @@
                     <div class="table-wrapper">
                         <table class="color-t table">
                             <thead class="table-head">
-                                <tr class="head-row">
-                                    <th class="head-row-item">
-                                        <div>
+                            <tr class="head-row">
+                                <th class="head-row-item">
+                                    <div>
                                         <div>
                                             #
                                         </div>
-                                        </div>
-                                    </th>
-                                    <th class="head-row-item">
-                                        <div>
+                                    </div>
+                                </th>
+                                <th class="head-row-item">
+                                    <div>
                                         <div class="date">
                                             Date
                                         </div>
-                                        </div>
-                                    </th>
-                                    <th class="head-row-item">
-                                        <div>
+                                    </div>
+                                </th>
+                                <th class="head-row-item">
+                                    <div>
                                         <div class="company">
                                             Company
                                         </div>
-                                        </div>
-                                    </th>
-                                    <th class="head-row-item">
-                                        <div><div></div></div>
-                                    </th>
-                                    <th class="head-row-item">
-                                        <div>
+                                    </div>
+                                </th>
+                                <th class="head-row-item">
+                                    <div>
+                                        <div></div>
+                                    </div>
+                                </th>
+                                <th class="head-row-item">
+                                    <div>
                                         <div class="valuation">
                                             Valuation
                                         </div>
-                                        </div>
-                                    </th>
-                                    <th class="head-row-item">
-                                        <div>
+                                    </div>
+                                </th>
+                                <th class="head-row-item">
+                                    <div>
                                         <div class="volume">
                                             Volume
                                         </div>
-                                        </div>
-                                    </th>
-                                    <th class="head-row-item">
-                                        <div>
+                                    </div>
+                                </th>
+                                <th class="head-row-item">
+                                    <div>
                                         <div class="share-price">
                                             Share price
                                         </div>
-                                        </div>
-                                    </th>
-                                    <th class="head-row-item">
-                                        <div>
+                                    </div>
+                                </th>
+                                <th class="head-row-item">
+                                    <div>
                                         <div class="number-of-shares">
                                             Number of shares
                                         </div>
-                                        </div>
-                                    </th>
-                                    <th class="head-row-item">
-                                        <div>
+                                    </div>
+                                </th>
+                                <th class="head-row-item">
+                                    <div>
                                         <div class="share-type">
                                             Share type
                                         </div>
-                                        </div>
-                                    </th>
-                                    <th class="head-row-item">
-                                        <div>
+                                    </div>
+                                </th>
+                                <th class="head-row-item">
+                                    <div>
                                         <div class="deal-structure">
                                             Deal Structure
                                         </div>
-                                        </div>
-                                    </th>
-                                    <th class="head-row-item">
-                                        <div> <div></div></div>
-                                    </th>
-                                    <th class="head-row-item">
-                                        <div> <div></div></div>
-                                    </th>
-                                    <th class="head-row-item">
-                                        <div><div></div></div>
-                                    </th>
-                                </tr>
+                                    </div>
+                                </th>
+                                <th class="head-row-item">
+                                    <div>
+                                        <div></div>
+                                    </div>
+                                </th>
+                                <th class="head-row-item">
+                                    <div>
+                                        <div></div>
+                                    </div>
+                                </th>
+                                <th class="head-row-item">
+                                    <div>
+                                        <div></div>
+                                    </div>
+                                </th>
+                            </tr>
                             </thead>
                             <tbody class="table-body">
                             @foreach($company->orders as $order)
                                 <tr class="body-row {{$order->type === 'BID'? 'bid':'ask'}} {{$order->status}}">
                                     <td class="body-row-item">
-                                        <div><div>
-                                            {{$loop->iteration}}
-                                        </div></div>
-                                    </td>
-                                    <td class="body-row-item">
-                                        <div><div class="date">
-                                            {{$order->date}}
-                                        </div></div>
-                                    </td>
-                                    <td class="body-row-item">
-                                        <div><div class="company" data-tippy-content="{{$company->companyName}}">
-                                            {{$company->companyName}}
-                                        </div></div>
-                                    </td>
-                                    <td class="body-row-item">
-                                        <div><div>
-                                            {{$order->type ?? '-'}}
-                                        </div></div>
-                                    </td>
-                                    <td class="body-row-item">
-                                        <div><div class="valuation">
-                                            {{$order->valuation_encode ?? '-'}}
-                                        </div></div>
-                                    </td>
-                                    <td class="body-row-item">
-                                        <div><div class="volume" data-tippy-content="{{$order->volume_encode ?? '-'}}">
-                                            {{$order->volume_encode ?? '-'}}
-                                        </div></div>
-                                    </td>
-                                    <td class="body-row-item">
-                                        <div><div class="share-price" data-tippy-content="{{$order->share_price_encode ?? '-'}}">
-                                            {{$order->share_price_encode ?? '-'}}
-                                        </div></div>
-                                    </td>
-                                    <td class="body-row-item">
-                                        <div><div class="number-of-shares">
-                                            {{$order->share_number ?? '-'}}
-                                        </div></div>
+                                        <div>
+                                            <div>
+                                                {{$loop->iteration}}
+                                            </div>
+                                        </div>
                                     </td>
                                     <td class="body-row-item">
                                         <div>
-                                            <div class="share-type"  data-tippy-content="{{$order->share_type ?? '-'}}">
+                                            <div class="date">
+                                                {{$order->date}}
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="body-row-item">
+                                        <div>
+                                            <div class="company" data-tippy-content="{{$company->companyName}}">
+                                                {{$company->companyName}}
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="body-row-item">
+                                        <div>
+                                            <div>
+                                                {{$order->type ?? '-'}}
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="body-row-item">
+                                        <div>
+                                            <div class="valuation">
+                                                {{$order->valuation_encode ?? '-'}}
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="body-row-item">
+                                        <div>
+                                            <div class="volume" data-tippy-content="{{$order->volume_encode ?? '-'}}">
+                                                {{$order->volume_encode ?? '-'}}
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="body-row-item">
+                                        <div>
+                                            <div class="share-price"
+                                                 data-tippy-content="{{$order->share_price_encode ?? '-'}}">
+                                                {{$order->share_price_encode ?? '-'}}
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="body-row-item">
+                                        <div>
+                                            <div class="number-of-shares">
+                                                {{$order->share_number ?? '-'}}
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="body-row-item">
+                                        <div>
+                                            <div class="share-type" data-tippy-content="{{$order->share_type ?? '-'}}">
                                                 {{$order->share_type ?? '-'}}
                                             </div>
                                         </div>
                                     </td>
                                     <td class="body-row-item">
                                         <div>
-                                            <div class="deal-structure" data-tippy-content="{{$order->deal_structure ?? '-'}}">
+                                            <div class="deal-structure"
+                                                 data-tippy-content="{{$order->deal_structure ?? '-'}}">
                                                 {{$order->deal_structure ?? '-'}}
                                             </div>
                                         </div>
@@ -529,281 +561,281 @@
                         <div class="table-wrapper">
                             <table class="color-t table">
                                 <thead class="table-head">
-                                    <tr class="head-row">
-                                        <th class="head-row-item">
+                                <tr class="head-row">
+                                    <th class="head-row-item">
+                                        <div>
                                             <div>
-                                                <div>
-                                                    #
-                                                </div>
+                                                #
                                             </div>
-                                        </th>
-                                        <th class="head-row-item">
-                                            <div>
-                                                <div class="date">
-                                                    Date
-                                                </div>
+                                        </div>
+                                    </th>
+                                    <th class="head-row-item">
+                                        <div>
+                                            <div class="date">
+                                                Date
                                             </div>
-                                        </th>
-                                        <th class="head-row-item">
-                                            <div>
-                                                <div class="company">
-                                                    Company
-                                                </div>
+                                        </div>
+                                    </th>
+                                    <th class="head-row-item">
+                                        <div>
+                                            <div class="company">
+                                                Company
                                             </div>
-                                        </th>
-                                        <th class="head-row-item">
-                                            <div>
-                                                <div></div>
+                                        </div>
+                                    </th>
+                                    <th class="head-row-item">
+                                        <div>
+                                            <div></div>
+                                        </div>
+                                    </th>
+                                    <th class="head-row-item">
+                                        <div>
+                                            <div class="valuation">
+                                                Valuation
                                             </div>
-                                        </th>
-                                        <th class="head-row-item">
-                                            <div>
-                                                <div class="valuation">
-                                                    Valuation
-                                                </div>
+                                        </div>
+                                    </th>
+                                    <th class="head-row-item">
+                                        <div>
+                                            <div class="volume">
+                                                Volume
                                             </div>
-                                        </th>
-                                        <th class="head-row-item">
-                                            <div>
-                                                <div class="volume">
-                                                    Volume
-                                                </div>
+                                        </div>
+                                    </th>
+                                    <th class="head-row-item">
+                                        <div>
+                                            <div class="share-price">
+                                                Share price
                                             </div>
-                                        </th>
-                                        <th class="head-row-item">
-                                            <div>
-                                                <div class="share-price">
-                                                    Share price
-                                                </div>
+                                        </div>
+                                    </th>
+                                    <th class="head-row-item">
+                                        <div>
+                                            <div class="number-of-shares">
+                                                Number of shares
                                             </div>
-                                        </th>
-                                        <th class="head-row-item">
-                                            <div>
-                                                <div class="number-of-shares">
-                                                    Number of shares
-                                                </div>
+                                        </div>
+                                    </th>
+                                    <th class="head-row-item">
+                                        <div>
+                                            <div class="share-type">
+                                                Share type
                                             </div>
-                                        </th>
-                                        <th class="head-row-item">
-                                            <div>
-                                                <div class="share-type">
-                                                    Share type
-                                                </div>
+                                        </div>
+                                    </th>
+                                    <th class="head-row-item">
+                                        <div>
+                                            <div class="deal-structure">
+                                                Deal Structure
                                             </div>
-                                        </th>
-                                        <th class="head-row-item">
-                                            <div>
-                                                <div class="deal-structure">
-                                                    Deal Structure
-                                                </div>
-                                            </div>
-                                        </th>
-                                        <th class="head-row-item">
-                                            <div>
-                                                <div></div>
-                                            </div>
-                                        </th>
-                                        <th class="head-row-item">
-                                            <div>
-                                                <div></div>
-                                            </div>
-                                        </th>
-                                        <th class="head-row-item">
-                                            <div>
-                                                <div></div>
-                                            </div>
-                                        </th>
-                                    </tr>
+                                        </div>
+                                    </th>
+                                    <th class="head-row-item">
+                                        <div>
+                                            <div></div>
+                                        </div>
+                                    </th>
+                                    <th class="head-row-item">
+                                        <div>
+                                            <div></div>
+                                        </div>
+                                    </th>
+                                    <th class="head-row-item">
+                                        <div>
+                                            <div></div>
+                                        </div>
+                                    </th>
+                                </tr>
                                 </thead>
                                 <tbody class="table-body">
-                                    <tr class="body-row ask">
-                                        <td class="body-row-item">
+                                <tr class="body-row ask">
+                                    <td class="body-row-item">
+                                        <div>
                                             <div>
-                                                <div>
-                                                    1
-                                                </div>
+                                                1
                                             </div>
-                                        </td>
-                                        <td class="body-row-item">
+                                        </div>
+                                    </td>
+                                    <td class="body-row-item">
+                                        <div>
+                                            <div class="date">
+                                                01/01/22
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="body-row-item">
+                                        <div>
+                                            <div class="company">
+                                                Company name
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="body-row-item">
+                                        <div>
                                             <div>
-                                                <div class="date">
-                                                    01/01/22
-                                                </div>
+                                                Аsk
                                             </div>
-                                        </td>
-                                        <td class="body-row-item">
+                                        </div>
+                                    </td>
+                                    <td class="body-row-item">
+                                        <div>
+                                            <div class="valuation">
+                                                0000000000
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="body-row-item">
+                                        <div>
+                                            <div class="volume">
+                                                00000000000000000000
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="body-row-item">
+                                        <div>
+                                            <div class="share-price">
+                                                00000000000000000000
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="body-row-item">
+                                        <div>
+                                            <div class="number-of-shares">
+                                                00000000000000000000
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="body-row-item">
+                                        <div>
+                                            <div class="share-type">
+                                                Text
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="body-row-item">
+                                        <div>
+                                            <div class="deal-structure">
+                                                Text
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="body-row-item center">
+                                        <div>
                                             <div>
-                                                <div class="company">
-                                                    Company name
-                                                </div>
+                                                <button class="reset-btn" type="button"
+                                                        data-tippy-content="Базовые сценарии поведения пользователей могут быть рассмотрены исключительно в разрезе маркетинговых и финансовых предпосылок. Современные технологии достигли такого уровня, что дальнейшее развитие различных форм деятельности способствует повышению качества поставленных обществом задач.">
+                                                    <i class="tree-dots"></i>
+                                                </button>
                                             </div>
-                                        </td>
-                                        <td class="body-row-item">
+                                        </div>
+                                    </td>
+                                    <td class="body-row-item center">
+                                        <div>
                                             <div>
-                                                <div>
-                                                    Аsk
-                                                </div>
                                             </div>
-                                        </td>
-                                        <td class="body-row-item">
+                                        </div>
+                                    </td>
+                                    <td class="body-row-item center ios-p">
+                                        <div>
                                             <div>
-                                                <div class="valuation">
-                                                    0000000000
-                                                </div>
                                             </div>
-                                        </td>
-                                        <td class="body-row-item">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="body-row bid">
+                                    <td class="body-row-item">
+                                        <div>
                                             <div>
-                                                <div class="volume">
-                                                    00000000000000000000
-                                                </div>
+                                                1
                                             </div>
-                                        </td>
-                                        <td class="body-row-item">
+                                        </div>
+                                    </td>
+                                    <td class="body-row-item">
+                                        <div>
+                                            <div class="date">
+                                                01/01/22
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="body-row-item">
+                                        <div>
+                                            <div class="company">
+                                                Company name
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="body-row-item">
+                                        <div>
                                             <div>
-                                                <div class="share-price">
-                                                    00000000000000000000
-                                                </div>
+                                                Аsk
                                             </div>
-                                        </td>
-                                        <td class="body-row-item">
+                                        </div>
+                                    </td>
+                                    <td class="body-row-item">
+                                        <div>
+                                            <div class="valuation">
+                                                0000000000
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="body-row-item">
+                                        <div>
+                                            <div class="volume">
+                                                0000000000
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="body-row-item">
+                                        <div>
+                                            <div class="share-price">
+                                                0000000000
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="body-row-item">
+                                        <div>
+                                            <div class="number-of-shares">
+                                                0000000000
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="body-row-item">
+                                        <div>
+                                            <div class="share-type">
+                                                Text
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="body-row-item">
+                                        <div>
+                                            <div class="deal-structure">
+                                                Text
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="body-row-item center">
+                                        <div>
                                             <div>
-                                                <div class="number-of-shares">
-                                                    00000000000000000000
-                                                </div>
+                                                <button class="reset-btn" type="button"
+                                                        data-tippy-content="Базовые сценарии поведения пользователей могут быть рассмотрены исключительно в разрезе маркетинговых и финансовых предпосылок. Современные технологии достигли такого уровня, что дальнейшее развитие различных форм деятельности способствует повышению качества поставленных обществом задач.">
+                                                    <i class="tree-dots"></i>
+                                                </button>
                                             </div>
-                                        </td>
-                                        <td class="body-row-item">
+                                        </div>
+                                    </td>
+                                    <td class="body-row-item center">
+                                        <div>
                                             <div>
-                                                <div class="share-type">
-                                                    Text
-                                                </div>
                                             </div>
-                                        </td>
-                                        <td class="body-row-item">
+                                        </div>
+                                    </td>
+                                    <td class="body-row-item center ios-p">
+                                        <div>
                                             <div>
-                                                <div class="deal-structure">
-                                                    Text
-                                                </div>
                                             </div>
-                                        </td>
-                                        <td class="body-row-item center">
-                                            <div>
-                                                <div>
-                                                    <button class="reset-btn" type="button"
-                                                            data-tippy-content="Базовые сценарии поведения пользователей могут быть рассмотрены исключительно в разрезе маркетинговых и финансовых предпосылок. Современные технологии достигли такого уровня, что дальнейшее развитие различных форм деятельности способствует повышению качества поставленных обществом задач.">
-                                                        <i class="tree-dots"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="body-row-item center">
-                                            <div>
-                                                <div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="body-row-item center ios-p">
-                                            <div>
-                                                <div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr class="body-row bid">
-                                        <td class="body-row-item">
-                                            <div>
-                                                <div>
-                                                    1
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="body-row-item">
-                                            <div>
-                                                <div class="date">
-                                                    01/01/22
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="body-row-item">
-                                            <div>
-                                                <div class="company">
-                                                    Company name
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="body-row-item">
-                                            <div>
-                                                <div>
-                                                    Аsk
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="body-row-item">
-                                            <div>
-                                                <div class="valuation">
-                                                    0000000000
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="body-row-item">
-                                            <div>
-                                                <div class="volume">
-                                                    0000000000
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="body-row-item">
-                                            <div>
-                                                <div class="share-price">
-                                                    0000000000
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="body-row-item">
-                                            <div>
-                                                <div class="number-of-shares">
-                                                    0000000000
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="body-row-item">
-                                            <div>
-                                                <div class="share-type">
-                                                    Text
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="body-row-item">
-                                            <div>
-                                                <div class="deal-structure">
-                                                    Text
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="body-row-item center">
-                                            <div>
-                                                <div>
-                                                    <button class="reset-btn" type="button"
-                                                            data-tippy-content="Базовые сценарии поведения пользователей могут быть рассмотрены исключительно в разрезе маркетинговых и финансовых предпосылок. Современные технологии достигли такого уровня, что дальнейшее развитие различных форм деятельности способствует повышению качества поставленных обществом задач.">
-                                                        <i class="tree-dots"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="body-row-item center">
-                                            <div>
-                                                <div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="body-row-item center ios-p">
-                                            <div>
-                                                <div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                        </div>
+                                    </td>
+                                </tr>
                                 </tbody>
                             </table>
                         </div>

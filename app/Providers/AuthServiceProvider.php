@@ -32,7 +32,7 @@ class AuthServiceProvider extends ServiceProvider
         });
 
         Gate::define('edit-order', function (User $user, CompanyOrder $companyOrder) {
-            return $user->id === $companyOrder->user_id;
+            return (int)$user->id === (int)$companyOrder->user_id;
         });
 
         Gate::define('update-order', function (User $user, CompanyOrder $companyOrder) {

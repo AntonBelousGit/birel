@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin\Order;
 
 use App\Events\OrderUpdateEvent;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Orders\Admin\AdminUpdateLfoOrderRequest;
 use App\Http\Requests\Orders\Admin\AdminUpdateOrderRequest;
 use App\Models\Company;
 use App\Models\CompanyOrder;
@@ -75,7 +76,10 @@ class OrderController extends Controller
         $companies = Company::status()->get(['id', 'companyName']);
         $order = CompanyOrder::with('user', 'company')->find($order);
 
-        return view('admin.orders.edit', compact('companies', 'order'));
+        if ($order->type !== 'LFO') {
+            return view('admin.orders.edit', compact('companies', 'order'));
+        }
+        return view('admin.orders.edit-lfo', compact('companies', 'order'));
     }
 
     /**
@@ -88,7 +92,27 @@ class OrderController extends Controller
     public function update(AdminUpdateOrderRequest $adminUpdateOrderRequest, CompanyOrder $order)
     {
         $data = $adminUpdateOrderRequest->validated();
+        $this->updateOrder($data, $order);
+        return back();
+    }
 
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param AdminUpdateLfoOrderRequest $adminUpdateOrderRequest
+     * @param CompanyOrder $order
+     * @return RedirectResponse
+     */
+    public function updateLFO(AdminUpdateLfoOrderRequest $adminUpdateOrderRequest, CompanyOrder $order)
+    {
+        $data = $adminUpdateOrderRequest->validated();
+        $this->updateOrder($data, $order);
+        return back();
+    }
+
+
+    protected function updateOrder($data, $order)
+    {
         if ($data['status'] == 'active') {
             $order->load('user');
             $user = $order->user;
@@ -108,7 +132,6 @@ class OrderController extends Controller
         }
 
         $order->update($data);
-        return back();
     }
 
     /**

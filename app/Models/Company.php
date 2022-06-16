@@ -35,7 +35,7 @@ class Company extends Model
 
     public function orders()
     {
-        return $this->hasMany(CompanyOrder::class,'company_id')->where('status','active')->orderByDesc('created_at');
+        return $this->hasMany(CompanyOrder::class,'company_id')->where('status','active');
     }
 
     public function wali()
