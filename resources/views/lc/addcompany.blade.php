@@ -169,11 +169,11 @@
 							</div>
 							<div class="ask-block-info">
 								<label class="t-r f16-l24 purple1" for="volume_bid2">Volume</label>
-								<input class="i-f w400" type="number" id="volume_bid2" placeholder="Placeholder">
+								<input class="i-f w400" type="number" id="volume_bid2" placeholder="Enter the Volume">
 							</div>
 							<div class="ask-block-info">
 								<label class="t-r f16-l24 purple1" for="share_number_bid2">Valuation</label>
-								<input class="i-f w400" type="number" id="share_number_bid2" placeholder="Placeholder">
+								<input class="i-f w400" type="number" id="share_number_bid2" placeholder="Enter the Valuation">
 							</div>
 						</div>
 					</div>
@@ -389,7 +389,6 @@
 							</div>
 						</div>
 						<div class="content-t2">
-
 							<div class="looking-block-info">
 								<label class="t-r f16-l24 purple1" for="share_type_looking2">Share Type</label>
 								<select id="share_type_looking2" class="js-example-basic-single w400" >
