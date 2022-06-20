@@ -101,15 +101,15 @@ class ManageOrderController extends Controller
         return back();
     }
 
-    public function updateLfo(UpdateOrderLFORequest $updateOrderRequest, CompanyOrder $order_lc)
+    public function updateLfo(UpdateOrderLFORequest $updateOrderRequest, CompanyOrder $order)
     {
-        if (!Gate::allows('edit-order', $order_lc)) {
+        if (!Gate::allows('edit-order', $order)) {
             abort(403);
         }
-        if (!Gate::allows('update-order', $order_lc)) {
+        if (!Gate::allows('update-order', $order)) {
             return back()->with('error', 'You have run out of attempts to update, you can only make changes once');
         }
-        $order_lc->update($updateOrderRequest->validated() + ['user_can_update' => 0, 'status' => 'moderation']);
+        $order->update($updateOrderRequest->validated() + ['status' => 'moderation']);
         return back();
     }
 

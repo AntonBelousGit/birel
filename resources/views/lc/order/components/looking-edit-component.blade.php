@@ -1,5 +1,5 @@
 <div class="content-t active">
-    <form class="add-order-looking" action="{{ route('update-lfo',$order) }}" method="POST" id='form'>
+    <form class="add-order-looking" action="{{ route('lc-update-lfo',$order) }}" method="POST" id='form'>
         @csrf
         @method('put')
         <div class="looking">
@@ -124,7 +124,7 @@
                         </div>
                         <div class="looking-block-info">
                             <label class="t-r f16-l24 purple1" for="volume23">Block Volume</label>
-                            <input class="i-f w400" type="number" id="volume23" placeholder="Enter the Volume" required
+                            <input class="i-f w400" type="number" id="volume23" name="volume" placeholder="Enter the Volume" required
                                    value="{{$order->volume}}">
                         </div>
                     @endif
