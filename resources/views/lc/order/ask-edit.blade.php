@@ -20,8 +20,8 @@
         @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
+                    @foreach($errors->all() as $error)
+                        <li>{{$error}}</li>
                     @endforeach
                 </ul>
             </div>
@@ -47,7 +47,7 @@
                 'volume2' => 'volume_ask2',
                 'btn_calc' => 'btn_calc_ask',
             ])
-{{--        @include('lc.order.components.looking-component',['id'=>'tabs2-looking'])--}}
+        {{--        @include('lc.order.components.looking-component',['id'=>'tabs2-looking'])--}}
     </div>
 @endsection
 

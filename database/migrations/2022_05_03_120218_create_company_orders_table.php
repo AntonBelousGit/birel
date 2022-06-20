@@ -31,7 +31,7 @@ class CreateCompanyOrdersTable extends Migration
             $table->enum('deal_structure', ['direct', 'spv', 'forward contract', 'direct or spv', 'any']);
             $table->enum('share_type', ['Preferred', 'Common', 'Preferred and Common', 'any']);
             $table->enum('share_type_currency', ['$', '€'])->default('$');
-            $table->enum('status', ['active', 'inactive', 'moderation'])->default('moderation');
+            $table->enum('status', ['active', 'inactive', 'moderation','history'])->default('moderation');
             $table->enum('user_status', ['active', 'inactive'])->default('active');
             $table->boolean('user_can_update')->default(1);
             $table->boolean('history')->default(0);
