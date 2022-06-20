@@ -6,7 +6,7 @@ const items111 = document.querySelector('#share_type_looking');
 const items211 = document.querySelector('#share_number_looking');
 const items311 = document.querySelector('#share_type_looking2');
 const items411 = document.querySelector('#volume_looking');
-
+console.log(items111,items211,items311,items411);
 f('#tabs_looking');
 
 function formSubmission(elTabs) {
@@ -72,7 +72,7 @@ function clearName(e) {
 	function deleteName(e) {
 		for (let i = 0; i < e.length; i++) {
 			e[i].removeAttribute("required");
-			e[i].removeAttribute("name");
+			// e[i].removeAttribute("name");
 
 		}
 	}
