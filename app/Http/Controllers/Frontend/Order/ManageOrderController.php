@@ -10,7 +10,9 @@ use App\Http\Requests\Orders\UpdateOrderLFORequest;
 use App\Http\Requests\Orders\UpdateOrderRequest;
 use App\Models\Company;
 use App\Models\CompanyOrder;
+use DB;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Request;
 
 class ManageOrderController extends Controller
 {
@@ -82,10 +84,20 @@ class ManageOrderController extends Controller
         if (!Gate::allows('edit-order', $order_lc)) {
             abort(403);
         }
-        if (!Gate::allows('update-order', $order_lc)) {
-            return back()->with('error', 'You have run out of attempts to update, you can only make changes once');
+
+        $data = $updateOrderRequest->validated();
+
+        if ($data['share_price'] != $order_lc->share_price || $data['valuation'] != $order_lc->valuation) {
+            if ($order_lc->publish_time > now()->subDays(30)->endOfDay()) {
+                return back()->with('error', 'Can be modified after 30 days');
+            }
+            if (!$order_lc->user_can_update) {
+                return back()->with(['error' => 'You have run out of attempts to update, you can only make changes once']);
+            }
+            $order_lc->update($data + ['user_can_update' => 0, 'status' => 'moderation']);
+            return back();
         }
-        $order_lc->update($updateOrderRequest->validated() + ['user_can_update' => 0, 'status' => 'moderation']);
+        $order_lc->update($data + ['status' => 'moderation']);
         return back();
     }
 
@@ -100,4 +112,16 @@ class ManageOrderController extends Controller
         $order_lc->update($updateOrderRequest->validated() + ['user_can_update' => 0, 'status' => 'moderation']);
         return back();
     }
+
+//    public function orderStatus(Request $request)
+//    {
+//        if ($request->mode == 'true') {
+//            DB::table('brands')->where('id', $request->id)->update(['status' => 'active']);
+//        } else {
+//            DB::table('brands')->where('id', $request->id)->update(['status' => 'inactive']);
+//        }
+//
+//        return response()->json(['msg' => 'Successfully updated status', 'status' => true]);
+//
+//    }
 }
