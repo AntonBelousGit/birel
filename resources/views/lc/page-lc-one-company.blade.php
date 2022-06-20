@@ -470,8 +470,11 @@
                                             <div>
                                                 <div>
                                                     <button class="reset-btn" type="button"
-                                                            data-tippy-content="Basic scenarios of user behavior can be considered solely in terms of marketing and financial prerequisites. Modern technologies have reached such a level that the further development of various forms of activity contributes to improving the quality of the tasks set by society.">
-                                                        <i class="tree-dots"></i>
+                                                        @if(!empty($order->description))
+                                                            data-tippy-content="{{$order->description}}"
+                                                        @endif
+                                                        >
+                                                    <i class="tree-dots"></i>
                                                     </button>
                                                 </div>
                                             </div>
@@ -502,7 +505,10 @@
                                             <div>
                                                 <div>
                                                     <button class="reset-btn" type="button"
-                                                            data-tippy-content="Basic scenarios of user behavior can be considered solely in terms of marketing and financial prerequisites. Modern technologies have reached such a level that the further development of various forms of activity contributes to improving the quality of the tasks set by society.">
+                                                        @if(!empty($order->description))
+                                                            data-tippy-content="{{$order->description}}"
+                                                        @endif
+                                                        >
                                                         <i class="tree-dots"></i>
                                                     </button>
                                                 </div>
