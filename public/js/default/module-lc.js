@@ -92,31 +92,6 @@ function bindTabs2(container) {
 	}
 }
 
-function addName(share_type, volume, valuation) {
-	volume.setAttribute('name', 'volume');
-	valuation.setAttribute('name', 'valuation');
-	share_type.setAttribute('name', 'share_type');
-
-	volume.required = true;
-	valuation.required = true;
-	share_type.required = true;
-}
-
-function addName2(share_type,share_number, volume,  share_price, share_type_currency1, share_type_currency2) {
-	volume.setAttribute('name', 'volume');
-	share_number.setAttribute('name', 'share_number');
-	share_price.setAttribute('name', 'share_price');
-	share_type_currency1.setAttribute('name', 'share_type_currency');
-	share_type_currency2.setAttribute('name', 'share_type_currency');
-	share_type.setAttribute('name', 'share_type');
-
-	volume.required = true;
-	share_number.required = true;
-	share_price.required = true;
-	share_type_currency1.required = true;
-	share_type_currency2.required = true;
-	share_type.required = true;
-}
 function calculate(btn,share_price,share_number,volume) {
 	btn.addEventListener('click',function() {
 		checkValue();
@@ -142,4 +117,4 @@ function calculate(btn,share_price,share_number,volume) {
 	}
 }
 
-export {bindTabs, createPopUp, bindTabs2, addName, addName2, calculate};
+export {bindTabs, createPopUp, bindTabs2, calculate};
