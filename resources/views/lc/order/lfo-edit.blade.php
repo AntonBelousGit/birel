@@ -48,6 +48,6 @@
 {{--                'volume2' => 'volume_bid2',--}}
 {{--                'btn_calc' => 'btn_calc_bid',--}}
 {{--            ])--}}
-        @include('lc.order.components.looking-edit-component',['id'=>'tabs2-looking'])
+        @include('lc.order.components.looking-edit-component',['id'=>'tabs_looking'])
     </div>
 @endsection
