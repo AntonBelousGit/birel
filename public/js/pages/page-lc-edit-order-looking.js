@@ -72,6 +72,7 @@ function clearName(e) {
 	function deleteName(e) {
 		for (let i = 0; i < e.length; i++) {
 			e[i].removeAttribute("required");
+			e[i].removeAttribute("name");
 
 		}
 	}
