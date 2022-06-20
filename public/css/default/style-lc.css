@@ -341,6 +341,14 @@ label {
   display: block;
 }
 
+.alert.alert-danger {
+  font-family: "WorkSans-Regular", sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  color: #ff3939;
+  font-weight: 400;
+}
+
 .btn-group {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2348,6 +2356,7 @@ label {
   background-color: #573CDA;
   -webkit-border-radius: 0 0 6px 6px;
           border-radius: 0 0 6px 6px;
+  min-width: 130px;
 }
 
 .header-user .menu-list-item {

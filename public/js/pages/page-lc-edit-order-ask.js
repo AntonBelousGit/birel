@@ -67,7 +67,7 @@ function clearName(e) {
 			if (e[i] === e[0]) {
 				share_type_ask2.removeAttribute("name");
 				volume_ask2.removeAttribute("name");
-				addName2(share_type_ask, share_number_ask, volume_ask, share_type_currency_ask1, share_type_currency_ask2);
+				addName2(share_type_ask, share_number_ask, volume_ask,share_price_ask, share_type_currency_ask1, share_type_currency_ask2);
 			} else {
 				share_type_ask.removeAttribute("name");
 				volume_ask.removeAttribute("name");
