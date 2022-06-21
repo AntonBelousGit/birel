@@ -46,7 +46,7 @@
 			</ul>
 		</div>
 		<div class="item_img">
-			<picture><source srcset="./img/explore-test.webp" type="image/webp"><img src="./img/explore-test.png" alt=""></picture>
+			<picture><source srcset="./img/explore-6.webp" type="image/webp"><img src="./img/explore-6.png" alt=""></picture>
 		</div>
 	</div>
 	<div class="content-list-item">
@@ -72,7 +72,7 @@
 			<p class="t-r f24-l42 purple2"> ⁃ The participant can subscribe to specific companies in order to receive notifications of new orders in them in a timely manner and not miss potential opportunities.</p>
 		</div>
 		<div class="item_img">
-			<picture><source srcset="./img/explore-test.webp" type="image/webp"><img src="./img/explore-test.png" alt=""></picture>
+			<picture><source srcset="./img/explore-3.webp" type="image/webp"><img src="./img/explore-3.png" alt=""></picture>
 		</div>
 
 	</div>
