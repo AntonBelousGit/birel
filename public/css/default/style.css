@@ -1352,6 +1352,11 @@ textarea.i-f::-webkit-scrollbar-thumb {
   line-height: 32px;
 }
 
+.f24-l42 {
+  font-size: 24px;
+  line-height: 42px;
+}
+
 .f30-l42 {
   font-size: 30px;
   line-height: 42px;
@@ -1661,10 +1666,6 @@ textarea.i-f::-webkit-scrollbar-thumb {
     max-width: 1280px;
   }
 
-  .container {
-    max-width: 1024px;
-  }
-
   .title.f80-l88 {
     font-size: 64px;
     line-height: 74px;
@@ -1676,6 +1677,10 @@ textarea.i-f::-webkit-scrollbar-thumb {
 }
 
 @media screen and (max-width: 1280px) {
+  .container {
+    max-width: 1024px;
+  }
+
   .header-menu {
     grid-gap: 100px;
   }
