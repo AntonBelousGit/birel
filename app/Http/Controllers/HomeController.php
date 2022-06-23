@@ -45,4 +45,15 @@ class HomeController extends Controller
         return redirect()->back()->with('success', 'password updated.');
     }
 
+    public function markNotification(Request $request)
+    {
+        auth()->user()
+            ->unreadNotifications
+            ->when($request->input('id'), function ($q) use ($request) {
+               return $q->where('id', $request->input('id'));
+            })
+            ->markAsRead();
+
+        return response()->noContent();
+    }
 }

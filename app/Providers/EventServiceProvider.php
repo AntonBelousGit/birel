@@ -3,8 +3,10 @@
 namespace App\Providers;
 
 use App\Events\OrderUpdateEvent;
+use App\Events\OrderUserStatusEvent;
 use App\Events\SendFormMailEvent;
 use App\Listeners\NewOrderHasBeenModeratedChangeCountOrders;
+use App\Listeners\OrderUserStatusListener;
 use App\Listeners\SendFormMailListener;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
@@ -21,11 +23,14 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
-        OrderUpdateEvent::class =>[
+        OrderUpdateEvent::class => [
             NewOrderHasBeenModeratedChangeCountOrders::class
         ],
         SendFormMailEvent::class => [
             SendFormMailListener::class
+        ],
+        OrderUserStatusEvent::class => [
+            OrderUserStatusListener::class,
         ]
     ];
 
