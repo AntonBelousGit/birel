@@ -41,7 +41,7 @@
                     <li class="header-list-item">
                         <button id="h-n-b" class="reset-btn" type="button">
                             <i class="icon icon-bells"></i>
-                            <span class="counter">2</span>
+                            <span class="counter">{{Auth::user()->notifications->count()}}</span>
                         </button>
                         <div class="notice-popup">
                             <ul class="notice_list">
