@@ -542,7 +542,7 @@
                         {{$company->orders->onEachSide(-1)->links('vendor.pagination.custom')}}
                     </div>
                     <div class="history">
-                        <h2 class="t-m f18-l32 purple1">History</h2>
+                        <h2 class="t-m f18-l32 purple1">Orders History</h2>
                         <div class="company-philter">
                             <label class="company-philter-select">
                                 <select class="js-example-basic-single">

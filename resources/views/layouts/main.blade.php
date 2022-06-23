@@ -229,8 +229,8 @@
 @yield('scripts')
 
 <script>
-    function sendMarkRequest(id = null)
-    {
+    (function sendMarkRequest(id = null) {
+
         return $.ajax("{{route('markNotification')}}",{
             method: 'POST',
             data:{
@@ -240,13 +240,15 @@
         });
 
         $('.mark-as-read').click(function (){
+        console.log( );
             let request = sendMarkRequest($(this).data('id'));
 
-            request.done(()=>{
-
+            request.done( () =>{
+                const item = document.querySelector(".mark-as-read");
+                item.classList.remove('new');
             })
         });
-    }
+    })();
 </script>
 </body>
 
