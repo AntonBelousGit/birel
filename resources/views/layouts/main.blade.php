@@ -234,13 +234,12 @@
         return $.ajax("{{route('markNotification')}}",{
             method: 'POST',
             data:{
-                _token,
+                _token: "{{csrf_token()}}",
                 id
             }
         });
 
         $('.mark-as-read').click(function (){
-        console.log( );
             let request = sendMarkRequest($(this).data('id'));
 
             request.done( () =>{
