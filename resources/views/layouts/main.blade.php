@@ -62,7 +62,7 @@
 
                                     </li>
                                 @empty
-                                    Пусто, ты нахуй никому не нужен!!!
+                                    Notification
                                 @endforelse
                             </ul>
                         </div>
