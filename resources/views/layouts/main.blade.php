@@ -48,7 +48,7 @@
                                 @forelse(Auth::user()->notifications as $notification)
 
 
-                                    <li class="notice_item {{$notification->read_at ?? 'new'}}">
+                                    <li class="notice_item mark-as-read {{$notification->read_at ?? 'new'}}"  data-id="{{$notification->id}}">
                                         <div class="user-avatar s">
                                             <span
                                                 class="t-sb purple1">{{ substr(Auth::user()->surname, 0,1)}}{{substr(Auth::user()->name, 0,1)}}</span>
@@ -59,10 +59,10 @@
                                         <span
                                             class="notice_item-hour t-r">{{$notification->created_at->diffForHumans()}}</span>
 
-                                        <a href="javascript:void(0);" class="red mark-as-read" data-id="{{$notification->id}}">ЖМИ НАХУЙ</a>
+
                                     </li>
                                 @empty
-                                    Пусто, ты нахуй никому не нужен!!!
+                                    Notification
                                 @endforelse
                             </ul>
                         </div>
@@ -234,7 +234,6 @@
             let request = sendMarkRequest($(this).data('id'));
             request.done(() => {
             $(this).removeClass('new');
-            window.location.reload();
             })
         })
     })
