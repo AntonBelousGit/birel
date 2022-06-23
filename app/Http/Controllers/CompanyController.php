@@ -51,7 +51,7 @@ class CompanyController extends Controller
         $data = $request->all();
         $categories = Category::all();
         $companies = $companyAction->handle($action->handle(CompanyFilter::class, $data));
-        $watchlist = Watchlist::where('user_id', auth()->id())->with('company.category')->paginate(16, ['*'], 'watchlist')->withQueryString();
+        $watchlist = Watchlist::where('user_id', auth()->id())->with('company.category','company.orders')->paginate(16, ['*'], 'watchlist')->withQueryString();
         $setting = $this->setting;
         return view('lc.companies', compact('companies', 'categories', 'watchlist', 'setting'));
     }
