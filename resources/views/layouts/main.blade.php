@@ -229,25 +229,25 @@
 @yield('scripts')
 
 <script>
-    (function sendMarkRequest(id = null) {
+    $(document).ready(function () {
+        $('.mark-as-read').click(function () {
+            let request = sendMarkRequest($(this).data('id'));
 
-        return $.ajax("{{route('markNotification')}}",{
+            request.done(() => {
+                const item = document.querySelector(".mark-as-read");
+                item.classList.remove('new');
+            })
+        })
+    })
+    function sendMarkRequest(id = null) {
+        return $.ajax("{{route('markNotification')}}", {
             method: 'POST',
-            data:{
+            data: {
                 _token: "{{csrf_token()}}",
                 id
             }
         });
-
-        $('.mark-as-read').click(function (){
-            let request = sendMarkRequest($(this).data('id'));
-
-            request.done( () =>{
-                const item = document.querySelector(".mark-as-read");
-                item.classList.remove('new');
-            })
-        });
-    })();
+    }
 </script>
 </body>
 
