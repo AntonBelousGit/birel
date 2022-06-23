@@ -232,10 +232,9 @@
     $(document).ready(function () {
         $('.mark-as-read').click(function () {
             let request = sendMarkRequest($(this).data('id'));
-
             request.done(() => {
-                const item = document.querySelector(".mark-as-read");
-                item.classList.remove('new');
+            $(this).removeClass('new');
+            window.location.reload();
             })
         })
     })
