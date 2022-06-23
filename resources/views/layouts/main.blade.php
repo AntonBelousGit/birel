@@ -58,8 +58,6 @@
                                         </span>
                                         <span
                                             class="notice_item-hour t-r">{{$notification->created_at->diffForHumans()}}</span>
-
-
                                     </li>
                                 @empty
                                     Notification
