@@ -43,6 +43,7 @@ Route::group(['middleware' => ['auth', 'user']], function () {
         Route::get('/orders', 'orders')->name('orders');
         Route::post('/update', 'update')->name('update');
         Route::post('/changepass', 'changepass')->name('changepass');
+        Route::post('markNotification','markNotification')->name('markNotification');
     });
 
 //ORDERS
@@ -54,7 +55,6 @@ Route::group(['middleware' => ['auth', 'user']], function () {
         Route::post('/order/storeLfo', 'storeLfo')->name('store-lfo');
         Route::put('/order/updateLfo/{order}', 'updateLfo')->name('lc-update-lfo');
         Route::post('order_status', 'orderStatus')->name('order.status');
-        Route::post('markNotification','markNotification')->name('markNotification');
     });
 
 //Question popup
