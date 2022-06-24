@@ -424,22 +424,21 @@
                                     <td class="body-row-item">
                                         <div>
                                             <div class="valuation">
-                                               {{$order->share_type_currency}} {{$order->valuation_encode ?? '-'}}
+                                                {{ $order->valuation_encode ? $order->share_type_currency.$order->valuation_encode:'-'}}
                                             </div>
                                         </div>
                                     </td>
                                     <td class="body-row-item">
                                         <div>
                                             <div class="volume" data-tippy-content="{{$order->volume_encode ?? '-'}}">
-                                               {{$order->share_type_currency}} {{$order->volume_encode ?? '-'}}
+                                                {{$order->volume_encode ? $order->share_type_currency.$order->volume_encode : '-'}}
                                             </div>
                                         </div>
                                     </td>
                                     <td class="body-row-item">
                                         <div>
-                                            <div class="share-price"
-                                                 data-tippy-content="{{$order->share_price_encode ?? '-'}}">
-                                               {{$order->share_type_currency}} {{$order->share_price_encode ?? '-'}}
+                                            <div class="share-price" data-tippy-content="{{$order->share_price_encode ?? '-'}}">
+                                                {{$order->share_price_encode ? $order->share_type_currency.$order->share_price_encode  : '-'}}
                                             </div>
                                         </div>
                                     </td>
