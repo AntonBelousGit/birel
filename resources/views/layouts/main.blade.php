@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="telephone=no">
     <!--      Favicon-->
-    <link href="{{ asset('img/favicon.ico')}}" rel="shortcut icon" type="image/x-icon">
+    <link href="{{ asset('img/faviconlc.ico')}}" rel="shortcut icon" type="image/x-icon">
     <title>Birel-lc</title>
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">

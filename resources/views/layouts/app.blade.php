@@ -9,7 +9,7 @@
 
     <title>Birel</title>
     <!--      Favicon-->
-    <link href="{{ asset('img/favicon.ico')}}" rel="shortcut icon" type="image/x-icon">
+    <link href="{{ asset('img/faviconf.ico')}}" rel="shortcut icon" type="image/x-icon">
 
     <!-- Scripts -->
 
