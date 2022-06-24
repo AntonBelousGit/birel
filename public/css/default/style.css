@@ -1629,6 +1629,12 @@ textarea.i-f::-webkit-scrollbar-thumb {
   display: block;
 }
 
+.header-logo {
+  -webkit-flex-basis: 320px;
+      -ms-flex-preferred-size: 320px;
+          flex-basis: 320px;
+}
+
 .header-menu {
   display: -webkit-box;
   display: -webkit-flex;

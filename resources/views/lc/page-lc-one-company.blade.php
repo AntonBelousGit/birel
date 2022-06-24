@@ -172,7 +172,7 @@
                     <form action="{{ route('order') }}" method="">
                         <label class="card-wrapper">
                             <select class="card-wrapper-select js-example-basic-single2" name="type">
-                                <option value="0" disabled>Choose offer</option>
+                                <option value="0" selected disabled>Choose offer</option>
                                 <option value="bid">Bid</option>
                                 <option value="ask">Ask</option>
                                 <option value="lfo">Looking for an offer</option>
