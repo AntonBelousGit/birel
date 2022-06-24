@@ -1352,6 +1352,11 @@ textarea.i-f::-webkit-scrollbar-thumb {
   line-height: 32px;
 }
 
+.f24-l42 {
+  font-size: 24px;
+  line-height: 42px;
+}
+
 .f30-l42 {
   font-size: 30px;
   line-height: 42px;
@@ -1483,9 +1488,9 @@ textarea.i-f::-webkit-scrollbar-thumb {
 .footer-grid {
   display: grid;
   grid-template-areas: "logo nav1 nav2 mail" "copyright nav1 nav2 mail";
-  grid-template-columns: 23% 23% 23% 23%;
+  grid-template-columns: 23% 15% 15% 23%;
   grid-template-rows: 50%;
-  grid-gap: 2.66667%;
+  grid-gap: 8%;
 }
 
 .footer-logo {
@@ -1575,7 +1580,7 @@ textarea.i-f::-webkit-scrollbar-thumb {
 }
 
 .footer-mail p {
-  margin-bottom: 14px;
+  margin-bottom: 20px;
 }
 
 .footer-mail p:last-child {
@@ -1624,6 +1629,12 @@ textarea.i-f::-webkit-scrollbar-thumb {
   display: block;
 }
 
+.header-logo {
+  -webkit-flex-basis: 320px;
+      -ms-flex-preferred-size: 320px;
+          flex-basis: 320px;
+}
+
 .header-menu {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1661,10 +1672,6 @@ textarea.i-f::-webkit-scrollbar-thumb {
     max-width: 1280px;
   }
 
-  .container {
-    max-width: 1024px;
-  }
-
   .title.f80-l88 {
     font-size: 64px;
     line-height: 74px;
@@ -1676,8 +1683,12 @@ textarea.i-f::-webkit-scrollbar-thumb {
 }
 
 @media screen and (max-width: 1280px) {
+  .container {
+    max-width: 1024px;
+  }
+
   .header-menu {
-    grid-gap: 100px;
+    grid-gap: 90px;
   }
 }
 
