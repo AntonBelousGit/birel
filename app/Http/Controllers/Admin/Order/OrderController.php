@@ -4,11 +4,14 @@ namespace App\Http\Controllers\Admin\Order;
 
 use App\Events\OrderUpdateEvent;
 use App\Events\OrderUserStatusEvent;
+use App\Events\WatchlistNotificationEvent;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Orders\Admin\AdminUpdateLfoOrderRequest;
 use App\Http\Requests\Orders\Admin\AdminUpdateOrderRequest;
 use App\Models\Company;
 use App\Models\CompanyOrder;
+use App\Models\Watchlist;
+use Arr;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -60,6 +63,7 @@ class OrderController extends Controller
      */
     public function update(AdminUpdateOrderRequest $adminUpdateOrderRequest, CompanyOrder $order)
     {
+
         $data = $adminUpdateOrderRequest->validated();
         $this->updateOrder($data, $order);
         return back();
@@ -100,7 +104,6 @@ class OrderController extends Controller
         }
 
         $order->update($data);
-
         $this->notification($order, $user);
     }
 
@@ -108,8 +111,12 @@ class OrderController extends Controller
     {
         if ($order->status == 'active') {
             $company = $order->company;
+            $type = $order->type;
+            $company_id = $order->company_id;
+
             $message = 'Your    ' . $order->type . ' on "' . $company?->companyName . '" has been placed on platform.';
             event(new OrderUserStatusEvent($user, $message));
+            event(new WatchlistNotificationEvent($user,$company_id,$type,$company?->companyName));
         }
 
         if ($order->status == 'inactive') {

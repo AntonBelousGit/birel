@@ -8,12 +8,14 @@ use App\Events\Order40daysLeftEvent;
 use App\Events\OrderUpdateEvent;
 use App\Events\OrderUserStatusEvent;
 use App\Events\SendFormMailEvent;
+use App\Events\WatchlistNotificationEvent;
 use App\Listeners\AllUserNotificationListener;
 use App\Listeners\NewOrderHasBeenModeratedChangeCountOrders;
 use App\Listeners\Order30daysLeftListener;
 use App\Listeners\Order40daysLeftListener;
 use App\Listeners\OrderUserStatusListener;
 use App\Listeners\SendFormMailListener;
+use App\Listeners\WatchlistNotificationListener;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -46,6 +48,9 @@ class EventServiceProvider extends ServiceProvider
         ],
         Order40daysLeftEvent::class => [
             Order40daysLeftListener::class,
+        ],
+        WatchlistNotificationEvent::class => [
+            WatchlistNotificationListener::class,
         ]
     ];
 
