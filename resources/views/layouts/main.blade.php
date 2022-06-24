@@ -54,7 +54,7 @@
                                                 class="t-sb purple1">{{ substr(Auth::user()->surname, 0,1)}}{{substr(Auth::user()->name, 0,1)}}</span>
                                         </div>
                                         <span class="notice_item-link t-r purple3">
-                                            {{$notification->data['message']}}
+                                            {!! $notification->data['message'] !!}
                                         </span>
                                         <span
                                             class="notice_item-hour t-r">{{$notification->created_at->diffForHumans()}}</span>

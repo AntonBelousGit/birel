@@ -57,14 +57,20 @@
                         <li><a href="{{ route('admin-orders',['type'=>'LFO']) }}">LFO</a></li>
                     </ul>
                 </li>
-                <li @if(Route::is('question.*')) class="active" @endif>
+                <li @if(Route::is('notification')) class="active" @endif>
+                    <a href="#notification" class="has-arrow"><i class="icon-settings"></i><span>Notification</span></a>
+                    <ul>
+                        <li><a href="{{ route('notification') }}">Create</a></li>
+                    </ul>
+                </li>
+                <li @if(Route::is('question')) class="active" @endif>
                     <a href="#question" class="has-arrow"><i class="icon-question"></i><span>Question</span></a>
                     <ul>
                         <li><a href="{{ route('question.index') }}">All</a></li>
                     </ul>
                 </li>
-                <li @if(Route::is('settings.*')) class="active" @endif>
-                    <a href="#question" class="has-arrow"><i class="icon-settings"></i><span>Settings</span></a>
+                <li @if(Route::is('settings')) class="active" @endif>
+                    <a href="#settings" class="has-arrow"><i class="icon-settings"></i><span>Settings</span></a>
                     <ul>
                         <li><a href="{{ route('settings') }}">All</a></li>
                     </ul>

@@ -10,9 +10,7 @@ use App\Http\Requests\Orders\UpdateOrderLFORequest;
 use App\Http\Requests\Orders\UpdateOrderRequest;
 use App\Models\Company;
 use App\Models\CompanyOrder;
-use DB;
 use Illuminate\Support\Facades\Gate;
-use Illuminate\Support\Facades\Request;
 
 class ManageOrderController extends Controller
 {

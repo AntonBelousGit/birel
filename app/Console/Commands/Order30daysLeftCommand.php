@@ -2,24 +2,25 @@
 
 namespace App\Console\Commands;
 
+use App\Events\Order30daysLeftEvent;
 use App\Models\CompanyOrder;
 use Illuminate\Console\Command;
 
-class OrderExpireCommand extends Command
+class Order30daysLeftCommand extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'order:expire';
+    protected $signature = 'order:30days';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'If 45 day left, change order status to history';
+    protected $description = 'Order 30 days left';
 
     /**
      * Create a new command instance.
@@ -34,11 +35,11 @@ class OrderExpireCommand extends Command
     /**
      * Execute the console command.
      *
-     * @return void
+     * @return int
      */
     public function handle()
     {
-        CompanyOrder::where('publish_time', '<', date('Y-m-d', strtotime("-45 days")))->where('status','active')->update(['status' => 'history']);
-        dd(date('Y-m-d', strtotime("-45 days")));
+        $order = CompanyOrder::with('user', 'company')->where('status', 'active')->where('publish_time', '=', date('Y-m-d', strtotime("-30 days")))->get();
+        event(new Order30daysLeftEvent($order));
     }
 }

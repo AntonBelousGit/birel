@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Action\Filter\GetFilteredCompanyAction;
-use App\Action\Filter\GetFilteredOneCompanyAction;
 use App\Action\Filter\SetFilterAction;
 use App\Http\Filters\CompanyFilter;
-use App\Http\Filters\OneCompanyFilter;
 use App\Http\Requests\Filter\OneCompanyFilterRequest;
 use App\Http\Requests\Orders\FilterRequest;
 use App\Http\Requests\StoreCompanyRequest;
@@ -15,14 +13,12 @@ use App\Http\Resources\CompanyFinanceInfoResource;
 use App\Models\Category;
 use App\Models\Company;
 use App\Models\Setting;
-use App\Models\Traits\Filterable;
 use App\Models\Watchlist;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Throwable;
 
 class CompanyController extends Controller

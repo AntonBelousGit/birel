@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\Category\CategoryController;
 use App\Http\Controllers\Admin\Company\CompanyController;
 use App\Http\Controllers\Admin\Company\Finance\CompanyFinanceController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\Notification\AdminNotificationController;
 use App\Http\Controllers\Admin\Order\OrderController;
 use App\Http\Controllers\Admin\Question\QuestionController;
 use App\Http\Controllers\Admin\Setting\SettingController;
@@ -43,5 +44,10 @@ Route::group(['middleware' => 'is_admin'], function () {
     Route::controller(SettingController::class)->prefix('setting')->group(function () {
         Route::get('/all','index')->name('settings');
         Route::patch('{setting}', 'updateSetting')->name('setting-update');
+    });
+
+    Route::controller(AdminNotificationController::class)->prefix('notification')->group(function () {
+        Route::get('/','index')->name('notification');
+        Route::post('/','sendNotification')->name('notification.send');
     });
 });
