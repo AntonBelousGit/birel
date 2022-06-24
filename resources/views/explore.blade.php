@@ -3,7 +3,6 @@
 @section('content')
 <link rel="stylesheet" href="{{ asset('css/pages/page-explore.min.css') }}">
 <main class="bg-site">
-
 	<div class="container">
 		<div class="content-cont">
 	<div class="content-list-item">
@@ -22,7 +21,6 @@
 		<div class="item_img">
 			<picture><source srcset="./img/Frame6.webp" type="image/webp"><img src="./img/Frame6.png" alt=""></picture>
 		</div>
-
 	</div>
 	<div class="content-list-item">
 		<div class="item_text">
@@ -52,13 +50,11 @@
 	<div class="content-list-item">
 		<div class="item_text">
 			<p class="t-r f24-l42 purple2"> ⁃ On the pages of companies, it is possible to contact participants who placed orders, so participants can establish contact with each other directly, find mutually beneficial conditions, provide information about themselves and proceed to the transaction process.
-
 			</p>
 		</div>
 		<div class="item_img">
 			<picture><source srcset="./img/Frame1.webp" type="image/webp"><img src="./img/Frame1.png" alt=""></picture>
 		</div>
-
 	</div>
 	<div class="content-list-item">
 		<div class="item_text">
@@ -75,7 +71,6 @@
 		<div class="item_img">
 			<picture><source srcset="./img/Frame3.webp" type="image/webp"><img src="./img/Frame3.png" alt=""></picture>
 		</div>
-
 	</div>
 	<div class="content-list-item">
 		<div class="item_text">
@@ -87,10 +82,8 @@
 	</div>
 </div>
 	</div>
-
 	<div class="container">
 		<div class="content-features">
-
 </div>
 	</div>
 </main>
