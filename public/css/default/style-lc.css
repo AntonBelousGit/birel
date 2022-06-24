@@ -288,6 +288,12 @@ label {
   padding-left: 350px;
 }
 
+.disabled-tab,
+.purple1.disabled-tab {
+  color: gray;
+  border-color: gray;
+}
+
 #tabs3 .nav-tabs,
 #tabs2 .nav-tabs,
 #tabs .nav-tabs {
