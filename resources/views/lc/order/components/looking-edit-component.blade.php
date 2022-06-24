@@ -63,7 +63,7 @@
                           placeholder="Enter the Text">{{$order->description}}</textarea>
             </div>
             <div class="looking-block i" id="{{$id}}">
-                <h2 class="t-sb f22-l25 purple3">Information</h2>
+                <h2 class="t-sb f22-l25 purple3">Terms</h2>
                 <ul class="nav-tabs">
                     <li class="t-m f18-l32 purple1 tab-n2 {{!empty($order->share_number)?'active':''}}">
                         Number shares

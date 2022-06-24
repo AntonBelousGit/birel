@@ -63,7 +63,7 @@
                 <textarea class="i-f f14-l16 w400 h235" name="description" placeholder="Enter the Text"></textarea>
             </div>
             <div class="looking-block i" id="tabs_looking">
-                <h2 class="t-sb f22-l25 purple3">Information</h2>
+                <h2 class="t-sb f22-l25 purple3">Terms</h2>
                 <ul class="nav-tabs">
                     <li class="t-m f18-l32 purple1 tab-n2 active">
                         Number shares

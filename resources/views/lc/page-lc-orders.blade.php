@@ -151,14 +151,14 @@
                         <td class="body-row-item">
                             <div>
                                 <div class="date">
-                                    01/01/22
+                                    {{$order->date}}
                                 </div>
                             </div>
                         </td>
                         <td class="body-row-item">
                             <div>
                                 <div class="company" data-tippy-content="{{$order->company->companyName}}">
-                                    {{$order->company->companyName}}
+                                   {{$order->company->companyName}}
                                 </div>
                             </div>
                         </td>
@@ -172,21 +172,21 @@
                         <td class="body-row-item">
                             <div>
                                 <div class="valuation">
-                                    {{$order->valuation_encode ?? '-'}}
+                                   {{$order->share_type_currency}} {{$order->valuation_encode ?? '-'}}
                                 </div>
                             </div>
                         </td>
                         <td class="body-row-item">
                             <div>
                                 <div class="volume" data-tippy-content="{{$order->volume_encode ?? '-'}}">
-                                    {{$order->volume_encode ?? '-'}}
+                                   {{$order->share_type_currency}} {{$order->volume_encode ?? '-'}}
                                 </div>
                             </div>
                         </td>
                         <td class="body-row-item">
                             <div>
                                 <div class="share-price" data-tippy-content="{{$order->share_price_encode ?? '-'}}">
-                                    {{$order->share_price_encode ?? '-'}}
+                                   {{$order->share_type_currency}} {{$order->share_price_encode ?? '-'}}
                                 </div>
                             </div>
                         </td>
