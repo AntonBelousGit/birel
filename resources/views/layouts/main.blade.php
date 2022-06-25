@@ -41,7 +41,7 @@
                     <li class="header-list-item">
                         <button id="h-n-b" class="reset-btn" type="button">
                             <i class="icon icon-bells"></i>
-                            @if (Auth::user()->unreadNotifications)
+                            @if (Auth::user()->unreadNotifications->count() != 0)
                                 <span class="counter">{{Auth::user()->unreadNotifications->count()}}</span>
                             @endif
                         </button>
