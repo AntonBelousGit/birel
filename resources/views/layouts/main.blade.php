@@ -51,10 +51,6 @@
 
 
                                     <li class="notice_item mark-as-read {{$notification->read_at ?? 'new'}}"  data-id="{{$notification->id}}">
-                                        <div class="user-avatar s">
-                                            <span
-                                                class="t-sb purple1">{{ substr(Auth::user()->surname, 0,1)}}{{substr(Auth::user()->name, 0,1)}}</span>
-                                        </div>
                                         <span class="notice_item-link t-r purple3">
                                             {!! $notification->data['message'] !!}
                                         </span>
@@ -107,13 +103,13 @@
                 </div>
             </div>
         </div>
-        <div class="notification active">
-            <p class="t-r f14-l16 purple1">Your order has been successfully saved and will be published after moderator
-                approval</p>
-            <button class="reset-btn" type="button">
-                <i class="icon icon-close-green"></i>
-            </button>
-        </div>
+<!--         <div class="notification active"> -->
+<!--             <p class="t-r f14-l16 purple1">Your order has been successfully saved and will be published after moderator -->
+<!--                 approval</p> -->
+<!--             <button class="reset-btn" type="button"> -->
+<!--                 <i class="icon icon-close-green"></i> -->
+<!--             </button> -->
+<!--         </div> -->
     </div>
 </header>
 <main class="bg-site">

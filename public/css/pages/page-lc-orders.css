@@ -573,7 +573,7 @@
 
 .orders-wrapper .orders-philter-btn {
   background-color: #F6F4FF;
-  padding: 8px;
+  padding: 5px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -597,6 +597,12 @@
   -webkit-transform: scale(1.1);
       -ms-transform: scale(1.1);
           transform: scale(1.1);
+}
+
+.orders-wrapper .orders-philter-btn-s {
+  height: 40px;
+  -webkit-border-radius: 6px;
+          border-radius: 6px;
 }
 
 .orders-wrapper .table-wrapper {
