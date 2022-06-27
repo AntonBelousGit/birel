@@ -7,8 +7,6 @@ use App\Http\Views\Composers\CategoryComposer;
 use App\Models\Contact;
 use App\Models\JsonCountry;
 use App\Models\Setting;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use Throwable;
 
