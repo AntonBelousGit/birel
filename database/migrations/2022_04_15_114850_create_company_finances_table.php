@@ -20,7 +20,7 @@ class CreateCompanyFinancesTable extends Migration
             $table->string('transaction_name');
             $table->integer('amount_raised');
             $table->integer('raised_to_date');
-            $table->bigInteger('issue_price');
+            $table->float('issue_price');
             $table->bigInteger('post_money_valuation');
             $table->text('key_investors');
             $table->timestamps();
