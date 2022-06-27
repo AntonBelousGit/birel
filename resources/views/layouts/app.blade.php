@@ -143,12 +143,12 @@
                 </a>
                 <ul class="list-soc">
                     <li class="list-soc-item">
-                        <a href="#">
+                        <a href="{{$settings?->attribute_name['linkedin']}}">
                             <i class="icon-linkidin"></i>
                         </a>
                     </li>
                     <li class="list-soc-item">
-                        <a href="#">
+                        <a href="{{$settings?->attribute_name['twitter']}}">
                             <i class="icon-telegram-1"></i>
                         </a>
                     </li>
