@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\Frontend\Order\ManageOrderController;
 use App\Http\Controllers\Frontend\Question\QuestionController;
 use App\Http\Controllers\HomeController;
@@ -32,11 +33,13 @@ Route::controller(MainController::class)->group(function () {
 Auth::routes(['verify' => true]);
 
 Route::group(['middleware' => ['auth', 'user']], function () {
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-    Route::resource('/companies', App\Http\Controllers\CompanyController::class);
-    Route::get('/companies/{company}/get-finance/', [App\Http\Controllers\CompanyController::class, 'getFinance'])->name('company.get-finance');
-    Route::post('/companies/wali', [App\Http\Controllers\CompanyController::class, 'wali'])->name('wali');
-    Route::post('/companies/wali-delete/{id}', [App\Http\Controllers\CompanyController::class, 'deleteWali'])->name('delete-wali');
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+    Route::resource('/companies', CompanyController::class);
+    Route::post('/companies/store-lfo', [CompanyController::class, 'storeLfo'])->name('companies.store-lfo');
+    Route::get('/companies/{company}/get-finance/', [CompanyController::class, 'getFinance'])->name('company.get-finance');
+    Route::post('/companies/wali', [CompanyController::class, 'wali'])->name('wali');
+    Route::post('/companies/wali-delete/{id}', [CompanyController::class, 'deleteWali'])->name('delete-wali');
 
 
     Route::controller(HomeController::class)->group(function () {

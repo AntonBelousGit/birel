@@ -26,7 +26,6 @@ class CreateOrderRequest extends FormRequest
             'share_price'           => 'filled|integer',
             'share_number'          => 'required_unless:share_price,null',
             'valuation'             => 'filled'
-
         ];
     }
 
