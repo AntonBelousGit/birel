@@ -22,7 +22,7 @@ class CreateCompanyFinancesTable extends Migration
             $table->integer('raised_to_date');
             $table->bigInteger('issue_price');
             $table->bigInteger('post_money_valuation');
-            $table->string('key_investors');
+            $table->text('key_investors');
             $table->timestamps();
         });
     }
