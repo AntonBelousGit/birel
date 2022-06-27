@@ -6,7 +6,7 @@ function openMenuTr(container) {
 	if (typeof container === 'string') {
 		container = document.querySelector(container);
 	}
-	const btn = container.querySelectorAll('.arrow-icon-purple');
+	const btn = container.querySelectorAll('.body-row.visible[data-id]');
 	const row = container.querySelectorAll('.visible');
 
 
