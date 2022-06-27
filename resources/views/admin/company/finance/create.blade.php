@@ -59,7 +59,7 @@
                             <hr>
                             <div class="form-group">
                                 <label for="price_per_share">Price Per Share</label>
-                                <input id="price_per_share" type="number" min="0" step="0.1" class="form-control" name="info[price_per_share]"
+                                <input id="price_per_share" type="number" min="0" step="0.01" class="form-control" name="info[price_per_share]"
                                        placeholder="Price Per Share" value="{{old('info[price_per_share]')}}">
                             </div>
                             <div class="form-group">
