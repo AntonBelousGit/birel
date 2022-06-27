@@ -13,7 +13,7 @@
     <script>
         let token = '{{csrf_token()}}';
         let finance = 1; // data-id строки финансирования
-        let items = document.querySelectorAll('.arrow-icon-purple[data-id]');
+        let items = document.querySelectorAll('.body-row.visible[data-id]');
         let item = [].map.call(items, function (e) {
             e.addEventListener('click', () => {
                 $.ajax({

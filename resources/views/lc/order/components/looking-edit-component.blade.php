@@ -98,7 +98,7 @@
                             <label class="t-r f16-l24 purple1" for="share_number">Share Number</label>
                             <input class="i-f w400 m-bid" type="number" id="share_number"
                                    placeholder="Enter the Number" name="share_number" required
-                                   value="{{$order->share_number}}">
+                                   value="{{$order->share_number}}" step="0.001">
                         </div>
                     @endif
                 </div>
@@ -125,7 +125,7 @@
                         <div class="looking-block-info">
                             <label class="t-r f16-l24 purple1" for="volume23">Block Volume</label>
                             <input class="i-f w400" type="number" id="volume23" name="volume" placeholder="Enter the Volume" required
-                                   value="{{$order->volume}}">
+                                   value="{{$order->volume}}" step="0.001">
                         </div>
                     @endif
                 </div>

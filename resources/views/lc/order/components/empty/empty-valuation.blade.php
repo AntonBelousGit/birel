@@ -10,6 +10,6 @@
     </div>
     <div class="edit-wrapper-box">
         <label for="valuation" class="t-r f16-l24 purple1">Valuation</label>
-        <input id="valuation" type="text" class="i-f " disabled value="" placeholder="Enter the Valuation">
+        <input id="valuation" type="text" class="i-f " disabled value="" placeholder="Enter the Valuation" step="0.001">
     </div>
 </div>

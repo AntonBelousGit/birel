@@ -88,7 +88,7 @@
                     <div class="looking-block-info">
                         <label class="t-r f16-l24 purple1" for="share_number_looking">Share Number</label>
                         <input class="i-f w400" type="number" id="share_number_looking" name="share_number"
-                            placeholder="Enter the Number" required>
+                            placeholder="Enter the Number" required step="0.001">
                     </div>
                 </div>
                 <div class="content-t2">
@@ -103,7 +103,7 @@
                     </div>
                     <div class="looking-block-info">
                         <label class="t-r f16-l24 purple1" for="volume_looking">Volume</label>
-                        <input class="i-f w400" type="number" id="volume_looking" placeholder="Enter the Volume">
+                        <input class="i-f w400" type="number" id="volume_looking" placeholder="Enter the Volume" step="0.001">
                     </div>
                 </div>
             </div>

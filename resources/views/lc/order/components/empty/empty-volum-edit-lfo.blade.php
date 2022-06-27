@@ -10,6 +10,6 @@
 </div>
 <div class="looking-block-info">
     <label class="t-r f16-l24 purple1" for="volume2">Block Volume</label>
-    <input class="i-f w400" type="number" id="volume2" placeholder="Enter the Volume">
+    <input class="i-f w400" type="number" id="volume2" placeholder="Enter the Volume" step="0.001">
 </div>
 

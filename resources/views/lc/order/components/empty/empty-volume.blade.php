@@ -6,6 +6,6 @@
     </div>
     <div class="edit-wrapper-box">
         <label for="volume2" class="t-r f16-l24 purple1">Volume</label>
-        <input id="volume2" type="text" class="i-f " disabled value="" placeholder="Enter the Volume">
+        <input id="volume2" type="text" class="i-f " disabled value="" placeholder="Enter the Volume" step="0.001">
     </div>
 </div>

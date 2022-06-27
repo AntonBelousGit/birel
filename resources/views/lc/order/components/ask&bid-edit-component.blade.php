@@ -84,17 +84,17 @@
                                 </div>
                             </div>
                             <label class="t-r f16-l24 purple1" for="{{$share_price}}">Share Price</label>
-                            <input class="i-f w400 m-bid" type="number" id="{{$share_price}}"
+                            <input class="i-f w400 m-bid" type="number" step="0.001" id="{{$share_price}}"
                                    placeholder="Enter the Price" name="share_price" required value="{{$order->share_price}}">
                         </div>
                         <div class="ask-block-info">
                             <label class="t-r f16-l24 purple1" for="{{$share_number}}">Share Number</label>
-                            <input class="i-f w400 m-bid" type="number" id="{{$share_number}}"
+                            <input class="i-f w400 m-bid" type="number" step="0.001" id="{{$share_number}}"
                                    placeholder="Enter the Number" name="share_number" required value="{{$order->share_number}}">
                         </div>
                         <div class="ask-block-info">
                             <label class="t-r f16-l24 purple1" for="{{$volume}}">Volume</label>
-                            <input class="i-f w400" type="number" id="{{$volume}}" name="volume" required value="{{$order->volume}}" placeholder="Enter the Volume">
+                            <input class="i-f w400" type="number" step="0.001" id="{{$volume}}" name="volume" required value="{{$order->volume}}" placeholder="Enter the Volume">
                             <button class="btn-green w265" type="button" id="{{$btn_calc}}">
                                 Calculate
                             </button>
@@ -119,12 +119,12 @@
                         </div>
                         <div class="ask-block-info">
                             <label class="t-r f16-l24 purple1" for="{{$volume2}}">Volume</label>
-                            <input class="i-f w400" type="number" id="{{$volume2}}" placeholder="Enter the Volume" name="volume"  value="{{$order->volume}}">
+                            <input class="i-f w400" type="number"  step="0.001" id="{{$volume2}}" placeholder="Enter the Volume" name="volume"  value="{{$order->volume}}">
                         </div>
                         <div class="ask-block-info">
                             <label class="t-r f16-l24 purple1" for="{{$share_number2}}">Valuation</label>
                             <input class="i-f w400" type="number" id="{{$share_number2}}" name="valuation"
-                                   placeholder="Enter the Valuation" value="{{$order->valuation}}">
+                                   placeholder="Enter the Valuation" step="0.001" value="{{$order->valuation}}">
                         </div>
                     @endif
                 </div>
