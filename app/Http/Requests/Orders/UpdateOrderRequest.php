@@ -23,9 +23,9 @@ class UpdateOrderRequest extends FormRequest
             'type'                  => 'filled|in:ASK,BID,TENDER,LOOKING',
             'sub_type'              => 'filled|in:ASK,BID',
             'volume'                => 'required',
-            'share_price'           => 'present|nullable|integer',
+            'share_price'           => 'present|nullable',
             'share_number'          => 'required_unless:share_price,null',
-            'valuation'             => 'present|nullable|integer'
+            'valuation'             => 'present|nullable'
 
         ];
     }
