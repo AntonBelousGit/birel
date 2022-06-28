@@ -17,10 +17,10 @@ class AdminUpdateOrderRequest extends FormRequest
 //            'type'                  => 'filled|in:ASK,BID,TENDER,LOOKING',
 //            'sub_type'              => 'filled|in:ASK,BID',
             'volume'                => 'required',
-            'share_price'           => 'filled|integer',
+            'share_price'           => 'filled',
             'share_number'          => 'required_unless:share_price,null',
             'status'                => 'required',
-            'valuation'             => 'filled|integer'
+            'valuation'             => 'filled'
         ];
     }
 
