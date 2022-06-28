@@ -25,7 +25,7 @@
                     },
                     success: function (response) {
                         result = response.data;
-                        let elem = e.parentNode.parentNode.nextElementSibling;
+                        let elem = e.nextElementSibling;
                         elem.innerHTML = '<td class="body-row-item" colspan="2">' +
                             '<ul class="list-t">' +
                             '<li class="list-t-item">' +
