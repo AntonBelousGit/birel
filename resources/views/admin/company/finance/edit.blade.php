@@ -61,6 +61,24 @@
                                 <input id="price_per_share" type="number" min="0" step="0.001" class="form-control" name="info[price_per_share]"
                                        placeholder="Price Per Share" value="{{old('info["price_per_share"]',$finance->info?->price_per_share)}}">
                             </div>
+                            <div class="wrapper-radio">
+                                <div class="form_radio">
+                                    <label class="t-r f14-l16 purple1">
+                                        <input type="radio" id="share_type_currency1" name="info[type_currency]"
+                                               value="$" @if ($finance->info?->type_currency == '$') checked @endif>
+                                        <span></span>
+                                        $
+                                    </label>
+                                </div>
+                                <div class="form_radio">
+                                    <label class="t-r f14-l16 purple1">
+                                        <input type="radio" id="share_type_currency2" name="info[type_currency]"
+                                               value="€" @if ($finance->info?->type_currency == '€') checked @endif>
+                                        <span></span>
+                                        €
+                                    </label>
+                                </div>
+                            </div>
                             <div class="form-group">
                                 <label for="liquidation_pref_order">Liquidation Pref Order</label>
                                 <input id="liquidation_pref_order" type="text"  class="form-control" name="info[liquidation_pref_order]"

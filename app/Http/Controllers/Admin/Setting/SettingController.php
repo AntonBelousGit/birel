@@ -11,8 +11,7 @@ class SettingController extends Controller
 
     public function index()
     {
-        $settings = Setting::where('setting_name', 'email')->first();
-
+        $settings = Setting::whereIn('setting_name', ['email','social'])->get();
         return view('admin.setting.edit',compact('settings'));
     }
 

@@ -10,6 +10,7 @@
     <script src="{{asset('js/pages/page-lc-add-order-all.min.js')}}" type="module"></script>
 
 @endsection
+
 @section('content')
 
 <!-- <section class="add"> -->
@@ -66,8 +67,10 @@
 <!--			</li>-->
 		</ul>
 		<div class="content-t active">
-			<form class="add-order-ask" action="#">
+			<form class="add-order-ask" action="{{ route('companies.store') }}" method="POST">
+                @csrf
 				<div class="ask">
+                    <input type="hidden" name="type" value="BID">
 					<div class="ask-block c-n">
 						<h2 class="t-sb f22-l25 purple3 ">
 							Add company
@@ -77,11 +80,11 @@
 						</p>
 						<div class="ask-block-inp">
 							<label class="t-r f16-l24 purple1" for="companyName_bid">Company name</label>
-							<input class="i-f w400" type="text" id="companyName_bid" placeholder="Enter the Name" name="" required>
+							<input class="i-f w400" type="text" id="companyName_bid" placeholder="Enter the Name" name="companyName" required>
 						</div>
 						<div class="ask-block-inp">
 							<label class="t-r f16-l24 purple1" for="companyAddress_bid">Company web address</label>
-							<input class="i-f w400" type="text" id="companyAddress_bid" placeholder="Enter the Web Address" name="" required>
+							<input class="i-f w400" type="text" id="companyAddress_bid" placeholder="Enter the Web Address" name="companyAddress" required>
 						</div>
 					</div>
 					<div class="ask-block d-s">
@@ -186,8 +189,10 @@
 			</form>
 		</div>
 		<div class="content-t ">
-			<form class="add-order-ask" action="#">
-				<div class="ask">
+			<form class="add-order-ask" action="{{ route('companies.store') }}" method="POST">
+                @csrf
+                <input type="hidden" name="type" value="ASK">
+                <div class="ask">
 					<div class="ask-block c-n">
 						<h2 class="t-sb f22-l25 purple3 ">
 							Add company
@@ -197,11 +202,11 @@
 						</p>
 						<div class="ask-block-inp">
 							<label class="t-r f16-l24 purple1" for="companyName_ask">Company name</label>
-							<input class="i-f w400" type="text" id="companyName_ask" placeholder="Enter the Name" name="" required>
+							<input class="i-f w400" type="text" id="companyName_ask" placeholder="Enter the Name" name="companyName" required>
 						</div>
 						<div class="ask-block-inp">
 							<label class="t-r f16-l24 purple1" for="companyAddress_ask">Company web address</label>
-							<input class="i-f w400" type="text" id="companyAddress_ask" placeholder="Enter the Web Address" name="" required>
+							<input class="i-f w400" type="text" id="companyAddress_ask" placeholder="Enter the Web Address" name="companyAddress" required>
 						</div>
 					</div>
 					<div class="ask-block d-s">
@@ -303,9 +308,11 @@
 			</form>
 		</div>
 		<div class="content-t ">
-			<form class="add-order-looking" action="#">
+			<form class="add-order-looking" action="{{ route('companies.store-lfo') }}" method="POST">
+                @csrf
 				<div class="looking">
-					<div class="looking-block c-n">
+                    <input type="hidden" name="type" value="LFO">
+                    <div class="looking-block c-n">
 						<h2 class="t-sb f22-l25 purple3 ">
 							Add company
 						</h2>
@@ -314,11 +321,11 @@
 						</p>
 						<div class="looking-block-inp">
 							<label class="t-r f16-l24 purple1" for="companyName_looking">Company name</label>
-							<input class="i-f w400" type="text" id="companyName_looking" placeholder="Enter the Name" required name="">
+							<input class="i-f w400" type="text" id="companyName_looking" placeholder="Enter the Name" required name="companyName">
 						</div>
 						<div class="looking-block-inp">
 							<label class="t-r f16-l24 purple1" for="companyAddress_looking">Company web address</label>
-							<input class="i-f w400" type="text" id="companyAddress_looking" placeholder="Enter the Web Address" required name="">
+							<input class="i-f w400" type="text" id="companyAddress_looking" placeholder="Enter the Web Address" required name="companyAddress">
 						</div>
 					</div>
 					<div class="looking-block o">
