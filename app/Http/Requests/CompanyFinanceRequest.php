@@ -16,7 +16,8 @@ class CompanyFinanceRequest extends FormRequest
             'issue_price' => 'required',
             'post_money_valuation' => 'required',
             'key_investors' => 'required',
-            'info' => 'required'
+            'info' => 'required',
+            'info.type_currency' => 'filled|in:$,€',
         ];
     }
 
