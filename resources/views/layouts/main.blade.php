@@ -58,7 +58,7 @@
                                             class="notice_item-hour t-r">{{$notification->created_at->diffForHumans()}}</span>
                                     </li>
                                 @empty
-                                    Notification
+                                    <li class="t-r f16-l24 purple3">Notification</li>
                                 @endforelse
                             </ul>
                         </div>

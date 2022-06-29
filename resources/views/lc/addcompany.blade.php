@@ -13,43 +13,7 @@
 
 @section('content')
 
-<!-- <section class="add"> -->
-<!-- 	<div class="add-company"> -->
-<!-- 		@if(URL::previous() != route('companies.create')) -->
-<!-- 		<div class="back-link active"> -->
-<!--             <a class="t-r f18-l32 purple4 " href="{{ URL::previous() }}"> -->
-<!--                 <i class="icon icon-arrow-left"></i> -->
-<!--                 Come back -->
-<!--             </a> -->
-<!--         </div> -->
-<!-- 		@endif -->
-<!-- 		<div class="add-company-wrapper"> -->
-<!-- 			<h2 class="t-sb f22-l25 purple3 "> -->
-<!-- 				Add company -->
-<!-- 			</h2> -->
-<!-- 			<p class="t-r f16-l24 purple2"> -->
-<!-- 				You can add a company. To do this, you need to correctly enter its name and the address of its website. -->
-<!-- 			</p> -->
-<!-- 			<form class="add-company-form" action="{{route('companies.store')}}" method="POST"> -->
-<!-- 				@csrf -->
-<!-- 				<ul class="form-list"> -->
-<!-- 					<li class="form-list-item"> -->
-<!-- 						<label class="t-r f16-l24 purple1"  for="companyName">Company name</label> -->
-<!-- 						<input class="i-f" type="text" id="companyName" placeholder="Placeholder text" name="companyName"> -->
-<!-- 					</li> -->
-<!-- 					<li class="form-list-item"> -->
-<!-- 						<label class="t-r f16-l24 purple1"  for="companyAddress">Company address</label> -->
-<!-- 						<input class="i-f" type="text" id="companyAddress" placeholder="Placeholder" name="companyAddress"> -->
-<!-- 					</li> -->
-<!-- 				</ul> -->
-<!-- 				<button class="btn btn-green"> -->
-<!-- 					<span class="f24-l32">+</span> -->
-<!-- 					Add company -->
-<!-- 				</button> -->
-<!-- 			</form> -->
-<!-- 		</div> -->
-<!-- 	</div> -->
-<!-- </section> -->
+
 <section class="add">
 	<div class="add-order" id="tabs">
 		<ul class="tab-wrapper nav-tabs w310">
@@ -62,9 +26,9 @@
 			<li class="t-m f18-l32 purple1 tab-n ">
 				Looking for an offer
 			</li>
-<!--			<li class="t-m f18-l32 purple1 tab-n ">-->
-<!--				Tender-->
-<!--			</li>-->
+<!-- 			<li class="t-m f18-l32 purple1 tab-n "> -->
+<!--                 Tender -->
+<!--             </li> -->
 		</ul>
 		<div class="content-t active">
 			<form class="add-order-ask" action="{{ route('companies.store') }}" method="POST">
@@ -145,15 +109,15 @@
 									</div>
 								</div>
 								<label class="t-r f16-l24 purple1" for="share_price_bid">Share Price</label>
-								<input class="i-f w400 m-bid" type="number" id="share_price_bid" placeholder="Enter the Price" name="share_price" required>
+								<input class="i-f w400 m-bid" type="number" id="share_price_bid" placeholder="Enter the Price" name="share_price" required step="0.001">
 							</div>
 							<div class="ask-block-info">
 								<label class="t-r f16-l24 purple1" for="share_number_bid">Share Number</label>
-								<input class="i-f w400 m-bid" type="number" id="share_number_bid" placeholder="Enter the Number" name="share_number" required>
+								<input class="i-f w400 m-bid" type="number" id="share_number_bid" placeholder="Enter the Number" name="share_number" required step="0.001">
 							</div>
 							<div class="ask-block-info">
 								<label class="t-r f16-l24 purple1" for="volume_bid">Volume</label>
-								<input class="i-f w400" type="number" id="volume_bid" placeholder="Enter the Volume" name="volume" required>
+								<input class="i-f w400" type="number" id="volume_bid" placeholder="Enter the Volume" name="volume" required step="0.001">
 								<button class="btn-green w265" type="button" id="btn_calc_bid">
 									Calculate
 								</button>
@@ -172,11 +136,11 @@
 							</div>
 							<div class="ask-block-info">
 								<label class="t-r f16-l24 purple1" for="volume_bid2">Volume</label>
-								<input class="i-f w400" type="number" id="volume_bid2" placeholder="Enter the Volume">
+								<input class="i-f w400" type="number" id="volume_bid2" placeholder="Enter the Volume" step="0.001">
 							</div>
 							<div class="ask-block-info">
 								<label class="t-r f16-l24 purple1" for="share_number_bid2">Valuation</label>
-								<input class="i-f w400" type="number" id="share_number_bid2" placeholder="Enter the Valuation">
+								<input class="i-f w400" type="number" id="share_number_bid2" placeholder="Enter the Valuation" step="0.001">
 							</div>
 						</div>
 					</div>
@@ -267,15 +231,15 @@
 									</div>
 								</div>
 								<label class="t-r f16-l24 purple1" for="share_price_ask">Share Price</label>
-								<input class="i-f w400 m-bid" type="number" id="share_price_ask" name="share_price" placeholder="Enter the Price" required>
+								<input class="i-f w400 m-bid" type="number" id="share_price_ask" name="share_price" placeholder="Enter the Price" required step="0.001">
 							</div>
 							<div class="ask-block-info">
 								<label class="t-r f16-l24 purple1" for="share_number_ask">Share Number</label>
-								<input class="i-f w400 m-bid" type="number" id="share_number_ask" name="share_number" placeholder="Enter the Number" required>
+								<input class="i-f w400 m-bid" type="number" id="share_number_ask" name="share_number" placeholder="Enter the Number" required step="0.001">
 							</div>
 							<div class="ask-block-info">
 								<label class="t-r f16-l24 purple1" for="volume_ask">Volume</label>
-								<input class="i-f w400" type="number" id="volume_ask" name="volume" placeholder="Enter the Volume" required>
+								<input class="i-f w400" type="number" id="volume_ask" name="volume" placeholder="Enter the Volume" required step="0.001">
 								<button class="btn-green w265" type="button" id="btn_calc_ask">
 									Calculate
 								</button>
@@ -291,11 +255,11 @@
 							</div>
 							<div class="ask-block-info">
 								<label class="t-r f16-l24 purple1" for="volume_ask2">Volume</label>
-								<input class="i-f w400" type="number" id="volume_ask2" placeholder="Enter the Volume">
+								<input class="i-f w400" type="number" id="volume_ask2" placeholder="Enter the Volume" step="0.001">
 							</div>
 							<div class="ask-block-info">
 								<label class="t-r f16-l24 purple1" for="share_number_ask2">Valuation</label>
-								<input class="i-f w400" type="number" id="share_number_ask2" placeholder="Enter the Valuation">
+								<input class="i-f w400" type="number" id="share_number_ask2" placeholder="Enter the Valuation" step="0.001">
 							</div>
 						</div>
 					</div>
@@ -392,7 +356,7 @@
 							</div>
 							<div class="looking-block-info">
 								<label class="t-r f16-l24 purple1" for="share_number_looking">Share Number</label>
-								<input class="i-f w400" type="text" id="share_number_looking"  name="share_number" placeholder="Enter the Number"required>
+								<input class="i-f w400" type="text" id="share_number_looking"  name="share_number" placeholder="Enter the Number"required step="0.001">
 							</div>
 						</div>
 						<div class="content-t2">
@@ -407,7 +371,7 @@
 							</div>
 							<div class="looking-block-info">
 								<label class="t-r f16-l24 purple1" for="volume_looking">Block Volume</label>
-								<input class="i-f w400" type="text" id="volume_looking" placeholder="Enter the Volume">
+								<input class="i-f w400" type="text" id="volume_looking" placeholder="Enter the Volume" step="0.001">
 							</div>
 						</div>
 					</div>

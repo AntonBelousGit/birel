@@ -153,7 +153,7 @@
                     </ul>
                     <div class="form-checkbox">
                         <label class="checkbox-ios">
-                            <span class="t-r f16-l24 purple1">Я хочу получать новостную рассылку</span>
+                            <span class="t-r f16-l24 purple1">I want to receive the newsletter</span>
                             <input type="checkbox"
                                    name="receive_news" {{ (Auth::user()->receive_news == 'on') ? 'checked="checked"': ''}}>
                             <span class="checkbox-ios-switch"></span>

@@ -44,15 +44,17 @@ tippy('[data-tippy-content]',
 		dynamicTitle: true,
 	});
 
-// const btn_filter = document.querySelectorAll('.company-philter-btn')
-//
-// for ( let i = 0 ; i< btn_filter.length ; i++ ) {
-// 	btn_filter[i].addEventListener('click', () => {
-// 		const href = document.location.href;
-// 		console.log(href);
-// 		const back_href = href.split("?");
-// 		console.log(back_href);
-// 		document.location.href = 'https://birel.speedshop.pp.ua/companies';
-// 	})
-// }
+const btn_filter = document.querySelector('.company-philter-btn');
+const btn_filter2 = document.querySelector('.company-philter-btn.h');
+clearFilter(btn_filter);
+clearFilter(btn_filter2);
 
+
+
+function clearFilter(btn) {
+	btn.addEventListener('click', () => {
+		const href_init = document.location.href;
+		let init = href_init.split('?');
+		document.location.href = init[0];
+	})
+}

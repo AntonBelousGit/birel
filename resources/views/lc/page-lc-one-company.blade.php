@@ -583,7 +583,7 @@
                             <button class="company-philter-btn-s btn btn-green w140" type="submit">
                                 Filter
                             </button>
-                            <button class="company-philter-btn" type="button">
+                            <button class="company-philter-btn h" type="button">
                                 Clear filters
                                 <i class="icon icon-close-green"></i>
                             </button>
