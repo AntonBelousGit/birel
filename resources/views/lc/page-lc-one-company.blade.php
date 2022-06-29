@@ -25,6 +25,7 @@
                     },
                     success: function (response) {
                         result = response.data;
+                        console.log(result);
                         let elem = e.nextElementSibling;
                         elem.innerHTML = '<td class="body-row-item" colspan="2">' +
                             '<ul class="list-t">' +
@@ -33,6 +34,7 @@
                             'Price Per Share' +
                             '</div>' +
                             '<div class="designation-meanings">' +
+                            result.type_currency +
                             result.price_per_share +
                             '</div>' +
                             '</li>' +

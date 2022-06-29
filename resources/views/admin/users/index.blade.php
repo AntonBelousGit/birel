@@ -26,15 +26,7 @@
                             <h2>Basic Table <small>Basic example without any additional modification classes</small></h2>
                             <ul class="header-dropdown dropdown dropdown-animated scale-left">
                                 <li> <a href="javascript:void(0);" data-toggle="cardloading" data-loading-effect="pulse"><i class="icon-refresh"></i></a></li>
-                                <li><a href="javascript:void(0);" class="full-screen"><i class="icon-size-fullscreen"></i></a></li>
-                                <li class="dropdown">
-                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="javascript:void(0);">Action</a></li>
-                                        <li><a href="javascript:void(0);">Another Action</a></li>
-                                        <li><a href="javascript:void(0);">Something else</a></li>
-                                    </ul>
-                                </li>
+
                             </ul>
                         </div>
                         <div class="body">
