@@ -18,7 +18,7 @@
         }
         </style>
             <div class="user_div">
-                {{ Auth::user()->surname}} {{substr(Auth::user()->name, 0,1)}}.
+                Admin
             </div>
         </div>
         <nav id="left-sidebar-nav" class="sidebar-nav">
