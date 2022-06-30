@@ -10,7 +10,9 @@ class OneCompanyFilterRequest extends FormRequest
     {
         return [
             'type' => '',
-            'sort' => ''
+            'sort' => '',
+            'type_history' => '',
+            'sort_history' => '',
         ];
     }
 

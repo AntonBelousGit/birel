@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Models\Traits\Filterable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Facades\Auth;
 
 class Company extends Model
@@ -36,6 +37,10 @@ class Company extends Model
     public function orders()
     {
         return $this->hasMany(CompanyOrder::class,'company_id')->where('status','active');
+    }
+    public function history(): HasMany
+    {
+        return $this->hasMany(CompanyOrder::class,'company_id')->where('status' , 'history');
     }
 
     public function wali()

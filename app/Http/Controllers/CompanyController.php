@@ -77,7 +77,7 @@ class CompanyController extends Controller
     {
         $data = $request->validated();
         $company = Company::create($request->validated());
-        CompanyOrder::create($data + ['company_id' => $company->id, 'user_id'=> auth()->id()]);
+        CompanyOrder::create($data + ['company_id' => $company->id, 'user_id' => auth()->id()]);
         return redirect()->route('companies.index');
     }
 
@@ -85,7 +85,7 @@ class CompanyController extends Controller
     {
         $data = $request->validated();
         $company = Company::create($request->validated());
-        CompanyOrder::create($data + ['company_id' => $company->id, 'user_id'=> auth()->id()]);
+        CompanyOrder::create($data + ['company_id' => $company->id, 'user_id' => auth()->id()]);
         return redirect()->route('companies.index');
     }
 
@@ -101,20 +101,20 @@ class CompanyController extends Controller
         $data = $request->all();
         $company = Company::find($id);
         $queryOrders = $company->orders();
+        $queryHistory = $company->history();
 
-        if (isset($data['type']) && $data['type'] !== '--') {
-            $queryOrders->where('type', $data['type']);
-        }
-        if (isset($data['sort']) && $data['sort'] === 'Data') {
-            $queryOrders->orderByDesc('publish_time');
-        }
-        if (isset($data['sort']) && $data['sort'] === 'Type') {
-            $queryOrders->orderByDesc('share_type');
-        }
-        if (!isset($data['sort']) && !isset($data['type'])) {
-            $queryOrders->orderByDesc('created_at');
-        }
+        if (isset($data['type']) && $data['type'] !== '--') $queryOrders->where('type', $data['type']);
+        if (isset($data['sort']) && $data['sort'] === 'Data') $queryOrders->orderByDesc('publish_time');
+        if (isset($data['sort']) && $data['sort'] === 'Type') $queryOrders->orderByDesc('share_type');
+        if (!isset($data['sort']) && !isset($data['type'])) $queryOrders->orderByDesc('created_at');
+
+        if (isset($data['type_history']) && $data['type_history'] !== '--') $queryHistory->where('type', $data['type_history']);
+        if (isset($data['sort_history']) && $data['sort_history'] === 'Data') $queryHistory->orderByDesc('publish_time');
+        if (isset($data['sort_history']) && $data['sort_history'] === 'Type') $queryHistory->orderByDesc('share_type');
+        if (!isset($data['sort_history']) && !isset($data['type_history'])) $queryHistory->orderByDesc('created_at');
+
         $company->setRelation('orders', $queryOrders->paginate(10, ['*'], 'orders')->withQueryString());
+        $company->setRelation('history', $queryHistory->paginate(10, ['*'], 'history')->withQueryString());
         $company->setRelation('finance', $company->finance()->paginate(10, ['*'], 'finance')->withQueryString());
         $check_isset = Watchlist::where(['user_id' => auth()->id(), 'company_id' => $id])->first(['id', 'type']);
         return view('lc.page-lc-one-company', compact('company', 'check_isset'));
