@@ -67,10 +67,10 @@
                                             <th>{{$loop->iteration}}</th>
                                             <td>{{$item->date}}</td>
                                             <td>{{$item->transaction_name}}</td>
-                                            <td>{{$item->amount_raised}}</td>
-                                            <td>{{$item->raised_to_date}}</td>
-                                            <td>{{number_format($item->issue_price)}}</td>
-                                            <td>{{number_format($item->post_money_valuation)}}</td>
+                                            <td>{{$item->amount_raised_encode}}</td>
+                                            <td>{{$item->raised_to_date_encode}}</td>
+                                            <td>{{$item->issue_price}}</td>
+                                            <td>{{$item->post_money_valuation_encode}}</td>
                                             <td>{{$item->key_investors}}</td>
                                             <td>
                                                 <a href="{{ route('company.id.financing.edit',['company' => $id, 'companyFinance' => $item]) }}"> Edit </a>
