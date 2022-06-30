@@ -21,6 +21,11 @@ class Watchlist extends Model
         return $this->belongsTo(Company::class);
     }
 
+    public function scopeStatus($query)
+    {
+        $query->where('status', 1);
+    }
+
     public function users(): BelongsTo
     {
         return $this->belongsTo(User::class,'user_id');

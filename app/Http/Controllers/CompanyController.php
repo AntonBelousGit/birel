@@ -6,8 +6,6 @@ use App\Action\Filter\GetFilteredCompanyAction;
 use App\Action\Filter\SetFilterAction;
 use App\Http\Filters\CompanyFilter;
 use App\Http\Requests\Filter\OneCompanyFilterRequest;
-use App\Http\Requests\Orders\CreateOrderLfoRequest;
-use App\Http\Requests\Orders\CreateOrderRequest;
 use App\Http\Requests\Orders\FilterRequest;
 use App\Http\Requests\StoreCompanyLfoRequest;
 use App\Http\Requests\StoreCompanyRequest;
@@ -21,7 +19,6 @@ use App\Models\Watchlist;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Throwable;
@@ -52,7 +49,9 @@ class CompanyController extends Controller
         $data = $request->all();
         $categories = Category::all();
         $companies = $companyAction->handle($action->handle(CompanyFilter::class, $data));
-        $watchlist = Watchlist::where('user_id', auth()->id())->with('company.category', 'company.orders')->paginate(16, ['*'], 'watchlist')->withQueryString();
+        $watchlist = Watchlist::where('user_id', auth()->id())->with('company.category', 'company.orders')->whereHas('company', function ($q) {
+            $q->where('status',1);
+        })->paginate(16, ['*'], 'watchlist')->withQueryString();
         $setting = $this->setting;
         return view('lc.companies', compact('companies', 'categories', 'watchlist', 'setting'));
     }
@@ -78,6 +77,22 @@ class CompanyController extends Controller
         $data = $request->validated();
         $company = Company::create($request->validated());
         CompanyOrder::create($data + ['company_id' => $company->id, 'user_id' => auth()->id()]);
+        try {
+            $check_isset = Watchlist::where(['user_id' => auth()->id(), 'company_id' => $company->id])->count();
+
+            if ($check_isset) {
+                return redirect()->route('companies.index');
+            }
+
+            Watchlist::create([
+                'user_id' => auth()->id(),
+                'company_id' => $company->id,
+                'type' => 'All',
+            ]);
+
+        } catch (Throwable $exception) {
+            report($exception);
+        }
         return redirect()->route('companies.index');
     }
 
@@ -86,6 +101,23 @@ class CompanyController extends Controller
         $data = $request->validated();
         $company = Company::create($request->validated());
         CompanyOrder::create($data + ['company_id' => $company->id, 'user_id' => auth()->id()]);
+
+        try {
+            $check_isset = Watchlist::where(['user_id' => auth()->id(), 'company_id' => $company->id])->count();
+
+            if ($check_isset) {
+                return redirect()->route('companies.index');
+            }
+
+            Watchlist::create([
+                'user_id' => auth()->id(),
+                'company_id' => $company->id,
+                'type' => 'All',
+            ]);
+        } catch (Throwable $exception) {
+            report($exception);
+        }
+
         return redirect()->route('companies.index');
     }
 

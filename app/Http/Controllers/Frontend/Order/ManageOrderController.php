@@ -10,7 +10,9 @@ use App\Http\Requests\Orders\UpdateOrderLFORequest;
 use App\Http\Requests\Orders\UpdateOrderRequest;
 use App\Models\Company;
 use App\Models\CompanyOrder;
+use App\Models\Watchlist;
 use Illuminate\Support\Facades\Gate;
+use Throwable;
 
 class ManageOrderController extends Controller
 {
@@ -32,13 +34,48 @@ class ManageOrderController extends Controller
 
     public function storeOrder(CreateOrderRequest $createOrderRequest)
     {
-        (new CompanyOrder())->create($createOrderRequest->validated());
+        $data = $createOrderRequest->validated();
+        CompanyOrder::create($data);
+
+        try {
+            $check_isset = Watchlist::where(['user_id' => auth()->id(), 'company_id' => $data['company_id']])->count();
+
+            if ($check_isset) {
+                return redirect()->route('orders');
+            }
+            Watchlist::create([
+                'user_id' => auth()->id(),
+                'company_id' => $data['company_id'],
+                'type' => 'All',
+            ]);
+
+        } catch (Throwable $exception) {
+            report($exception);
+        }
+
         return redirect()->route('orders');
     }
 
     public function storeLfo(CreateOrderLfoRequest $createOrderLfoRequest)
     {
-        (new CompanyOrder())->create($createOrderLfoRequest->validated());
+        $data = $createOrderLfoRequest->validated();
+
+        try {
+            $check_isset = Watchlist::where(['user_id' => auth()->id(), 'company_id' => $data['company_id']])->count();
+
+            if ($check_isset) {
+                return redirect()->route('orders');
+            }
+            Watchlist::create([
+                'user_id' => auth()->id(),
+                'company_id' => $data['company_id'],
+                'type' => 'All',
+            ]);
+
+        } catch (Throwable $exception) {
+            report($exception);
+        }
+
         return redirect()->route('orders');
     }
 
