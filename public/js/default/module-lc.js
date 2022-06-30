@@ -106,13 +106,16 @@ function calculate(btn,share_price,share_number,volume) {
 			errorCalc.innerText = 'No count when 3 fields are filled';
 		} else if(sharePrice !== null && sharePrice !== 0 && shareNumber !== null && shareNumber !== 0) {
 			errorCalc.innerText = '';
-			volume.value = sharePrice * shareNumber;
+			let result = sharePrice * shareNumber;
+			volume.value = result.toFixed(3);
 		} else if (sharePrice !== null && sharePrice !== 0 && volume1 !== null && volume1 !== 0) {
 			errorCalc.innerText = '';
-			share_number.value =  volume1 / sharePrice;
+			let result = volume1 / sharePrice;
+			share_number.value =  result.toFixed(3);
 		} else if (volume1 !== null && volume1 !== 0 && shareNumber !== null && shareNumber !== 0) {
 			errorCalc.innerText = '';
-			share_price.value = volume1 / shareNumber ;
+			let result = volume1 / shareNumber ;
+			share_price.value = result.toFixed(3);
 		}
 	}
 }
