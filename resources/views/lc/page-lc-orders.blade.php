@@ -6,6 +6,8 @@
 @section('scripts')
     <script src="{{asset('/js/lib/propper.min.js')}}"></script>
     <script src="{{asset('/js/lib/tippy.min.js')}}"></script>
+    <script src="{{asset('js/pages/page-lc-orders.min.js')}}"></script>
+
     <script>
         tippy('[data-tippy-content]',
             {
@@ -19,39 +21,48 @@
     </script>
 @endsection
 @section('content')
+    @php
+        $type = $_GET['type'] ?? '';
+        $sort = $_GET['sort']?? '';
+        $search = $_GET['search']?? '';
+    @endphp
     <div class="orders-wrapper">
         <div class="orders-search">
-            <form class="orders-search-form w310" action="#">
-                <input class="i-f2" type="search" placeholder="Search" required>
+            <form class="orders-search-form w310" action="{{ route('orders') }}">
+                <input class="i-f2" type="search" name="search" value="{{$search}}" placeholder="Search" required>
                 <button class="reset-btn">
                     <i class="icon icon-search"></i>
                 </button>
             </form>
         </div>
-        <div class="orders-philter">
-            <label class="orders-philter-select">
-                <select class="js-example-basic-single">
-                    <option value="0">3D Printing</option>
-                    <option value="1">Advertising</option>
-                    <option value="2">Aerospace</option>
-                    <option value="3">Analytics/Big Data</option>
-                </select>
-            </label>
-            <label class="orders-philter-select">
-                <select class="js-example-basic-single-no-search">
-                    <option value="0" selected disabled>--</option>
-                    <option value="1">Data</option>
-                    <option value="2">Type</option>
-                </select>
-            </label>
-            <button class="orders-philter-btn-s btn btn-green w140" type="submit">
-                Filter
-            </button>
-            <button class="orders-philter-btn" type="button">
-                Clear filters
-                <i class="icon icon-close-green"></i>
-            </button>
-        </div>
+
+        <form action="{{ route('orders') }}" method="GET">
+            <div class="orders-philter">
+                <label class="orders-philter-select">
+                    <select class="js-example-basic-single" name="type">
+                        <option value="0" selected disabled>--</option>
+                        <option value="BID" {{$type == 'BID'?'selected':''}}>Bid</option>
+                        <option value="ASK" {{$type == 'ASK'?'selected':''}}>Ask</option>
+                        <option value="LFO" {{$type == 'LFO'?'selected':''}}>Looking for an offer</option>
+                        <option value="TD" {{$type == 'TD'?'selected':''}}>Tender</option>
+                    </select>
+                </label>
+                <label class="orders-philter-select">
+                    <select class="js-example-basic-single-no-search" name="sort">
+                        <option value="0" selected disabled>--</option>
+                        <option value="Data" {{$sort == 'Data'?'selected':''}}>Data</option>
+                        <option value="Type" {{$sort == 'Type'?'selected':''}}>Type</option>
+                    </select>
+                </label>
+                <button class="orders-philter-btn-s btn btn-green w140" type="submit">
+                    Filter
+                </button>
+                <button class="orders-philter-btn" type="button">
+                    Clear filters
+                    <i class="icon icon-close-green"></i>
+                </button>
+            </div>
+        </form>
         <div class="table-wrapper">
             <table class="color-t table">
                 <thead class="table-head">
@@ -182,14 +193,14 @@
                         <td class="body-row-item">
                             <div>
                                 <div class="volume" data-tippy-content="{{$order->volume_encode ?? '-'}}">
-                                   {{$order->volume_encode ? $order->share_type_currency.$order->volume_encode : '-'}}
+                                    {{$order->volume_encode ? $order->share_type_currency.$order->volume_encode : '-'}}
                                 </div>
                             </div>
                         </td>
                         <td class="body-row-item">
                             <div>
                                 <div class="share-price" data-tippy-content="{{$order->share_price_encode ?? '-'}}">
-                                   {{$order->share_price_encode ? $order->share_type_currency.$order->share_price_encode  : '-'}}
+                                    {{$order->share_price_encode ? $order->share_type_currency.$order->share_price_encode  : '-'}}
                                 </div>
                             </div>
                         </td>
@@ -222,16 +233,21 @@
                                             data-tippy-content="{{$order->description}}"
                                         @endif
                                     >
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip0_792_40686)">
-                                        <path d="M12 22.5C9.21523 22.5 6.54451 21.3938 4.57538 19.4246C2.60625 17.4555 1.5 14.7848 1.5 12C1.5 9.21523 2.60625 6.54451 4.57538 4.57538C6.54451 2.60625 9.21523 1.5 12 1.5C14.7848 1.5 17.4555 2.60625 19.4246 4.57538C21.3938 6.54451 22.5 9.21523 22.5 12C22.5 14.7848 21.3938 17.4555 19.4246 19.4246C17.4555 21.3938 14.7848 22.5 12 22.5ZM12 24C15.1826 24 18.2348 22.7357 20.4853 20.4853C22.7357 18.2348 24 15.1826 24 12C24 8.8174 22.7357 5.76516 20.4853 3.51472C18.2348 1.26428 15.1826 0 12 0C8.8174 0 5.76516 1.26428 3.51472 3.51472C1.26428 5.76516 0 8.8174 0 12C0 15.1826 1.26428 18.2348 3.51472 20.4853C5.76516 22.7357 8.8174 24 12 24Z" fill="#2A206A"/>
-                                        <path d="M13.3949 9.882L9.95993 10.3125L9.83693 10.8825L10.5119 11.007C10.9529 11.112 11.0399 11.271 10.9439 11.7105L9.83693 16.9125C9.54593 18.258 9.99443 18.891 11.0489 18.891C11.8664 18.891 12.8159 18.513 13.2464 17.994L13.3784 17.37C13.0784 17.634 12.6404 17.739 12.3494 17.739C11.9369 17.739 11.7869 17.4495 11.8934 16.9395L13.3949 9.882ZM13.4999 6.75C13.4999 7.14782 13.3419 7.52936 13.0606 7.81066C12.7793 8.09196 12.3978 8.25 11.9999 8.25C11.6021 8.25 11.2206 8.09196 10.9393 7.81066C10.658 7.52936 10.4999 7.14782 10.4999 6.75C10.4999 6.35218 10.658 5.97064 10.9393 5.68934C11.2206 5.40804 11.6021 5.25 11.9999 5.25C12.3978 5.25 12.7793 5.40804 13.0606 5.68934C13.3419 5.97064 13.4999 6.35218 13.4999 6.75Z" fill="#2A206A"/>
-                                        </g>
-                                        <defs>
-                                        <clipPath id="clip0_792_40686">
-                                        <rect width="24" height="24" fill="white"/>
-                                        </clipPath>
-                                        </defs>
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_792_40686)">
+                                                <path
+                                                    d="M12 22.5C9.21523 22.5 6.54451 21.3938 4.57538 19.4246C2.60625 17.4555 1.5 14.7848 1.5 12C1.5 9.21523 2.60625 6.54451 4.57538 4.57538C6.54451 2.60625 9.21523 1.5 12 1.5C14.7848 1.5 17.4555 2.60625 19.4246 4.57538C21.3938 6.54451 22.5 9.21523 22.5 12C22.5 14.7848 21.3938 17.4555 19.4246 19.4246C17.4555 21.3938 14.7848 22.5 12 22.5ZM12 24C15.1826 24 18.2348 22.7357 20.4853 20.4853C22.7357 18.2348 24 15.1826 24 12C24 8.8174 22.7357 5.76516 20.4853 3.51472C18.2348 1.26428 15.1826 0 12 0C8.8174 0 5.76516 1.26428 3.51472 3.51472C1.26428 5.76516 0 8.8174 0 12C0 15.1826 1.26428 18.2348 3.51472 20.4853C5.76516 22.7357 8.8174 24 12 24Z"
+                                                    fill="#2A206A"/>
+                                                <path
+                                                    d="M13.3949 9.882L9.95993 10.3125L9.83693 10.8825L10.5119 11.007C10.9529 11.112 11.0399 11.271 10.9439 11.7105L9.83693 16.9125C9.54593 18.258 9.99443 18.891 11.0489 18.891C11.8664 18.891 12.8159 18.513 13.2464 17.994L13.3784 17.37C13.0784 17.634 12.6404 17.739 12.3494 17.739C11.9369 17.739 11.7869 17.4495 11.8934 16.9395L13.3949 9.882ZM13.4999 6.75C13.4999 7.14782 13.3419 7.52936 13.0606 7.81066C12.7793 8.09196 12.3978 8.25 11.9999 8.25C11.6021 8.25 11.2206 8.09196 10.9393 7.81066C10.658 7.52936 10.4999 7.14782 10.4999 6.75C10.4999 6.35218 10.658 5.97064 10.9393 5.68934C11.2206 5.40804 11.6021 5.25 11.9999 5.25C12.3978 5.25 12.7793 5.40804 13.0606 5.68934C13.3419 5.97064 13.4999 6.35218 13.4999 6.75Z"
+                                                    fill="#2A206A"/>
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_792_40686">
+                                                    <rect width="24" height="24" fill="white"/>
+                                                </clipPath>
+                                            </defs>
                                         </svg>
                                     </button>
                                 </div>
