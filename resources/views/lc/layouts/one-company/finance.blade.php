@@ -88,28 +88,28 @@
                     <td class="body-row-item">
                         <div>
                             <div class="amount-raised-t">
-                                {{$finance->amount_raised}}
+                                {{ $finance->amount_raised_encode ? $finance->type_currency.$finance->amount_raised_encode:'-'}}
                             </div>
                         </div>
                     </td>
                     <td class="body-row-item">
                         <div>
                             <div class="raised-to-date-t">
-                                {{$finance->raised_to_date}}
+                                {{ $finance->raised_to_date_encode ? $finance->type_currency.$finance->raised_to_date_encode:'-'}}
                             </div>
                         </div>
                     </td>
                     <td class="body-row-item">
                         <div>
                             <div class="issue-price-t">
-                                {{$finance->issue_price}}
+                                {{ $finance->issue_price ? $finance->type_currency.$finance->issue_price:'-'}}
                             </div>
                         </div>
                     </td>
                     <td class="body-row-item">
                         <div>
                             <div class="post-money-valuation-t">
-                                {{$finance->post_money_valuation}}
+                                {{ $finance->post_money_valuation_encode ? $finance->type_currency.$finance->post_money_valuation_encode:'-'}}
                             </div>
                         </div>
                     </td>

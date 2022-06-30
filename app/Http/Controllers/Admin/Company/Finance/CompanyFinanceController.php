@@ -50,6 +50,7 @@ class CompanyFinanceController extends Controller
      *
      * @param Company $company
      * @param CompanyFinanceRequest $companyFinanceRequest
+     * @param SyncFinancingTotalFundingAction $action
      * @return RedirectResponse
      */
     public function store(Company $company, CompanyFinanceRequest $companyFinanceRequest, SyncFinancingTotalFundingAction $action)
@@ -69,7 +70,7 @@ class CompanyFinanceController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @return void
+     * @return View
      */
     public function edit(Company $company, $companyFinance)
     {
@@ -84,6 +85,7 @@ class CompanyFinanceController extends Controller
      * @param CompanyFinanceRequest $companyFinanceRequest
      * @param Company $company
      * @param $companyFinance
+     * @param SyncFinancingTotalFundingAction $action
      * @return RedirectResponse
      */
     public function update(CompanyFinanceRequest $companyFinanceRequest, Company $company, $companyFinance, SyncFinancingTotalFundingAction $action)

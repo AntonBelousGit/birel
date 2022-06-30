@@ -24,6 +24,24 @@
                                 <input type="date" class="form-control" name="date" placeholder="Date"
                                        value="{{old('date',$finance->date->format('Y-m-d'))}}" id="date">
                             </div>
+                            <div class="wrapper-radio">
+                                <div class="form_radio">
+                                    <label class="t-r f14-l16 purple1">
+                                        <input type="radio" id="share_type_currency1" name="type_currency]"
+                                               value="$" @if ($finance->type_currency == '$') checked @endif>
+                                        <span></span>
+                                        $
+                                    </label>
+                                </div>
+                                <div class="form_radio">
+                                    <label class="t-r f14-l16 purple1">
+                                        <input type="radio" id="share_type_currency2" name="type_currency"
+                                               value="€" @if ($finance->type_currency == '€') checked @endif>
+                                        <span></span>
+                                        €
+                                    </label>
+                                </div>
+                            </div>
                             <div class="form-group">
                                 <label for="transaction_name">Transaction Name</label>
                                 <input type="text" class="form-control" name="transaction_name"
@@ -58,7 +76,7 @@
                             <hr>
                             <div class="form-group">
                                 <label for="price_per_share">Price Per Share</label>
-                                <input id="price_per_share" type="number" min="0" step="0.001" class="form-control" name="info[price_per_share]"
+                                <input id="price_per_share" type="text" class="form-control" name="info[price_per_share]"
                                        placeholder="Price Per Share" value="{{old('info["price_per_share"]',$finance->info?->price_per_share)}}">
                             </div>
                             <div class="wrapper-radio">
@@ -86,7 +104,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="dividend_rate">Dividend Rate</label>
-                                <input id="dividend_rate" type="number" min="0" step="0.1" class="form-control" name="info[dividend_rate]"
+                                <input id="dividend_rate" type="text" class="form-control" name="info[dividend_rate]"
                                        placeholder="Dividend Rate" value="{{old('info[dividend_rate]',$finance->info?->dividend_rate)}}">
                             </div>
                             <div class="form-group">
@@ -101,7 +119,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="liquidation_pref_as_multiplier">Liquidation Pref As Multiplier</label>
-                                <input id="liquidation_pref_as_multiplier" type="number" min="0" step="0.1" class="form-control" name="info[liquidation_pref_as_multiplier]"
+                                <input id="liquidation_pref_as_multiplier" type="text" class="form-control" name="info[liquidation_pref_as_multiplier]"
                                        placeholder="Liquidation Pref As Multiplier" value="{{old('info[liquidation_pref_as_multiplier]',$finance->info?->liquidation_pref_as_multiplier)}}">
                             </div>
                             <div class="form-group">
@@ -111,12 +129,12 @@
                             </div>
                             <div class="form-group">
                                 <label for="percent_shares_outstanding">Percent Shares Outstanding</label>
-                                <input id="percent_shares_outstanding" type="number" min="0" step="0.1" class="form-control" name="info[percent_shares_outstanding]"
+                                <input id="percent_shares_outstanding" type="text" class="form-control" name="info[percent_shares_outstanding]"
                                        placeholder="Percent Shares Outstanding" value="{{old('info[percent_shares_outstanding]',$finance->info?->percent_shares_outstanding)}}">
                             </div>
                             <div class="form-group">
                                 <label for="conversion_rate">Conversion Rate</label>
-                                <input id="conversion_rate" type="number" min="0" step="0.1" class="form-control" name="info[conversion_rate]"
+                                <input id="conversion_rate" type="text" class="form-control" name="info[conversion_rate]"
                                        placeholder="Conversion Rate" value="{{old('info[conversion_rate]',$finance->info?->conversion_rate)}}">
                             </div>
                             <div class="form-group">
