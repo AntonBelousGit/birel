@@ -251,7 +251,7 @@
                             <div>
                                 <div>
                                     <label class="checkbox-ios">
-                                        <input type="checkbox">
+                                        <input type="checkbox" id="{{$order->id}}">
                                         <span class="checkbox-ios-switch"></span>
                                     </label>
                                 </div>

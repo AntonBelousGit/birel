@@ -94,6 +94,12 @@ function addGreenLine(elem) {
 		if (textArr[i]== 'birel') {
 			textArr[i] = `<span>${textArr[i]}</span>`;
 		}
+		if (textArr[i]== 'is') {
+			textArr[i] = `<span>${textArr[i]}</span>`;
+		}
+		if (textArr[i]== 'free,') {
+			textArr[i] = `<span>${textArr[i]}</span>`;
+		}
 		if (textArr[i]== 'helps') {
 			textArr[i] = `<span>${textArr[i]}</span>`;
 		}
