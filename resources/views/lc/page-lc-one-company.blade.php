@@ -166,6 +166,10 @@
                         <span>Total funding: </span>
                         <span>${{$company->total_funding}}</span>
                     </p>
+                    <p class="card-sub-title t-r f16-l24 purple3">
+                        <span>Address: </span>
+                        <span>{{$company->companyAddress}}</span>
+                    </p>
                     <picture>
                         <source srcset="{{asset('storage/companies/'.$company->image)  }}" type="image/webp">
                         <img class="card-img" src="{{asset('storage/companies/'.$company->image)  }}" alt=""
