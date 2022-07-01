@@ -3,6 +3,7 @@
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\Frontend\Order\ManageOrderController;
 use App\Http\Controllers\Frontend\Question\QuestionController;
+use App\Http\Controllers\Frontend\Settings\SettingController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
@@ -63,7 +64,6 @@ Route::group(['middleware' => ['auth', 'user']], function () {
 //Question popup
     Route::post('/question', QuestionController::class)->name('frontend-question');
 
-    Route::get('/settings', function () {
-        return view('lc.page-lc-notification');
-    })->name('settings-notification');
+    Route::get('/settings', [SettingController::class,'index'])->name('settings-notification');
+    Route::post('/settings', [SettingController::class,'store'])->name('settings-notification-store');
 });

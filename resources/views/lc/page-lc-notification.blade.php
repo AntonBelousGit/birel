@@ -19,31 +19,32 @@
 			<h2 class="notification-cont-title t-sb f22-l25 black2">
 				Notification settings
 			</h2>
-			<form action="#" class="notification-cont-form">
+			<form action="{{ route('settings-notification-store') }}" class="notification-cont-form" method="POST">
+                @csrf
 				<div class="notification-cont-item">
 					<label class="checkbox-green">
-						<input type="checkbox" name="new_messages">
+						<input type="checkbox" name="new_message" value="1" {{$settings->new_message == 1?'checked':''}}>
 						<i></i>
 						<span class="t-r f16-l24 purple3">New messages</span>
 					</label>
 				</div>
 				<div class="notification-cont-item">
 					<label class="checkbox-green">
-						<input type="checkbox" name="companies_subscribe">
+						<input type="checkbox" name="new_order_subscribe_company" value="1" {{$settings->new_order_subscribe_company == 1?'checked':''}}>
 						<i></i>
 						<span class="t-r f16-l24 purple3">New orders in companies you subscribe to</span>
 					</label>
 				</div>
 				<div class="notification-cont-item">
 					<label class="checkbox-green">
-						<input type="checkbox" name="placed_order">
+						<input type="checkbox" name="new_order_company_have_your_order" value="1" {{$settings->new_order_company_have_your_order == 1?'checked':''}}>
 						<i></i>
 						<span class="t-r f16-l24 purple3">New orders in the companies for which you have placed an order</span>
 					</label>
 				</div>
 				<div class="notification-cont-item">
 					<label class="checkbox-green">
-						<input type="checkbox" name="service_updates">
+						<input type="checkbox" name="new_system_message" value="1" {{$settings->new_system_message == 1?'checked':''}}>
 						<i></i>
 						<span class="t-r f16-l24 purple3">Service updates</span>
 					</label>
