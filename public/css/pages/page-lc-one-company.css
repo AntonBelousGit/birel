@@ -434,13 +434,13 @@
      text-overflow: ellipsis;
 }
 
+.table-two .table-body2 .body-row {
+  cursor: pointer;
+}
+
 .table-two .table-body2 .body-row-item:first-child > div {
   padding-left: 0;
   text-align: right;
-}
-
-.table-two .table-body2 .body-row-item:last-child > div.arrow-icon-purple {
-  cursor: pointer;
 }
 
 .table-two .table-body2 .body-row-item:last-child > div.arrow-icon-purple:hover:before {
@@ -474,7 +474,9 @@
 }
 
 .table-two .table-body2 .body-row-item .key-investors-t {
-  width: 560px;
+  width: 100%;
+  max-width: 736px;
+  min-width: 560px;
 }
 
 .table-two .table-body2 .body-row-item > div > div {
@@ -785,7 +787,7 @@
 }
 
 .one-company-tab .tab-wrapper {
-  width: 370px;
+  width: 230px;
   margin-bottom: 55px;
 }
 
