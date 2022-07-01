@@ -17,6 +17,9 @@ class AllUserNotificationListener implements ShouldQueue
     public function handle(AllUserNotificationEvent $event)
     {
         $when = Carbon::now()->addSecond();
-        Notification::send(User::all(), (new UserNotification($event->message))->delay($when));
+        $users = User::whereHas('userSettingNotifications', function ($q) {
+            $q->where('new_system_message',1);
+        })->get();
+        Notification::send($users, (new UserNotification($event->message))->delay($when));
     }
 }

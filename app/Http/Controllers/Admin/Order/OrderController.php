@@ -116,7 +116,7 @@ class OrderController extends Controller
 
             $message = 'Your    ' . $order->type . ' on "' . $company?->companyName . '" has been placed on platform.';
             event(new OrderUserStatusEvent($user, $message));
-            event(new WatchlistNotificationEvent($user,$company_id,$type,$company?->companyName));
+            event(new WatchlistNotificationEvent($user,$company_id,$type,$company));
         }
 
         if ($order->status == 'inactive') {
