@@ -16,10 +16,10 @@ class CreateUserSettingNotificationsTable extends Migration
         Schema::create('user_setting_notifications', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
-            $table->boolean('new_message')->default(0);
-            $table->boolean('new_order_subscribe_company')->default(0)->comment('New orders in companies you subscribe to');
-            $table->boolean('new_order_company_have_your_order')->default(0)->comment('New orders in the companies for which you have placed an order');
-            $table->boolean('new_system_message')->default(0);
+            $table->boolean('new_message')->default(1);
+            $table->boolean('new_order_subscribe_company')->default(1)->comment('New orders in companies you subscribe to');
+            $table->boolean('new_order_company_have_your_order')->default(1)->comment('New orders in the companies for which you have placed an order');
+            $table->boolean('new_system_message')->default(1);
             $table->timestamps();
         });
     }
