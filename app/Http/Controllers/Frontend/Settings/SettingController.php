@@ -13,7 +13,6 @@ class SettingController extends Controller
         return view('lc.page-lc-notification',compact('settings'));
     }
     public function store(StoreSettingNotificationRequest $request){
-//        dd($request->validated());
         auth()->user()->userSettingNotifications->update($request->validated());
         return back();
     }
