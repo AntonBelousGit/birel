@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Events\AllUserNotificationEvent;
+use App\Events\NewChatMessageEvent;
 use App\Events\Order30daysLeftEvent;
 use App\Events\Order40daysLeftEvent;
 use App\Events\OrderUpdateEvent;
@@ -10,6 +11,7 @@ use App\Events\OrderUserStatusEvent;
 use App\Events\SendFormMailEvent;
 use App\Events\WatchlistNotificationEvent;
 use App\Listeners\AllUserNotificationListener;
+use App\Listeners\NewChatMessageListener;
 use App\Listeners\NewOrderHasBeenModeratedChangeCountOrders;
 use App\Listeners\Order30daysLeftListener;
 use App\Listeners\Order40daysLeftListener;
@@ -51,6 +53,9 @@ class EventServiceProvider extends ServiceProvider
         ],
         WatchlistNotificationEvent::class => [
             WatchlistNotificationListener::class,
+        ],
+        NewChatMessageEvent::class => [
+            NewChatMessageListener::class,
         ]
     ];
 
