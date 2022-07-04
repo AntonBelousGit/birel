@@ -1,83 +1,83 @@
 <style>
-    :root {
-        --messengerColor: {{ $messengerColor }},
-    }
+//     :root {
+//         --messengerColor: {{ $messengerColor }},
+//     }
 /* NProgress background */
 #nprogress .bar{
-	background: {{ $messengerColor }} !important;
+	background: #574cda !important;
 }
 #nprogress .peg {
-    box-shadow: 0 0 10px {{ $messengerColor }}, 0 0 5px {{ $messengerColor }} !important;
+    box-shadow: 0 0 10px #574cda, 0 0 5px #574cda !important;
 }
 #nprogress .spinner-icon {
-  border-top-color: {{ $messengerColor }} !important;
-  border-left-color: {{ $messengerColor }} !important;
+  border-top-color: #574cda !important;
+  border-left-color: #574cda !important;
 }
 
 .m-header svg{
-    color: {{ $messengerColor }};
+    color: #574cda;
 }
 
 .m-list-active,
 .m-list-active:hover,
 .m-list-active:focus{
-	background: {{ $messengerColor }};
+	background: #574cda;
 }
 
 .m-list-active b{
 	background: #fff !important;
-	color: {{ $messengerColor }} !important;
+	color: #574cda !important;
 }
 
 .messenger-list-item td b{
-    background: {{ $messengerColor }};
+    background: #574cda;
 }
 
 .messenger-infoView nav a{
-    color: {{ $messengerColor }};
+    color: #574cda;
 }
 
 .messenger-infoView-btns a.default{
-	color: {{ $messengerColor }};
+	color: #574cda;
 }
 
 .mc-sender p{
-  background: {{ $messengerColor }};
+  background: #574cda;
 }
 
 .messenger-sendCard button svg{
-    color: {{ $messengerColor }};
+    color: #574cda;
 }
 
 .messenger-listView-tabs a,
 .messenger-listView-tabs a:hover,
 .messenger-listView-tabs a:focus{
-    color: {{ $messengerColor }};
+    color: #574cda;
 }
 
 .active-tab{
-	border-bottom: 2px solid {{ $messengerColor }};
+	border-bottom: 2px solid #574cda;
 }
 
 .lastMessageIndicator{
-    color: {{ $messengerColor }} !important;
+    color: #574cda !important;
 }
 
 .messenger-favorites div.avatar{
-    box-shadow: 0px 0px 0px 2px {{ $messengerColor }};
+    box-shadow: 0px 0px 0px 2px #574cda;
 }
 
 .dark-mode-switch{
-    color: {{ $messengerColor }};
+    color: #574cda;
 }
 .m-list-active .activeStatus{
-    border-color: {{ $messengerColor }} !important;
+    border-color: #574cda !important;
 }
 
 .messenger [type='text']:focus {
-    outline: 1px solid {{ $messengerColor }};
-    border-color: {{ $messengerColor }} !important;
-    border-color: {{ $messengerColor }};
-    box-shadow: 0 0 2px {{ $messengerColor }};
+    outline: 1px solid #574cda;
+    border-color: #574cda !important;
+    border-color: #574cda;
+    box-shadow: 0 0 2px #574cda;
 }
 </style>
