@@ -69,7 +69,7 @@
                     <li class="header-list-item">
                         <a href="/chatify">
                             <i class="icon icon-mail"></i>
-                            <span class="counter">24</span>
+<!--                             <span class="counter">24</span> -->
                         </a>
                     </li>
                 </ul>

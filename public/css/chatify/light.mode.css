@@ -48,7 +48,7 @@
     border: 1px solid #eee;
 }
 .messenger-infoView > p {
-    color: #000;
+    color: #574cda;
 }
 .divider {
     border-top: 1px solid #e0e0e0;
@@ -78,7 +78,7 @@
     color: #606679;
 }
 .messenger-list-item td p {
-    color: #606679;
+    color: #574cda;
 }
 .activeStatus {
     border: 2px solid #fff;
