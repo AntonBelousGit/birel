@@ -18,13 +18,13 @@
     <script src='https://unpkg.com/nprogress@0.2.0/nprogress.js'></script>
 @endsection
 
-@section('style')
+@section('style-chatify')
     {{--     styles--}}
     <link rel='stylesheet' href='https://unpkg.com/nprogress@0.2.0/nprogress.css'/>
     <link href="{{ asset('css/chatify/style.css') }}" rel="stylesheet"/>
     <link href="{{ asset('css/chatify/'.$dark_mode.'.mode.css') }}" rel="stylesheet"/>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet"/>
-
+    <link rel="stylesheet" href="{{ asset('css/pages/page-lc-message.min.css') }}">
 
     {{--     Messenger Color Style--}}
     @include('Chatify::layouts.messengerColor')

@@ -17,10 +17,10 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <!-- Styles -->
     @yield('scripts_head')
-    @yield('style')
+    @yield('style-chatify')
     <link rel="stylesheet" href="{{asset('css/lib/select2.min.css')}}">
     <link rel="stylesheet" href="{{ asset('css/default/style-lc.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/pages/page-lc-message.min.css') }}">
+    @yield('style')
 
 </head>
 
