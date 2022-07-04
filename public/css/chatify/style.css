@@ -101,10 +101,11 @@ body {
   position: relative;
   overflow: hidden;
   width: 100%;
+    height: calc(100vh - 150px);
 }
 .messenger-messagingView .m-body {
   padding-top: 15px;
-  height: calc(100vh - 166px);
+    height: calc(100% - 192px);
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -880,25 +881,20 @@ div.loadingPlaceholder-date {
     bottom: 0;
     max-width: 334px;
   }
+.messenger-sendCard {
+    height: 90px;
 }
-@media (max-width: 980px) {
-  .messenger-listView {
-    position: fixed;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    max-width: 334px;
-  }
-  .listView-x {
-    display: block;
-  }
-  .show-listView {
-    display: inline-block;
-  }
+    .listView-x {
+        display: block;
+    }
+    .show-listView {
+        display: inline-block;
+    }
     .messenger-messagingView .m-body {
-        height: calc(100vh - 172px);
+        height: calc(100vh - 285px);
     }
 }
+
 
 @media (max-width: 680px) {
   .messenger-messagingView {
