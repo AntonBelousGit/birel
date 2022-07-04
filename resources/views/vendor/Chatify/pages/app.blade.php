@@ -1,4 +1,4 @@
-@extends('layouts.main')
+    @extends('layouts.main')
 
 @section('meta')
     {{--     Meta tags--}}
@@ -25,6 +25,7 @@
     <link href="{{ asset('css/chatify/'.$dark_mode.'.mode.css') }}" rel="stylesheet"/>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet"/>
 
+
     {{--     Messenger Color Style--}}
     @include('Chatify::layouts.messengerColor')
 @endsection
@@ -49,8 +50,6 @@
                 {{--                 Tabs--}}
                 <div class="messenger-listView-tabs">
                     <a href="#" @if($type == 'user') class="active-tab" @endif data-view="users">
-                        <span class="far fa-user"></span>All People</a>
-                    <a href="#" @if($type == 'user') class="active-tab" @endif data-view="users">
                         <span class="far fa-user"></span> People</a>
                     <a href="#" @if($type == 'group') class="active-tab" @endif data-view="groups">
                         <span class="fas fa-users"></span> Groups</a>
@@ -59,23 +58,7 @@
             {{--             tabs and lists--}}
             <div class="m-body contacts-container">
                 {{--                 Lists [Users/Group]--}}
-                {{--                 ---------------- [ All User Tab ] ------------------}}
-                <div class="@if($type == 'user') show @endif messenger-tab users-tab app-scroll" data-view="users">
 
-                    {{--                     Favorites--}}
-                    <div class="favorites-section">
-                        <p class="messenger-title">Favorites</p>
-                        <div class="messenger-favorites app-scroll-thin"></div>
-                    </div>
-
-                    {{--                     Saved Messages--}}
-                    {!! view('Chatify::layouts.listItem', ['get' => 'saved']) !!}
-
-                    {{--                     Contact--}}
-                    <div class="listOfContacts"
-                         style="width: 100%;height: calc(100% - 200px);position: relative;"></div>
-
-                </div>
                 {{--                 ---------------- [ User Tab ] ------------------}}
                 <div class="@if($type == 'user') show @endif messenger-tab users-tab app-scroll" data-view="users">
 

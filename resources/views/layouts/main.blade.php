@@ -16,11 +16,12 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <!-- Styles -->
-    <link rel="stylesheet" href="{{asset('css/lib/select2.min.css')}}">
-
-    <link rel="stylesheet" href="{{ asset('css/default/style-lc.min.css') }}">
-    @yield('style')
     @yield('scripts_head')
+    @yield('style')
+    <link rel="stylesheet" href="{{asset('css/lib/select2.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/default/style-lc.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/pages/page-lc-message.min.css') }}">
+
 </head>
 
 <body>
@@ -66,7 +67,7 @@
                         </div>
                     </li>
                     <li class="header-list-item">
-                        <a href="#">
+                        <a href="/chatify">
                             <i class="icon icon-mail"></i>
                             <span class="counter">24</span>
                         </a>
