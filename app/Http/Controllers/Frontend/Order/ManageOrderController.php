@@ -11,6 +11,8 @@ use App\Http\Requests\Orders\UpdateOrderRequest;
 use App\Models\Company;
 use App\Models\CompanyOrder;
 use App\Models\Watchlist;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
 use Throwable;
 
@@ -148,15 +150,19 @@ class ManageOrderController extends Controller
         return back();
     }
 
-//    public function orderStatus(Request $request)
-//    {
-//        if ($request->mode == 'true') {
-//            DB::table('brands')->where('id', $request->id)->update(['status' => 'active']);
-//        } else {
-//            DB::table('brands')->where('id', $request->id)->update(['status' => 'inactive']);
-//        }
-//
-//        return response()->json(['msg' => 'Successfully updated status', 'status' => true]);
-//
-//    }
+    public function orderStatus(Request $request)
+    {
+        $companyOrder = CompanyOrder::find($request->id);
+
+        if (!Gate::allows('edit-order', $companyOrder)) {
+            abort(403);
+        }
+        if ($request->mode == 'inactive') {
+            DB::table('company_orders')->where('id', $request->id)->update(['status' => 'active']);
+        } else {
+            DB::table('company_orders')->where('id', $request->id)->update(['status' => 'inactive']);
+        }
+
+        return response()->json(['msg' => 'Successfully updated status', 'status' => true]);
+    }
 }
