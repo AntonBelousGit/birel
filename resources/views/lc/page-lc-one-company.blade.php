@@ -544,10 +544,10 @@
                                         <td class="body-row-item center">
                                             <div>
                                                 <div>
-                                                    <button class="reset-btn icons" type="button"
+                                                    <a href="/chatify/{{$order->user_id}}" class="reset-btn icons" type="button"
                                                             data-tippy-content="Prompt about the possibility of sending a message">
                                                         <i class="icon icon-mail-blue"></i>
-                                                    </button>
+                                                    </a>
                                                 </div>
                                             </div>
                                         </td>
