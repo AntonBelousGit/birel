@@ -204,8 +204,7 @@
 {{--            <input type="text" class="messenger-search" placeholder="Search" />--}}
 {{--            --}}{{-- Tabs --}}
 {{--            <div class="messenger-listView-tabs">--}}
-{{--                <a href="#" @if($type == 'user') class="active-tab" @endif data-view="users">--}}
-{{--                    <span class="far fa-user"></span>All People</a>--}}
+
 {{--                <a href="#" @if($type == 'user') class="active-tab" @endif data-view="users">--}}
 {{--                    <span class="far fa-user"></span> People</a>--}}
 {{--                <a href="#" @if($type == 'group') class="active-tab" @endif data-view="groups">--}}
@@ -215,22 +214,6 @@
 {{--        --}}{{-- tabs and lists --}}
 {{--        <div class="m-body contacts-container">--}}
 {{--           --}}{{-- Lists [Users/Group] --}}
-{{--            --}}{{-- ---------------- [ All User Tab ] ---------------- --}}
-{{--                      <div class="@if($type == 'user') show @endif messenger-tab users-tab app-scroll" data-view="users">--}}
-
-{{--                          --}}{{-- Favorites --}}
-{{--                          <div class="favorites-section">--}}
-{{--                           <p class="messenger-title">Favorites</p>--}}
-{{--                           <div class="messenger-favorites app-scroll-thin"></div>--}}
-{{--                          </div>--}}
-
-{{--                          --}}{{-- Saved Messages --}}
-{{--                          {!! view('Chatify::layouts.listItem', ['get' => 'saved']) !!}--}}
-
-{{--                          --}}{{-- Contact --}}
-{{--                          <div class="listOfContacts" style="width: 100%;height: calc(100% - 200px);position: relative;"></div>--}}
-
-{{--                      </div>--}}
 {{--           --}}{{-- ---------------- [ User Tab ] ---------------- --}}
 {{--           <div class="@if($type == 'user') show @endif messenger-tab users-tab app-scroll" data-view="users">--}}
 
