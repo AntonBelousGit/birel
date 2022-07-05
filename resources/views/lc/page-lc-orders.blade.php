@@ -27,23 +27,24 @@
             for (let i = 0; i < checkbox.length; i++) {
                 const checkboxEl = checkbox[i];
                 checkboxEl.addEventListener('click', () => {
-                    const question = confirm('Do you confirm your action ?');
-                    if (question) {
-                        const idEl = checkboxEl.id
-                        $.ajax({
-                            type: "GET",
-                            url: "/order/order-status",
-                            data: {
-                                id:idEl,
-                                _token:'{{csrf_token()}}',
-                                status:question,
-                            },
-                            success: function (response) {
-                            },
-                        });
+                    if(checkboxEl.dataset.status === "active") {
+                        question = !confirm('Do you confirm your action ?');
                     } else {
-                        return;
+                        question = confirm('Do you confirm your action ?');
+
                     }
+                    const idEl = checkboxEl.id
+                    $.ajax({
+                        type: "POST",
+                        url: "/order/order-status",
+                        data: {
+                            id:idEl,
+                            _token:'{{csrf_token()}}',
+                            status:question,
+                        },
+                        success: function (response) {
+                        },
+                    });
                 });
             }
         }
