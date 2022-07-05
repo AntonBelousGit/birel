@@ -87,6 +87,7 @@ class MessagesController extends Controller
         if ($request['type'] == 'user') {
             $fetch = User::where('id', $request['id'])->first();
             if($fetch){
+                $shortName =  substr($fetch->name, 0,1) .'.'. substr($fetch->surname, 0,1).'.';
                 $userAvatar = Chatify::getUserWithAvatar($fetch)->avatar;
             }
         }
@@ -95,6 +96,7 @@ class MessagesController extends Controller
         return Response::json([
             'favorite' => $favorite,
             'fetch' => $fetch ?? [],
+            'name'  => $shortName ?? '',
             'user_avatar' => $userAvatar ?? null,
         ]);
     }
