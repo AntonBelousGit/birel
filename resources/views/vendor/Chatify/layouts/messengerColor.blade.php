@@ -75,9 +75,7 @@
 }
 
 .messenger [type='text']:focus {
-    outline: 1px solid #574cda;
     border-color: #574cda !important;
-    border-color: #574cda;
     box-shadow: 0 0 2px #574cda;
 }
 </style>
