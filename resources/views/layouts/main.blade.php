@@ -76,7 +76,7 @@
                 <div class="header-user">
                     <div class="user-avatar">
                         <span
-                            class="t-sb f18-l25 purple1"> {{ substr(Auth::user()->surname, 0,1)}}{{substr(Auth::user()->name, 0,1)}}</span>
+                            class="t-sb f18-l25 purple1"> {{substr(Auth::user()->name, 0,1)}}.{{ substr(Auth::user()->surname, 0,1)}}.</span>
                     </div>
                     <div class="header-user-menu">
                         <div class="menu-name arrow-icon">
@@ -95,7 +95,7 @@
                                 <a class="icon icon-settings" href="{{route('settings-notification')}}">Settings</a>
                             </li>
                             <li class="menu-list-item">
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST">
                                     @csrf
                                     <button type="submit" class="reset-btn icon icon-log-out-white"
                                             value="{{ __('Log out') }}">{{ __('Log out') }}</button>
