@@ -145,23 +145,27 @@
                     for (let i = 0; i < checkbox.length; i++) {
                         const checkboxEl = checkbox[i];
                         checkboxEl.addEventListener('click', () => {
-                            const question = confirm('Do you confirm your action ?');
-                            if (question) {
-                                const idEl = checkboxEl.id
-                                $.ajax({
-                                    type: "GET",
-                                    url: "/order/order-status",
-                                    data: {
-                                        id:idEl,
-                                        _token:'{{csrf_token()}}',
-                                        status:question,
-                                    },
-                                    success: function (response) {
-                                    },
-                                });
-                            } else {
-                                return;
+                            if(checkboxEl.dataset.status === "active") {
+                                question = !confirm('Do you confirm your action ?');
                             }
+                            if(checkboxEl.dataset.status === "inactive") {
+                                question = confirm('Do you confirm your action ?');
+                            }
+                            console.log(question);
+                            idEl = checkboxEl.dataset.id
+                            $.ajax({
+                                type: "POST",
+                                url: "/order/order-status",
+                                data: {
+                                    id:idEl,
+                                    _token:'{{csrf_token()}}',
+                                    status:question,
+                                },
+                                success: function (response) {
+                                checkboxEl.dataset.status = response.status;
+                                console.log(response.status);
+                                },
+                            });
                         });
                     }
                 }
@@ -540,7 +544,7 @@
                                             <div>
                                                 <div>
                                                     <label class="checkbox-ios">
-                                                        <input type="checkbox" class="cb-ios" data-status="{{$order->user_status}}" data-id="{{$order->id}}">
+                                                        <input type="checkbox" class="cb-ios" data-status="{{$order->user_status}}" data-id="{{$order->id}}"{{$order->user_status=='active'?'checked':''}}>
                                                         <span class="checkbox-ios-switch"></span>
                                                     </label>
                                                 </div>
