@@ -33,7 +33,7 @@
                         question = confirm('Do you confirm your action ?');
 
                     }
-                    const idEl = checkboxEl.id
+                    idEl = checkboxEl.dataset.id
                     $.ajax({
                         type: "POST",
                         url: "/order/order-status",
