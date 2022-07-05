@@ -28,6 +28,7 @@
             @endif
         <div class="avatar av-m"
         style="background-image: url('{{ $user->avatar }}');">
+            {{ substr($user->surname, 0,1)}}{{substr($user->name, 0,1)}}
         </div>
         </td>
         {{-- center side --}}
@@ -71,6 +72,7 @@
         <td>
         <div class="avatar av-m"
         style="background-image: url('{{ $user->avatar }}');">
+            {{ substr($user->surname, 0,1)}}{{substr($user->name, 0,1)}}
         </div>
         </td>
         {{-- center side --}}
