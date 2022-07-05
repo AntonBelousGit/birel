@@ -157,7 +157,7 @@ class ManageOrderController extends Controller
         if (!Gate::allows('edit-order', $companyOrder)) {
             abort(403);
         }
-        if ($request->status == false) {
+        if ($request->status == true) {
             DB::table('company_orders')->where('id', $request->id)->update(['status' => 'active']);
         } else {
             DB::table('company_orders')->where('id', $request->id)->update(['status' => 'inactive']);
