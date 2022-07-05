@@ -136,6 +136,35 @@
                 });
             });
         });
+        isActive('.cb-ios');
+
+                function isActive(checkbox) {
+                    if (typeof checkbox === 'string') {
+                        checkbox = document.querySelectorAll(checkbox);
+                    }
+                    for (let i = 0; i < checkbox.length; i++) {
+                        const checkboxEl = checkbox[i];
+                        checkboxEl.addEventListener('click', () => {
+                            const question = confirm('Do you confirm your action ?');
+                            if (question) {
+                                const idEl = checkboxEl.id
+                                $.ajax({
+                                    type: "GET",
+                                    url: "/order/order-status",
+                                    data: {
+                                        id:idEl,
+                                        _token:'{{csrf_token()}}',
+                                        status:question,
+                                    },
+                                    success: function (response) {
+                                    },
+                                });
+                            } else {
+                                return;
+                            }
+                        });
+                    }
+                }
     </script>
 @endsection
 
@@ -511,7 +540,7 @@
                                             <div>
                                                 <div>
                                                     <label class="checkbox-ios">
-                                                        <input type="checkbox" data-status="{{$order->user_status}}" data-id="{{$order->id}}">
+                                                        <input type="checkbox" class="cb-ios" data-status="{{$order->user_status}}" data-id="{{$order->id}}">
                                                         <span class="checkbox-ios-switch"></span>
                                                     </label>
                                                 </div>
@@ -554,10 +583,10 @@
                                         <td class="body-row-item center ios-p">
                                             <div>
                                                 <div>
-                                                    <label class="checkbox-ios">
-{{--                                                        <input type="checkbox">--}}
-{{--                                                        <span class="checkbox-ios-switch"></span>--}}
-                                                    </label>
+{{--                                                <label class="checkbox-ios">--}}
+{{--                                                    <input type="checkbox">--}}
+{{--                                                    <span class="checkbox-ios-switch"></span>--}}
+{{--                                                </label>--}}
                                                 </div>
                                             </div>
                                         </td>
