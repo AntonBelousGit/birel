@@ -372,11 +372,8 @@ function IDinfo(id, type) {
         // avatar photo
         $(".messenger-infoView")
           .find(".avatar")
-          .css("background-image", 'url("' + data.user_avatar + '")');
-        $(".header-avatar").css(
-          "background-image",
-          'url("' + data.user_avatar + '")'
-        );
+          .html(data.name);
+        $(".header-avatar").html(data.name);
         // Show shared and actions
         $(".messenger-infoView-btns .delete-conversation").show();
         $(".messenger-infoView-shared").show();
@@ -387,6 +384,10 @@ function IDinfo(id, type) {
         // update info in view
         $(".messenger-infoView .info-name").html(data.fetch.name);
         $(".m-header-messaging .user-name").html(data.fetch.name);
+
+          // update info in type
+        $(".messenger-infoView .info-type").html(data.fetch.type);
+        $(".m-header-messaging .user-type").html(data.fetch.type);
         // Star status
         data.favorite > 0
           ? $(".add-to-favorite").addClass("favorite")

@@ -107,9 +107,9 @@
                         <a href="#" class="show-listView"><i class="fas fa-arrow-left"></i></a>
                         <div class="avatar av-s header-avatar"
                              style="margin: 0px 10px; margin-top: -5px; margin-bottom: -5px;">
-                               <span></span>
                         </div>
                         <a href="#" class="user-name">{{ config('chatify.name') }}</a>
+                        <p class="user-type"></p>
                     </div>
                     {{--                     header buttons--}}
                     <nav class="m-header-right">

@@ -15,8 +15,8 @@
     background: #fff;
 }
 .messenger-search[type="text"] {
-    background: #f7f7f7;
-    color: #333;
+    background: #fff;
+    color: rgba(192, 188, 214, 0.6);
 }
 .messenger-listView {
     background: #fff;
@@ -58,14 +58,14 @@
     border-top: 1px solid #eee;
 }
 .attachment-preview > p {
-    color: #333;
+    color: #515994;
 }
 .m-send {
-    color: #333;
+    color: #515994;
 }
 .message-card p {
     background: #ffffff;
-    color: #656b75;
+    color: #515994;
     box-shadow: 0px 6px 11px rgba(18, 67, 105, 0.03);
 }
 .m-li-divider {
@@ -75,7 +75,7 @@
 .m-header a:hover,
 .m-header a:focus {
     text-decoration: none;
-    color: #606679;
+    color: #574cda;
 }
 .messenger-list-item td p {
     color: #574cda;
@@ -87,7 +87,7 @@
     border-color: #f7f7f7;
 }
 .messenger-favorites > div p {
-    color: #4a4a4a;
+    color: #574cda;
 }
 
 .avatar {
