@@ -58,14 +58,14 @@
                             @enderror
                         </li>
                     </ul>
-                    <div class="form-checkbox">
-                        <label class="checkbox-ios">
-                            <span class="t-r f16-l24 purple1">I want to receive the newsletter</span>
-                            <input type="checkbox"
-                                   name="receive_news" {{ (Auth::user()->receive_news == 'on') ? 'checked="checked"': ''}}>
-                            <span class="checkbox-ios-switch"></span>
-                        </label>
-                    </div>
+<!--                     <div class="form-checkbox"> -->
+<!--                         <label class="checkbox-ios"> -->
+<!--                             <span class="t-r f16-l24 purple1">I want to receive the newsletter</span> -->
+<!--                             <input type="checkbox" -->
+<!--                                    name="receive_news" {{ (Auth::user()->receive_news == 'on') ? 'checked="checked"': ''}}> -->
+<!--                             <span class="checkbox-ios-switch"></span> -->
+<!--                         </label> -->
+<!--                     </div> -->
                     <div class="form-btn">
                         <button class="btn w100p" type="submit">Confirm information changed</button>
                     </div>
@@ -151,14 +151,14 @@
                             @enderror
                         </li>
                     </ul>
-                    <div class="form-checkbox">
-                        <label class="checkbox-ios">
-                            <span class="t-r f16-l24 purple1">I want to receive the newsletter</span>
-                            <input type="checkbox"
-                                   name="receive_news" {{ (Auth::user()->receive_news == 'on') ? 'checked="checked"': ''}}>
-                            <span class="checkbox-ios-switch"></span>
-                        </label>
-                    </div>
+<!--                     <div class="form-checkbox"> -->
+<!--                         <label class="checkbox-ios"> -->
+<!--                             <span class="t-r f16-l24 purple1">I want to receive the newsletter</span> -->
+<!--                             <input type="checkbox" -->
+<!--                                    name="receive_news" {{ (Auth::user()->receive_news == 'on') ? 'checked="checked"': ''}}> -->
+<!--                             <span class="checkbox-ios-switch"></span> -->
+<!--                         </label> -->
+<!--                     </div> -->
                     <div class="form-btn">
                         <button class="btn w100p" type="submit">Confirm information changed</button>
                     </div>
