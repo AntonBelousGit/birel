@@ -29,10 +29,11 @@
                 checkboxEl.addEventListener('click', () => {
                     if(checkboxEl.dataset.status === "active") {
                         question = !confirm('Do you confirm your action ?');
-                    } else {
-                        question = confirm('Do you confirm your action ?');
-
                     }
+                    if(checkboxEl.dataset.status === "inactive") {
+                        question = confirm('Do you confirm your action ?');
+                    }
+                    console.log(question);
                     idEl = checkboxEl.dataset.id
                     $.ajax({
                         type: "POST",
@@ -43,6 +44,8 @@
                             status:question,
                         },
                         success: function (response) {
+                        checkboxEl.dataset.status = response.status;
+                        console.log(response.status);
                         },
                     });
                 });
@@ -296,8 +299,9 @@
                         <td class="body-row-item center">
                             <div>
                                 <div>
+
                                     <label class="checkbox-ios">
-                                        <input class="cb-ios" type="checkbox" data-status="{{$order->user_status}}" data-id="{{$order->id}}">
+                                        <input class="cb-ios" type="checkbox" data-status="{{$order->user_status}}" data-id="{{$order->id}}"{{$order->user_status=='active'?'checked':''}}>
                                         <span class="checkbox-ios-switch"></span>
                                     </label>
                                 </div>
