@@ -28,7 +28,7 @@
             @endif
         <div class="avatar av-m"
         style="background-image: url('{{ $user->avatar }}');">
-            {{ substr($user->surname, 0,1)}}{{substr($user->name, 0,1)}}
+            {{substr($user->name, 0,1)}}{{ substr($user->surname, 0,1)}}
         </div>
         </td>
         {{-- center side --}}
@@ -37,7 +37,7 @@
         <p data-id="{{ $user->id }}" data-type="user">
             {{ strlen($user->name) > 12 ? trim(substr($user->name,0,12)).'..' : $user->name }}
             <span>{{ $lastMessage->created_at->diffForHumans() }}</span></p>
-            <span>сюда</span><br>
+        <span>сюда</span><br>
         <span>
             {{-- Last Message user indicator --}}
             {!!
