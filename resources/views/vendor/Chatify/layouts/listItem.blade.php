@@ -32,6 +32,7 @@
         </td>
         {{-- center side --}}
         <td>
+        <p>сюда</p>
         <p data-id="{{ $user->id }}" data-type="user">
             {{ strlen($user->name) > 12 ? trim(substr($user->name,0,12)).'..' : $user->name }}
             <span>{{ $lastMessage->created_at->diffForHumans() }}</span></p>
