@@ -18,6 +18,35 @@
                 delay: [700, 500],
                 dynamicTitle: true,
             });
+        isActive('.cb-ios');
+
+        function isActive(checkbox) {
+            if (typeof checkbox === 'string') {
+                checkbox = document.querySelectorAll(checkbox);
+            }
+            for (let i = 0; i < checkbox.length; i++) {
+                const checkboxEl = checkbox[i];
+                checkboxEl.addEventListener('click', () => {
+                    const question = confirm('Do you confirm your action ?');
+                    if (question) {
+                        const idEl = checkboxEl.id
+                        $.ajax({
+                            type: "GET",
+                            url: "/order/order-status",
+                            data: {
+                                id:idEl,
+                                _token:'{{csrf_token()}}',
+                                status:question,
+                            },
+                            success: function (response) {
+                            },
+                        });
+                    } else {
+                        return;
+                    }
+                });
+            }
+        }
     </script>
 @endsection
 @section('content')
@@ -267,7 +296,7 @@
                             <div>
                                 <div>
                                     <label class="checkbox-ios">
-                                        <input type="checkbox" data-status="{{$order->user_status}}" data-id="{{$order->id}}">
+                                        <input class="cb-ios" type="checkbox" data-status="{{$order->user_status}}" data-id="{{$order->id}}">
                                         <span class="checkbox-ios-switch"></span>
                                     </label>
                                 </div>
