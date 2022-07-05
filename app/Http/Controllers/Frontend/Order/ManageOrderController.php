@@ -153,16 +153,16 @@ class ManageOrderController extends Controller
     public function orderStatus(Request $request)
     {
         $companyOrder = CompanyOrder::find($request->id);
-
         if (!Gate::allows('edit-order', $companyOrder)) {
             abort(403);
         }
         if ($request->status == true) {
             DB::table('company_orders')->where('id', $request->id)->update(['status' => 'active']);
+            $status = 'active';
         } else {
             DB::table('company_orders')->where('id', $request->id)->update(['status' => 'inactive']);
+            $status = 'inactive';
         }
-
-        return response()->json(['msg' => 'Successfully updated status', 'status' => true]);
+        return response()->json(['msg' => 'Successfully updated status', 'status' => $status]);
     }
 }
