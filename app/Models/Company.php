@@ -36,7 +36,7 @@ class Company extends Model
 
     public function orders()
     {
-        return $this->hasMany(CompanyOrder::class,'company_id')->where('status','active');
+        return $this->hasMany(CompanyOrder::class,'company_id')->where('status','active')->where('user_status','active');
     }
     public function history(): HasMany
     {
