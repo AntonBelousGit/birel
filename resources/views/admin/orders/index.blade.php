@@ -50,7 +50,7 @@
                                             <td>{{$item->status }}</td>
                                             <td>
                                                 <a href="{{ route('orders.edit',$item) }}">Edit</a>
-                                                <a href="#">
+                                                <a href="/chatify/{{$item->user_id}}">
                                                     <i class="icon-envelope" aria-hidden="true"></i>
                                                 </a>
                                                 <form action="{{route('orders.destroy',$item)}}" class="d-inline"
