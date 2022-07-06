@@ -5,7 +5,7 @@
 @endsection
 
 @section('scripts')
-    <script src="{{asset('js/default/redirect_filter.min.js')}}"></script>
+
     <script src="{{asset('js/lib/jquery.min.js')}}"></script>
     <script src="{{asset('js/lib/select2.min.js')}}"></script>
     <script src="{{asset('js/pages/page-lc-company.js')}}" type="module"></script>
