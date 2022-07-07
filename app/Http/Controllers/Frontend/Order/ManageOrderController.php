@@ -61,7 +61,7 @@ class ManageOrderController extends Controller
     public function storeLfo(CreateOrderLfoRequest $createOrderLfoRequest)
     {
         $data = $createOrderLfoRequest->validated();
-
+        CompanyOrder::create($data);
         try {
             $check_isset = Watchlist::where(['user_id' => auth()->id(), 'company_id' => $data['company_id']])->count();
 
