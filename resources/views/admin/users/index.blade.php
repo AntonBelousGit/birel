@@ -72,6 +72,9 @@
                                             <td>{{$item->linkedin}}</td>
                                             <td>
                                                 <a href="{{ route('users.edit',$item->id) }}">Edit</a>
+                                                <a href="/chatify/{{$item->id}}">
+                                                    <i class="icon-envelope" aria-hidden="true"></i>
+                                                </a>
                                                 <form action="{{route('users.destroy',$item)}}" class="d-inline" method="POST">
                                                     @csrf
                                                     @method('DELETE')

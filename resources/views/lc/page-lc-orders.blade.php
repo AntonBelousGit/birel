@@ -299,11 +299,12 @@
                         <td class="body-row-item center">
                             <div>
                                 <div>
-
-                                    <label class="checkbox-ios">
-                                        <input class="cb-ios" type="checkbox" data-status="{{$order->user_status}}" data-id="{{$order->id}}"{{$order->user_status=='active'?'checked':''}}>
-                                        <span class="checkbox-ios-switch"></span>
-                                    </label>
+                                    @if ($order->status == 'active')
+                                        <label class="checkbox-ios">
+                                            <input class="cb-ios" type="checkbox" data-status="{{$order->user_status}}" data-id="{{$order->id}}"{{$order->user_status=='active'?'checked':''}}>
+                                            <span class="checkbox-ios-switch"></span>
+                                        </label>
+                                    @endif
                                 </div>
                             </div>
                         </td>
