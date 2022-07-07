@@ -200,7 +200,7 @@
                         <span>${{$company->total_funding}}</span>
                     </p>
                     <p class="card-sub-title t-r f16-l24 purple3">
-                        <span>Address: </span>
+                        <span>Web address: </span>
                         <span>{{$company->companyAddress}}</span>
                     </p>
                     <picture>
