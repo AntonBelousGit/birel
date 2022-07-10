@@ -21,7 +21,35 @@
     <link rel="stylesheet" href="{{asset('css/lib/select2.min.css')}}">
     <link rel="stylesheet" href="{{ asset('css/default/style-lc.min.css') }}">
     @yield('style')
-
+    <style>
+    .js-example-basic-single2 {
+        background-color: #fff;
+        border: none;
+        border-bottom: 1px solid #ab9dec;
+        padding: 10px 0 10px 0;
+        height: 40px;
+        font-family: WorkSans-Regular,sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        color: #573cda;
+    }
+    .js-example-basic-single,
+    .js-example-basic-single-no-search {
+        background-color: #fff;
+        border: 1px solid #ab9dec;
+        box-sizing: border-box;
+        padding: 10px 20px 10px 10px;
+        height: 40px;
+        border-radius: 6px;
+        transition: all .2s linear;
+        font-family: WorkSans-Regular,sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        color: #573cda;
+    }
+    </style>
 </head>
 
 <body>

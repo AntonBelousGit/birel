@@ -68,6 +68,17 @@
 						<h2 class="t-sb f22-l25 purple3">Details</h2>
 						<p class="t-r f16-l24 purple2">Here you can enter important details. For example, SPV - layers, management fee, carry ... / Escrow / ROFR / requirements for the second side of the transaction and so on.</p>
 						<textarea class="i-f f14-l16 w400 h235" cols="30" rows="10" name="description" placeholder="Enter the Text"></textarea>
+						<ul class="t-r f16-l24 purple2 list-help">
+                            <li>
+                                - Order will be placed for 45 days, after this period you can update order so that it remains valid for another 45 days (this is available in section my orders).
+                            </li>
+                            <li>
+                                - You can place one order per company.
+                            </li>
+                            <li>
+                                - You can edit the Share price or Valuation once during the first 30 days.
+                            </li>
+                        </ul>
 					</div>
 					<div class="ask-block i" id="tabs_bid">
 						<h2 class="t-sb f22-l25 purple3">Information</h2>
@@ -190,6 +201,17 @@
 						<h2 class="t-sb f22-l25 purple3">Details</h2>
 						<p class="t-r f16-l24 purple2">Here you can enter important details. For example, SPV - layers, management fee, carry ... / Escrow / ROFR / requirements for the second side of the transaction and so on.</p>
 						<textarea class="i-f f14-l16 w400 h235" cols="30" rows="10" placeholder="Enter the Text"></textarea>
+						<ul class="t-r f16-l24 purple2 list-help">
+                            <li>
+                                - Order will be placed for 45 days, after this period you can update order so that it remains valid for another 45 days (this is available in section my orders).
+                            </li>
+                            <li>
+                                - You can place one order per company.
+                            </li>
+                            <li>
+                                - You can edit the Share price or Valuation once during the first 30 days.
+                            </li>
+                        </ul>
 					</div>
 					<div class="ask-block i" id="tabs_ask">
 						<h2 class="t-sb f22-l25 purple3">Information</h2>
@@ -330,6 +352,17 @@
                            management fee, carry ... / Escrow / ROFR / requirements for the second side of the transaction and
                            so on.</p>
 						<textarea class="i-f f14-l16 w400 h235" placeholder="Enter the Text" name="description"></textarea>
+						<ul class="t-r f16-l24 purple2 list-help">
+                            <li>
+                                - Order will be placed for 45 days, after this period you can update order so that it remains valid for another 45 days (this is available in section my orders).
+                            </li>
+                            <li>
+                                - You can place one order per company.
+                            </li>
+                            <li>
+                                - You can edit the Share price or Valuation once during the first 30 days.
+                            </li>
+                        </ul>
 					</div>
 					<div class="looking-block i" id="tabs_looking">
 						<h2 class="t-sb f22-l25 purple3">Information</h2>
@@ -442,6 +475,17 @@
 <!--							<input class="i-f w170" type="text" name="datetimes">-->
 <!--							<input class="i-f w170" type="text" name="datetimes">-->
 <!--						</div>-->
+<!--                             <ul class="t-r f16-l24 purple2 list-help"> -->
+<!--                                 <li> -->
+<!--                                     - Order will be placed for 45 days, after this period you can update order so that it remains valid for another 45 days (this is available in section my orders). -->
+<!--                                 </li> -->
+<!--                                 <li> -->
+<!--                                     - You can place one order per company. -->
+<!--                                 </li> -->
+<!--                                 <li> -->
+<!--                                     - You can edit the Share price or Valuation once during the first 30 days. -->
+<!--                                 </li> -->
+<!--                             </ul> -->
 <!--					</div>-->
 <!--					<div class="tender-block i" id="tabs2-tender">-->
 <!--						<h2 class="t-sb f22-l25 purple3">Информация</h2>-->

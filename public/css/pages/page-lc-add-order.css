@@ -170,7 +170,7 @@
 
 .ask {
   display: grid;
-  grid-template-areas: "name specification" "structure specification" "info fix";
+  grid-template-areas: "name specification" "structure specification" "info specification";
   grid-template-columns: 0.5fr 0.5fr;
   grid-gap: 0 20px;
   margin-top: 50px;
@@ -387,7 +387,7 @@
 
 .looking {
   display: grid;
-  grid-template-areas: "name specification" "order specification" "structure specification" "info fix";
+  grid-template-areas: "name specification" "order specification" "structure specification" "info specification";
   grid-template-columns: 0.5fr 0.5fr;
   grid-gap: 0 20px;
   margin-top: 50px;
@@ -527,7 +527,7 @@
 
 .tender {
   display: grid;
-  grid-template-areas: "name specification" "company specification" "order specification" "structure data" "info fix";
+  grid-template-areas: "name specification" "company specification" "order specification" "structure data" "info data";
   grid-template-columns: 0.5fr 0.5fr;
   grid-gap: 0 20px;
   margin-top: 50px;
@@ -757,6 +757,14 @@
 #tabs2 .nav-tabs .f18-l32 {
   font-size: 16px;
   line-height: 32px;
+}
+
+.list-help {
+  padding: 10px;
+  background: #F6F4FF;
+  -webkit-border-radius: 6px;
+          border-radius: 6px;
+  margin-top: 30px;
 }
 
 @media screen and (max-width: 1580px) {
