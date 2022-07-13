@@ -10,8 +10,7 @@
 				<div class="content-block-title">
 					<h1 class="title b b2 f54-l70 purple1"></h1>
 					<p class="t-r f24-l32 purple2">
-						Over the decade, the secondary financing market shows significant growth. What is connected with the demand
-						for a partner search tool and solutions to simplify secondary issues.
+						Over the past decade, the secondary financing market has shown significant growth. This increases the demand for a partner search tool and solutions to simplify secondary deals.
 					</p>
 				</div>
 				<div class="content-block-img">
@@ -174,8 +173,8 @@
 					</div>
 					<div class="item-text">
 						<p class="t-r f20-l28 purple2">
-							In 2010 the number of secondary transactions was <strong>500+</strong> per year in 2021 the number
-							of transactions exceeded <strong>2500.</strong>
+						    In 2010 the number of secondary deals was <strong>500+</strong> per year, but in 2021 the number of deals exceeded <strong>2,500.</strong>
+
 						</p>
 					</div>
 				</div>
@@ -187,9 +186,8 @@
 					</div>
 					<div class="item-text">
 						<p class="t-r f20-l28 purple2">
-							In 2010 the volume of secondary transactions is <strong>9</strong> billion in 2021 the volume of
-							transactions is <strong>48+</strong>
-							billion.
+						In 2010 the volume of secondary deals was <strong>9</strong> billion, in 2021 the volume of deals was <strong>48+</strong> billion.
+
 						</p>
 					</div>
 				</div>
@@ -201,8 +199,8 @@
 					</div>
 					<div class="item-text">
 						<p class="t-r f20-l28 purple2">
-							Significant growth is due to the fact that more companies remain private for a longer period, the
-							average path to an IPO is <strong>12</strong> years. 15 years ago, the average path to an IPO was <strong>6</strong> years.
+						The significant growth is due to the fact that more and more companies remain private for a longer period, the average path to an IPO is <strong>12</strong> years. 15 years ago, the average path to an IPO was <strong>6</strong> years.
+
 						</p>
 					</div>
 				</div>
@@ -264,9 +262,7 @@
 				</div>
 				<div class="wrapper-text">
 					<h3 class="t-sb f36-l42 purple1">Reason</h3>
-					<p class="t-r f24-l32 purple2">Investors who have completed the profit plan in portfolio companies are waiting for IPOs to obtain
-						liquidity. Is it practical when the most precious resource is time and profits can already be invested
-						in earlier stages bringing even greater return on investment?</p>
+					<p class="t-r f24-l32 purple2">Investors who have fulfilled the profit plan in portfolio companies are waiting for an IPO to obtain liquidity. Is it practical when the most precious resource, namely time and profit, can already be reinvested at a more early stage bringing an even greater return on investment?....</p>
 				</div>
 			</div>
 			<div class="content-block__item">
@@ -394,14 +390,8 @@
 				</div>
 				<div class="wrapper-text">
 					<h3 class="t-sb f36-l42 purple1">Problem</h3>
-					<p class="t-r f24-l32 purple2">There are processes hindering development on the market. Firstly, the offers are not grouped in one
-						place, which greatly complicates the process of closing deals in a timely manner. Secondly, it is a
-						morally obsolete commission of 5% on each side of the transaction, which was popularized before the era
-						of the global Internet and open access to information, in a word, at a time when brokers were needed to
-						conclude transactions. The third factor related to the second is intermediaries, in many transactions
-						there are two or more brokers / finders, which greatly complicates the negotiation process and slows
-						down the process of connecting the buyer and seller directly, since each of them must conclude an
-						agreement with each other and pass the necessary checks.</p>
+					<p class="t-r f24-l32 purple2">There are processes on the market that slow down development. Firstly, the offers are not grouped in one place, which significantly complicates the process of closing deals in a timely manner. Secondly, it is a morally outdated commission of 5% on each side of a deal, which was popularized before the era of the global Internet and open access to information, in a word, at a time when brokers were needed to make deals. The third factor associated with the second is intermediaries, in many deals there are two or three or more brokers/finders, which significantly complicates the negotiation process and slows down the process of connecting the buyer and seller directly, since each of them must conclude an agreement with each other and pass the necessary checks.
+</p>
 				</div>
 			</div>
 			<div class="content-block__item">
@@ -697,8 +687,8 @@
 				</div>
 				<div class="wrapper-text">
 					<h3 class="t-sb f36-l42 purple1">Solution</h3>
-					<p class="t-r f24-l32 purple2">Birel's task is to accumulate capital in the secondary market and connect buyers and sellers of private
-						assets and make the process of finding liquidity more convenient.</p>
+					<p class="t-r f24-l32 purple2">The task of Birel is to accumulate capital in the secondary market and connect buyers and sellers of private assets and make the process of finding liquidity more convenient.
+</p>
 				</div>
 			</div>
 		</div>

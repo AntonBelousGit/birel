@@ -9,7 +9,7 @@ const box4 = document.querySelector('.bot-block svg');
 const column = document.getElementById('f-bg');
 const column2 = document.getElementById('f-bg2');
 
-const str = 'birel makes private equity liquid';
+const str = 'secondary market without brokers and intermediaries.';
 const widthW = window.screen.width;
 
 
@@ -23,13 +23,16 @@ animate(box2, 'top', '-140px', 2000);
 animate(box3, 'left', '0px', 2000);
 if (widthW > 1680) {
 	createBg(column, 33);
-	animate(box4, 'bottom', '-140px', 2000);
+	animate(box4, 'bottom', '20px', 2000);
 } else if (widthW > 1440) {
 	createBg(column, 33);
 	animate(box4, 'bottom', '0px', 2000);
+} else if (widthW > 1280) {
+	createBg(column, 33);
+	animate(box4, 'bottom', '50px', 2000);
 } else if (widthW > 1024) {
 	createBg(column, 33);
-	animate(box4, 'bottom', '-20px', 2000);
+	animate(box4, 'bottom', '140px', 2000);
 } else if (widthW > 768) {
 	createBg(column, 23);
 } else if (widthW > 450) {

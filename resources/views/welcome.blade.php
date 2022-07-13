@@ -8,9 +8,8 @@
     <div class="content-block-left">
         <h1 class="title b f80-l88 purple1"></h1>
         <p class="t-r f18-l32 purple2">
-            P2P network that allows the shareholders to find a demand
-            for their assets before a liquidity event, and the investors to
-            purchase the shares in high-demand assets.
+            P2P platform for secondary market liquidity where institutional and qualified investors can interact with each other directly without the participation of
+             brokers and other intermediaries, which will greatly simplify and speed up the process of closing deals and make it more profitable
         </p>
         <div class="btn-group btn-group-w50">
             <a class="btn w170" href="{{ route('order') }}">
@@ -728,10 +727,7 @@
         <div class="content-block mission" style="margin-top:40px;">
     <div class="content-block-left">
         <h2 class="title s f54-l70 purple1">Our Mission</h2>
-        <p class="t-r f18-l32 purple2">By uniting all ecosystem participants into a single network, Birel makes
-            the secondary market of the private companies (unicorns and high-profile companies) liquid and
-            transparent, simplifies the search for the partners between the buyers and sellers, and increases
-            the likelihood of the successful closing of deals.</p>
+        <p class="t-r f18-l32 purple2">By uniting all private equity ecosystem participants into a single network, Birel makes the secondary market of the late stage private companies liquid and transparent, simplifies the search for the partners between the buyers and sellers, and increases the likelihood of the successful closing of deals without intermediaries.</p>
         <a class="btn w140" href="{{ route('mission')}}">See more</a>
     </div>
     <div class="content-block-right">
@@ -744,9 +740,7 @@
         <div class="content-block investor">
     <div class="content-block-left">
         <h3 class="purple1 t-sb f36-l42">For Investors</h3>
-        <p class="t-r f18-l32 purple2">The vast majority of asteroids are small, compared with a large one like
-            Ida, this 32-mile-long chunk of stone and iron that was photographed in 1993 by the Galileo
-            spacecraft. </p>
+        <p class="t-r f18-l32 purple2">Opportunity for investment banks, family offices, secondary funds, and private investors to invest in the late-stage / PRE-IPO companies. Take the whole process of finding allocations into your own hands. Get terms of deals with net price without commissions.</p>
     </div>
     <div class="content-block-right">
         <picture><source srcset="./img/note-boock.svg" type="image/webp"><img src="./img/note-boock.svg" alt=""></picture>
@@ -760,78 +754,83 @@
     </div>
     <div class="content-block-right">
         <h3 class="purple1 t-sb f36-l42">For shareholders</h3>
-        <p class="t-r f18-l32 purple2">The vast majority of asteroids are small, compared with a large one like
-            Ida, this 32-mile-long chunk of stone and iron that was photographed in 1993 by the Galileo
-            spacecraft. </p>
+        <p class="t-r f18-l32 purple2">Easily find liquidity for your assets without intermediaries. Birel allows you to see all orders for your shares and you can apply the most current market price. Birel focuses on institutional and qualified investors, so you can cover the entire offer with one or several deals.
+        </p>
     </div>
 </div>
     </div>
     <div class="container">
         <div class="content-features">
-    <div class="content-features-title">
-        <h2 class="title s f54-l70 purple1">Key Features</h2>
-    </div>
-    <div class="content-features-cont">
-        <div class="content-features-search">
-            <div class="content-features-img">
-                <picture><source srcset="./img/img-search.svg" type="image/webp"><img src="./img/img-search.svg" alt=""></picture>
+            <div class="content-features-title">
+                <h2 class="title s f54-l70 purple1">Key Features</h2>
             </div>
-            <div class="content-features-text">
-                <h3 class="purple1 t-sb f36-l42">Transparency</h3>
-                <p class="t-r f18-l32 purple2">Active positions are visible to all network members. This enables the
-                    shareholders of private high-tech companies to understand the real value of their assets and
-                    liquidity options.</p>
+            <div class="content-features-cont">
+                <div class="content-features-search">
+                    <div class="content-features-img">
+                        <picture><source srcset="./img/img-search.svg" type="image/webp"><img src="./img/img-search.svg" alt=""></picture>
+                    </div>
+                    <div class="content-features-text">
+                        <h3 class="purple1 t-sb f36-l42">Transparency</h3>
+                        <p class="t-r f18-l32 purple2">Active orders are visible to all participants of the platform. This allows shareholders of private high-tech companies to understand liquidity options, market sentiment and the current value of their assets.</p>
+                    </div>
+                </div>
+                <div class="content-features-shield">
+                    <div class="content-features-img">
+                        <picture><source srcset="./img/img-shield.svg" type="image/webp"><img src="./img/img-shield.svg" alt=""></picture>
+                    </div>
+                    <div class="content-features-text">
+                        <h3 class="purple1 t-sb f36-l42">Direct connection</h3>
+                        <p class="t-r f18-l32 purple2">Directly connect a buyer with a seller, without the participation of intermediaries. This gives the Birel members opportunity to receive the most relevant details and find mutually beneficial terms for the deal during the negotiations.
+                        </p>
+                    </div>
+                </div>
+                <div class="content-features-arrow">
+                    <div class="content-features-img">
+                        <picture><source srcset="./img/img-arrow.svg" type="image/webp"><img src="./img/img-arrow.svg" alt=""></picture>
+                    </div>
+                    <div class="content-features-text">
+                        <h3 class="purple1 t-sb f36-l42">Focus</h3>
+                        <p class="t-r f18-l32 purple2">As listed assets, Birel focuses on Venture-backed late stage companies that have closed rounds D, E, F +….<br>
+                                                       Platform members: Birel is designed to address the liquidity issues of institutional/qualified investors who do not require the presence of brokers to make deals. The volume of orders starts from 1 million to 100+ million.
+                        </p>
+                    </div>
+                </div>
+                <div class="content-features-arrow">
+                    <div class="content-features-img">
+                        <picture><source srcset="./img/image.svg" type="image/webp"><img src="./img/image.svg" alt=""></picture>
+                    </div>
+                    <div class="content-features-text">
+                        <h3 class="purple1 t-sb f36-l42">Commission free</h3>
+                        <p class="t-r f18-l32 purple2">We do not charge a commission. Currently, brokers charge a commission that can reach up to 5% on each side of a deal. We consider this an overrate.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="content-features-shield">
-            <div class="content-features-img">
-                <picture><source srcset="./img/img-shield.svg" type="image/webp"><img src="./img/img-shield.svg" alt=""></picture>
-            </div>
-            <div class="content-features-text">
-                <h3 class="purple1 t-sb f36-l42">P2P</h3>
-                <p class="t-r f18-l32 purple2">Preference to directly connect the buyer with the seller, this gives
-                    the Birel participants the opportunity to receive the most relevant information and find
-                    mutually beneficial terms for the transaction during direct the negotiations.</p>
-            </div>
-        </div>
-        <div class="content-features-arrow">
-            <div class="content-features-img">
-                <picture><source srcset="./img/img-arrow.svg" type="image/webp"><img src="./img/img-arrow.svg" alt=""></picture>
-            </div>
-            <div class="content-features-text">
-                <h3 class="purple1 t-sb f36-l42">Focus</h3>
-                <p class="t-r f18-l32 purple2">Birel focuses on Venture-backed high-profile companies that have
-                    closed rounds D, E, F…. with $300 million - $1 billion+ valuation. The volume in applications
-                    starts from 1 million to 100+ million. This enables the sellers to realize the entire volume in
-                    one or several transactions.</p>
-            </div>
-        </div>
-    </div>
-</div>
     </div>
     <div class="bg-form">
         <div class="container">
             <div class="content-block contact">
-    <div class="content-block-left">
-        <h2 class="title s f54-l70 white">Contact us</h2>
-        <p class="t-r f18-l32 white">Birel's goal is to popularize the secondary market as a liquidity tool by
-            accumulating supply and demand in one place, ultimately offering an effective solution for the sale
-            and purchase of the private assets.</p>
-    </div>
-    <div class="content-block-right">
-        <form action="{{ route('contactUsRequest') }}" method="POST">
-            @csrf
-            <h4 class="t-m f24-l32 green">Feel free to reach out to us.</h4>
-            <input class="i-f" name="name" type="text" placeholder="Name">
-            <input class="i-f" name="email" type="email" placeholder="Email">
-            <textarea class="i-f" name="msg" placeholder="Message"></textarea>
-            <p class="t-r f12-l18 purple2">By clicking the button, you agree to the processing of personal data.</p>
-            <button class="btn w140">
-                Send
-            </button>
-        </form>
-    </div>
-</div>
+                <div class="content-block-left">
+                    <h2 class="title s f54-l70 white">Contact us</h2>
+                    <p class="t-r f18-l32 white">Birel's goal is to popularize the secondary market as a liquidity tool by
+                        accumulating supply and demand in one place, ultimately offering an effective solution for the sale
+                        and purchase of the private assets.</p>
+                </div>
+                <div class="content-block-right">
+                    <form action="{{ route('contactUsRequest') }}" method="POST">
+                        @csrf
+                        <h4 class="t-m f24-l32 green">Feel free to reach out to us.</h4>
+                        <input class="i-f" name="name" type="text" placeholder="Name">
+                        <input class="i-f" name="email" type="email" placeholder="Email">
+                        <textarea class="i-f" name="msg" placeholder="Message"></textarea>
+                        <p class="t-r f12-l18 purple2">By clicking the button, you agree to the processing of personal data.</p>
+                        <button class="btn w140">
+                            Send
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
         <div id="f-bg2"></div>
     </div>

@@ -46,13 +46,13 @@ function animateText(element, text, duration) {
 	animateCore(p => {
 		const length = Math.ceil(text.length * p);
 		element.innerHTML = text.slice(0, length);
-	}, duration, FUNCTIONS.linear,element);
+
+	}, duration, FUNCTIONS.linear, element);
 }
 
-function animateCore(render, duration, timingFn,element) {
+function animateCore(render, duration, timingFn, element) {
 	const timePerFrame = 1000 / 60;
 	const startTime = Date.now();
-
 	const timerId = setInterval(() => {
 		const currentTime = Date.now();
 		let fraction = (currentTime - startTime) / duration;
@@ -62,9 +62,7 @@ function animateCore(render, duration, timingFn,element) {
 		} else if (fraction > 1) {
 			fraction = 1;
 		}
-
 		const percents = timingFn(fraction);
-
 		render(percents);
 
 		if (fraction === 1) {
@@ -75,38 +73,52 @@ function animateCore(render, duration, timingFn,element) {
 	}, timePerFrame);
 
 }
+
 function addGreenLine(elem) {
- const text = elem.textContent;
+	const text = elem.textContent;
 	const textArr = text.split(' ');
 	for (let i = 0; i < textArr.length; i++) {
-		if(textArr[i]== 'makes') {
+		if (textArr[i] === 'secondary') {
 			textArr[i] = `<span>${textArr[i]}</span>`;
 		}
-		if (textArr[i]== 'liquid') {
+		if (textArr[i] === 'market') {
 			textArr[i] = `<span>${textArr[i]}</span>`;
 		}
-		if (textArr[i]== 'flexible') {
+		if (textArr[i] === 'without') {
 			textArr[i] = `<span>${textArr[i]}</span>`;
 		}
-		if (textArr[i]== 'how') {
+		if (textArr[i] === 'brokers') {
 			textArr[i] = `<span>${textArr[i]}</span>`;
 		}
-		if (textArr[i]== 'birel') {
+		if (textArr[i] === 'and') {
 			textArr[i] = `<span>${textArr[i]}</span>`;
 		}
-		if (textArr[i]== 'is') {
+		if (textArr[i] === 'intermediaries.') {
 			textArr[i] = `<span>${textArr[i]}</span>`;
 		}
-		if (textArr[i]== 'free,') {
+		if (textArr[i] === 'flexible') {
 			textArr[i] = `<span>${textArr[i]}</span>`;
 		}
-		if (textArr[i]== 'helps') {
+		if (textArr[i] === 'how') {
 			textArr[i] = `<span>${textArr[i]}</span>`;
 		}
-		if (textArr[i]== 'mission') {
+		if (textArr[i] === 'birel') {
+			textArr[i] = `<span>${textArr[i]}</span>`;
+		}
+		if (textArr[i] === 'is') {
+			textArr[i] = `<span>${textArr[i]}</span>`;
+		}
+		if (textArr[i] === 'free,') {
+			textArr[i] = `<span>${textArr[i]}</span>`;
+		}
+		if (textArr[i] === 'helps') {
+			textArr[i] = `<span>${textArr[i]}</span>`;
+		}
+		if (textArr[i] === 'mission') {
 			textArr[i] = `<span>${textArr[i]}</span>`;
 		}
 	}
+
 	elem.innerHTML = textArr.join(' ');
 }
 
@@ -134,7 +146,7 @@ function animate(element, styleName, endValue, time) {
 	}, timePerFrame);
 }
 
-function createBg(column , count) {
+function createBg(column, count) {
 	for (let i = 0; i < count; i++) {
 		let divElement = document.createElement('div');
 		divElement.classList.add('g-p');
@@ -142,7 +154,7 @@ function createBg(column , count) {
 	}
 	setTimeout(() => {
 		elems(column);
-	},1000);
+	}, 1000);
 }
 
 function elems(column) {
@@ -192,4 +204,5 @@ function bindTabs(container) {
 		}
 	}
 }
-export { animateText,animate,createBg,isVisible,bindTabs };
+
+export {animateText, animate, createBg, isVisible, bindTabs};
