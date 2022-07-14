@@ -458,7 +458,7 @@
                                     <td class="body-row-item">
                                         <div>
                                             <div>
-                                                {{$order->type ?? '-'}}
+                                                {{$order->type ?? '-'}}{{($order->sub_type)?'|'.$order->sub_type:''}}
                                             </div>
                                         </div>
                                     </td>
@@ -746,7 +746,7 @@
                                         <td class="body-row-item">
                                             <div>
                                                 <div>
-                                                    {{$order->type ?? '-'}}
+                                                    {{$order->type ?? '-'}}{{($order->sub_type)?'|'.$order->sub_type:''}}
                                                 </div>
                                             </div>
                                         </td>

@@ -46,7 +46,7 @@
                                             <td>{{$item->user->name}}</td>
                                             <td>{{$item->date ?? '-'}}</td>
                                             <td>{{$item->share_type }}</td>
-                                            <td>{{$item->type }}</td>
+                                            <td>{{$item->type }}{{($item->sub_type)?'|'.$item->sub_type:''}}</td>
                                             <td>{{$item->status }}</td>
                                             <td>
                                                 <a href="{{ route('orders.edit',$item) }}">Edit</a>
