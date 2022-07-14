@@ -765,18 +765,18 @@
                 <h2 class="title s f54-l70 purple1">Key Features</h2>
             </div>
             <div class="content-features-cont">
-                <div class="content-features-search">
+                <div class="content-features-arrow">
                     <div class="content-features-img">
-                        <picture><source srcset="./img/img-search.svg" type="image/webp"><img src="./img/img-search.svg" alt=""></picture>
+                       <picture><source srcset="./img/123.svg" type="image/webp"><img src="./img/123.svg" alt=""></picture>
                     </div>
                     <div class="content-features-text">
                         <h3 class="purple1 t-sb f36-l42">Transparency</h3>
                         <p class="t-r f18-l32 purple2">Active orders are visible to all participants of the platform. This allows shareholders of private high-tech companies to understand liquidity options, market sentiment and the current value of their assets.</p>
                     </div>
                 </div>
-                <div class="content-features-shield">
+                <div class="content-features-arrow">
                     <div class="content-features-img">
-                        <picture><source srcset="./img/img-shield.svg" type="image/webp"><img src="./img/img-shield.svg" alt=""></picture>
+                       <picture><source srcset="./img/1234.svg" type="image/webp"><img src="./img/1234.svg" alt=""></picture>
                     </div>
                     <div class="content-features-text">
                         <h3 class="purple1 t-sb f36-l42">Direct connection</h3>
@@ -786,7 +786,7 @@
                 </div>
                 <div class="content-features-arrow">
                     <div class="content-features-img">
-                        <picture><source srcset="./img/img-arrow.svg" type="image/webp"><img src="./img/img-arrow.svg" alt=""></picture>
+                        <picture><source srcset="./img/12345.svg" type="image/webp"><img src="./img/12345.svg" alt=""></picture>
                     </div>
                     <div class="content-features-text">
                         <h3 class="purple1 t-sb f36-l42">Focus</h3>
@@ -797,7 +797,7 @@
                 </div>
                 <div class="content-features-arrow">
                     <div class="content-features-img">
-                        <picture><source srcset="./img/image.svg" type="image/webp"><img src="./img/image.svg" alt=""></picture>
+                      <picture><source srcset="./img/123456.svg" type="image/webp"><img src="./img/123456.svg" alt=""></picture>
                     </div>
                     <div class="content-features-text">
                         <h3 class="purple1 t-sb f36-l42">Commission free</h3>

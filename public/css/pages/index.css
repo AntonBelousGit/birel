@@ -241,7 +241,7 @@
 }
 
 .content-features-text {
-  padding: 35px 25px 55px 20px;
+  padding: 35px 10px 55px 10px;
 }
 
 .content-features-text h3 {
@@ -249,10 +249,22 @@
 }
 
 .content-features-img {
-  width: 340px;
-  height: 230px;
   background: -o-linear-gradient(241.9deg, #F6F4FF 7.35%, #E5DDFA 79.61%);
   background: linear-gradient(208.1deg, #F6F4FF 7.35%, #E5DDFA 79.61%);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 30px 0;
+}
+
+.content-features-img img {
+  width: 160px;
+  height: 158px;
 }
 
 .content-features-cont {
@@ -269,28 +281,8 @@
           justify-content: space-between;
 }
 
-.content-features-search {
-  width: 340px;
-}
-
-.content-features-search div img {
-  padding: 40px 100px;
-}
-
-.content-features-shield {
-  width: 340px;
-}
-
-.content-features-shield div img {
-  padding: 40px 100px;
-}
-
 .content-features-arrow {
-  width: 340px;
-}
-
-.content-features-arrow div img {
-  padding: 40px 100px;
+  width: 23%;
 }
 
 .contact {
@@ -367,7 +359,7 @@
 
   .mission .content-block-right .bg-lattice {
     padding-bottom: 80%;
-    margin-left: -50px;
+    left: -110px;
   }
 }
 
@@ -509,33 +501,8 @@
     margin: 40px 0 30px;
   }
 
-  .content-features-img {
-    width: 340px;
-    height: 280px;
-  }
-
-  .content-features-search {
-    width: 340px;
-  }
-
-  .content-features-search div img {
-    padding: 40px 66px;
-  }
-
-  .content-features-shield {
-    width: 340px;
-  }
-
-  .content-features-shield div img {
-    padding: 40px 88px;
-  }
-
   .content-features-arrow {
-    width: 340px;
-  }
-
-  .content-features-arrow div img {
-    padding: 40px 66px;
+    width: 45%;
   }
 
   .contact .content-block-left .title {
@@ -555,22 +522,6 @@
 
   .shareholders .content-block-right {
     padding: 50px 0;
-  }
-
-  .content-features-img {
-    width: 270px;
-  }
-
-  .content-features-search {
-    width: 270px;
-  }
-
-  .content-features-shield {
-    width: 270px;
-  }
-
-  .content-features-arrow {
-    width: 270px;
   }
 }
 
@@ -597,33 +548,8 @@
     padding: 35px 0 55px 0;
   }
 
-  .content-features-img {
-    width: 100%;
-    height: auto;
-  }
-
-  .content-features-search {
-    width: 100%;
-  }
-
-  .content-features-search div img {
-    padding: 40px 34px;
-  }
-
-  .content-features-shield {
-    width: 100%;
-  }
-
-  .content-features-shield div img {
-    padding: 40px 52px;
-  }
-
   .content-features-arrow {
     width: 100%;
-  }
-
-  .content-features-arrow div img {
-    padding: 40px 34px;
   }
 
   .contact .content-block-right {
