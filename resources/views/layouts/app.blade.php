@@ -127,7 +127,6 @@
             @endauth
         </div>
     </div>
-    </div>
 </header>
 
 @yield('content')
