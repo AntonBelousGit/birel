@@ -767,31 +767,11 @@
             <div class="content-features-cont">
                 <div class="content-features-arrow">
                     <div class="content-features-img">
-                       <picture><source srcset="./img/123.svg" type="image/webp"><img src="./img/123.svg" alt=""></picture>
-                    </div>
-                    <div class="content-features-text">
-                        <h3 class="purple1 t-sb f36-l42">Transparency</h3>
-                        <p class="t-r f18-l32 purple2">Active orders are visible to all participants of the platform. This allows shareholders of private high-tech companies to understand liquidity options, market sentiment and the current value of their assets.</p>
-                    </div>
-                </div>
-                <div class="content-features-arrow">
-                    <div class="content-features-img">
                        <picture><source srcset="./img/1234.svg" type="image/webp"><img src="./img/1234.svg" alt=""></picture>
                     </div>
                     <div class="content-features-text">
                         <h3 class="purple1 t-sb f36-l42">Direct connection</h3>
                         <p class="t-r f18-l32 purple2">Directly connect a buyer with a seller, without the participation of intermediaries. This gives the Birel members opportunity to receive the most relevant details and find mutually beneficial terms for the deal during the negotiations.
-                        </p>
-                    </div>
-                </div>
-                <div class="content-features-arrow">
-                    <div class="content-features-img">
-                        <picture><source srcset="./img/12345.svg" type="image/webp"><img src="./img/12345.svg" alt=""></picture>
-                    </div>
-                    <div class="content-features-text">
-                        <h3 class="purple1 t-sb f36-l42">Focus</h3>
-                        <p class="t-r f18-l32 purple2">As listed assets, Birel focuses on Venture-backed late stage companies that have closed rounds D, E, F +….<br>
-                                                       Platform members: Birel is designed to address the liquidity issues of institutional/qualified investors who do not require the presence of brokers to make deals. The volume of orders starts from 1 million to 100+ million.
                         </p>
                     </div>
                 </div>
@@ -805,6 +785,28 @@
                         </p>
                     </div>
                 </div>
+                <div class="content-features-arrow">
+                    <div class="content-features-img">
+                       <picture><source srcset="./img/123.svg" type="image/webp"><img src="./img/123.svg" alt=""></picture>
+                    </div>
+                    <div class="content-features-text">
+                        <h3 class="purple1 t-sb f36-l42">Transparency</h3>
+                        <p class="t-r f18-l32 purple2">Active orders are visible to all participants of the platform. This allows shareholders of private high-tech companies to understand liquidity options, market sentiment and the current value of their assets.</p>
+                    </div>
+                </div>
+
+                <div class="content-features-arrow">
+                    <div class="content-features-img">
+                        <picture><source srcset="./img/12345.svg" type="image/webp"><img src="./img/12345.svg" alt=""></picture>
+                    </div>
+                    <div class="content-features-text">
+                        <h3 class="purple1 t-sb f36-l42">Focus</h3>
+                        <p class="t-r f18-l32 purple2">As listed assets, Birel focuses on Venture-backed late stage companies that have closed rounds D, E, F +….<br>
+                                                       Platform members: Birel is designed to address the liquidity issues of institutional/qualified investors who do not require the presence of brokers to make deals. The volume of orders starts from 1 million to 100+ million.
+                        </p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
