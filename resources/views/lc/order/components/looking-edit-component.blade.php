@@ -1,5 +1,5 @@
 <div class="content-t active">
-    <form class="add-order-looking" action="{{ route('lc-update-lfo',$order) }}" method="POST" id='form'>
+    <form class="add-order-looking" action="{{ route('update-lfo',$order) }}" method="POST" id='form'>
         @csrf
         @method('put')
         <div class="looking">
@@ -88,10 +88,10 @@
                         @include('lc.order.components.empty.empty-numbshare-edit-lfo')
                     @else
                         <div class="looking-block-info">
-                            <label class="t-r f16-l24 purple1" for="share_type3">
+                            <label class="t-r f16-l24 purple1" for="share_type_looking">
                                 Share Type
                             </label>
-                            <select class="js-example-basic-single w400" id="share_type" name="share_type"
+                            <select class="js-example-basic-single w400" id="share_type_looking" name="share_type"
                                     required>
                                 <option value="Choose" disabled>Choose</option>
                                 <option value="Preferred" {{$order->share_type == 'Preferred'? 'selected':''}}>
@@ -106,8 +106,8 @@
                             </select>
                         </div>
                         <div class="looking-block-info">
-                            <label class="t-r f16-l24 purple1" for="share_number">Share Number</label>
-                            <input class="i-f w400 m-bid" type="number" id="share_number"
+                            <label class="t-r f16-l24 purple1" for="share_number_looking">Share Number</label>
+                            <input class="i-f w400 m-bid" type="number" id="share_number_looking"
                                    placeholder="Enter the Number" name="share_number" required
                                    value="{{$order->share_number}}" step="0.001">
                         </div>
@@ -118,8 +118,8 @@
                         @include('lc.order.components.empty.empty-volum-edit-lfo')
                     @else
                         <div class="looking-block-info">
-                            <label class="t-r f16-l24 purple1" for="share_type23">Share Type</label>
-                            <select class="js-example-basic-single w400" id="share_type2" name="share_type"
+                            <label class="t-r f16-l24 purple1" for="share_type_looking2">Share Type</label>
+                            <select class="js-example-basic-single w400" id="share_type_looking2" name="share_type"
                                     required>
                                 <option value="Choose" disabled>Choose</option>
                                 <option value="Preferred" {{$order->share_type == 'Preferred'? 'selected':''}}>
@@ -144,7 +144,7 @@
             </div>
         </div>
         <div class="add-order-btn">
-            <button class="btn w265">
+            <button class="btn w265" id="submit_orm" type='submit'>
                 Submit
             </button>
         </div>
