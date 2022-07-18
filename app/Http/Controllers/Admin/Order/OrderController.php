@@ -3,11 +3,15 @@
 namespace App\Http\Controllers\Admin\Order;
 
 use App\Events\OrderUpdateEvent;
+use App\Events\OrderUserStatusEvent;
+use App\Events\WatchlistNotificationEvent;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Orders\Admin\AdminUpdateLfoOrderRequest;
 use App\Http\Requests\Orders\Admin\AdminUpdateOrderRequest;
 use App\Models\Company;
 use App\Models\CompanyOrder;
+use App\Models\Watchlist;
+use Arr;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -31,38 +35,6 @@ class OrderController extends Controller
         }
         $orders = $orders_query->with('user', 'company')->get();
         return view('admin.orders.index', compact('orders'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @return Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param \App\Models\CompanyOrder $companyOrder
-     * @return Response
-     */
-    public function show(CompanyOrder $companyOrder)
-    {
-        //
     }
 
     /**
@@ -91,6 +63,7 @@ class OrderController extends Controller
      */
     public function update(AdminUpdateOrderRequest $adminUpdateOrderRequest, CompanyOrder $order)
     {
+
         $data = $adminUpdateOrderRequest->validated();
         $this->updateOrder($data, $order);
         return back();
@@ -107,41 +80,49 @@ class OrderController extends Controller
     {
         $data = $adminUpdateOrderRequest->validated();
         $this->updateOrder($data, $order);
+        $user = $order->user;
+        $this->notification($order, $user);
         return back();
     }
 
 
     protected function updateOrder($data, $order)
     {
+        $user = $order->user;
         if ($data['status'] == 'active') {
             $order->load('user');
-            $user = $order->user;
-
             if ($user->active_order > 0) {
                 event(new OrderUpdateEvent($user, '-'));
             } else {
-                return back()->with('error', 'The error message here!');
+                return back()->with('error', 'Max count active order');
             }
         }
 
         if ($order->status == 'active' && $data['status'] != 'active') {
             $order->load('user');
-            $user = $order->user;
-
             event(new OrderUpdateEvent($user, '+'));
         }
 
         $order->update($data);
+        $this->notification($order, $user);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param \App\Models\CompanyOrder $companyOrder
-     * @return Response
-     */
-    public function destroy(CompanyOrder $companyOrder)
+    protected function notification($order, $user)
     {
-        //
+        if ($order->status == 'active') {
+            $company = $order->company;
+            $type = $order->type;
+            $company_id = $order->company_id;
+
+            $message = 'Your    ' . $order->type . ' on "' . $company?->companyName . '" has been placed on platform.';
+            event(new OrderUserStatusEvent($user, $message));
+            event(new WatchlistNotificationEvent($user,$company_id,$type,$company));
+        }
+
+        if ($order->status == 'inactive') {
+            $company = $order->company;
+            $message = 'Your ' . $order->type .' on "'. $company?->companyName  .'" did not facilitate moderation.';
+            event(new OrderUserStatusEvent($user, $message));
+        }
     }
 }

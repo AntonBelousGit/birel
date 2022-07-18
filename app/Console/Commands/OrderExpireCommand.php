@@ -38,6 +38,7 @@ class OrderExpireCommand extends Command
      */
     public function handle()
     {
-        CompanyOrder::where('publish_time', '<', now()->subDays(45)->endOfDay())->update(['status' => 'history']);
+        CompanyOrder::where('publish_time', '<', date('Y-m-d', strtotime("-45 days")))->where('status','active')->update(['status' => 'history']);
+        dd(date('Y-m-d', strtotime("-45 days")));
     }
 }

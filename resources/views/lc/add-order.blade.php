@@ -8,10 +8,22 @@
 @section('scripts')
     <script src="{{asset('js/lib/moment.min.js')}}"></script>
     <script src="{{asset('js/lib/daterangepicker.min.js')}}"></script>
+    <script src="{{asset('/js/lib/propper.min.js')}}"></script>
+    <script src="{{asset('/js/lib/tippy.min.js')}}"></script>
     <script src="{{asset('js/pages/page-lc-add-order.min.js')}}" type="module"></script>
     <script src="{{asset('js/pages/page-lc-add-order-all.min.js')}}" type="module"></script>
-<!--     <script src="{{asset('js/pages/page-lc-add-order-looking.min.js')}}" type="module"></script> -->
     <script src="{{asset('js/pages/page-lc-add-order-tender.min.js')}}" type="module"></script>
+    <script>
+            tippy('[data-tippy-content]',
+                {
+                    placement: 'left',
+                    arrow: true,
+                    theme: 'my',
+                    duration: 0,
+                    delay: [700, 500],
+                    dynamicTitle: true,
+                });
+        </script>
 @endsection
 
 @section('content')
@@ -26,7 +38,7 @@
             <li class="t-m f18-l32 purple1 tab-n {{(!empty($data))?($data['type'] == 'lfo')?'active':'':''}}">
                 Looking for an offer
             </li>
-            <li class="t-m f18-l32 purple1 tab-n ">
+            <li class="t-m f18-l32 purple1 disabled-tab " data-tippy-content="Tender will be available later">
                 Tender
             </li>
         </ul>
@@ -90,7 +102,7 @@
                     <div class="tender-block c-n">
                         <h2 class="t-sb f22-l25 purple3">Company Name</h2>
                         <p class="t-r f16-l24 purple2">You can choose deal structure: direct, spv, forward contract
-                                                                        or primary round.
+                            or primary round.
                         </p>
                         <div class="select">
                             <select id="theme24" class="js-example-basic-single w400">
@@ -144,9 +156,20 @@
                             <input class="i-f w170" type="text" name="datetimes">
                             <input class="i-f w170" type="text" name="datetimes">
                         </div>
+                        <ul class="t-r f16-l24 purple2 list-help">
+                            <li>
+                                - Order will be placed for 45 days, after this period you can update order so that it remains valid for another 45 days (this is available in section my orders).
+                            </li>
+                            <li>
+                                - You can place one order per company.
+                            </li>
+                            <li>
+                                - You can edit the Share price or Valuation once during the first 30 days.
+                            </li>
+                        </ul>
                     </div>
                     <div class="tender-block i" id="tabs2-tender">
-                        <h2 class="t-sb f22-l25 purple3">Information</h2>
+                        <h2 class="t-sb f22-l25 purple3">Terms</h2>
                         <ul class="nav-tabs">
                             <li class="t-m f18-l32 purple1 tab-n2 active">
                                 Price

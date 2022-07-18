@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\UserCreateRequest;
 use App\Http\Requests\UserDependencyRequest;
 use App\Models\User;
+use App\Models\UserSettingNotification;
 use App\Service\UserService;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -54,7 +55,11 @@ class UserController extends Controller
         try {
 
             $data['password'] = Hash::make($data['password']);
-            User::create($data->toArray());
+            $user =  User::create($data->toArray());
+            $user->userSettingNotifications()->create([
+                'user_id' => $user->id,
+            ]);
+
         } catch (Throwable $e) {
             report($e);
             abort(500);

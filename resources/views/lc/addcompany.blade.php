@@ -10,45 +10,10 @@
     <script src="{{asset('js/pages/page-lc-add-order-all.min.js')}}" type="module"></script>
 
 @endsection
+
 @section('content')
 
-<!-- <section class="add"> -->
-<!-- 	<div class="add-company"> -->
-<!-- 		@if(URL::previous() != route('companies.create')) -->
-<!-- 		<div class="back-link active"> -->
-<!--             <a class="t-r f18-l32 purple4 " href="{{ URL::previous() }}"> -->
-<!--                 <i class="icon icon-arrow-left"></i> -->
-<!--                 Come back -->
-<!--             </a> -->
-<!--         </div> -->
-<!-- 		@endif -->
-<!-- 		<div class="add-company-wrapper"> -->
-<!-- 			<h2 class="t-sb f22-l25 purple3 "> -->
-<!-- 				Add company -->
-<!-- 			</h2> -->
-<!-- 			<p class="t-r f16-l24 purple2"> -->
-<!-- 				You can add a company. To do this, you need to correctly enter its name and the address of its website. -->
-<!-- 			</p> -->
-<!-- 			<form class="add-company-form" action="{{route('companies.store')}}" method="POST"> -->
-<!-- 				@csrf -->
-<!-- 				<ul class="form-list"> -->
-<!-- 					<li class="form-list-item"> -->
-<!-- 						<label class="t-r f16-l24 purple1"  for="companyName">Company name</label> -->
-<!-- 						<input class="i-f" type="text" id="companyName" placeholder="Placeholder text" name="companyName"> -->
-<!-- 					</li> -->
-<!-- 					<li class="form-list-item"> -->
-<!-- 						<label class="t-r f16-l24 purple1"  for="companyAddress">Company address</label> -->
-<!-- 						<input class="i-f" type="text" id="companyAddress" placeholder="Placeholder" name="companyAddress"> -->
-<!-- 					</li> -->
-<!-- 				</ul> -->
-<!-- 				<button class="btn btn-green"> -->
-<!-- 					<span class="f24-l32">+</span> -->
-<!-- 					Add company -->
-<!-- 				</button> -->
-<!-- 			</form> -->
-<!-- 		</div> -->
-<!-- 	</div> -->
-<!-- </section> -->
+
 <section class="add">
 	<div class="add-order" id="tabs">
 		<ul class="tab-wrapper nav-tabs w310">
@@ -61,13 +26,15 @@
 			<li class="t-m f18-l32 purple1 tab-n ">
 				Looking for an offer
 			</li>
-<!--			<li class="t-m f18-l32 purple1 tab-n ">-->
-<!--				Tender-->
-<!--			</li>-->
+<!-- 			<li class="t-m f18-l32 purple1 tab-n "> -->
+<!--                 Tender -->
+<!--             </li> -->
 		</ul>
 		<div class="content-t active">
-			<form class="add-order-ask" action="#">
+			<form class="add-order-ask" action="{{ route('companies.store') }}" method="POST">
+                @csrf
 				<div class="ask">
+                    <input type="hidden" name="type" value="BID">
 					<div class="ask-block c-n">
 						<h2 class="t-sb f22-l25 purple3 ">
 							Add company
@@ -77,11 +44,11 @@
 						</p>
 						<div class="ask-block-inp">
 							<label class="t-r f16-l24 purple1" for="companyName_bid">Company name</label>
-							<input class="i-f w400" type="text" id="companyName_bid" placeholder="Enter the Name" name="" required>
+							<input class="i-f w400" type="text" id="companyName_bid" placeholder="Enter the Name" name="companyName" required>
 						</div>
 						<div class="ask-block-inp">
 							<label class="t-r f16-l24 purple1" for="companyAddress_bid">Company web address</label>
-							<input class="i-f w400" type="text" id="companyAddress_bid" placeholder="Enter the Web Address" name="" required>
+							<input class="i-f w400" type="text" id="companyAddress_bid" placeholder="Enter the Web Address" name="companyAddress" required>
 						</div>
 					</div>
 					<div class="ask-block d-s">
@@ -101,6 +68,17 @@
 						<h2 class="t-sb f22-l25 purple3">Details</h2>
 						<p class="t-r f16-l24 purple2">Here you can enter important details. For example, SPV - layers, management fee, carry ... / Escrow / ROFR / requirements for the second side of the transaction and so on.</p>
 						<textarea class="i-f f14-l16 w400 h235" cols="30" rows="10" name="description" placeholder="Enter the Text"></textarea>
+						<ul class="t-r f16-l24 purple2 list-help">
+                            <li>
+                                - Order will be placed for 45 days, after this period you can update order so that it remains valid for another 45 days (this is available in section my orders).
+                            </li>
+                            <li>
+                                - You can place one order per company.
+                            </li>
+                            <li>
+                                - You can edit the Share price or Valuation once during the first 30 days.
+                            </li>
+                        </ul>
 					</div>
 					<div class="ask-block i" id="tabs_bid">
 						<h2 class="t-sb f22-l25 purple3">Information</h2>
@@ -142,15 +120,15 @@
 									</div>
 								</div>
 								<label class="t-r f16-l24 purple1" for="share_price_bid">Share Price</label>
-								<input class="i-f w400 m-bid" type="number" id="share_price_bid" placeholder="Enter the Price" name="share_price" required>
+								<input class="i-f w400 m-bid" type="number" id="share_price_bid" placeholder="Enter the Price" name="share_price" required step="0.001">
 							</div>
 							<div class="ask-block-info">
 								<label class="t-r f16-l24 purple1" for="share_number_bid">Share Number</label>
-								<input class="i-f w400 m-bid" type="number" id="share_number_bid" placeholder="Enter the Number" name="share_number" required>
+								<input class="i-f w400 m-bid" type="number" id="share_number_bid" placeholder="Enter the Number" name="share_number" required step="0.001">
 							</div>
 							<div class="ask-block-info">
 								<label class="t-r f16-l24 purple1" for="volume_bid">Volume</label>
-								<input class="i-f w400" type="number" id="volume_bid" placeholder="Enter the Volume" name="volume" required>
+								<input class="i-f w400" type="number" id="volume_bid" placeholder="Enter the Volume" name="volume" required step="0.001">
 								<button class="btn-green w265" type="button" id="btn_calc_bid">
 									Calculate
 								</button>
@@ -169,11 +147,11 @@
 							</div>
 							<div class="ask-block-info">
 								<label class="t-r f16-l24 purple1" for="volume_bid2">Volume</label>
-								<input class="i-f w400" type="number" id="volume_bid2" placeholder="Enter the Volume">
+								<input class="i-f w400" type="number" id="volume_bid2" placeholder="Enter the Volume" step="0.001">
 							</div>
 							<div class="ask-block-info">
 								<label class="t-r f16-l24 purple1" for="share_number_bid2">Valuation</label>
-								<input class="i-f w400" type="number" id="share_number_bid2" placeholder="Enter the Valuation">
+								<input class="i-f w400" type="number" id="share_number_bid2" placeholder="Enter the Valuation" step="0.001">
 							</div>
 						</div>
 					</div>
@@ -186,8 +164,10 @@
 			</form>
 		</div>
 		<div class="content-t ">
-			<form class="add-order-ask" action="#">
-				<div class="ask">
+			<form class="add-order-ask" action="{{ route('companies.store') }}" method="POST">
+                @csrf
+                <input type="hidden" name="type" value="ASK">
+                <div class="ask">
 					<div class="ask-block c-n">
 						<h2 class="t-sb f22-l25 purple3 ">
 							Add company
@@ -197,11 +177,11 @@
 						</p>
 						<div class="ask-block-inp">
 							<label class="t-r f16-l24 purple1" for="companyName_ask">Company name</label>
-							<input class="i-f w400" type="text" id="companyName_ask" placeholder="Enter the Name" name="" required>
+							<input class="i-f w400" type="text" id="companyName_ask" placeholder="Enter the Name" name="companyName" required>
 						</div>
 						<div class="ask-block-inp">
 							<label class="t-r f16-l24 purple1" for="companyAddress_ask">Company web address</label>
-							<input class="i-f w400" type="text" id="companyAddress_ask" placeholder="Enter the Web Address" name="" required>
+							<input class="i-f w400" type="text" id="companyAddress_ask" placeholder="Enter the Web Address" name="companyAddress" required>
 						</div>
 					</div>
 					<div class="ask-block d-s">
@@ -221,6 +201,17 @@
 						<h2 class="t-sb f22-l25 purple3">Details</h2>
 						<p class="t-r f16-l24 purple2">Here you can enter important details. For example, SPV - layers, management fee, carry ... / Escrow / ROFR / requirements for the second side of the transaction and so on.</p>
 						<textarea class="i-f f14-l16 w400 h235" cols="30" rows="10" placeholder="Enter the Text"></textarea>
+						<ul class="t-r f16-l24 purple2 list-help">
+                            <li>
+                                - Order will be placed for 45 days, after this period you can update order so that it remains valid for another 45 days (this is available in section my orders).
+                            </li>
+                            <li>
+                                - You can place one order per company.
+                            </li>
+                            <li>
+                                - You can edit the Share price or Valuation once during the first 30 days.
+                            </li>
+                        </ul>
 					</div>
 					<div class="ask-block i" id="tabs_ask">
 						<h2 class="t-sb f22-l25 purple3">Information</h2>
@@ -262,15 +253,15 @@
 									</div>
 								</div>
 								<label class="t-r f16-l24 purple1" for="share_price_ask">Share Price</label>
-								<input class="i-f w400 m-bid" type="number" id="share_price_ask" name="share_price" placeholder="Enter the Price" required>
+								<input class="i-f w400 m-bid" type="number" id="share_price_ask" name="share_price" placeholder="Enter the Price" required step="0.001">
 							</div>
 							<div class="ask-block-info">
 								<label class="t-r f16-l24 purple1" for="share_number_ask">Share Number</label>
-								<input class="i-f w400 m-bid" type="number" id="share_number_ask" name="share_number" placeholder="Enter the Number" required>
+								<input class="i-f w400 m-bid" type="number" id="share_number_ask" name="share_number" placeholder="Enter the Number" required step="0.001">
 							</div>
 							<div class="ask-block-info">
 								<label class="t-r f16-l24 purple1" for="volume_ask">Volume</label>
-								<input class="i-f w400" type="number" id="volume_ask" name="volume" placeholder="Enter the Volume" required>
+								<input class="i-f w400" type="number" id="volume_ask" name="volume" placeholder="Enter the Volume" required step="0.001">
 								<button class="btn-green w265" type="button" id="btn_calc_ask">
 									Calculate
 								</button>
@@ -286,11 +277,11 @@
 							</div>
 							<div class="ask-block-info">
 								<label class="t-r f16-l24 purple1" for="volume_ask2">Volume</label>
-								<input class="i-f w400" type="number" id="volume_ask2" placeholder="Enter the Volume">
+								<input class="i-f w400" type="number" id="volume_ask2" placeholder="Enter the Volume" step="0.001">
 							</div>
 							<div class="ask-block-info">
 								<label class="t-r f16-l24 purple1" for="share_number_ask2">Valuation</label>
-								<input class="i-f w400" type="number" id="share_number_ask2" placeholder="Enter the Valuation">
+								<input class="i-f w400" type="number" id="share_number_ask2" placeholder="Enter the Valuation" step="0.001">
 							</div>
 						</div>
 					</div>
@@ -303,9 +294,11 @@
 			</form>
 		</div>
 		<div class="content-t ">
-			<form class="add-order-looking" action="#">
+			<form class="add-order-looking" action="{{ route('companies.store-lfo') }}" method="POST">
+                @csrf
 				<div class="looking">
-					<div class="looking-block c-n">
+                    <input type="hidden" name="type" value="LFO">
+                    <div class="looking-block c-n">
 						<h2 class="t-sb f22-l25 purple3 ">
 							Add company
 						</h2>
@@ -314,11 +307,11 @@
 						</p>
 						<div class="looking-block-inp">
 							<label class="t-r f16-l24 purple1" for="companyName_looking">Company name</label>
-							<input class="i-f w400" type="text" id="companyName_looking" placeholder="Enter the Name" required name="">
+							<input class="i-f w400" type="text" id="companyName_looking" placeholder="Enter the Name" required name="companyName">
 						</div>
 						<div class="looking-block-inp">
 							<label class="t-r f16-l24 purple1" for="companyAddress_looking">Company web address</label>
-							<input class="i-f w400" type="text" id="companyAddress_looking" placeholder="Enter the Web Address" required name="">
+							<input class="i-f w400" type="text" id="companyAddress_looking" placeholder="Enter the Web Address" required name="companyAddress">
 						</div>
 					</div>
 					<div class="looking-block o">
@@ -359,6 +352,17 @@
                            management fee, carry ... / Escrow / ROFR / requirements for the second side of the transaction and
                            so on.</p>
 						<textarea class="i-f f14-l16 w400 h235" placeholder="Enter the Text" name="description"></textarea>
+						<ul class="t-r f16-l24 purple2 list-help">
+                            <li>
+                                - Order will be placed for 45 days, after this period you can update order so that it remains valid for another 45 days (this is available in section my orders).
+                            </li>
+                            <li>
+                                - You can place one order per company.
+                            </li>
+                            <li>
+                                - You can edit the Share price or Valuation once during the first 30 days.
+                            </li>
+                        </ul>
 					</div>
 					<div class="looking-block i" id="tabs_looking">
 						<h2 class="t-sb f22-l25 purple3">Information</h2>
@@ -385,7 +389,7 @@
 							</div>
 							<div class="looking-block-info">
 								<label class="t-r f16-l24 purple1" for="share_number_looking">Share Number</label>
-								<input class="i-f w400" type="text" id="share_number_looking"  name="share_number" placeholder="Enter the Number"required>
+								<input class="i-f w400" type="text" id="share_number_looking"  name="share_number" placeholder="Enter the Number"required step="0.001">
 							</div>
 						</div>
 						<div class="content-t2">
@@ -400,7 +404,7 @@
 							</div>
 							<div class="looking-block-info">
 								<label class="t-r f16-l24 purple1" for="volume_looking">Block Volume</label>
-								<input class="i-f w400" type="text" id="volume_looking" placeholder="Enter the Volume">
+								<input class="i-f w400" type="text" id="volume_looking" placeholder="Enter the Volume" step="0.001">
 							</div>
 						</div>
 					</div>
@@ -471,6 +475,17 @@
 <!--							<input class="i-f w170" type="text" name="datetimes">-->
 <!--							<input class="i-f w170" type="text" name="datetimes">-->
 <!--						</div>-->
+<!--                             <ul class="t-r f16-l24 purple2 list-help"> -->
+<!--                                 <li> -->
+<!--                                     - Order will be placed for 45 days, after this period you can update order so that it remains valid for another 45 days (this is available in section my orders). -->
+<!--                                 </li> -->
+<!--                                 <li> -->
+<!--                                     - You can place one order per company. -->
+<!--                                 </li> -->
+<!--                                 <li> -->
+<!--                                     - You can edit the Share price or Valuation once during the first 30 days. -->
+<!--                                 </li> -->
+<!--                             </ul> -->
 <!--					</div>-->
 <!--					<div class="tender-block i" id="tabs2-tender">-->
 <!--						<h2 class="t-sb f22-l25 purple3">Информация</h2>-->

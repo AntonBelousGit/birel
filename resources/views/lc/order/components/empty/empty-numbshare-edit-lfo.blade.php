@@ -13,6 +13,6 @@
 <div class="looking-block-info">
     <label class="t-r f16-l24 purple1" for="share_number123">Share Number</label>
     <input class="i-f w400 m-bid" type="text" id="share_number123"
-           placeholder="Enter the Number" name="share_number">
+           placeholder="Enter the Number" name="share_number" step="0.001">
 </div>
 

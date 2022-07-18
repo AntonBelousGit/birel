@@ -61,9 +61,20 @@
                     so on.</p>
                 <textarea class="i-f f14-l16 w400 h235"
                           placeholder="Enter the Text">{{$order->description}}</textarea>
+                <ul class="t-r f16-l24 purple2 list-help">
+                    <li>
+                        - Order will be placed for 45 days, after this period you can update order so that it remains valid for another 45 days (this is available in section my orders).
+                    </li>
+                    <li>
+                        - You can place one order per company.
+                    </li>
+                    <li>
+                        - You can edit the Share price or Valuation once during the first 30 days.
+                    </li>
+                </ul>
             </div>
             <div class="looking-block i" id="{{$id}}">
-                <h2 class="t-sb f22-l25 purple3">Information</h2>
+                <h2 class="t-sb f22-l25 purple3">Terms</h2>
                 <ul class="nav-tabs">
                     <li class="t-m f18-l32 purple1 tab-n2 {{!empty($order->share_number)?'active':''}}">
                         Number shares
@@ -98,7 +109,7 @@
                             <label class="t-r f16-l24 purple1" for="share_number_looking">Share Number</label>
                             <input class="i-f w400 m-bid" type="number" id="share_number_looking"
                                    placeholder="Enter the Number" name="share_number" required
-                                   value="{{$order->share_number}}">
+                                   value="{{$order->share_number}}" step="0.001">
                         </div>
                     @endif
                 </div>
@@ -123,9 +134,9 @@
                             </select>
                         </div>
                         <div class="looking-block-info">
-                            <label class="t-r f16-l24 purple1" for="volume_looking">Block Volume</label>
-                            <input class="i-f w400" type="number" id="volume_looking" name="volume" placeholder="Enter the Volume" required
-                                   value="{{$order->volume}}">
+                            <label class="t-r f16-l24 purple1" for="volume23">Block Volume</label>
+                            <input class="i-f w400" type="number" id="volume23" name="volume" placeholder="Enter the Volume" required
+                                   value="{{$order->volume}}" step="0.001">
                         </div>
                     @endif
                 </div>

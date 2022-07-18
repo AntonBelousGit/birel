@@ -29,17 +29,7 @@
                             <ul class="header-dropdown dropdown dropdown-animated scale-left">
                                 <li><a href="javascript:void(0);" data-toggle="cardloading" data-loading-effect="pulse"><i
                                             class="icon-refresh"></i></a></li>
-                                <li><a href="javascript:void(0);" class="full-screen"><i
-                                            class="icon-size-fullscreen"></i></a></li>
-                                <li class="dropdown">
-                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"
-                                       role="button" aria-haspopup="true" aria-expanded="false"></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="javascript:void(0);">Action</a></li>
-                                        <li><a href="javascript:void(0);">Another Action</a></li>
-                                        <li><a href="javascript:void(0);">Something else</a></li>
-                                    </ul>
-                                </li>
+
                             </ul>
                         </div>
                         <div class="body">
@@ -77,10 +67,10 @@
                                             <th>{{$loop->iteration}}</th>
                                             <td>{{$item->date}}</td>
                                             <td>{{$item->transaction_name}}</td>
-                                            <td>{{$item->amount_raised}}</td>
-                                            <td>{{$item->raised_to_date}}</td>
-                                            <td>{{number_format($item->issue_price)}}</td>
-                                            <td>{{number_format($item->post_money_valuation)}}</td>
+                                            <td>{{$item->amount_raised_encode}}</td>
+                                            <td>{{$item->raised_to_date_encode}}</td>
+                                            <td>{{$item->issue_price}}</td>
+                                            <td>{{$item->post_money_valuation_encode}}</td>
                                             <td>{{$item->key_investors}}</td>
                                             <td>
                                                 <a href="{{ route('company.id.financing.edit',['company' => $id, 'companyFinance' => $item]) }}"> Edit </a>

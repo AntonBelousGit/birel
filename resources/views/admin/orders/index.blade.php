@@ -46,10 +46,13 @@
                                             <td>{{$item->user->name}}</td>
                                             <td>{{$item->date ?? '-'}}</td>
                                             <td>{{$item->share_type }}</td>
-                                            <td>{{$item->type }}</td>
+                                            <td>{{$item->type }}{{($item->sub_type)?'|'.$item->sub_type:''}}</td>
                                             <td>{{$item->status }}</td>
                                             <td>
                                                 <a href="{{ route('orders.edit',$item) }}">Edit</a>
+                                                <a href="/chatify/{{$item->user_id}}">
+                                                    <i class="icon-envelope" aria-hidden="true"></i>
+                                                </a>
                                                 <form action="{{route('orders.destroy',$item)}}" class="d-inline"
                                                       method="POST">
                                                     @csrf

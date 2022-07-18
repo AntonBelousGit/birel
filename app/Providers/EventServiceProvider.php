@@ -2,10 +2,22 @@
 
 namespace App\Providers;
 
+use App\Events\AllUserNotificationEvent;
+use App\Events\NewChatMessageEvent;
+use App\Events\Order30daysLeftEvent;
+use App\Events\Order40daysLeftEvent;
 use App\Events\OrderUpdateEvent;
+use App\Events\OrderUserStatusEvent;
 use App\Events\SendFormMailEvent;
+use App\Events\WatchlistNotificationEvent;
+use App\Listeners\AllUserNotificationListener;
+use App\Listeners\NewChatMessageListener;
 use App\Listeners\NewOrderHasBeenModeratedChangeCountOrders;
+use App\Listeners\Order30daysLeftListener;
+use App\Listeners\Order40daysLeftListener;
+use App\Listeners\OrderUserStatusListener;
 use App\Listeners\SendFormMailListener;
+use App\Listeners\WatchlistNotificationListener;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -21,11 +33,29 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
-        OrderUpdateEvent::class =>[
+        OrderUpdateEvent::class => [
             NewOrderHasBeenModeratedChangeCountOrders::class
         ],
         SendFormMailEvent::class => [
             SendFormMailListener::class
+        ],
+        OrderUserStatusEvent::class => [
+            OrderUserStatusListener::class,
+        ],
+        AllUserNotificationEvent::class => [
+            AllUserNotificationListener::class,
+        ],
+        Order30daysLeftEvent::class => [
+            Order30daysLeftListener::class,
+        ],
+        Order40daysLeftEvent::class => [
+            Order40daysLeftListener::class,
+        ],
+        WatchlistNotificationEvent::class => [
+            WatchlistNotificationListener::class,
+        ],
+        NewChatMessageEvent::class => [
+            NewChatMessageListener::class,
         ]
     ];
 

@@ -32,5 +32,12 @@ class SettingSeeder extends Seeder
             'setting_name' => 'email',
             'attribute_name' => ['email' => 'orders@birel.io']
         ]);
+        Setting::create([
+            'setting_name' => 'social',
+            'attribute_name' => [
+                'twitter' => 'https://twitter.com',
+                'linkedin' => 'https://www.linkedin.com'
+            ]
+        ]);
     }
 }

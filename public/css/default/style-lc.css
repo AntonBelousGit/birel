@@ -248,6 +248,7 @@ label {
 .container {
   position: relative;
   width: 100%;
+  max-width: 100%;
   margin: 0 auto;
   padding: 0 65px;
   -webkit-box-sizing: border-box;
@@ -286,6 +287,12 @@ label {
 .box-container {
   background-color: #F6F4FF;
   padding-left: 350px;
+}
+
+.disabled-tab,
+.purple1.disabled-tab {
+  color: #A4A4A4;
+  border-color: #A4A4A4;
 }
 
 #tabs3 .nav-tabs,
@@ -2208,7 +2215,7 @@ label {
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 6px 8px 2px 3px;
+  padding: 6px 12px;
   margin-right: 8px;
   margin-bottom: 7px;
 }
@@ -2224,18 +2231,18 @@ label {
 .header .notice_item-link {
   display: inline;
   -webkit-box-flex: 0;
-  -webkit-flex: 0 1 455px;
-      -ms-flex: 0 1 455px;
-          flex: 0 1 455px;
-  font-size: 18px;
-  line-height: 25px;
+  -webkit-flex: 0 1 400px;
+      -ms-flex: 0 1 400px;
+          flex: 0 1 400px;
+  font-size: 16px;
+  line-height: 22px;
 }
 
 .header .notice_item-hour {
   -webkit-box-flex: 0;
-  -webkit-flex: 0 1 75px;
-      -ms-flex: 0 1 75px;
-          flex: 0 1 75px;
+  -webkit-flex: 0 1 155px;
+      -ms-flex: 0 1 155px;
+          flex: 0 1 155px;
   text-align: right;
   font-size: 16px;
   line-height: 25px;
@@ -2404,31 +2411,6 @@ label {
           justify-content: center;
   -webkit-border-radius: 50%;
           border-radius: 50%;
-}
-
-.user-avatar.s {
-  max-width: 22px;
-  max-height: 22px;
-  min-width: 22px;
-  min-height: 22px;
-  border: 1px solid #F6F4FF;
-}
-
-.user-avatar.s span {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  text-transform: uppercase;
-  font-size: 10px;
 }
 
 .user-avatar span {

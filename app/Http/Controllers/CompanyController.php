@@ -3,26 +3,24 @@
 namespace App\Http\Controllers;
 
 use App\Action\Filter\GetFilteredCompanyAction;
-use App\Action\Filter\GetFilteredOneCompanyAction;
 use App\Action\Filter\SetFilterAction;
 use App\Http\Filters\CompanyFilter;
-use App\Http\Filters\OneCompanyFilter;
 use App\Http\Requests\Filter\OneCompanyFilterRequest;
 use App\Http\Requests\Orders\FilterRequest;
+use App\Http\Requests\StoreCompanyLfoRequest;
 use App\Http\Requests\StoreCompanyRequest;
 use App\Http\Requests\StoreWatchlistRequest;
 use App\Http\Resources\CompanyFinanceInfoResource;
 use App\Models\Category;
 use App\Models\Company;
+use App\Models\CompanyOrder;
 use App\Models\Setting;
-use App\Models\Traits\Filterable;
 use App\Models\Watchlist;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Throwable;
 
 class CompanyController extends Controller
@@ -51,7 +49,9 @@ class CompanyController extends Controller
         $data = $request->all();
         $categories = Category::all();
         $companies = $companyAction->handle($action->handle(CompanyFilter::class, $data));
-        $watchlist = Watchlist::where('user_id', auth()->id())->with('company.category')->paginate(16, ['*'], 'watchlist')->withQueryString();
+        $watchlist = Watchlist::where('user_id', auth()->id())->with('company.category', 'company.orders')->whereHas('company', function ($q) {
+            $q->where('status',1);
+        })->paginate(16, ['*'], 'watchlist')->withQueryString();
         $setting = $this->setting;
         return view('lc.companies', compact('companies', 'categories', 'watchlist', 'setting'));
     }
@@ -74,7 +74,50 @@ class CompanyController extends Controller
      */
     public function store(StoreCompanyRequest $request)
     {
-        Company::create($request->validated());
+        $data = $request->validated();
+        $company = Company::create($request->validated());
+        CompanyOrder::create($data + ['company_id' => $company->id, 'user_id' => auth()->id()]);
+        try {
+            $check_isset = Watchlist::where(['user_id' => auth()->id(), 'company_id' => $company->id])->count();
+
+            if ($check_isset) {
+                return redirect()->route('companies.index');
+            }
+
+            Watchlist::create([
+                'user_id' => auth()->id(),
+                'company_id' => $company->id,
+                'type' => 'All',
+            ]);
+
+        } catch (Throwable $exception) {
+            report($exception);
+        }
+        return redirect()->route('companies.index');
+    }
+
+    public function storeLfo(StoreCompanyLfoRequest $request)
+    {
+        $data = $request->validated();
+        $company = Company::create($request->validated());
+        CompanyOrder::create($data + ['company_id' => $company->id, 'user_id' => auth()->id()]);
+
+        try {
+            $check_isset = Watchlist::where(['user_id' => auth()->id(), 'company_id' => $company->id])->count();
+
+            if ($check_isset) {
+                return redirect()->route('companies.index');
+            }
+
+            Watchlist::create([
+                'user_id' => auth()->id(),
+                'company_id' => $company->id,
+                'type' => 'All',
+            ]);
+        } catch (Throwable $exception) {
+            report($exception);
+        }
+
         return redirect()->route('companies.index');
     }
 
@@ -90,20 +133,20 @@ class CompanyController extends Controller
         $data = $request->all();
         $company = Company::find($id);
         $queryOrders = $company->orders();
+        $queryHistory = $company->history();
 
-        if (isset($data['type']) && $data['type'] !== '--') {
-            $queryOrders->where('type', $data['type']);
-        }
-        if (isset($data['sort']) && $data['sort'] === 'Data') {
-            $queryOrders->orderByDesc('publish_time');
-        }
-        if (isset($data['sort']) && $data['sort'] === 'Type') {
-            $queryOrders->orderByDesc('share_type');
-        }
-        if (!isset($data['sort']) && !isset($data['type'])) {
-            $queryOrders->orderByDesc('created_at');
-        }
+        if (isset($data['type']) && $data['type'] !== '--') $queryOrders->where('type', $data['type']);
+        if (isset($data['sort']) && $data['sort'] === 'Data') $queryOrders->orderByDesc('publish_time');
+        if (isset($data['sort']) && $data['sort'] === 'Type') $queryOrders->orderByDesc('share_type');
+        if (!isset($data['sort']) && !isset($data['type'])) $queryOrders->orderByDesc('created_at');
+
+        if (isset($data['type_history']) && $data['type_history'] !== '--') $queryHistory->where('type', $data['type_history']);
+        if (isset($data['sort_history']) && $data['sort_history'] === 'Data') $queryHistory->orderByDesc('publish_time');
+        if (isset($data['sort_history']) && $data['sort_history'] === 'Type') $queryHistory->orderByDesc('share_type');
+        if (!isset($data['sort_history']) && !isset($data['type_history'])) $queryHistory->orderByDesc('created_at');
+
         $company->setRelation('orders', $queryOrders->paginate(10, ['*'], 'orders')->withQueryString());
+        $company->setRelation('history', $queryHistory->paginate(10, ['*'], 'history')->withQueryString());
         $company->setRelation('finance', $company->finance()->paginate(10, ['*'], 'finance')->withQueryString());
         $check_isset = Watchlist::where(['user_id' => auth()->id(), 'company_id' => $id])->first(['id', 'type']);
         return view('lc.page-lc-one-company', compact('company', 'check_isset'));

@@ -39,9 +39,20 @@
                 <p class="t-r f16-l24 purple2">Here you can enter important details. For example, SPV - layers, management fee, carry ... / Escrow / ROFR / requirements for the second side of the transaction and so on.</p>
                 <textarea class="i-f f14-l16 w400 h235" cols="30" rows="10" name="description"
                           placeholder="Enter the Text">{{$order->description}}</textarea>
+                <ul class="t-r f16-l24 purple2 list-help">
+                    <li>
+                        - Order will be placed for 45 days, after this period you can update order so that it remains valid for another 45 days (this is available in section my orders).
+                    </li>
+                    <li>
+                        - You can place one order per company.
+                    </li>
+                    <li>
+                        - You can edit the Share price or Valuation once during the first 30 days.
+                    </li>
+                </ul>
             </div>
             <div class="ask-block i" id="{{$id}}">
-                <h2 class="t-sb f22-l25 purple3">Information</h2>
+                <h2 class="t-sb f22-l25 purple3">Terms</h2>
                 <ul class="nav-tabs ">
                     <li class="t-m f18-l32 purple1 tab-n2 {{!empty($order->share_number)?'active':''}}">
                         Price
@@ -84,17 +95,17 @@
                                 </div>
                             </div>
                             <label class="t-r f16-l24 purple1" for="{{$share_price}}">Share Price</label>
-                            <input class="i-f w400 m-bid" type="number" id="{{$share_price}}"
+                            <input class="i-f w400 m-bid" type="number" step="0.001" id="{{$share_price}}"
                                    placeholder="Enter the Price" name="share_price" required value="{{$order->share_price}}">
                         </div>
                         <div class="ask-block-info">
                             <label class="t-r f16-l24 purple1" for="{{$share_number}}">Share Number</label>
-                            <input class="i-f w400 m-bid" type="number" id="{{$share_number}}"
+                            <input class="i-f w400 m-bid" type="number" step="0.001" id="{{$share_number}}"
                                    placeholder="Enter the Number" name="share_number" required value="{{$order->share_number}}">
                         </div>
                         <div class="ask-block-info">
                             <label class="t-r f16-l24 purple1" for="{{$volume}}">Volume</label>
-                            <input class="i-f w400" type="number" id="{{$volume}}" name="volume" required value="{{$order->volume}}" placeholder="Enter the Volume">
+                            <input class="i-f w400" type="number" step="0.001" id="{{$volume}}" name="volume" required value="{{$order->volume}}" placeholder="Enter the Volume">
                             <button class="btn-green w265" type="button" id="{{$btn_calc}}">
                                 Calculate
                             </button>
@@ -119,12 +130,12 @@
                         </div>
                         <div class="ask-block-info">
                             <label class="t-r f16-l24 purple1" for="{{$volume2}}">Volume</label>
-                            <input class="i-f w400" type="number" id="{{$volume2}}" placeholder="Enter the Volume" name="volume"  value="{{$order->volume}}">
+                            <input class="i-f w400" type="number"  step="0.001" id="{{$volume2}}" placeholder="Enter the Volume" name="volume"  value="{{$order->volume}}">
                         </div>
                         <div class="ask-block-info">
                             <label class="t-r f16-l24 purple1" for="{{$share_number2}}">Valuation</label>
                             <input class="i-f w400" type="number" id="{{$share_number2}}" name="valuation"
-                                   placeholder="Enter the Valuation" value="{{$order->valuation}}">
+                                   placeholder="Enter the Valuation" step="0.001" value="{{$order->valuation}}">
                         </div>
                     @endif
                 </div>

@@ -61,9 +61,20 @@
                 <h2 class="t-sb f22-l25 purple3">Details</h2>
                 <p class="t-r f16-l24 purple2">Here you can enter important details. For example, SPV - layers, management fee, carry ... / Escrow / ROFR / requirements for the second side of the transaction and so on.</p>
                 <textarea class="i-f f14-l16 w400 h235" name="description" placeholder="Enter the Text"></textarea>
+                <ul class="t-r f16-l24 purple2 list-help">
+                    <li>
+                        - Order will be placed for 45 days, after this period you can update order so that it remains valid for another 45 days (this is available in section my orders).
+                    </li>
+                    <li>
+                        - You can place one order per company.
+                    </li>
+                    <li>
+                        - You can edit the Share price or Valuation once during the first 30 days.
+                    </li>
+                </ul>
             </div>
             <div class="looking-block i" id="tabs_looking">
-                <h2 class="t-sb f22-l25 purple3">Information</h2>
+                <h2 class="t-sb f22-l25 purple3">Terms</h2>
                 <ul class="nav-tabs">
                     <li class="t-m f18-l32 purple1 tab-n2 active">
                         Number shares
@@ -88,7 +99,7 @@
                     <div class="looking-block-info">
                         <label class="t-r f16-l24 purple1" for="share_number_looking">Share Number</label>
                         <input class="i-f w400" type="number" id="share_number_looking" name="share_number"
-                            placeholder="Enter the Number" required>
+                            placeholder="Enter the Number" required step="0.001">
                     </div>
                 </div>
                 <div class="content-t2">
@@ -103,7 +114,7 @@
                     </div>
                     <div class="looking-block-info">
                         <label class="t-r f16-l24 purple1" for="volume_looking">Volume</label>
-                        <input class="i-f w400" type="number" id="volume_looking" placeholder="Enter the Volume">
+                        <input class="i-f w400" type="number" id="volume_looking" placeholder="Enter the Volume" step="0.001">
                     </div>
                 </div>
             </div>

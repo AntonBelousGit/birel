@@ -71,8 +71,8 @@
                                     <label class="input-group-text" for="inputGroupSelect01">Status</label>
                                 </div>
                                 <select name="status" class="custom-select">
-                                    <option value="0" @if ($company->status === 0) selected @endif>Inactive</option>
-                                    <option value="1" @if ($company->status === 1) selected @endif>Active</option>
+                                    <option value="0" @if ($company->status == 0) selected @endif>Inactive</option>
+                                    <option value="1" @if ($company->status == 1) selected @endif>Active</option>
                                 </select>
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>

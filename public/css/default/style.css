@@ -1488,9 +1488,9 @@ textarea.i-f::-webkit-scrollbar-thumb {
 .footer-grid {
   display: grid;
   grid-template-areas: "logo nav1 nav2 mail" "copyright nav1 nav2 mail";
-  grid-template-columns: 23% 23% 23% 23%;
+  grid-template-columns: 23% 15% 15% 23%;
   grid-template-rows: 50%;
-  grid-gap: 2.66667%;
+  grid-gap: 8%;
 }
 
 .footer-logo {
@@ -1511,7 +1511,7 @@ textarea.i-f::-webkit-scrollbar-thumb {
 }
 
 .footer-logo .list-soc-item a i:before {
-  font-size: 32px;
+  font-size: 34px;
 }
 
 .footer-copyright {
@@ -1580,7 +1580,7 @@ textarea.i-f::-webkit-scrollbar-thumb {
 }
 
 .footer-mail p {
-  margin-bottom: 14px;
+  margin-bottom: 20px;
 }
 
 .footer-mail p:last-child {
@@ -1627,6 +1627,12 @@ textarea.i-f::-webkit-scrollbar-thumb {
 
 .header-container .burger .reset-btn.active .icon-close:before {
   display: block;
+}
+
+.header-logo {
+  -webkit-flex-basis: 320px;
+      -ms-flex-preferred-size: 320px;
+          flex-basis: 320px;
 }
 
 .header-menu {
@@ -1682,7 +1688,7 @@ textarea.i-f::-webkit-scrollbar-thumb {
   }
 
   .header-menu {
-    grid-gap: 100px;
+    grid-gap: 90px;
   }
 }
 
@@ -1821,6 +1827,14 @@ textarea.i-f::-webkit-scrollbar-thumb {
 
   .footer-nav1 {
     margin-left: 30px;
+  }
+
+  .header {
+    padding: 36px 0 36px;
+  }
+
+  .drop-down.active .btn-group {
+    margin-bottom: 50px;
   }
 }
 

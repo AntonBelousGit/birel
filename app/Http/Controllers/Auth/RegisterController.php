@@ -104,6 +104,10 @@ class RegisterController extends Controller
                 'active_order' => 4,
             ]);
         }
+        $user->userSettingNotifications()->create([
+            'user_id' => $user->id,
+        ]);
+
         return $user;
     }
 }

@@ -160,6 +160,14 @@
   display: flex;
 }
 
+.list-help {
+  padding: 10px;
+  background: #F6F4FF;
+  -webkit-border-radius: 6px;
+          border-radius: 6px;
+  margin-top: 30px;
+}
+
 .add-order {
   background-color: #fff;
   width: 100%;
@@ -177,7 +185,7 @@
 
 .ask {
   display: grid;
-  grid-template-areas: "name specification" "structure specification" "info fix";
+  grid-template-areas: "name specification" "structure specification" "info specification";
   grid-template-columns: 0.4fr 0.6fr;
   grid-gap: 0 20px;
   margin-top: 50px;
@@ -354,7 +362,7 @@
 
 .looking {
   display: grid;
-  grid-template-areas: "name specification" "order specification" "structure specification" "info fix";
+  grid-template-areas: "name specification" "order specification" "structure specification" "info specification";
   grid-template-columns: 0.4fr 0.6fr;
   grid-gap: 0 20px;
   margin-top: 50px;

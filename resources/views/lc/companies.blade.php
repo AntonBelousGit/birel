@@ -5,7 +5,7 @@
 @endsection
 
 @section('scripts')
-    <script src="{{asset('js/default/redirect_filter.min.js')}}"></script>
+
     <script src="{{asset('js/lib/jquery.min.js')}}"></script>
     <script src="{{asset('js/lib/select2.min.js')}}"></script>
     <script src="{{asset('js/pages/page-lc-company.js')}}" type="module"></script>
@@ -90,7 +90,7 @@
             <ul class="company-list">
                 @foreach($watchlist as $item)
                     <li class="company-item">
-                        <span class="company-item-count t-r">0 order</span>
+                        <span class="company-item-count t-r">{{$item->company->orders->count()}} order{{$item->company->orders->count()>1?'s':''}}</span>
                         <a class="company-item-link" href="{{ route('companies.show',$item->company) }}">
                             <picture>
                                 <source srcset="{{asset('storage/companies/'.$item->company->image)  }}"

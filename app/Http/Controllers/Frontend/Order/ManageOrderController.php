@@ -10,9 +10,11 @@ use App\Http\Requests\Orders\UpdateOrderLFORequest;
 use App\Http\Requests\Orders\UpdateOrderRequest;
 use App\Models\Company;
 use App\Models\CompanyOrder;
-use DB;
+use App\Models\Watchlist;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
-use Illuminate\Support\Facades\Request;
+use Throwable;
 
 class ManageOrderController extends Controller
 {
@@ -34,13 +36,48 @@ class ManageOrderController extends Controller
 
     public function storeOrder(CreateOrderRequest $createOrderRequest)
     {
-        (new CompanyOrder())->create($createOrderRequest->validated());
+        $data = $createOrderRequest->validated();
+        CompanyOrder::create($data);
+
+        try {
+            $check_isset = Watchlist::where(['user_id' => auth()->id(), 'company_id' => $data['company_id']])->count();
+
+            if ($check_isset) {
+                return redirect()->route('orders');
+            }
+            Watchlist::create([
+                'user_id' => auth()->id(),
+                'company_id' => $data['company_id'],
+                'type' => 'All',
+            ]);
+
+        } catch (Throwable $exception) {
+            report($exception);
+        }
+
         return redirect()->route('orders');
     }
 
     public function storeLfo(CreateOrderLfoRequest $createOrderLfoRequest)
     {
-        (new CompanyOrder())->create($createOrderLfoRequest->validated());
+        $data = $createOrderLfoRequest->validated();
+        CompanyOrder::create($data);
+        try {
+            $check_isset = Watchlist::where(['user_id' => auth()->id(), 'company_id' => $data['company_id']])->count();
+
+            if ($check_isset) {
+                return redirect()->route('orders');
+            }
+            Watchlist::create([
+                'user_id' => auth()->id(),
+                'company_id' => $data['company_id'],
+                'type' => 'All',
+            ]);
+
+        } catch (Throwable $exception) {
+            report($exception);
+        }
+
         return redirect()->route('orders');
     }
 
@@ -113,15 +150,20 @@ class ManageOrderController extends Controller
         return back();
     }
 
-//    public function orderStatus(Request $request)
-//    {
-//        if ($request->mode == 'true') {
-//            DB::table('brands')->where('id', $request->id)->update(['status' => 'active']);
-//        } else {
-//            DB::table('brands')->where('id', $request->id)->update(['status' => 'inactive']);
-//        }
-//
-//        return response()->json(['msg' => 'Successfully updated status', 'status' => true]);
-//
-//    }
+    public function orderStatus(Request $request)
+    {
+        $companyOrder = CompanyOrder::find($request->id);
+        if (!Gate::allows('edit-order', $companyOrder)) {
+            abort(403);
+        }
+        if ($request->status == 'true') {
+            DB::table('company_orders')->where('id', $request->id)->update(['user_status' => 'active']);
+            $status = 'active';
+        }
+        if ($request->status == 'false') {
+            DB::table('company_orders')->where('id', $request->id)->update(['user_status' => 'inactive']);
+            $status = 'inactive';
+        }
+        return response()->json(['msg' => 'Successfully updated status', 'status' => $status]);
+    }
 }

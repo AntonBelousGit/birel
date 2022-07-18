@@ -157,7 +157,7 @@
   width: 100%;
 }
 
-.table-head .head-row-item {
+.table .table-head .head-row-item {
   text-align: left;
   border-left: 1px solid #fff;
   border-right: 1px solid #fff;
@@ -166,57 +166,57 @@
   vertical-align: middle;
 }
 
-.table-head .head-row-item:first-child div {
+.table .table-head .head-row-item:first-child div {
   -webkit-border-radius: 6px 0 0 6px;
           border-radius: 6px 0 0 6px;
 }
 
-.table-head .head-row-item:last-child div {
+.table .table-head .head-row-item:last-child div {
   -webkit-border-radius: 0 6px 6px 0;
           border-radius: 0 6px 6px 0;
 }
 
-.table-head .head-row-item:first-child > div > div {
+.table .table-head .head-row-item:first-child > div > div {
   text-align: right;
 }
 
-.table-head .head-row-item .date {
+.table .table-head .head-row-item .date {
   width: 110px;
 }
 
-.table-head .head-row-item .company {
+.table .table-head .head-row-item .company {
   width: 190px;
 }
 
-.table-head .head-row-item .valuation {
+.table .table-head .head-row-item .valuation {
   width: 135px;
 }
 
-.table-head .head-row-item .volume {
+.table .table-head .head-row-item .volume {
   width: 130px;
 }
 
-.table-head .head-row-item .share-price {
+.table .table-head .head-row-item .share-price {
   width: 135px;
 }
 
-.table-head .head-row-item .number-of-shares {
+.table .table-head .head-row-item .number-of-shares {
   width: 165px;
 }
 
-.table-head .head-row-item .share-type {
+.table .table-head .head-row-item .share-type {
   width: 125px;
 }
 
-.table-head .head-row-item .deal-structure {
+.table .table-head .head-row-item .deal-structure {
   width: 165px;
 }
 
-.table-head .head-row-item > div {
+.table .table-head .head-row-item > div {
   background-color: #2A206A;
 }
 
-.table-head .head-row-item > div > div {
+.table .table-head .head-row-item > div > div {
   padding: 8px 12px;
   height: 40px;
   font-family: "WorkSans-SemiBold", sans-serif;
@@ -230,36 +230,36 @@
      text-overflow: ellipsis;
 }
 
-.table-body .body-row-item {
+.table .table-body .body-row-item {
   border-top: 4px solid white;
   border-bottom: 4px solid white;
   vertical-align: middle;
 }
 
-.table-body .body-row-item:first-child > div {
+.table .table-body .body-row-item:first-child > div {
   -webkit-border-radius: 6px 0 0 6px;
           border-radius: 6px 0 0 6px;
 }
 
-.table-body .body-row-item:first-child > div > div {
+.table .table-body .body-row-item:first-child > div > div {
   text-align: right;
 }
 
-.table-body .body-row-item:last-child > div {
+.table .table-body .body-row-item:last-child > div {
   -webkit-border-radius: 0 6px 6px 0;
           border-radius: 0 6px 6px 0;
 }
 
-.table-body .body-row-item .reset-btn {
+.table .table-body .body-row-item .reset-btn {
   width: 24px;
   height: 24px;
 }
 
-.table-body .body-row-item .reset-btn .tree-dots {
+.table .table-body .body-row-item .reset-btn .tree-dots {
   display: block;
 }
 
-.table-body .body-row-item.center > div > div {
+.table .table-body .body-row-item.center > div > div {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -270,7 +270,7 @@
           justify-content: center;
 }
 
-.table-body .body-row-item.center > div > div button {
+.table .table-body .body-row-item.center > div > div button {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -285,43 +285,43 @@
           align-items: center;
 }
 
-.table-body .body-row-item .date {
+.table .table-body .body-row-item .date {
   width: 110px;
 }
 
-.table-body .body-row-item .company {
+.table .table-body .body-row-item .company {
   width: 190px;
 }
 
-.table-body .body-row-item .valuation {
+.table .table-body .body-row-item .valuation {
   width: 135px;
 }
 
-.table-body .body-row-item .volume {
+.table .table-body .body-row-item .volume {
   width: 130px;
 }
 
-.table-body .body-row-item .share-price {
+.table .table-body .body-row-item .share-price {
   width: 135px;
 }
 
-.table-body .body-row-item .number-of-shares {
+.table .table-body .body-row-item .number-of-shares {
   width: 165px;
 }
 
-.table-body .body-row-item .share-type {
+.table .table-body .body-row-item .share-type {
   width: 125px;
 }
 
-.table-body .body-row-item .deal-structure {
+.table .table-body .body-row-item .deal-structure {
   width: 165px;
 }
 
-.table-body .body-row-item > div {
+.table .table-body .body-row-item > div {
   background-color: #C6F7CE;
 }
 
-.table-body .body-row-item > div > div {
+.table .table-body .body-row-item > div > div {
   height: 34px;
   text-align: left;
   vertical-align: middle;
@@ -337,26 +337,26 @@
      text-overflow: ellipsis;
 }
 
-.table-body .body-row-item > div > div > a {
+.table .table-body .body-row-item > div > div > a {
   display: inline-block;
   width: 26px;
   height: 26px;
 }
 
-.table-body .body-row-item > div > div > a > i:before {
+.table .table-body .body-row-item > div > div > a > i:before {
   width: 30px;
   height: 26px;
 }
 
-.table-body .body-row.bid > td > div {
+.table .table-body .body-row.bid > td > div {
   background-color: #F8D2D2;
 }
 
-.table-body .body-row.moderation > td > div {
+.table .table-body .body-row.moderation > td > div {
   background-color: #C0BCD699;
 }
 
-.table-body .body-row.history > td > div {
+.table .table-body .body-row.history > td > div {
   background-color: #C6F6CE99;
 }
 
@@ -377,7 +377,6 @@
 .table-two .table-head .head-row-item:first-child div {
   -webkit-border-radius: 6px 0 0 6px;
           border-radius: 6px 0 0 6px;
-  text-align: right;
 }
 
 .table-two .table-head .head-row-item:last-child div {
@@ -385,7 +384,43 @@
           border-radius: 0 6px 6px 0;
 }
 
-.table-two .table-head .head-row-item div {
+.table-two .table-head .head-row-item:first-child > div > div {
+  text-align: right;
+}
+
+.table-two .table-head .head-row-item .date-t {
+  width: 185px;
+}
+
+.table-two .table-head .head-row-item .transaction-name-t {
+  width: 175px;
+}
+
+.table-two .table-head .head-row-item .amount-raised-t {
+  width: 145px;
+}
+
+.table-two .table-head .head-row-item .raised-to-date-t {
+  width: 140px;
+}
+
+.table-two .table-head .head-row-item .issue-price-t {
+  width: 110px;
+}
+
+.table-two .table-head .head-row-item .post-money-valuation-t {
+  width: 195px;
+}
+
+.table-two .table-head .head-row-item .key-investors-t {
+  width: 560px;
+}
+
+.table-two .table-head .head-row-item > div {
+  background-color: #2A206A;
+}
+
+.table-two .table-head .head-row-item > div > div {
   padding: 8px 12px;
   height: 40px;
   font-family: "WorkSans-SemiBold", sans-serif;
@@ -393,16 +428,19 @@
   font-size: 16px;
   line-height: 24px;
   color: #fff;
-  background-color: #2A206A;
+  white-space: nowrap;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+}
+
+.table-two .table-body2 .body-row {
+  cursor: pointer;
 }
 
 .table-two .table-body2 .body-row-item:first-child > div {
   padding-left: 0;
   text-align: right;
-}
-
-.table-two .table-body2 .body-row-item:last-child > div.arrow-icon-purple {
-  cursor: pointer;
 }
 
 .table-two .table-body2 .body-row-item:last-child > div.arrow-icon-purple:hover:before {
@@ -411,7 +449,37 @@
           transform: rotate(-45deg) scale(1.4);
 }
 
-.table-two .table-body2 .body-row-item > div {
+.table-two .table-body2 .body-row-item .date-t {
+  width: 185px;
+}
+
+.table-two .table-body2 .body-row-item .transaction-name-t {
+  width: 175px;
+}
+
+.table-two .table-body2 .body-row-item .amount-raised-t {
+  width: 145px;
+}
+
+.table-two .table-body2 .body-row-item .raised-to-date-t {
+  width: 140px;
+}
+
+.table-two .table-body2 .body-row-item .issue-price-t {
+  width: 110px;
+}
+
+.table-two .table-body2 .body-row-item .post-money-valuation-t {
+  width: 195px;
+}
+
+.table-two .table-body2 .body-row-item .key-investors-t {
+  width: 100%;
+  max-width: 736px;
+  min-width: 560px;
+}
+
+.table-two .table-body2 .body-row-item > div > div {
   height: 32px;
   text-align: left;
   vertical-align: middle;
@@ -421,10 +489,14 @@
   font-size: 16px;
   line-height: 24px;
   color: #2A206A;
+  white-space: nowrap;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
 }
 
 .table-two .table-body2 .body-row-item:first-child > ul {
-  padding-left: 70px;
+  padding-left: 49px;
 }
 
 .table-two .table-body2 .body-row-item:first-child > ul li div {
@@ -498,7 +570,7 @@
 }
 
 .list-t-item {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .list-t-item:last-child {
@@ -573,7 +645,7 @@
 
 .orders-wrapper .orders-philter-btn {
   background-color: #F6F4FF;
-  padding: 8px;
+  padding: 5px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -597,6 +669,12 @@
   -webkit-transform: scale(1.1);
       -ms-transform: scale(1.1);
           transform: scale(1.1);
+}
+
+.orders-wrapper .orders-philter-btn-s {
+  height: 40px;
+  -webkit-border-radius: 6px;
+          border-radius: 6px;
 }
 
 .orders-wrapper .table-wrapper {

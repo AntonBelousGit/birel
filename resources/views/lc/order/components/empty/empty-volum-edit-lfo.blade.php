@@ -9,7 +9,7 @@
     </select>
 </div>
 <div class="looking-block-info">
-    <label class="t-r f16-l24 purple1" for="volume_looking">Block Volume</label>
-    <input class="i-f w400" type="number" id="volume_looking" placeholder="Enter the Volume">
+    <label class="t-r f16-l24 purple1" for="volume2">Block Volume</label>
+    <input class="i-f w400" type="number" id="volume2" placeholder="Enter the Volume" step="0.001">
 </div>
 

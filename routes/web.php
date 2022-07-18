@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\Frontend\Order\ManageOrderController;
 use App\Http\Controllers\Frontend\Question\QuestionController;
+use App\Http\Controllers\Frontend\Settings\SettingController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
@@ -32,17 +34,20 @@ Route::controller(MainController::class)->group(function () {
 Auth::routes(['verify' => true]);
 
 Route::group(['middleware' => ['auth', 'user']], function () {
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-    Route::resource('/companies', App\Http\Controllers\CompanyController::class);
-    Route::get('/companies/{company}/get-finance/', [App\Http\Controllers\CompanyController::class, 'getFinance'])->name('company.get-finance');
-    Route::post('/companies/wali', [App\Http\Controllers\CompanyController::class, 'wali'])->name('wali');
-    Route::post('/companies/wali-delete/{id}', [App\Http\Controllers\CompanyController::class, 'deleteWali'])->name('delete-wali');
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+    Route::resource('/companies', CompanyController::class);
+    Route::post('/companies/store-lfo', [CompanyController::class, 'storeLfo'])->name('companies.store-lfo');
+    Route::get('/companies/{company}/get-finance/', [CompanyController::class, 'getFinance'])->name('company.get-finance');
+    Route::post('/companies/wali', [CompanyController::class, 'wali'])->name('wali');
+    Route::post('/companies/wali-delete/{id}', [CompanyController::class, 'deleteWali'])->name('delete-wali');
 
 
     Route::controller(HomeController::class)->group(function () {
         Route::get('/orders', 'orders')->name('orders');
         Route::post('/update', 'update')->name('update');
         Route::post('/changepass', 'changepass')->name('changepass');
+        Route::post('markNotification','markNotification')->name('markNotification');
     });
 
 //ORDERS
@@ -53,13 +58,12 @@ Route::group(['middleware' => ['auth', 'user']], function () {
         Route::post('/order/', 'storeOrder')->name('store-order');
         Route::post('/order/storeLfo', 'storeLfo')->name('store-lfo');
         Route::put('/order/updateLfo/{order}', 'updateLfo')->name('lc-update-lfo');
-        Route::post('order_status', 'orderStatus')->name('order.status');
+        Route::post('/order/order-status', 'orderStatus')->name('order.status');
     });
 
 //Question popup
     Route::post('/question', QuestionController::class)->name('frontend-question');
 
-    Route::get('/settings', function () {
-        return view('lc.page-lc-notification');
-    })->name('settings-notification');
+    Route::get('/settings', [SettingController::class,'index'])->name('settings-notification');
+    Route::post('/settings', [SettingController::class,'store'])->name('settings-notification-store');
 });

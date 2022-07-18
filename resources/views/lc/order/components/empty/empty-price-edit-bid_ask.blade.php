@@ -29,14 +29,14 @@
     </div>
     <label class="t-r f16-l24 purple1" for="{{$share_price}}">Share Price</label>
     <input class="i-f w400 m-bid" type="text" id="{{$share_price}}"
-           placeholder="Enter the Price" name="share_price" >
+           placeholder="Enter the Price" name="share_price"  step="0.001">
 </div>
 <div class="ask-block-info">
     <label class="t-r f16-l24 purple1" for="{{$share_number}}">Share Number</label>
     <input class="i-f w400 m-bid" type="text" id="{{$share_number}}"
-           placeholder="Enter the Number" name="share_number" >
+           placeholder="Enter the Number" name="share_number"  step="0.001">
 </div>
 <div class="ask-block-info">
     <label class="t-r f16-l24 purple1" for="{{$volume}}">Volume</label>
-    <input class="i-f w400" type="number" id="{{$volume}}" name="volume" placeholder="Enter the Volume">
+    <input class="i-f w400" type="number" id="{{$volume}}" name="volume" placeholder="Enter the Volume" step="0.001">
 </div>

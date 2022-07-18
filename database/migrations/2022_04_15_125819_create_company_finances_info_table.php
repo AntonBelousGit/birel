@@ -17,15 +17,16 @@ class CreateCompanyFinancesInfoTable extends Migration
             $table->id();
             $table->foreignId('company_finance_id')->constrained('company_finances')->cascadeOnDelete()->cascadeOnUpdate();
 
-            $table->float('price_per_share')->nullable();
+            $table->string('price_per_share')->nullable();
+            $table->enum('type_currency', ['$', '€'])->default('$');
             $table->string('liquidation_pref_order')->nullable();
-            $table->float('dividend_rate')->nullable();
+            $table->string('dividend_rate')->nullable();
             $table->string('investors')->nullable();
             $table->string('shares_outstanding')->nullable();
-            $table->float('liquidation_pref_as_multiplier')->nullable();
+            $table->string('liquidation_pref_as_multiplier')->nullable();
             $table->string('cumulative')->nullable();
-            $table->float('percent_shares_outstanding')->nullable();
-            $table->float('conversion_rate')->nullable();
+            $table->string('percent_shares_outstanding')->nullable();
+            $table->string('conversion_rate')->nullable();
             $table->string('participating')->nullable();
             $table->string('participation_cap')->nullable();
 

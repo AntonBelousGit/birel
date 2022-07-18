@@ -15,5 +15,5 @@
 <div class="ask-block-info">
     <label class="t-r f16-l24 purple1" for="{{$share_number2}}">Valuation</label>
     <input class="i-f w400" type="number" id="{{$share_number2}}" name="valuation"
-            placeholder="Enter the Valuation">
+            placeholder="Enter the Valuation" step="0.001">
 </div>

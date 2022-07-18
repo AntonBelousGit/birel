@@ -22,13 +22,13 @@
                             @method('patch')
 
                             <div class="form-group">
-                                <input type="number" min="1" class="form-control" name="active_order" placeholder="Active order"
+                            <label for="count-order">Count orders</label>
+                                <input type="number" id="count-order" min="1" class="form-control" name="active_order" placeholder="Active order"
                                        value="{{old('active_order',$user->active_order)}}">
                             </div>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
-                                    <label class="input-group-text" for="inputGroupSelect01">Выбрать
-                                        тип</label>
+                                    <label class="input-group-text" for="inputGroupSelect01">Select type</label>
                                 </div>
                                 <select name="type" class="custom-select">
                                         <option value="Representative"  @if ($user->type === 'Representative') selected @endif>Representative</option>

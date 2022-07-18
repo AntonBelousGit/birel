@@ -11,6 +11,7 @@ class CompanyFinanceInfo extends Model
 
     protected $fillable = [
         'price_per_share',
+        'type_currency',
         'liquidation_pref_order',
         'dividend_rate',
         'investors',

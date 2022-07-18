@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Filter\AllOrderFilterRequest;
 use App\Models\CompanyOrder;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
@@ -22,9 +23,22 @@ class HomeController extends Controller
         return view('lc.home');
     }
 
-    public function orders()
+    public function orders(AllOrderFilterRequest $request)
     {
-        $orders = CompanyOrder::with('user','company')->where('user_id',Auth::id())->orderByDesc('created_at')->get();
+        $data = $request->all();
+        $query = CompanyOrder::with('user','company')->where('user_id',Auth::id());
+
+        if (isset($data['type']) && $data['type'] !== '--') $query->where('type', $data['type']);
+        if (isset($data['sort']) && $data['sort'] === 'Data') $query->orderByDesc('publish_time');
+        if (isset($data['sort']) && $data['sort'] === 'Type') $query->orderByDesc('share_type');
+        if (!isset($data['sort']) && !isset($data['type'])) $query->orderByDesc('created_at');
+        if (isset($data['search'])&& !empty($data['search'])) {
+            $query->whereHas('company',function ($q) use ($data) {
+                $q->where('companyName', 'LIKE', "%{$data['search']}%");
+            });
+        }
+        $orders = $query->get();
+
         return view('lc.page-lc-orders',compact('orders'));
     }
 
@@ -45,4 +59,15 @@ class HomeController extends Controller
         return redirect()->back()->with('success', 'password updated.');
     }
 
+    public function markNotification(Request $request)
+    {
+        auth()->user()
+            ->unreadNotifications
+            ->when($request->input('id'), function ($q) use ($request) {
+               return $q->where('id', $request->input('id'));
+            })
+            ->markAsRead();
+
+        return response()->noContent();
+    }
 }

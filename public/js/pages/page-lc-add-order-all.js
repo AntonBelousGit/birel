@@ -34,8 +34,8 @@ const share_type_ask2 = document.querySelector('#share_type_ask2');
 const volume_ask2 = document.querySelector('#volume_ask2');
 const share_number_ask2 = document.querySelector('#share_number_ask2');
 const btn_ask = document.querySelector('#btn_calc_ask');
-calculate(btn_bid, share_price_ask, share_number_ask, volume_ask);
-calculate(btn_ask,share_price_bid,share_number_bid,volume_bid);
+calculate(btn_ask, share_price_ask, share_number_ask, volume_ask);
+calculate(btn_bid,share_price_bid,share_number_bid,volume_bid);
 
 function f(item) {
 	let items = document.querySelector(item);

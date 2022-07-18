@@ -12,12 +12,13 @@ class CompanyFinanceInfoResource extends JsonResource
      * Transform the resource into an array.
      *
      * @param Request $request
-     * @return array|Arrayable|\JsonSerializable
+     * @return array
      */
-    public function toArray($request)
+    public function toArray($request): array
     {
         return [
             'price_per_share' => $this->price_per_share,
+            'type_currency' => $this->type_currency,
             'liquidation_pref_order' => $this->liquidation_pref_order,
             'dividend_rate' => $this->liquidation_pref_order,
             'investors' => $this->investors,
