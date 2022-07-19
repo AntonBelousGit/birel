@@ -7,7 +7,7 @@
                     @csrf
                     <ul class="nav navbar-nav">
                         <li>
-                            <button type="submit" style="border: none;outline: none;background-color: transparent;padding: 0;"  class="icon-menu"><i class="icon-power"></i></button>
+                            <button type="submit" style="border: none;outline: none;background-color: transparent;padding: 15px;"  class="icon-menu"><i class="icon-power"></i></button>
                         </li>
                     </ul>
                 </form>
