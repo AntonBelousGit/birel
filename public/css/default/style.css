@@ -299,6 +299,22 @@ label {
   height: 0;
 }
 
+.alert.alert-danger {
+  font-family: "WorkSans-Regular", sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  color: #ff3939;
+  font-weight: 400;
+}
+
+.invalid-feedback {
+  color: #ff3939;
+  font-size: 14px;
+  line-height: 16px;
+  font-family: "WorkSans-Regular", sans-serif;
+  font-weight: 400;
+}
+
 .btn-group {
   display: -webkit-box;
   display: -webkit-flex;
