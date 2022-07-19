@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('login', [AuthController::class, 'index'])->name('admin.login');
+Route::post('logout', [AuthController::class, 'adminLogout'])->name('admin.logout');
 Route::post('login_process', [AuthController::class, 'login'])->name('admin.login_process');
 
 Route::group(['middleware' => 'is_admin'], function () {

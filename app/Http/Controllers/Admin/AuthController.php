@@ -27,4 +27,9 @@ class AuthController extends Controller
         return redirect(route('admin.login'))->withErrors(['email'=>"User  doesn't exists"]);
     }
 
+    public function adminLogout()
+    {
+        auth('admin')->logout();
+        return redirect()->route('admin.login');
+    }
 }
