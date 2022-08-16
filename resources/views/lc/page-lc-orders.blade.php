@@ -204,8 +204,8 @@
                         </td>
                         <td class="body-row-item">
                             <div>
-                                <div class="company" data-tippy-content="{{$order->company->companyName}}">
-                                    {{$order->company->companyName}}
+                                <div class="company" data-tippy-content="{{$order->company?->companyName}}">
+                                    {{$order->company?->companyName}}
                                 </div>
                             </div>
                         </td>
