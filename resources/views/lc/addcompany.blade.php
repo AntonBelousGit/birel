@@ -200,7 +200,7 @@
 					<div class="ask-block s">
 						<h2 class="t-sb f22-l25 purple3">Details</h2>
 						<p class="t-r f16-l24 purple2">Here you can enter important details. For example, SPV - layers, management fee, carry ... / Escrow / ROFR / requirements for the second side of the transaction and so on.</p>
-						<textarea class="i-f f14-l16 w400 h235" cols="30" rows="10" placeholder="Enter the Text"></textarea>
+						<textarea class="i-f f14-l16 w400 h235" cols="30" rows="10" name="description" placeholder="Enter the Text"></textarea>
 						<ul class="t-r f16-l24 purple2 list-help">
                             <li>
                                 - Order will be placed for 45 days, after this period you can update order so that it remains valid for another 45 days (this is available in section my orders).
@@ -272,7 +272,10 @@
 							<div class="ask-block-info">
 								<label class="t-r f16-l24 purple1" for="share_type_ask2">Share Type</label>
 								<select id="share_type_ask2" class="js-example-basic-single w400">
-									<option value="0" selected>Choose</option>
+									<option value="Preferred">Preferred</option>
+                                    <option value="Common">Common</option>
+                                    <option value="Preferred and Common">Preferred and Common</option>
+                                    <option value="any">Any</option>
 								</select>
 							</div>
 							<div class="ask-block-info">
